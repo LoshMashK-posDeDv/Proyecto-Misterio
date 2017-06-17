@@ -15,6 +15,26 @@
 	</thead>
 
 	<tbody>
+		<?php
+			$consulta_videos = <<<SQL
+				SELECT
+					IMG_DESTACADA,
+					TITULO,
+					AUTOR,
+					FECHA_ALTA,
+					A_ESTADO
+				FROM
+					articulos
+				ORDER BY FECHA_ALTA
+SQL;
+			$respuesta_videos = mysqli_query($conexion, $consulta_videos);
+			
+			while($array_videos = mysql_fetch_assoc($respuesta_videos)){
+				echo $array_videos['TITULO'];
+			};
+			var_dump($respuesta_videos);
+			echo mysqli_error($conexion);
+		?>
 		<tr class="video_list__row">
 			<td class="video_list__row__image"><img src="http://placehold.it/100x80"></td>
 			<td class="video_list__row__name"><p>Lorem ipsum dolor sit amet.</p></td>
