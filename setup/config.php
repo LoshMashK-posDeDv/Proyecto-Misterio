@@ -24,6 +24,10 @@ $conexion = @mysqli_connect(
 	$config['bdd']
 );
 
+if( $conexion ){
+	mysqli_set_charset($conexion, 'utf8');
+}
+
 
 // To do:
 // - Validacion del get

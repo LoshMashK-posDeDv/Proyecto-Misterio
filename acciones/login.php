@@ -8,10 +8,7 @@
 	/* CONSULTA A TABLA USUARIOS */
 $c_log = <<<LOGIN
 SELECT 
-	IDUSUARIOS, 
-	NOMBRE_USUARIO, 
-	CONTRASENIA, 
-	U_ESTADO
+	*
 FROM usuarios 
 LIMIT 1
 LOGIN;
@@ -19,10 +16,7 @@ LOGIN;
 	$user = mysqli_query($conexion, $c_log);
 	$log = mysqli_fetch_assoc($user);
 
-	var_dump($nombre_login);
-	var_dump($clave_login);
-	var_dump($user);
-	var_dump($log);
+	var_dump($log['IDUSUARIOS']);
 
 	/*if( ! $log ){
 		$_SESSION['LOGIN_ERROR'] = 'Mal usuario o clave';
