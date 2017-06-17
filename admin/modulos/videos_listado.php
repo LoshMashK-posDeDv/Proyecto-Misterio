@@ -25,15 +25,16 @@
 					A_ESTADO
 				FROM
 					articulos
-				ORDER BY FECHA_ALTA
 SQL;
+			echo $consulta_videos;
 			$respuesta_videos = mysqli_query($conexion, $consulta_videos);
+			var_dump($respuesta_videos);
 			
-			while($array_videos = mysql_fetch_assoc($respuesta_videos)){
+			/*while($array_videos = mysql_fetch_assoc($respuesta_videos)){
 				echo $array_videos['TITULO'];
 			};
 			var_dump($respuesta_videos);
-			echo mysqli_error($conexion);
+			echo mysqli_error($conexion);*/
 		?>
 		<tr class="video_list__row">
 			<td class="video_list__row__image"><img src="http://placehold.it/100x80"></td>
