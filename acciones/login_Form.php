@@ -37,8 +37,6 @@
 					echo $_SESSION['LOGIN_ERROR'];
 				echo '</p>';
 				unset( $_SESSION['LOGIN_ERROR'] );
-			} else {
-				echo '<p class="response ok"> Todo bien </p>';
 			}
 		?>
 
