@@ -1,4 +1,5 @@
 <?php
+session_start( );
 
 //leo el archivo de configuración general
 $config_gen = parse_ini_file('setup.ini',true);
@@ -7,12 +8,14 @@ date_default_timezone_set($config_gen['zona']['timezone']);
 
 //conexion local u online
 if($_SERVER['HTTP_HOST'] == 'localhost'){
-	$config = parse_ini_file('local.ini');
-}else{
+	/*$config = parse_ini_file('local.ini');
+} else {*/
 	$config = parse_ini_file('online.ini');
 }
-//error_reporting($config['errores']['reporting']);
-//ini_set('display_errors' , $config['errores']['display']) ;
+
+/*error_reporting($config['errores']['reporting']);
+ini_set('display_errors' , $config['errores']['display']) ;
+*/
 
 //conexion al sql
 $conexion = @mysqli_connect(
@@ -21,6 +24,10 @@ $conexion = @mysqli_connect(
 	$config['pwd'],
 	$config['bdd']
 );
+
+if( $conexion ){
+	mysqli_set_charset($conexion, 'utf8');
+}
 
 
 // To do:
