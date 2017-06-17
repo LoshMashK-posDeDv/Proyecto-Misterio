@@ -1,5 +1,15 @@
+<?php
+	if(isset($_GET['e'])){
+		if($_GET['e'] == 'ok'){
+			echo 'Se guardó correctamente';
+		} else {
+			echo 'Algo salió mal';
+		}
+	}
+?>
+
 <div class="content-fluid">
-	<form class="create_form" action="../acciones/agregar_video.php" eenctype="multipart/form-data" method="post">
+	<form class="create_form" action="../acciones/agregar_video.php" enctype="multipart/form-data" method="post">
 		<div class="section__title">
 			<h2><input type="text" name="titulo" id="titulo" placeholder="Titulo del video" class="create_form__title"/></h2>
 		</div>
