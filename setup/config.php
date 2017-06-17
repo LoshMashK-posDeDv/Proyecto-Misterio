@@ -11,8 +11,8 @@ if($_SERVER['HTTP_HOST'] == 'localhost'){
 }else{
 	$config = parse_ini_file('online.ini');
 }
-error_reporting($config['errores']['reporting']);
-ini_set('display_errors' , $config['errores']['display']) ;
+//error_reporting($config['errores']['reporting']);
+//ini_set('display_errors' , $config['errores']['display']) ;
 
 //conexion al sql
 $conexion = @mysqli_connect(
