@@ -31,15 +31,20 @@
 	display: inline-block;
 }
 
+.section__title__action {
+	margin-left: 10px;
+	padding-left: 10px;
+	border-left: 1px solid #000;
+}
+
 .section__title h2 {
-	padding-right: 10px;
-	margin: 0 10px 0 0;
-	border-right: 1px solid #000;
+	margin: 0;
 }
 
 .video_list {
 	border-spacing: 0 20px;
 	border-collapse: separate;
+	width: 100%;
 }
 
 .video_list__row__name,
@@ -68,6 +73,16 @@
 
 	.header__title {
 		text-align: left;
+	}
+
+	.video_list__head__image,
+	.video_list__head__author,
+	.video_list__head__date {
+		width: 100px;
+	}
+	.video_list__head__actions {
+		text-align: center;
+		width: 75px;
 	}
 
 }
