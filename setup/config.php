@@ -7,12 +7,14 @@ date_default_timezone_set($config_gen['zona']['timezone']);
 
 //conexion local u online
 if($_SERVER['HTTP_HOST'] == 'localhost'){
-	$config = parse_ini_file('local.ini');
-}else{
+	/*$config = parse_ini_file('local.ini');
+} else {*/
 	$config = parse_ini_file('online.ini');
 }
-error_reporting($config['errores']['reporting']);
+
+/*error_reporting($config['errores']['reporting']);
 ini_set('display_errors' , $config['errores']['display']) ;
+*/
 
 //conexion al sql
 $conexion = @mysqli_connect(
