@@ -1,5 +1,9 @@
 /* ADMIN */
 
+img {
+	max-width: 100%;
+}
+
 .menu__list {
 	margin: 0;
 	padding: 0;
@@ -23,7 +27,7 @@
 .section__title {
 	display: flex;
 	align-items: center;
-	margin: 35px 0 15px;
+	margin: 15px 0 15px;
 }
 
 .section__title h2,
@@ -59,6 +63,15 @@
 
 .video_list__row__actions i {
 	margin: 0 5px;
+}
+
+.video_agregar_form input[type="text"],
+.video_agregar_form textarea {
+	width: 100%;
+}
+
+.imagenes__item {
+	margin-bottom: 10px;
 }
 
 /* TABLET */
