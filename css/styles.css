@@ -1,37 +1,73 @@
+/* ADMIN */
 
-.col-sm-12 {
-	width: 100%;
+.menu__list {
+	margin: 0;
+	padding: 0;
+	display: flex;
+    justify-content: space-between;
 }
-.col-sm-11 {
-	width: 91.66666667%;
+
+.menu__list__option {
+	list-style: none;
 }
-.col-sm-10 {
-	width: 83.33333333%;
+
+.header__title {
+	text-align: center;
 }
-.col-sm-9 {
-	width: 75%;
+
+.header__user {
+	float: right;
+	margin-right: 15px;
 }
-.col-sm-8 {
-	width: 66.66666667%;
+
+.section__title {
+	display: flex;
+	align-items: center;
+	margin: 35px 0 15px;
 }
-.col-sm-7 {
-	width: 58.33333333%;
+
+.section__title h2,
+.section__title a {
+	display: inline-block;
 }
-.col-sm-6 {
-	width: 50%;
+
+.section__title h2 {
+	padding-right: 10px;
+	margin: 0 10px 0 0;
+	border-right: 1px solid #000;
 }
-.col-sm-5 {
-	width: 41.66666667%;
+
+.video_list {
+	border-spacing: 0 20px;
+	border-collapse: separate;
 }
-.col-sm-4 {
-	width: 33.33333333%;
+
+.video_list__row__name,
+.video_list__head__name {
+	padding-left: 15px;
+	padding-right: 15px;
 }
-.col-sm-3 {
-	width: 25%;
+
+.video_list__row__actions {
+	text-align: center;
 }
-.col-sm-2 {
-	width: 16.66666667%;
+
+.video_list__row__actions i {
+	margin: 0 5px;
 }
-.col-sm-1 {
-	width: 8.33333333%;
+
+/* TABLET */
+
+/* DESKTOP */
+
+@media screen and (min-width: 1024px){
+
+	.menu__list {
+		display: block;
+	}
+
+	.header__title {
+		text-align: left;
+	}
+
 }
