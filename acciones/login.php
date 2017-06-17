@@ -1,40 +1,42 @@
 <?php 
-	include( '../../setup/config.php' ); 
+	
+	//include( '../../setup/config.php' ); 
+	
+	
+
+	/* CAMPOS LOGIN FORM */
 	$nombre_login = $_POST['usuario'];
-	$clave_login = md5($_POST['clave']);
+	$clave_login = md5($_POST['password']);
 
-	$c_log = <<<LOGIN
-	SELECT  
-		IFNULL(
-			CONCAT(LEFT(NOMBRE,1),'. ',UCASE(APELLIDO)),
-			LEFT( EMAIL , INSTR( EMAIL, '@' )-1 )
-		) AS USERNAME,
-		NOMBRE, 
-		APELLIDO, /*ESTOS DOS SON PARA EL FORMULARIO DE EDITAR DATOS */
-		EMAIL, 
-		NIVEL, 
-		ID, 
-		ESTADO, 
-		IFNULL( AVATAR, 'no-profile.jpg' ) AS AVATAR 
-	FROM usuarios 
-	WHERE 
-		EMAIL='$usuario' 
-		AND CLAVE='$clave' 
-	LIMIT 1
+	/* CONSULTA A TABLA USUARIOS */
+$c_log = <<<LOGIN
+SELECT 
+	IDUSUARIOS, 
+	NOMBRE_USUARIO, 
+	CONTRASENIA, 
+	U_ESTADO, 
+	FKPERMISOS, 
+	ESTADO, 
+FROM usuarios 
+WHERE 
+	NOMBRE_USUARIO='$nombre_login' AND CONTRASENIA='$clave_login' 
+LIMIT 1
 LOGIN;
-
+	
 	$user = mysqli_query($conexion, $c_log);
 	$log = mysqli_fetch_assoc($user);
 
-	if( ! $log ){
+	if( !$log ){
 		$_SESSION['LOGIN_ERROR'] = 'Mal usuario o clave';
 	} else {
-		if( $a['ESTADO'] == 1 ){
-			$_SESSION = $a;
+		if( $log['U_ESTADO'] == 1 ){
+			$_SESSION = $log;
 		} else {
 			$_SESSION['LOGIN_ERROR'] = 'Cuenta bloqueada';
 		}
 	}
 
-	header("Location: ../index.php");
+	//header("Location: ../index.php");
+
+	var_dump($log);
 ?>
