@@ -1,4 +1,5 @@
 <?php
+session_start( );
 
 //leo el archivo de configuración general
 $config_gen = parse_ini_file('setup.ini',true);

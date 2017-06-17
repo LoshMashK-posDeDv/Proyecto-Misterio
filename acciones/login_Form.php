@@ -1,3 +1,5 @@
+<?php include('../setup/config.php');  ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,10 +28,25 @@
 	</style>
 </head>
 <body>	
-	<form action="login.php" method="POST" enctype="" >
-		<div><input type="text" name="usuario"></div>
-		<div><input type="password" name="password"></div>
+	
+
+	<form action="login.php" method="POST">
+		<?php 
+			if( isset($_SESSION['LOGIN_ERROR'])){
+				echo '<p class="response error">';
+					echo $_SESSION['LOGIN_ERROR'];
+				echo '</p>';
+				unset( $_SESSION['LOGIN_ERROR'] );
+			} else {
+				echo '<p class="response ok"> Todo bien </p>';
+			}
+		?>
+
+		<div><input type="text" name="usuario" placeholder="Usuario"></div>
+		<div><input type="password" name="password" placeholder="Contraseña"></div>
 		<div><input type="submit" name="" value="Ingresar"></div>
+
+		<a href="logout.php">Cerrar Sesión</a>
 	</form>
 </body>
 </html>
