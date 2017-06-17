@@ -1,11 +1,17 @@
 <?php
+	include("../../setup/config.php");
+
 	$titulo = $_POST['titulo'];
 	$descripcion = $_POST['descripcion'];
 	$duracion = $_POST['duracion'];
 	$anio = $_POST['anio'];
 	$video = $_FILES['video'];
+	$video_nombre = $_FILES['video']['name'];
 	$imagenes = $_FILES['imagenes'];
 	$imagen_destacada = $_FILES['imagen_destacada'];
+	$imagen_destacada_nombre = $_FILES['imagen_destacada']['name'];
+
+	//$autor = $_SESSION['NOMBRE_COMPLETO'];
 
 
 	$er_titulo = "/^[a-z0-9-\.*\s]{5,80}$/i";
@@ -18,17 +24,29 @@
 	$txt_duracion = preg_match($er_duracion, $duracion, $coincidencia_duracion);
 
 	$er_video = "/^[\w\s]{4,45}\.(mp4|webm)$/i";
-	$txt_video = preg_match($er_video, $video['name'], $coincidencia_video);
+	$txt_video = preg_match($er_video, $video_nombre = $_FILES['video']['name'], $coincidencia_video);
 
 	$er_imagen_destacada = "/^[\w\s]{4,45}\.(jpg|png)$/i";
 	$txt_imagen_destacada = preg_match($er_imagen_destacada, $imagen_destacada['name'], $coincidencia_imagen_destacada);
 
 	if($txt_titulo && $txt_descripcion && $txt_duracion && $txt_video && $txt_imagen_destacada){
-		/* ACÁ VA EL INSERT DE LOS DATOS */
-		echo "todo ok";
+		$c = <<<SQL
+
+		INSERT INTO 
+			articulos
+		SET 
+			TITULO = "$titulo",
+			DESCRIPCION = "$descripcion",
+			DURACION = "$duracion",
+			AÑO = "$anio",
+			VIDEO = '$video_nombre',
+			IMG_DESTACADA = '$imagen_destacada_nombre'
+SQL;
+		$rta = 'ok';
+
 	} else {
-		header("Location: ../crear_video.php");
-		die();
+		$rta = 'error';
 	}
 
+	header("Location: ../modulos/video_agregar.php?e=$rta");
 ?>

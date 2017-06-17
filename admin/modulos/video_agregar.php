@@ -1,3 +1,13 @@
+<?php
+	if(isset($_GET['e'])){
+		if($_GET['e'] == 'ok'){
+			echo 'Se guardó correctamente';
+		} else {
+			echo 'Algo salió mal';
+		}
+	}
+?>
+
 <div class="row video_agregar_form">
 	<div class="col-md-5">
 		<form class="create_form" action="acciones/agregar_video.php" enctype="multipart/form-data" method="post">
