@@ -42,14 +42,26 @@ if(isset($_GET['s'])){
 	$s = '';
 }
 
-switch ($s) {
-	case 'agregar_video':
-		$seccion .= 'video_agregar.php';
-		break;
-	
-	default:
-		$seccion .= 'videos_listado.php';
-		break;
+if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
+	switch ($s) {
+		case 'login':
+			$seccion .= 'login.php';
+			break;
+		
+		default:
+			$seccion .= 'home.php';
+			break;
+	}
+} else {
+	switch ($s) {
+		case 'agregar_video':
+			$seccion .= 'video_agregar.php';
+			break;
+		
+		default:
+			$seccion .= 'videos_listado.php';
+			break;
+	}
 }
 
 ?>
