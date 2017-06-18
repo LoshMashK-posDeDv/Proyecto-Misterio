@@ -14,51 +14,27 @@
 
 	//$autor = $_SESSION['NOMBRE_COMPLETO'];
 
-	$er_titulo = "/^[a-z0-9-\.*\s]{5,80}$/i";
-	$txt_titulo = preg_match($er_titulo, $titulo, $coincidencia_titulo);
-	
-	/*
-	TENGO UN HERMOSO PROBLEMA CON EL VIDEO Y LA IMAGEN DESTACADA.
-	CUANDO EDITO, NO LE PUEDO SETEAR UN VALOR AL INPUT FILE, ENTONCES SI EL USUARIO NO VUELVE A SUBIR EL VIDEO, EN LA BASE DE DATOS PONE '' =D
+	$c = "UPDATE 
+		articulos
+	SET 
+		TITULO = '$titulo',
+		DESCRIPCION = '$descripcion',
+		DURACION = '$duracion',
+		AÑO = '$anio'";
 
-	$er_descripcion = "/^.{10,500}$/i";
-	$txt_descripcion = preg_match_all($er_descripcion, $descripcion, $coincidencia_descripcion);
+	if($video['size'] > 0){
+		$c .= ", VIDEO = '$video_nombre'";
+	}
 
-	$er_duracion = "/^[0-9]{1,2}(:|.)[0-9]{2}(:|.)[0-9]{2}$/";
-	$txt_duracion = preg_match($er_duracion, $duracion, $coincidencia_duracion);
-
-	$er_video = "/^[\w\s]{4,45}\.(mp4|webm)$/i";
-	$txt_video = preg_match($er_video, $video_nombre = $_FILES['video']['name'], $coincidencia_video);
-
-	$er_imagen_destacada = "/^[\w\s]{4,45}\.(jpg|png)$/i";
-	$txt_imagen_destacada = preg_match($er_imagen_destacada, $imagen_destacada['name'], $coincidencia_imagen_destacada);
-	*/
-	if($txt_titulo){
-		$c = <<<SQL
-
-		UPDATE 
-			articulos
-		SET 
-			TITULO = "$titulo",
-			DESCRIPCION = "$descripcion",
-			DURACION = "$duracion",
-			AÑO = "$anio",
-			VIDEO = '$video_nombre',
-			IMG_DESTACADA = '$imagen_destacada_nombre'
-		WHERE
-			IDARTICULO = '$id'
-SQL;
-		$rta = 'ok';
-		
-		echo 'bien';
-		mysqli_query($conexion, $c);
-		echo $c;
-	} else {
-		$rta = 'error';
-		echo mysqli_error($conexion);
-		echo 'mal';
-		#echo $id;
+	if($imagen_destacada['size'] > 0){
+		$c .= ", IMG_DESTACADA = '$imagen_destacada_nombre'";
 	}
 	
-	//header("Location: ../index.php?s=agregar_video&e=$rta");
+	$c .= " WHERE
+		IDARTICULO = '$id'";
+	$rta = 'ok';
+	
+	mysqli_query($conexion, $c);
+
+	header("Location: ../index.php?m=ok");
 ?>

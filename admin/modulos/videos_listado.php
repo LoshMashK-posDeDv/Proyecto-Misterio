@@ -1,3 +1,13 @@
+<?php
+	if(isset($_GET['m'])){
+		if($_GET['m'] == 'ok'){
+			echo 'Se actualizó correctamente';
+		} else {
+			echo 'Algo salió mal';
+		}
+	}
+?>
+
 <div class="section__title">
 	<h2>Videos</h2>
 	<a href="index.php?s=agregar_video" class="section__title__action"><i class="glyphicon glyphicon-plus"></i> Agregar video</a>
@@ -34,7 +44,7 @@ SQL;
 			while($array_videos = mysqli_fetch_assoc($respuesta_videos)):
 		?>
 		<tr class="video_list__row">
-			<td class="video_list__row__image"><img src="<?php echo $array_videos['IMG_DESTACADA'] ?>"></td>
+			<td class="video_list__row__image"><img src="uploads/<?php echo $array_videos['IMG_DESTACADA'] ?>"></td>
 			<td class="video_list__row__name"><p><?php echo $array_videos['TITULO'] ?></p></td>
 			<td class="video_list__row__author hidden-xs"><p><?php echo $array_videos['AUTOR'] ?></p></td>
 			<td class="video_list__row__date hidden-xs"><p><?php echo $array_videos['FECHA_ALTA'] ?></p></td>

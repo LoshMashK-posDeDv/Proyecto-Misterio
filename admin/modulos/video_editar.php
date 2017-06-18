@@ -1,12 +1,4 @@
 <?php
-	if(isset($_GET['e'])){
-		if($_GET['e'] == 'ok'){
-			echo 'Se guardó correctamente';
-		} else {
-			echo 'Algo salió mal';
-		}
-	}
-
 	if(isset($_GET['i'])){
 		$id = $_GET['i'];
 	} else {
@@ -33,6 +25,8 @@ SQL;
 
 	$f = mysqli_query($conexion, $c);
 	$a = mysqli_fetch_assoc($f);
+
+	$separar_video = explode(".", $a['VIDEO']);
 ?>
 
 <div class="row video_agregar_form">
@@ -70,7 +64,9 @@ SQL;
 					<h3>Video</h3>
 					<div class="row">
 						<div class="col-md-6">	
-							<img src="http://placehold.it/200x200" alt="Preview del video" />
+							<video controls>
+								<source src="uploads/<?php echo $a['VIDEO'] ?>" type="video/<?php echo $separar_video[1] ?>">
+							</video>
 						</div>
 						<div class="col-md-6">
 							<input type="file" name="video" id="video" class="form-control create_form__video" />	
@@ -99,7 +95,7 @@ SQL;
 					<h3>Im&aacute;gen destacada</h3>
 					<div class="row">
 						<div class="col-md-6">
-							<img src="http://placehold.it/300x150" alt="">
+							<img src="uploads/<?php echo $a['IMG_DESTACADA'] ?>" alt="">
 						</div>
 						<div class="col-md-6">
 							<input type="file" name="imagen_destacada" id="imagen_destacada" class="form-control create_form__imagen_destacada" />	

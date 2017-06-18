@@ -30,6 +30,22 @@
 	$txt_imagen_destacada = preg_match($er_imagen_destacada, $imagen_destacada['name'], $coincidencia_imagen_destacada);
 
 	if($txt_titulo && $txt_descripcion && $txt_duracion && $txt_video && $txt_imagen_destacada){
+		if($video['size'] > 0){
+			$extension = pathinfo($video_nombre, PATHINFO_EXTENSION);
+			$video_nombre = $titulo; 
+			$video_nombre = preg_replace("/[^a-zA-Z0-9_-]/", "_", $video_nombre);
+			$video_nombre .= "_video." . $extension;
+			move_uploaded_file($video['tmp_name'], "../uploads/$video_nombre");
+		}
+
+		if($imagen_destacada['size'] > 0){
+			$extension_img = pathinfo($imagen_destacada_nombre, PATHINFO_EXTENSION);
+			$imagen_destacada_nombre = $titulo; 
+			$imagen_destacada_nombre = preg_replace("/[^a-zA-Z0-9_-]/", "_", $imagen_destacada_nombre);
+			$imagen_destacada_nombre .= "_img_destacada." . $extension_img;
+			move_uploaded_file($imagen_destacada['tmp_name'], "../uploads/$imagen_destacada_nombre");
+		}
+
 		$c = <<<SQL
 
 		INSERT INTO 
@@ -43,7 +59,7 @@
 			IMG_DESTACADA = '$imagen_destacada_nombre'
 SQL;
 		$rta = 'ok';
-		
+
 		mysqli_query($conexion, $c);
 	} else {
 		$rta = 'error';
