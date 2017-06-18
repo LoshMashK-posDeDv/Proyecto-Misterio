@@ -1,6 +1,6 @@
 <div class="section__title">
 	<h2>Videos</h2>
-	<a href="#" class="section__title__action"><i class="glyphicon glyphicon-plus"></i> Agregar video</a>
+	<a href="index.php?s=agregar_video" class="section__title__action"><i class="glyphicon glyphicon-plus"></i> Agregar video</a>
 </div>
 
 <table class="video_list">
@@ -26,53 +26,25 @@
 				FROM
 					articulos
 SQL;
-			echo $consulta_videos;
-			$respuesta_videos = mysqli_query($conexion, $consulta_videos);
-			var_dump($respuesta_videos);
+	
+			$respuesta_videos = mysqli_query($conexion, $consulta_videos);		
 			
-			/*while($array_videos = mysql_fetch_assoc($respuesta_videos)){
-				echo $array_videos['TITULO'];
-			};
-			var_dump($respuesta_videos);
-			echo mysqli_error($conexion);*/
+
+			while($array_videos = mysqli_fetch_assoc($respuesta_videos)):
+			
 		?>
 		<tr class="video_list__row">
-			<td class="video_list__row__image"><img src="http://placehold.it/100x80"></td>
-			<td class="video_list__row__name"><p>Lorem ipsum dolor sit amet.</p></td>
-			<td class="video_list__row__author hidden-xs"><p>Admin</p></td>
-			<td class="video_list__row__date hidden-xs"><p>21/01/2017</p></td>
+			<td class="video_list__row__image"><img src="<?php echo $array_videos['IMG_DESTACADA'] ?>"></td>
+			<td class="video_list__row__name"><p><?php echo $array_videos['TITULO'] ?></p></td>
+			<td class="video_list__row__author hidden-xs"><p><?php echo $array_videos['AUTOR'] ?></p></td>
+			<td class="video_list__row__date hidden-xs"><p><?php echo $array_videos['FECHA_ALTA'] ?></p></td>
 			<td class="video_list__row__actions">
 				<a href="#" title="Editar video"><i class="glyphicon glyphicon-pencil"></i></a>
 				<a href="#" title="Eliminar video"><i class="glyphicon glyphicon-remove"></i></a>
 			</td>
 		</tr>
-		<tr class="video_list__row">
-			<td class="video_list__row__image"><img src="http://placehold.it/100x80"></td>
-			<td class="video_list__row__name"><p>Lorem ipsum dolor sit amet.</p></td>
-			<td class="hidden-xs"><p>Admin</p></td>
-			<td class="hidden-xs"><p>21/01/2017</p></td>
-			<td class="video_list__row__actions"><a href="#"><i class="glyphicon glyphicon-remove"></i></a></td>
-		</tr>
-		<tr class="video_list__row">
-			<td class="video_list__row__image"><img src="http://placehold.it/100x80"></td>
-			<td class="video_list__row__name"><p>Lorem ipsum dolor sit amet.</p></td>
-			<td class="hidden-xs"><p>Admin</p></td>
-			<td class="hidden-xs"><p>21/01/2017</p></td>
-			<td class="video_list__row__actions"><a href="#"><i class="glyphicon glyphicon-remove"></i></a></td>
-		</tr>
-		<tr class="video_list__row">
-			<td class="video_list__row__image"><img src="http://placehold.it/100x80"></td>
-			<td class="video_list__row__name"><p>Lorem ipsum dolor sit amet.</p></td>
-			<td class="hidden-xs"><p>Admin</p></td>
-			<td class="hidden-xs"><p>21/01/2017</p></td>
-			<td class="video_list__row__actions"><a href="#"><i class="glyphicon glyphicon-remove"></i></a></td>
-		</tr>
-		<tr class="video_list__row">
-			<td class="video_list__row__image"><img src="http://placehold.it/100x80"></td>
-			<td class="video_list__row__name"><p>Lorem ipsum dolor sit amet.</p></td>
-			<td class="hidden-xs"><p>Admin</p></td>
-			<td class="hidden-xs"><p>21/01/2017</p></td>
-			<td class="video_list__row__actions"><a href="#"><i class="glyphicon glyphicon-remove"></i></a></td>
-		</tr>
+		<?php
+			endwhile;
+		?>
 	</tbody>
 </table>

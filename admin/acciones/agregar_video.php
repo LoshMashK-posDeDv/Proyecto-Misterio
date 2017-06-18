@@ -43,10 +43,11 @@
 			IMG_DESTACADA = '$imagen_destacada_nombre'
 SQL;
 		$rta = 'ok';
-
+		
+		mysqli_query($conexion, $c);
 	} else {
 		$rta = 'error';
 	}
-
-	header("Location: ../modulos/video_agregar.php?e=$rta");
+	
+	header("Location: ../index.php?s=agregar_video&e=$rta");
 ?>

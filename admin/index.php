@@ -1,7 +1,4 @@
-<?php include('../setup/config.php');
-var_dump($conexion);
-
- ?>
+<?php include('../setup/config.php');?>
 
 <!DOCTYPE html>
 <html lang="es">

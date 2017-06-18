@@ -78,10 +78,10 @@
 					</div>
 				</div>
 			</div>
+			<div class="col-md-6"></div>
+			<div class="col-md-1">
+				<input type="submit" class="btn btn-default" value="Guardar"/>
+			</div>
 		</form>
-	</div>
-	<div class="col-md-6"></div>
-	<div class="col-md-1">
-		<input type="submit" class="btn btn-default" value="Guardar"/>
 	</div>
 </div>
