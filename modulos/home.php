@@ -6,7 +6,31 @@
 		</section>
 
 		<section>
+			<?php
+				$consulta_videos = <<<SQL
+				SELECT
+					TITULO,
+					DESCRIPCION,
+					IMG_DESTACADA
+				FROM
+					articulos
+				LIMIT 3
+SQL;
+
+				$r1 = mysqli_query($conexion, $consulta_videos);
+
+				while($array_videos = mysqli_fetch_assoc($r1)){
+			?>
+			
 			<article>
+				<img src="<?php echo $array_videos['IMG_DESTACADA'] ?>">
+				<h3><?php echo $array_videos['TITULO'] ?></h3>
+				<p><?php echo $array_videos['DESCRIPCION'] ?></p>
+			</article>
+			<?php
+				}//cierre while
+			?>
+			<!--<article>
 				<img src="http://placehold.it/50x50">
 				<h3>Titulo A</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
@@ -22,7 +46,7 @@
 				<img src="http://placehold.it/50x50">
 				<h3>Titulo C</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-			</article>
+			</article>-->
 		</section>
 
 		<section>
