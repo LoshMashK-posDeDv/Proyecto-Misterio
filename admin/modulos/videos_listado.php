@@ -31,7 +31,6 @@ SQL;
 	
 			$respuesta_videos = mysqli_query($conexion, $consulta_videos);		
 			
-
 			while($array_videos = mysqli_fetch_assoc($respuesta_videos)):
 		?>
 		<tr class="video_list__row">
