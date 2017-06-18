@@ -57,7 +57,9 @@ if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
 		case 'agregar_video':
 			$seccion .= 'video_agregar.php';
 			break;
-		
+		case 'editar_video':
+			$seccion .= 'video_editar.php';
+			break;
 		default:
 			$seccion .= 'videos_listado.php';
 			break;
