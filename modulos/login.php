@@ -1,4 +1,4 @@
-<form class="login_form" action="login.php" method="POST">
+<form class="login_form" action="acciones/login.php" method="POST">
 	<?php 
 		if( isset($_SESSION['LOGIN_ERROR'])){
 			echo '<p class="response error">';

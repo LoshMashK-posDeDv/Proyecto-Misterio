@@ -7,10 +7,12 @@
 
 	/* CONSULTA A TABLA USUARIOS */
 $c_log = <<<LOGIN
-SELECT 
+SELECT
+	IDUSUARIOS,
 	NOMBRE_USUARIO, 
 	CONTRASENIA, 
-	U_ESTADO
+	U_ESTADO,
+	FKPERMISOS
 FROM usuarios 
 WHERE 
 	NOMBRE_USUARIO='$nombre_login' 
@@ -30,6 +32,6 @@ LOGIN;
 			$_SESSION['LOGIN_ERROR'] = 'Tu cuenta ha sido bloqueada';
 		}
 	}
-	var_dump($_SESSION);
-	header("Location: login_Form.php");
+	//var_dump($_SESSION);
+	header("Location: ../index.php");
 ?>

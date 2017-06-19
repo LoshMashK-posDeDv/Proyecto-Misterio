@@ -1,18 +1,52 @@
 /* ADMIN */
 
-img {
+img,
+video {
 	max-width: 100%;
+}
+
+header {
+	position: relative;
+}
+
+.admin {
+	background: #2a2f37;
+}
+
+.admin header {
+	background: #FFF;
+	border-bottom: 1px solid #c7c7c7;
+}
+
+.admin main {
+	background: #f0f0f0;
+	padding: 10px 20px;
+}
+
+.admin main div[class^='seccion--'] {
+	background: #FFF;
+	padding: 15px;
+	border: 1px solid #c7c7c7;
 }
 
 .menu__list {
 	margin: 0;
-	padding: 0;
+	padding: 10px 0 0;
 	display: flex;
     justify-content: space-between;
 }
 
 .menu__list__option {
 	list-style: none;
+	padding: 10px;
+}
+
+.menu__list__option a {
+	color: #FFF;
+}
+
+.menu__list__option i {
+	margin-right: 10px;
 }
 
 .header__title {
@@ -20,8 +54,14 @@ img {
 }
 
 .header__user {
-	float: right;
-	margin-right: 15px;
+	float: left;
+    margin: 38px 0 0 15px;
+}
+
+.header__logos {
+    float: right;
+    margin-right: 15px;
+    margin: 10px 22px 10px 0;
 }
 
 .section__title {
@@ -101,7 +141,9 @@ img {
 	}
 
 	.header__title {
+		margin-left: 15px;
 		text-align: left;
+		float: left;
 	}
 
 	.video_list__head__image,
