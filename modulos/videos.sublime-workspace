@@ -1,0 +1,732 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"ali",
+				"align-self"
+			],
+			[
+				"dis",
+				"display"
+			],
+			[
+				"blo",
+				"block_wrapper"
+			],
+			[
+				"op",
+				"opacity"
+			],
+			[
+				"ver",
+				"overflow"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Applications/XAMPP/xamppfiles/htdocs/Proyecto-Misterio/admin/modulos/videos_listado.php",
+			"settings":
+			{
+				"buffer_size": 3132,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Applications/XAMPP/xamppfiles/htdocs/Proyecto-Misterio/admin/index.php",
+			"settings":
+			{
+				"buffer_size": 1154,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Applications/XAMPP/xamppfiles/htdocs/Proyecto-Misterio/admin/modulos/video_agregar.php",
+			"settings":
+			{
+				"buffer_size": 3014,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Applications/XAMPP/xamppfiles/htdocs/Proyecto-Misterio/index.php",
+			"settings":
+			{
+				"buffer_size": 612,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Applications/XAMPP/xamppfiles/htdocs/Proyecto-Misterio/css/styles.css",
+			"settings":
+			{
+				"buffer_size": 1475,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Applications/XAMPP/xamppfiles/htdocs/Proyecto-Misterio/setup/config.php",
+			"settings":
+			{
+				"buffer_size": 1127,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Applications/XAMPP/xamppfiles/htdocs/Proyecto-Misterio/acciones/login_Form.php",
+			"settings":
+			{
+				"buffer_size": 882,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "login.php",
+			"settings":
+			{
+				"buffer_size": 629,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "home.php",
+			"settings":
+			{
+				"buffer_size": 2333,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 87.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 485.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Applications/XAMPP/xamppfiles/htdocs/Proyecto-Misterio",
+		"/Applications/XAMPP/xamppfiles/htdocs/Proyecto-Misterio/acciones",
+		"/Applications/XAMPP/xamppfiles/htdocs/Proyecto-Misterio/modulos",
+		"/Applications/XAMPP/xamppfiles/htdocs/Proyecto-Misterio/setup"
+	],
+	"file_history":
+	[
+		"/Applications/XAMPP/xamppfiles/htdocs/Proyecto-Misterio/acciones/login_Form.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/Proyecto-Misterio/secciones/home.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/Proyecto-Misterio/admin/modulos/video_agregar.php",
+		"/Applications/XAMPP/xamppfiles/htdocs/Proyecto-Misterio/config.php",
+		"/Users/leomerlo/Proyecto-Misterio/css/styles.css",
+		"/Users/leomerlo/Proyecto-Misterio/admin/modulos/videos_listado.php",
+		"/Users/leomerlo/Proyecto-Misterio/admin/config.php",
+		"/Users/leomerlo/Proyecto-Misterio/admin/index.php",
+		"/Users/leomerlo/Proyecto-Misterio/index.html",
+		"/Users/leomerlo/Proyecto-Misterio/admin/modulos/video_agregar.php",
+		"/Users/leomerlo/Proyecto-Misterio/admin/agregar_video.php",
+		"/Users/leomerlo/code/perceptyx/templates/fies78/dc/dc_local.css",
+		"/Users/leomerlo/code/perceptyx/templates/fies78/dc/dc_variables.html",
+		"/Users/leomerlo/code/perceptyx/templates/fies78/dc/blocks/m.html",
+		"/Users/leomerlo/code/perceptyx/templates/msps64clone/dc_accessible/blocks/r2.html",
+		"/Users/leomerlo/code/perceptyx/templates/msps64clone/dc_accessible/dc_local.css",
+		"/Users/leomerlo/code/perceptyx/perl/MenuFramework/ConfEditor.pm",
+		"/Users/leomerlo/code/perceptyx/templates/fies78/dc/blocks/r_slider.html",
+		"/Users/leomerlo/code/perceptyx/templates/fies78/dc/dc_local.js",
+		"/Users/leomerlo/code/perceptyx/templates/msps64clone/dc_accessible/page_master_local.js",
+		"/Users/leomerlo/code/perceptyx/templates/nbces76/dc/dc_local.css",
+		"/Users/leomerlo/code/perceptyx/templates/fies78/dc/master_buttons.html",
+		"/Users/leomerlo/code/perceptyx/templates/fies78/dc/dc_wrapper.html",
+		"/Users/leomerlo/code/perceptyx/templates/nbces76/dc/dc_local.js",
+		"/Users/leomerlo/code/perceptyx/templates/fies78/dc/header.html",
+		"/Users/leomerlo/code/perceptyx/templates/fies78/dc/page_welcome.html",
+		"/Users/leomerlo/code/perceptyx/templates/fies78/dc/blocks/r.html",
+		"/Users/leomerlo/code/perceptyx/templates/fies78/dc/footer.html",
+		"/Users/leomerlo/code/perceptyx/data/fies78/dc/index.cgi",
+		"/Users/leomerlo/code/perceptyx/perl/MenuFramework/Admin/nbces58.pm",
+		"/Users/leomerlo/code/perceptyx/data/fies78/dc/dc_wrapper.html",
+		"/Users/leomerlo/code/perceptyx/perl/MenuFramework/Admin/fies78.pm",
+		"/Users/leomerlo/code/perceptyx/perl/MenuFramework/Admin/fhps26.pm",
+		"/Users/leomerlo/code/perceptyx/templates/default/dc_accessible/page_master.js",
+		"/Users/leomerlo/code/perceptyx/templates/default/design2016/managers_tree.html",
+		"/Users/leomerlo/code/perceptyx/templates/default/design2016/managers_tree.js",
+		"/Users/leomerlo/code/perceptyx/templates/default/dc_accessible/blocks/r2.html",
+		"/Users/leomerlo/code/perceptyx/templates/default/dc_accessible/header.html",
+		"/Users/leomerlo/code/perceptyx/templates/msps64clone/dc_accessible/page_master.html",
+		"/Users/leomerlo/code/perceptyx/templates/default/dc_accessible/page_master.html",
+		"/Users/leomerlo/code/perceptyx/templates/nbces76/dc/blocks/r2.html",
+		"/Users/leomerlo/code/perceptyx/templates/nbces76/local_site.css",
+		"/Users/leomerlo/code/perceptyx/templates/nbces76/managers_tree.js",
+		"/Users/leomerlo/code/perceptyx/templates/nbces76/managers_tree.html",
+		"/Users/leomerlo/code/perceptyx/templates/msps64clone/dc_accessible/dc_wrapper.html",
+		"/Users/leomerlo/code/perceptyx/templates/msps64clone/dc_accessible/footer.html",
+		"/Users/leomerlo/code/perceptyx/templates/msps64clone/dc_accessible/question_text.html",
+		"/Users/leomerlo/code/perceptyx/templates/msps64clone/dc/dc_wrapper.html",
+		"/Users/leomerlo/code/perceptyx/templates/msps64clone/dc_accessible/blocks/r2_buttons.html",
+		"/Users/leomerlo/code/perceptyx/templates/msps64clone/dc/dc_local.css",
+		"/Users/leomerlo/code/perceptyx/templates/default/design2016/fav_report/page.js",
+		"/Users/leomerlo/code/perceptyx/templates/default/design2016/js/global.js",
+		"/Users/leomerlo/code/perceptyx/templates/default/design2016/js/mass_report_generator.js",
+		"/Users/leomerlo/code/perceptyx/templates/default/design2016/fav_report.js",
+		"/Users/leomerlo/code/perceptyx/templates/default/design2016/gap_report/page.js",
+		"/private/var/folders/1q/q52k5lm92wv_m5kp1912rzdw0000gn/T/fz3temp-2/top.php",
+		"/private/var/folders/1q/q52k5lm92wv_m5kp1912rzdw0000gn/T/fz3temp-2/functions.php",
+		"/Users/leomerlo/code/perceptyx/templates/default/design2016/demographic_comparison/page.js",
+		"/Users/leomerlo/code/perceptyx/templates/default/design2016/demographic_comparison.js",
+		"/Users/leomerlo/code/perceptyx/templates/default/design2016/demographic_comparison.html",
+		"/Users/leomerlo/code/perceptyx/templates/nexes75/slides_and_guides1/local.css",
+		"/Users/leomerlo/code/perceptyx/templates/default/design2016/css/site_dataTable.css",
+		"/Users/leomerlo/code/perceptyx/templates/default/design2016/demographic_comparison.css",
+		"/Users/leomerlo/code/perceptyx/templates/aaes6a/fav_report/custom_questions.html",
+		"/Users/leomerlo/code/perceptyx/templates/mmces75/slides_and_guides1/team/dashboard.html",
+		"/Users/leomerlo/code/perceptyx/perl/MenuFramework/Admin/mmces75.pm",
+		"/Users/leomerlo/code/perceptyx/perl/MenuFramework/Admin/mmces76.pm",
+		"/Users/leomerlo/code/perceptyx/templates/abes03/new_executive_summary.tmpl",
+		"/Users/leomerlo/code/perceptyx/templates/nbces76/dc/dc_wrapper.html",
+		"/Users/leomerlo/code/perceptyx/data/nbces76/dc/textresizedetector.js",
+		"/Users/leomerlo/code/perceptyx/templates/nbces76/dc/page_master_local.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/leomerlo/code/perceptyx/templates/fies78",
+			"/Users/leomerlo/code/perceptyx/templates/fies78/dc",
+			"/Users/leomerlo/code/perceptyx/perl/MenuFramework/Admin",
+			"/Users/leomerlo/code/perceptyx/templates/default/dc_accessible",
+			"/Users/leomerlo/code/perceptyx/templates/default/dc",
+			"/Users/leomerlo/code/perceptyx/templates/default/dc_accessible",
+			"/Users/leomerlo/code/perceptyx/templates/msps64clone/dc_accessible",
+			"/Users/leomerlo/code/perceptyx/templates/msps64clone",
+			"/Users/leomerlo/code/perceptyx/templates/default/dc",
+			"/Users/leomerlo/code/perceptyx/templates/default/design2016",
+			"/Users/leomerlo/code/perceptyx/templates",
+			"/Users/leomerlo/code/perceptyx/templates/nbces76",
+			"/Users/leomerlo/code/perceptyx/templates/default/design2016"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"h2",
+			"1",
+			"6",
+			"\"]\n",
+			"8",
+			"6",
+			"row",
+			"7",
+			"{}",
+			"}\n",
+			">\n",
+			" {",
+			"link",
+			"%;",
+			"link",
+			" };",
+			"# ",
+			"qids_array",
+			"create_",
+			"theSlides",
+			"responses",
+			"custom",
+			".flip-side-2",
+			".tiles",
+			".block_wrapper.has_tiles td.answers .field",
+			".m_block .tiles",
+			".m_block .tiles .tile",
+			"td.question",
+			".flip-side-2",
+			".orage",
+			"logo",
+			".page_welcome .wrapper, .page_welcome",
+			"Rock Sans",
+			"Arial",
+			"animate",
+			".color_placeholder.animate",
+			".page_master .page_table",
+			"display:none",
+			"fix_fun",
+			"make_slider",
+			"validate_selection_04_00",
+			"setBgColor",
+			"fun",
+			"next",
+			"make_fun_page",
+			"fun",
+			"go_blo",
+			"orange",
+			"NBCUniversal",
+			"nbces58",
+			"elem.",
+			"na_hidden",
+			"na_hidded",
+			"focus",
+			"go_next",
+			"validationEngine",
+			"check_emp_id",
+			"emp_id",
+			"required",
+			"<!--% IF obj.question_required.$qid == 1",
+			"missing_responses_ok",
+			"required",
+			"questions_required",
+			"sr-only",
+			"<h1>",
+			"h1",
+			"required",
+			"next_button",
+			"radiogroup",
+			"aria-required",
+			">",
+			"radiogroup",
+			"aria-req",
+			"[%-",
+			"radiogroup",
+			"required",
+			"Privacy statement",
+			"tabsload",
+			"tabs_load",
+			"tabsload_",
+			"tabsload",
+			"DataTable",
+			";\n",
+			"dataTable",
+			"slide_dash",
+			"dashboard_team",
+			"dashboard",
+			"has_trends",
+			"trend",
+			"trending",
+			".page_master .page_table > tbody > tr",
+			".block_wrapper .answers",
+			".page_master .page_table > tbody > tr",
+			"offsetHeight",
+			"flip",
+			"mysql",
+			".demographic_comparison #categories .report-data .DTFC_LeftHeadWrapper .report-table.DTFC_Cloned .header"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"Arial",
+			"Fiserv",
+			"fies78",
+			"$(this).",
+			"<!--% IF obj.question_required.$qid == 1 && obj.missing_responses_ok != 1",
+			"obj.missing_responses_ok"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 8,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Applications/XAMPP/xamppfiles/htdocs/Proyecto-Misterio/admin/modulos/videos_listado.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3132,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								517,
+								517
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Applications/XAMPP/xamppfiles/htdocs/Proyecto-Misterio/admin/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1154,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								371,
+								218
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Applications/XAMPP/xamppfiles/htdocs/Proyecto-Misterio/admin/modulos/video_agregar.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3014,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								276,
+								276
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Applications/XAMPP/xamppfiles/htdocs/Proyecto-Misterio/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 612,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								257,
+								257
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Applications/XAMPP/xamppfiles/htdocs/Proyecto-Misterio/css/styles.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1475,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1014,
+								1014
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 647.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/Applications/XAMPP/xamppfiles/htdocs/Proyecto-Misterio/setup/config.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1127,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								963,
+								963
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 137.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/Applications/XAMPP/xamppfiles/htdocs/Proyecto-Misterio/acciones/login_Form.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 882,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								217,
+								217
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "login.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 629,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13,
+								23
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "home.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2333,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2,
+								2
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "videos.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/PTX.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 221.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

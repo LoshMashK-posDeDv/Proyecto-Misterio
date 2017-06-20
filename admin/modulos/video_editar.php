@@ -38,15 +38,16 @@ SQL;
 
 				<div class="form-group">
 					<div class="section__title">
+						<a class="section__title__back" href="index.php"><i class="glyphicon glyphicon-chevron-left"></i></a>
 						<h2>Editar video</h2>
 					</div>
 
-					<div>
+					<div class="clearfix">
 						<h3>Titulo</h3>
 						<input type="text" name="titulo" id="titulo" class="form-control create_form__titulo" value="<?php echo $a['TITULO'] ?>"/>
 					</div>
 
-					<div>
+					<div class="clearfix">
 						<h3>Descripcion</h3>
 						<textarea class="form-control create_form__descripcion" name="descripcion" id="descripcion"><?php echo $a['DESCRIPCION'] ?></textarea>
 					</div>
@@ -62,7 +63,7 @@ SQL;
 						</div>
 					</div>
 
-					<div>
+					<div class="clearfix">
 						<h3>Video</h3>
 						<div class="row">
 							<div class="col-md-6">	
@@ -76,7 +77,7 @@ SQL;
 						</div>
 					</div>
 
-					<div>
+					<div class="clearfix">
 						<h3>Im&aacute;genes</h3>
 						<div class="imagenes row">
 							<div class="imagenes__item col-xs-6 col-md-3"><img src="http://placehold.it/100x100" alt=""></div>
@@ -93,7 +94,7 @@ SQL;
 						</div>
 					</div>
 
-					<div>
+					<div class="clearfix">
 						<h3>Im&aacute;gen destacada</h3>
 						<div class="row">
 							<div class="col-md-6">
