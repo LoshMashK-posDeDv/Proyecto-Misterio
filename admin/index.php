@@ -2,7 +2,7 @@
 	include('../setup/config.php');
 
 	if(!isset($_SESSION['NOMBRE_USUARIO']) || $_SESSION['FKPERMISOS'] != 1){
-		header("Location: ../index.php");
+		header("Location: ../index.php?s=login");
 	}
 ?>
 
