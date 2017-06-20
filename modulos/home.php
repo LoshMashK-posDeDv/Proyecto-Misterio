@@ -10,6 +10,7 @@
 		<?php
 			$consulta_videos = <<<SQL
 			SELECT
+				IDARTICULO,
 				TITULO,
 				DESCRIPCION,
 				IMG_DESTACADA
@@ -28,9 +29,9 @@ SQL;
 		
 		<article class="col-md-4 home__videos">
 			<div class="home__videos__img">
-				<img src="admin/uploads/<?php echo $array_videos['IMG_DESTACADA'] ?>">
+				<a href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>"><img src="admin/uploads/<?php echo $array_videos['IMG_DESTACADA'] ?>"></a>
 			</div>
-			<h3 class="home__videos__title"><?php echo $array_videos['TITULO'] ?></h3>
+			<a href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>"><h3 class="home__videos__title"><?php echo $array_videos['TITULO'] ?></h3></a>
 			<p class="home__videos__desc"><?php echo $array_videos['DESCRIPCION'] ?></p>
 		</article>
 		<?php

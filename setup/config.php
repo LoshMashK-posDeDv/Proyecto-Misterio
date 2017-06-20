@@ -55,6 +55,10 @@ if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
 		case 'registro':
 			$seccion .= 'registro.php';
 			break;
+
+		case 'video':
+			$seccion .= 'video.php';
+			break;
 		
 		default:
 			$seccion .= 'home.php';
