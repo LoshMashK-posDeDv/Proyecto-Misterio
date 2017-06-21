@@ -81,9 +81,13 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6"></div>
-				<div class="col-md-1">
-					<input type="submit" class="btn btn-default" value="Guardar"/>
+				<div class="row">
+					<div class="col-md-6">
+						<input type="submit" class="btn btn_ok btn-block" value="Guardar"/>
+					</div>
+					<div class="col-md-6">
+						
+					</div>					
 				</div>
 			</form>
 		</div>
