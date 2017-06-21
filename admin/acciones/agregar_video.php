@@ -100,9 +100,7 @@
 
 		if($imagen_destacada['size'] > 0){
 			$extension_img = pathinfo($imagen_destacada_nombre, PATHINFO_EXTENSION);
-			$imagen_destacada_nombre = $titulo;
-			$imagen_destacada_nombre = preg_replace("/[^a-zA-Z0-9_-]/", "_", $imagen_destacada_nombre);
-			$imagen_destacada_nombre .= "_img_destacada." . $extension_img;
+			$imagen_destacada_nombre = "img_" . time() . "." . $extension_img;
 			move_uploaded_file($imagen_destacada['tmp_name'], "../../uploads/$imagen_destacada_nombre");
 		}
 
@@ -114,7 +112,9 @@
 			DURACION = '$duracion',
 			AÑO = '$anio',
 			VIDEO = '$video_nombre',
-			IMG_DESTACADA = '$imagen_destacada_nombre'";
+			IMG_DESTACADA = '$imagen_destacada_nombre',
+			A_ESTADO = '1',
+			FECHA_ALTA = '". date("Y-m-d H:i:s") . "'";
 
 		if($imagenes['size'] > 0){
 			$c .= ", IMAGENES  = '$insertar'";

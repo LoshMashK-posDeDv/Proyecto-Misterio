@@ -6,6 +6,14 @@
 			echo 'Algo salió mal';
 		}
 	}
+
+	if(isset($_GET['e'])){
+		if($_GET['e'] == 'ok'){
+			echo 'Se eliminó el video';
+		} else {
+			echo 'Algo salió mal';
+		}
+	}
 ?>
 
 <div class="seccion--video-listado">
@@ -38,7 +46,9 @@
 						IDARTICULO
 					FROM
 						articulos
-					ORDER BY FECHA_ALTA
+					WHERE
+						A_ESTADO = 1
+					ORDER BY FECHA_ALTA DESC
 SQL;
 
 				$respuesta_videos = mysqli_query($conexion, $consulta_videos);
@@ -52,7 +62,7 @@ SQL;
 				<td class="video_list__row__date hidden-xs"><p><?php echo $array_videos['FECHA_ALTA'] ?></p></td>
 				<td class="video_list__row__actions">
 					<a href="index.php?s=editar_video&i=<?php echo $array_videos['IDARTICULO'] ?>" title="Editar video"><i class="glyphicon glyphicon-pencil"></i></a>
-					<a href="#" title="Eliminar video"><i class="glyphicon glyphicon-remove"></i></a>
+					<a href="acciones/eliminar_video.php?i=<?php echo $array_videos['IDARTICULO'] ?>" title="Eliminar video"><i class="glyphicon glyphicon-remove"></i></a>
 				</td>
 			</tr>
 			<?php
