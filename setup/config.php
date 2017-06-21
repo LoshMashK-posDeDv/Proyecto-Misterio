@@ -1,4 +1,5 @@
 <?php
+
 session_start( );
 
 //leo el archivo de configuración general
@@ -54,6 +55,10 @@ if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
 
 		case 'registro':
 			$seccion .= 'registro.php';
+			break;
+
+		case 'videos':
+			$seccion .= 'videos.php';
 			break;
 
 		case 'video':
