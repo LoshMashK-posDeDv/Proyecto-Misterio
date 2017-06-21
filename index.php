@@ -6,7 +6,9 @@
 	<meta charset="utf-8">
 	<title>Prisión &amp; Libertad</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/stylesheet.css">
 	<link rel="stylesheet" href="css/styles.css">
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon"/>
 	<script src="js/bootstrap.min.js"></script>
 </head>
 <body>

@@ -12,16 +12,14 @@ INSERT INTO
 SET 
 	NOMBRE_USUARIO = '$nombre_usuario',
 	CONTRASENIA = '$password',
-	U_ESTADO = '1',
-	FKPERMISO = 'user',
+	U_ESTADO = 1,
+	FKPERMISOS = 1,
 	NOMBRE_COMPLETO = '$nombre_completo',
 	EMAIL = '$email',
 	FECHA_ALTA = NOW( )
 REGISTRO;
 
-	mysqli_query($conexion, $c_reg);
-	//header("Location: registro_Form.php");
-
-	var_dump(mysqli_query($conexion, $c_reg));
+	//mysqli_query($conexion, $c_reg);
+	header("Location: index.php");
 
 ?>

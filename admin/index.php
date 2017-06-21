@@ -1,4 +1,10 @@
-<?php include('../setup/config.php');?>
+<?php
+	include('../setup/config.php');
+
+	if(!isset($_SESSION['NOMBRE_USUARIO']) || $_SESSION['FKPERMISOS'] != 1){
+		header("Location: ../index.php?s=login");
+	}
+?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -10,21 +16,22 @@
 	<link rel="stylesheet" href="../css/styles.css">
 	<script src="../js/bootstrap.min.js"></script>
 </head>
-<body>
+<body class="admin">
 	<header class="header clearfix">
 		<h1 class="header__title">Prisión &amp; Libertad</h1>
-		<p class="header__user">Bienvenido, admin</p>
+		<p class="header__user">Bienvenido, <?php echo $_SESSION['NOMBRE_USUARIO']; ?></p>
+		<div class="header__logos"><img src="../images/header-logos.png" alt="Sponsors:" /></div>
 	</header>
-	<divzzzz class="container-fluid">
+	<div class="container-fluid">
 		<div class="row">
 			<aside class="col-md-2 menu">
 				<nav>
 					<ul class="menu__list">
-						<li class="menu__list__option"><a href="#">Inicio</a></li>
-						<li class="menu__list__option"><a href="#">Homepage</a></li>
-						<li class="menu__list__option"><a href="#">Nosotros</a></li>
-						<li class="menu__list__option"><a href="#">Videos</a></li>
-						<li class="menu__list__option"><a href="#">Contacto</a></li>
+						<li class="menu__list__option"><a href="index.php"><i class="glyphicon glyphicon-home"></i>Inicio</a></li>
+						<li class="menu__list__option"><a href="index.php?s=editar_pagina&p=home"><i class="glyphicon glyphicon-file"></i>Homepage</a></li>
+						<li class="menu__list__option"><a href="index.php?s=editar_pagina&p=nosotros"><i class="glyphicon glyphicon-file"></i>Nosotros</a></li>
+						<li class="menu__list__option"><a href="index.php?s=videos_listado"><i class="glyphicon glyphicon-facetime-video"></i>Videos</a></li>
+						<li class="menu__list__option"><a href="index.php?s=editar_pagina&p=contacto"><i class="glyphicon glyphicon-file"></i>Contacto</a></li>
 					</ul>
 				</nav>
 			</aside>
