@@ -47,7 +47,7 @@ if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
 		case 'login':
 			$seccion .= 'login.php';
 			break;
-		
+
 		default:
 			$seccion .= 'home.php';
 			break;
