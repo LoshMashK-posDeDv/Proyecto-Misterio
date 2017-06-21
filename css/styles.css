@@ -188,6 +188,7 @@ header {
 
 .navbar-default{
 	background-color: #333333;
+	border: none;
 }
 
 .navbar-brand img{
@@ -199,8 +200,14 @@ header {
 	color: white!important;
 }
 
+.botones i{
+	color: white!important;
+}
+
+
+/* esto no funcaaaa :/ */
 .botones:hover{
-	color: #t70707!important;
+	background-color: #t70707!important;
 }
 
 /* HOME */
@@ -268,9 +275,26 @@ header {
 	background-image: url("../images/cover.jpg");
 	background-size: cover;
 	height: 100vh;
-	width: 100vw;
+	width: 100%;
+	margin-top: -69px;
 }
 
+blockquote{
+	font-family: 'gobold_hollow';
+	color: #3C439B;
+	font-size: 1.8em;
+	font-weight: 600;
+}
+
+.linki{
+	font-family: 'gobold';
+	color: #9E3838;
+	text-transform: uppercase;
+}
+
+.linki:hover{
+	color: #3C439B;
+}
 
 
 

@@ -70,7 +70,7 @@ SQL;
 
 <section class="section--home--quote container-fluid">
 	<blockquote class="container">
-		Keep it, I've got a Pit Bull now. Come on. (They walk off to see what's going on at the Mall. They have Griff's Pit Bull. An old man, Terry, approaches Marty.) Save the clock tower. (to Marty) Hey kid, thumb a hundred bucks will ya, help save the clock tower. I... Sorry, no. Another time.
+		Hey kid, thumb a hundred bucks will ya, help save the clock tower. I... Sorry, no. Another time.
 	</blockquote>
 </section>
 
@@ -108,5 +108,5 @@ SQL;
 		</li>
 	</ul>
 
-	<p class="pull-right"><a href="#">Ver todos</a></p>
+	<p class="pull-right"><a class="linki" href="#">Ver todos</a></p>
 </section>
