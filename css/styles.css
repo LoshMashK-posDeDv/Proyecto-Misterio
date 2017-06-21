@@ -14,11 +14,26 @@
     font-style: normal;
 }
 
+*{
+	font-family: helvetica;
+	color: #333333;
+}
+
+body{
+	background-color: #EFEFEF;
+}
 /* ADMIN */
 
 h1,h2,h3,h4,h5,h6 {
 	font-family: 'gobold',sans-serif;
 	text-transform: uppercase;
+}
+
+h2{
+	font-size: 3em;
+	text-align: center;
+	margin-bottom: 30px!important;
+	color: #9E3838;
 }
 
 img,
@@ -169,6 +184,32 @@ header {
 	font-size: 13px;
 }
 
+/* navbar */
+
+.navbar-default{
+	background-color: #333333;
+	border: none;
+}
+
+.navbar-brand img{
+	height: 25px;
+}
+
+.botones{
+	cursor: pointer!important;
+	color: white!important;
+}
+
+.botones i{
+	color: white!important;
+}
+
+
+/* esto no funcaaaa :/ */
+.botones:hover{
+	background-color: #t70707!important;
+}
+
 /* HOME */
 
 	section[class*="section--home--"] {
@@ -194,6 +235,7 @@ header {
 	.home__videos__title {
 		color: #3C439B;
 		text-align: center;
+		font-size: 1.5em;
 	}
 
 	.home__videos__desc {
@@ -224,9 +266,37 @@ header {
 
 	.section--home--info__title h3 {
 		text-align: left;
+		font-size: 1.3em;
 	}
 
-/* HOME */
+
+
+#contenedorHome{
+	background-image: url("../images/cover.jpg");
+	background-size: cover;
+	height: 100vh;
+	width: 100vw;
+	margin-top: -69px;
+}
+
+blockquote{
+	font-family: 'gobold_hollow';
+	color: #3C439B;
+	font-size: 1.8em;
+	font-weight: 600;
+}
+
+.linki{
+	font-family: 'gobold';
+	color: #9E3838;
+	text-transform: uppercase;
+}
+
+.linki:hover{
+	color: #3C439B;
+}
+
+
 
 /* TABLET */
 
