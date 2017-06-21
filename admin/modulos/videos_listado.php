@@ -40,13 +40,13 @@
 						articulos
 					ORDER BY FECHA_ALTA
 SQL;
-		
-				$respuesta_videos = mysqli_query($conexion, $consulta_videos);		
-				
+
+				$respuesta_videos = mysqli_query($conexion, $consulta_videos);
+
 				while($array_videos = mysqli_fetch_assoc($respuesta_videos)):
 			?>
 			<tr class="video_list__row">
-				<td class="video_list__row__image"><img src="uploads/<?php echo $array_videos['IMG_DESTACADA'] ?>"></td>
+				<td class="video_list__row__image"><img src="../uploads/<?php echo $array_videos['IMG_DESTACADA'] ?>"></td>
 				<td class="video_list__row__name"><p><?php echo $array_videos['TITULO'] ?></p></td>
 				<td class="video_list__row__author hidden-xs"><p><?php echo $array_videos['AUTOR'] ?></p></td>
 				<td class="video_list__row__date hidden-xs"><p><?php echo $array_videos['FECHA_ALTA'] ?></p></td>

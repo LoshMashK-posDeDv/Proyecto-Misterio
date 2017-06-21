@@ -1,4 +1,4 @@
-<?php 
+<?php
 include( '../setup/config.php' );
 
 $nombre_completo = $_POST['nombre_completo'];
@@ -9,7 +9,7 @@ $password = md5($_POST['password']);
 $c_reg = <<<REGISTRO
 INSERT INTO
 	usuarios
-SET 
+SET
 	NOMBRE_USUARIO = '$nombre_usuario',
 	CONTRASENIA = '$password',
 	U_ESTADO = 1,
@@ -19,7 +19,7 @@ SET
 	FECHA_ALTA = NOW( )
 REGISTRO;
 
-	//mysqli_query($conexion, $c_reg);
-	header("Location: index.php");
+	mysqli_query($conexion, $c_reg);
+	header("Location: ../index.php");
 
 ?>

@@ -7,26 +7,29 @@
 
 	$c = <<<SQL
 
-	SELECT 
-		TITULO, 
+	SELECT
+		TITULO,
 		DESCRIPCION,
-		DURACION, 
-		AÑO, 
-		VIDEO, 
+		DURACION,
+		AÑO,
+		VIDEO,
 		IMG_DESTACADA,
+		IMAGENES,
 		IDARTICULO
-	FROM 
+	FROM
 		articulos
-	WHERE 
+	WHERE
 		IDARTICULO = $id
-	LIMIT 
-		1 
+	LIMIT
+		1
 SQL;
 
 	$f = mysqli_query($conexion, $c);
 	$a = mysqli_fetch_assoc($f);
 
 	$separar_video = explode(".", $a['VIDEO']);
+
+	$separar_imagenes = explode(",", $a['IMAGENES']);
 ?>
 
 <div class="seccion--video-editar">
@@ -66,13 +69,13 @@ SQL;
 					<div class="clearfix">
 						<h3>Video</h3>
 						<div class="row">
-							<div class="col-md-6">	
+							<div class="col-md-6">
 								<video controls>
-									<source src="uploads/<?php echo $a['VIDEO'] ?>" type="video/<?php echo $separar_video[1] ?>">
+									<source src="../uploads/<?php echo $a['VIDEO'] ?>" type="video/<?php echo $separar_video[1] ?>">
 								</video>
 							</div>
 							<div class="col-md-6">
-								<input type="file" name="video" id="video" class="form-control create_form__video" />	
+								<input type="file" name="video" id="video" class="form-control create_form__video" />
 							</div>
 						</div>
 					</div>
@@ -80,17 +83,12 @@ SQL;
 					<div class="clearfix">
 						<h3>Im&aacute;genes</h3>
 						<div class="imagenes row">
-							<div class="imagenes__item col-xs-6 col-md-3"><img src="http://placehold.it/100x100" alt=""></div>
-							<div class="imagenes__item col-xs-6 col-md-3"><img src="http://placehold.it/100x100" alt=""></div>
-							<div class="imagenes__item col-xs-6 col-md-3"><img src="http://placehold.it/100x100" alt=""></div>
-							<div class="imagenes__item col-xs-6 col-md-3"><img src="http://placehold.it/100x100" alt=""></div>
-							<div class="imagenes__item col-xs-6 col-md-3"><img src="http://placehold.it/100x100" alt=""></div>
-							<div class="imagenes__item col-xs-6 col-md-3"><img src="http://placehold.it/100x100" alt=""></div>
-							<div class="imagenes__item col-xs-6 col-md-3"><img src="http://placehold.it/100x100" alt=""></div>
-							<div class="imagenes__item col-xs-6 col-md-3"><img src="http://placehold.it/100x100" alt=""></div>
+							<?php for($i = 0; $i < count($separar_imagenes); $i++): ?>
+								<div class="imagenes__item col-xs-6 col-md-3"><img src="../uploads/<?php echo $separar_imagenes[$i]  ?>" alt=""></div
+							<?php endfor; ?>
 						</div>
 						<div class="pull-right">
-							<input type="file" multiple="true" name="imagenes" id="imagenes" class="form-control create_form__imagenes" />
+							<input type="file" multiple="true" name="imagenes[]" id="imagenes" class="form-control create_form__imagenes" />
 						</div>
 					</div>
 
@@ -98,10 +96,10 @@ SQL;
 						<h3>Im&aacute;gen destacada</h3>
 						<div class="row">
 							<div class="col-md-6">
-								<img src="uploads/<?php echo $a['IMG_DESTACADA'] ?>" alt="">
+								<img src="../uploads/<?php echo $a['IMG_DESTACADA'] ?>" alt="">
 							</div>
 							<div class="col-md-6">
-								<input type="file" name="imagen_destacada" id="imagen_destacada" class="form-control create_form__imagen_destacada" />	
+								<input type="file" name="imagen_destacada" id="imagen_destacada" class="form-control create_form__imagen_destacada" />
 							</div>
 						</div>
 					</div>

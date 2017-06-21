@@ -43,11 +43,11 @@
 					<div class="clearfix">
 						<h3>Video</h3>
 						<div class="row">
-							<div class="col-md-6">	
+							<div class="col-md-6">
 								<img src="http://placehold.it/200x200" alt="Preview del video" />
 							</div>
 							<div class="col-md-6">
-								<input type="file" name="video" id="video" class="form-control create_form__video" />	
+								<input type="file" name="video" id="video" class="form-control create_form__video" />
 							</div>
 						</div>
 					</div>
@@ -65,7 +65,7 @@
 							<div class="imagenes__item col-xs-6 col-md-3"><img src="http://placehold.it/100x100" alt=""></div>
 						</div>
 						<div class="pull-right">
-							<input type="file" multiple="true" name="imagenes" id="imagenes" class="form-control create_form__imagenes" />
+							<input type="file" multiple="true" name="imagenes[]" id="imagenes" class="form-control create_form__imagenes" />
 						</div>
 					</div>
 
@@ -76,7 +76,7 @@
 								<img src="http://placehold.it/300x150" alt="">
 							</div>
 							<div class="col-md-6">
-								<input type="file" name="imagen_destacada" id="imagen_destacada" class="form-control create_form__imagen_destacada" />	
+								<input type="file" name="imagen_destacada" id="imagen_destacada" class="form-control create_form__imagen_destacada" />
 							</div>
 						</div>
 					</div>
