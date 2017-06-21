@@ -38,7 +38,7 @@ SQL;
 
 		<article class="col-md-4 home__videos">
 			<div class="home__videos__img">
-				<a href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>"><img src="admin/uploads/<?php echo $array_videos['IMG_DESTACADA'] ?>"></a>
+				<a href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>"><img src="uploads/<?php echo $array_videos['IMG_DESTACADA'] ?>"></a>
 			</div>
 			<a href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>"><h3 class="home__videos__title"><?php echo $array_videos['TITULO'] ?></h3></a>
 			<p class="home__videos__desc"><?php echo $array_videos['DESCRIPCION'] ?></p>
@@ -50,28 +50,32 @@ SQL;
 
 </section>
 
-<section class="section--home--info container">
-	<div class="row">
-		<div class="section--home--info__title col-md-10 col-md-offset-1">
-			<h3>Otra info</h3>
-		</div>
-		<div class="col-md-4 col-md-offset-1">
-			<video controls>
-				<source src="" type="">
-					Tu navegador no soporta la reproducción de videos.
-			</video>
-		</div>
-		<div class="col-md-6">
-			<p>Yeah. (Saturday Morning) (George's Backyard) (George is hanging up laundry.) I still don't understand, how am I supposed to go to the dance with her, if she's already going to the dance with you.</p>
-			<p>Hey! (Biff walks over to his car, where Terry the mechanic has fixed it. It's the same Terry from 2015 who asked Marty to donate money to save the clock tower- of course here he's 60 years younger.) Looking good Terry. Hey Biff, she's all fixed up just like you wanted, but I couldn't get it started! You got some kind of a kill switch on this thing?</p>
-		</div>
+<section class="section--home--info">
+	<div class="container">
+		<div class="row">
+			<div class="section--home--info__title col-md-11 col-md-offset-1">
+				<h3>Otra info</h3>
+			</div>
+			<div class="col-md-5 col-md-offset-1">
+				<video controls>
+					<source src="" type="">
+						Tu navegador no soporta la reproducción de videos.
+				</video>
+			</div>
+			<div class="col-md-5">
+				<p>Yeah. (Saturday Morning) (George's Backyard) (George is hanging up laundry.) I still don't understand, how am I supposed to go to the dance with her, if she's already going to the dance with you.</p>
+				<p>Hey! (Biff walks over to his car, where Terry the mechanic has fixed it. It's the same Terry from 2015 who asked Marty to donate money to save the clock tower- of course here he's 60 years younger.) Looking good Terry. Hey Biff, she's all fixed up just like you wanted, but I couldn't get it started! You got some kind of a kill switch on this thing?</p>
+			</div>
+		</div>		
 	</div>
 </section>
 
-<section class="section--home--quote container-fluid">
-	<blockquote class="container">
-		Hey kid, thumb a hundred bucks will ya, help save the clock tower. I... Sorry, no. Another time.
-	</blockquote>
+<section class="section--home--quote">
+	<div class="container">
+		<blockquote>
+			Hey kid, thumb a hundred bucks will ya, help save the clock tower. I... Sorry, no. Another time.
+		</blockquote>		
+	</div>
 </section>
 
 <section class="section--home--otros-videos container">

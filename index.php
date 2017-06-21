@@ -14,7 +14,7 @@
 <body>
 	<header>
 		<nav class="navbar navbar-default">
-  			<div class="container-fluid">
+  			<div class="container">
     			<!-- Brand and toggle get grouped for better mobile display -->
     			<div class="navbar-header">
       				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -23,14 +23,14 @@
         				<span class="icon-bar"></span>
         				<span class="icon-bar"></span>
       				</button>
-     				<a class="navbar-brand botones" href="#"><img src="images/brand.png"></a>
+     				<a class="navbar-brand botones" href="index.php"><img src="images/brand.png"></a>
     			</div>
 
     			<!-- Collect the nav links, forms, and other content for toggling -->
     			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
        				<ul class="nav navbar-nav navbar-right">
-        				<li><a class="botones" href="#"><i class="glyphicon glyphicon-user"></i> Login</a></li>
-       					<li><a class="botones" href="#"><i class="glyphicon glyphicon-align-center"></i> Registro</a></li>
+        				<li><a class="botones" href="index.php?s=login"><i class="glyphicon glyphicon-user"></i> Login</a></li>
+       					<li><a class="botones" href="index.php?s=registro"><i class="glyphicon glyphicon-align-center"></i> Registro</a></li>
     				</ul>
     			</div><!-- /.navbar-collapse -->
   			</div><!-- /.container-fluid -->
