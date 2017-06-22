@@ -62,7 +62,7 @@
 						<?php if(chequear_permisos('EDITAR')) { ?>
 							<li class="menu__list__option">
 								<a href="index.php?s=editar_pagina&p=contacto">
-									<i class="glyphicon glyphicon-file"></i>
+									<i class="glyphicon glyphicon-earphone"></i>
 									Contacto
 								</a>
 							</li>
@@ -70,7 +70,7 @@
 						<?php if(chequear_permisos('MODERAR_USUARIOS')) { ?>
 							<li class="menu__list__option">
 								<a href="index.php?s=usuarios_listado">
-									<i class="glyphicon glyphicon-pawn"></i>
+									<i class="glyphicon glyphicon-user"></i>
 									Usuarios
 								</a>
 							</li>
