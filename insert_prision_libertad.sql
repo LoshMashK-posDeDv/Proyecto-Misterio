@@ -19,7 +19,7 @@ VALUES
 	('leo', 'leo merlo', 'lmerlo@davinci.edu.ar', '1234', NOW( ), 1),
 	('flors', 'florencia sepulveda', 'fsepulveda@davinci.edu.ar', '1234', NOW( ), 1),
 	('fespino', 'florencia ederli', 'federli@davinci.edu.ar', 'zeldaeslomas', NOW( ), 1),
-	('lmitono', 'laura mitono', 'lmitono@davinci.edu.ar', 'nellylalechuza', NOW( ), 1),
+	('lmitono', 'laura mitono', 'lmitono@davinci.edu.ar', 'nellylalechuza', NOW( ), 1);
 	
 */
 
