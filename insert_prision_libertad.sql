@@ -15,11 +15,11 @@ INSERT INTO
 	usuarios (NOMBRE_USUARIO, NOMBRE_COMPLETO, EMAIL, CONTRASENIA, FECHA_ALTA, U_ESTADO)
 VALUES
 	('german', 'german rodriguez', 'grodriguez@davinci.edu.ar', '1234', NOW( ), 1),
-	('fede', 'federico miranda', 'fmiranda@davinci.edu.ar', '1234', NOW( ), 1),
+	('fmiranda', 'federico miranda', 'fmiranda@davinci.edu.ar', '1234', NOW( ), 1),
 	('leo', 'leo merlo', 'lmerlo@davinci.edu.ar', '1234', NOW( ), 1),
 	('flors', 'florencia sepulveda', 'fsepulveda@davinci.edu.ar', '1234', NOW( ), 1),
-	('flore', 'florencia ederli', 'federli@davinci.edu.ar', '1234', NOW( ), 1),
-	('lau', 'laura mitono', 'lmitono@davinci.edu.ar', '1234', NOW( ), 1),
+	('fespino', 'florencia ederli', 'federli@davinci.edu.ar', 'zeldaeslomas', NOW( ), 1),
+	('lmitono', 'laura mitono', 'lmitono@davinci.edu.ar', 'nellylalechuza', NOW( ), 1);
 	
 */
 
