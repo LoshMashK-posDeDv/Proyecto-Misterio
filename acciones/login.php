@@ -25,14 +25,14 @@ LOGIN;
 
 	if( !$log ){
 		$_SESSION['LOGIN_ERROR'] = 'Tu usuario o contraseña son incorrectos';
+		header("Location: ../index.php?s=login");
 	} else {
 		if( $log['U_ESTADO'] == 1 ){
 			$_SESSION = $log;
+			header("Location: ../admin/index.php");
 		} else {
 			$_SESSION['LOGIN_ERROR'] = 'Tu cuenta ha sido bloqueada';
+			header("Location: ../index.php?s=login");
 		}
 	}
-	
-	//var_dump($_SESSION);
-	header("Location: ../admin/index.php");
 ?>

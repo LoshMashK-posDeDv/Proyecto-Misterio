@@ -66,6 +66,17 @@ input[type="submit"]:hover {
 	color: #fff;
 }
 
+p.error {
+    background: #d02828;
+    border-radius: 4px;
+    padding: 5px 20px;
+    color: #fff;
+    font-size: 12px;
+    margin: 10px 0;
+    line-height: 12px;
+    text-align: center;
+}
+
 /* ADMIN */
 
 h1,h2,h3,h4,h5,h6 {
