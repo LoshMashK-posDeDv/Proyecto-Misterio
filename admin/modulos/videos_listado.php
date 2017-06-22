@@ -36,19 +36,44 @@
 
 		<tbody>
 			<?php
-				$consulta_videos = <<<SQL
-					SELECT
-						IMG_DESTACADA,
-						TITULO,
-						AUTOR,
-						FECHA_ALTA,
-						A_ESTADO,
-						IDARTICULO
-					FROM
+				//primer consulta
+				$cantidad_por_pagina = 10;
+				$pagina_actual = isset($_GET['p']) ? $_GET['p'] : 1; //lo que viene por get, el num de la pag cliqueada
+				$inicio_paginador = ($pagina_actual - 1) * $cantidad_por_pagina; //cantidad que debe saltear
+				
+				
+				//segunda consulta: cant de videos que hay
+				$consulta_cant_videos = <<<SQL
+					SELECT 
+						COUNT(IDARTICULO) AS CANTIDAD 
+					FROM 	
 						articulos
-					WHERE
-						A_ESTADO = 1
-					ORDER BY FECHA_ALTA DESC
+SQL;
+				$cantidad_videos = mysqli_query ($conexion, $consulta_cant_videos);
+				//var_dump($cantidad_videos);
+				$array_videos2 = mysqli_fetch_assoc ($cantidad_videos);
+				$cantidad_resultados = $array_videos2['CANTIDAD'];
+				
+				$total_links = ceil ($cantidad_resultados / $cantidad_por_pagina);
+
+				//verificacion de cantidad de paginas
+				if($pagina_actual > $total_links or $pagina_actual < 1){
+					echo 'Pediste una página inexistente';
+				}else{
+					$consulta_videos = <<<SQL
+						SELECT
+							IMG_DESTACADA,
+							TITULO,
+							AUTOR,
+							FECHA_ALTA,
+							A_ESTADO,
+							IDARTICULO
+						FROM
+							articulos
+						WHERE
+							A_ESTADO = 1
+						LIMIT $inicio_paginador, $cantidad_por_pagina
+						ORDER BY FECHA_ALTA DESC
 SQL;
 
 				$respuesta_videos = mysqli_query($conexion, $consulta_videos);
@@ -67,7 +92,26 @@ SQL;
 			</tr>
 			<?php
 				endwhile;
+				} //cierre del else de la verificacion
 			?>
+			
+			<!--paginador: modificar estructura para los links-->
+			<div>
+				<ul>
+					<?php
+						for($i = 1; $i <= $total_links; i++){
+							if ($i == $pagina_actual){
+								$estilo = 'class="pag_activa"';
+							}else{
+								$estilo = '';
+							}
+							echo "<li>";
+							echo "<a $estilo href='videos_listado.php?p=$i'>$i</a>";
+							echo "</li>";
+						};
+					?>
+				</ul>
+			</div>
 		</tbody>
 	</table>
 
