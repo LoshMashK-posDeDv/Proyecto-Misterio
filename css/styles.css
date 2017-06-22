@@ -22,6 +22,50 @@
 body{
 	background-color: #EFEFEF;
 }
+
+.btn {
+	line-height: 40px;
+	border: 0;
+	text-transform: uppercase;
+	font-size: 0.8em;
+}
+
+.btn_ok {
+	background: #3D449B;
+	color: #fff;
+}
+
+.link-a {
+	color: #af4c4c;
+}
+
+.link-d {
+	opacity: 0.8;
+	color: #333;
+}
+
+a, 
+input,
+button {
+	transition: 0.3s;
+}
+
+
+a:hover, 
+input:hover,
+button:hover {
+	opacity: 0.8;
+}
+
+input,
+textarea {
+	outline: none;
+}
+
+input[type="submit"]:hover {
+	color: #fff;
+}
+
 /* ADMIN */
 
 h1,h2,h3,h4,h5,h6 {
@@ -32,7 +76,6 @@ h1,h2,h3,h4,h5,h6 {
 h2{
 	font-size: 3em;
 	text-align: center;
-	margin-bottom: 30px!important;
 	color: #9E3838;
 }
 
@@ -56,7 +99,7 @@ header {
 
 .admin main {
 	background: #f0f0f0;
-	padding: 10px 20px;
+	padding: 10px;
 }
 
 .admin main div[class^='seccion--'] {
@@ -83,6 +126,7 @@ header {
 
 .menu__list__option i {
 	margin-right: 10px;
+	color: #686c98;
 }
 
 .header__title {
@@ -109,6 +153,7 @@ header {
 .section__title h2,
 .section__title a {
 	display: inline-block;
+	vertical-align: middle;
 }
 
 .section__title__action {
@@ -129,33 +174,64 @@ header {
 	text-align: center;
 }
 
+.seccion--admin-listado .section__title {
+	margin-bottom: 30px;
+	display: block;
+}
+
+.seccion--admin-listado h2 {
+	margin: 0;
+}
+
 .section__title__back {
 	display: inline-block;
 	margin-right: 10px;
 }
 
-.video_list {
-	border-spacing: 0 20px;
+.admin_list {
 	border-collapse: separate;
 	width: 100%;
+	white-space: nowrap;
 }
 
-.video_list__row__name,
-.video_list__head__name {
+.admin_list__row td{
+	vertical-align: middle;
+	border-bottom: 1px solid #f3eded;
+}
+
+.admin_list__row__name,
+.admin_list__head__name,
+.admin_list__row__author,
+.admin_list__row__date,
+.admin_list__row__tipo {
 	padding-left: 15px;
 	padding-right: 15px;
 }
 
-.video_list__row__actions {
+.admin_list__row__image {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.admin_list__row__actions {
 	text-align: center;
 }
 
-.video_list__row__actions i {
+.admin_list__row__actions i {
 	margin: 0 5px;
 }
 
-.video_agregar_form input[type="text"],
-.video_agregar_form textarea {
+.admin_list__row__actions .activo i {
+	color: #369e36;
+}
+
+.admin_list__row__actions .inactivo i {
+	color: #ca2424;
+}
+
+
+.admin_agregar_form input[type="text"],
+.admin_agregar_form textarea {
 	width: 100%;
 }
 
@@ -164,8 +240,12 @@ header {
 }
 
 .login_form {
-	margin: 0 auto;
-	width: 300px;
+    margin: 80px auto;
+    width: 30%;
+    background: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
 }
 
 .login_form__row {
@@ -180,8 +260,8 @@ header {
 }
 
 .create_form h3 {
-	color: #3C439B;
-	font-size: 13px;
+    color: #3e4044;
+    font-size: 15px;
 }
 
 /* navbar */
@@ -189,10 +269,21 @@ header {
 .navbar-default{
 	background-color: #333333;
 	border: none;
+	border-radius: 0;
+}
+
+.navbar-brand {
+    height: 70px;
+    padding: 0 15px;
 }
 
 .navbar-brand img{
-	height: 25px;
+	height: 50px;
+	margin-top: 10px;
+}
+
+.navbar-nav > li > a {
+    padding: 25px 15px;
 }
 
 .botones{
@@ -253,6 +344,7 @@ header {
 
 	.section--home--quote {
 		text-align: center;
+		background: #a92020;
 	}
 
 	.section--home--otros-videos ul {
@@ -264,11 +356,24 @@ header {
 		list-style: none;
 	}
 
+	.section--home--info {
+		background: #333;
+	}
+
 	.section--home--info__title h3 {
 		text-align: left;
 		font-size: 1.3em;
+		color: #fff;
 	}
 
+	.section--home--info p {
+		color: #fff;
+	}
+
+	.section--home--info video {
+		width: 100%;
+	}
+	
 
 
 #contenedorHome{
@@ -280,10 +385,14 @@ header {
 }
 
 blockquote{
-	font-family: 'gobold_hollow';
-	color: #3C439B;
-	font-size: 1.8em;
-	font-weight: 600;
+	font-family: 'gobold';
+	color: #ecdbdb;
+	font-size: 1.4em;
+	font-weight: 400;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	letter-spacing: 1px;
 }
 
 .linki{
@@ -295,6 +404,8 @@ blockquote{
 .linki:hover{
 	color: #3C439B;
 }
+
+
 
 
 
@@ -314,12 +425,12 @@ blockquote{
 		float: left;
 	}
 
-	.video_list__head__image,
-	.video_list__head__author,
-	.video_list__head__date {
+	.admin_list__head__image,
+	.admin_list__head__author,
+	.admin_list__head__date {
 		width: 100px;
 	}
-	.video_list__head__actions {
+	.admin_list__head__actions {
 		text-align: center;
 		width: 75px;
 	}
