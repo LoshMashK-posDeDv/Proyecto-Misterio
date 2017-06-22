@@ -57,6 +57,8 @@
 						COUNT(IDARTICULO) AS CANTIDAD
 					FROM
 						articulos
+					WHERE
+						A_ESTADO = 1
 SQL;
 				$cantidad_videos = mysqli_query ($conexion, $consulta_cant_videos);
 				//var_dump($cantidad_videos);

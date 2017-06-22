@@ -20,7 +20,7 @@
 				$consulta_videos = <<<SQL
 				SELECT
 					IDARTICULO,
-					TITULO,
+					UCASE(TITULO) AS TITULO,
 					DESCRIPCION,
 					IMG_DESTACADA
 				FROM
