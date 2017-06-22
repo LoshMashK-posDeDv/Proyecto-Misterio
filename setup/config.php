@@ -48,19 +48,15 @@ if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
 		case 'login':
 			$seccion .= 'login.php';
 			break;
-
 		case 'logout':
 			header("Location: acciones/logout.php" );
 			break;
-
 		case 'registro':
 			$seccion .= 'registro.php';
 			break;
-
 		case 'videos':
 			$seccion .= 'videos.php';
 			break;
-
 		case 'video':
 			$seccion .= 'video.php';
 			break;
@@ -70,6 +66,9 @@ if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
 	}
 } else {
 	switch ($s) {
+		case 'videos_listado':
+			$seccion .= 'videos_listado.php';
+			break;
 		case 'agregar_video':
 			$seccion .= 'video_agregar.php';
 			break;
@@ -78,8 +77,12 @@ if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
 			break;
 		case 'editar_pagina':
 			$seccion .= 'pagina_editar.php';
+			break;
+		case 'usuarios_listado':
+			$seccion .= 'usuarios_listado.php';
+			break;
 		default:
-			$seccion .= 'videos_listado.php';
+			$seccion .= 'inicio.php';
 			break;
 	}
 }

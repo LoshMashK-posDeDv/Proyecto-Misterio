@@ -28,28 +28,68 @@
 		<div class="row">
 			<aside class="col-md-2 menu">
 				<nav>
-					<ul class="menu__list">
-						<li class="menu__list__option"><a href="index.php"><i class="glyphicon glyphicon-user"></i>Mi cuenta</a></li>
+					<ul class="menu__list">						
 						<?php if(chequear_permisos('MODERAR_VIDEOS')) { ?>
-							<li class="menu__list__option"><a href="index.php"><i class="glyphicon glyphicon-home"></i>Inicio</a></li>
+							<li class="menu__list__option">
+								<a href="index.php">
+									<i class="glyphicon glyphicon-home"></i>
+									Inicio
+								</a>
+							</li>
+						<?php } ?>
+							<li class="menu__list__option">
+								<a href="index.php">
+									<i class="glyphicon glyphicon-user"></i>
+									Mi cuenta
+								</a>
+							</li>
+						<?php if(chequear_permisos('EDITAR')) { ?>
+							<li class="menu__list__option">
+								<a href="index.php?s=editar_pagina&p=home">
+									<i class="glyphicon glyphicon-file"></i>
+									Homepage
+								</a>
+							</li>
 						<?php } ?>
 						<?php if(chequear_permisos('EDITAR')) { ?>
-							<li class="menu__list__option"><a href="index.php?s=editar_pagina&p=home"><i class="glyphicon glyphicon-file"></i>Homepage</a></li>
+							<li class="menu__list__option">
+								<a href="index.php?s=editar_pagina&p=nosotros">
+									<i class="glyphicon glyphicon-file"></i>
+									Nosotros
+								</a>
+							</li>
 						<?php } ?>
 						<?php if(chequear_permisos('EDITAR')) { ?>
-							<li class="menu__list__option"><a href="index.php?s=editar_pagina&p=nosotros"><i class="glyphicon glyphicon-file"></i>Nosotros</a></li>
-						<?php } ?>
-						<?php if(chequear_permisos('EDITAR')) { ?>
-							<li class="menu__list__option"><a href="index.php?s=editar_pagina&p=contacto"><i class="glyphicon glyphicon-file"></i>Contacto</a></li>
+							<li class="menu__list__option">
+								<a href="index.php?s=editar_pagina&p=contacto">
+									<i class="glyphicon glyphicon-file"></i>
+									Contacto
+								</a>
+							</li>
 						<?php } ?>
 						<?php if(chequear_permisos('MODERAR_USUARIOS')) { ?>
-							<li class="menu__list__option"><a href="index.php?s=usuarios_listado"><i class="glyphicon glyphicon-pawn"></i>Usuarios</a></li>
+							<li class="menu__list__option">
+								<a href="index.php?s=usuarios_listado">
+									<i class="glyphicon glyphicon-pawn"></i>
+									Usuarios
+								</a>
+							</li>
 						<?php } ?>
 						<?php if(chequear_permisos('MODERAR_COMENTARIOS')) { ?>
-							<li class="menu__list__option"><a href="index.php?s=comentarios_listado"><i class="glyphicon glyphicon-comment"></i>Comentarios</a></li>
+							<li class="menu__list__option">
+								<a href="index.php?s=comentarios_listado">
+									<i class="glyphicon glyphicon-comment"></i>
+									Comentarios
+								</a>
+							</li>
 						<?php } ?>
 						<?php if(chequear_permisos('MODERAR_VIDEOS')) { ?>
-							<li class="menu__list__option"><a href="index.php?s=videos_listado"><i class="glyphicon glyphicon-facetime-video"></i>Videos</a></li>
+							<li class="menu__list__option">
+								<a href="index.php?s=videos_listado">
+									<i class="glyphicon glyphicon-facetime-video"></i>
+									Videos
+								</a>
+							</li>
 						<?php } ?>
 					</ul>
 				</nav>

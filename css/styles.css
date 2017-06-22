@@ -174,12 +174,12 @@ header {
 	text-align: center;
 }
 
-.seccion--video-listado .section__title {
+.seccion--admin-listado .section__title {
 	margin-bottom: 30px;
 	display: block;
 }
 
-.seccion--video-listado h2 {
+.seccion--admin-listado h2 {
 	margin: 0;
 }
 
@@ -188,37 +188,50 @@ header {
 	margin-right: 10px;
 }
 
-.video_list {
+.admin_list {
 	border-collapse: separate;
 	width: 100%;
+	white-space: nowrap;
 }
 
-.video_list__row td{
+.admin_list__row td{
 	vertical-align: middle;
 	border-bottom: 1px solid #f3eded;
 }
 
-.video_list__row__name,
-.video_list__head__name {
+.admin_list__row__name,
+.admin_list__head__name,
+.admin_list__row__author,
+.admin_list__row__date,
+.admin_list__row__tipo {
 	padding-left: 15px;
 	padding-right: 15px;
 }
 
-.video_list__row__image {
+.admin_list__row__image {
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-.video_list__row__actions {
+.admin_list__row__actions {
 	text-align: center;
 }
 
-.video_list__row__actions i {
+.admin_list__row__actions i {
 	margin: 0 5px;
 }
 
-.video_agregar_form input[type="text"],
-.video_agregar_form textarea {
+.admin_list__row__actions .activo i {
+	color: #369e36;
+}
+
+.admin_list__row__actions .inactivo i {
+	color: #ca2424;
+}
+
+
+.admin_agregar_form input[type="text"],
+.admin_agregar_form textarea {
 	width: 100%;
 }
 
@@ -394,6 +407,8 @@ blockquote{
 
 
 
+
+
 /* TABLET */
 
 /* DESKTOP */
@@ -410,12 +425,12 @@ blockquote{
 		float: left;
 	}
 
-	.video_list__head__image,
-	.video_list__head__author,
-	.video_list__head__date {
+	.admin_list__head__image,
+	.admin_list__head__author,
+	.admin_list__head__date {
 		width: 100px;
 	}
-	.video_list__head__actions {
+	.admin_list__head__actions {
 		text-align: center;
 		width: 75px;
 	}
