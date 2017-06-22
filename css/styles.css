@@ -14,6 +14,13 @@
     font-style: normal;
 }
 
+.tdv_no.tdv_no {
+	color: #b92828;
+	text-decoration: line-through;
+	pointer-events: none;
+
+}
+
 *{
 	font-family: helvetica;
 	color: #333333;
@@ -66,15 +73,20 @@ input[type="submit"]:hover {
 	color: #fff;
 }
 
-p.error {
-    background: #d02828;
-    border-radius: 4px;
+.error {
+    color: #d02828;
+    font-weight: bold;
+    border: 1px solid;
+    display: inline-block;
     padding: 5px 20px;
-    color: #fff;
-    font-size: 12px;
-    margin: 10px 0;
-    line-height: 12px;
-    text-align: center;
+}
+
+.exito {
+    color: #41a541;
+    font-weight: bold;
+    border: 1px solid;
+    display: inline-block;
+    padding: 5px 20px;
 }
 
 /* ADMIN */
@@ -154,6 +166,10 @@ header .dropdown-menu > li i {
 	min-height: calc(100vh - 90px);
 }
 
+.admin main div[class^='seccion--'] input[type=submit] {
+	margin-top: 20px;
+}
+
 /*ADMIN - VIDEOS_LISTADO*/
 .paginator{
 	text-align: right;
@@ -162,26 +178,45 @@ header .dropdown-menu > li i {
 .paginator li{
 	display: inline-block;
 	margin: 5px;
-	padding: 8px;
-	background-color: #3C439B;
 }
 
 .paginator li a{
-	color: white!important;
-	font-size: 1em;
-	padding: 5px;
-	margin: 10px 0;
-	font-family: 'gobold';
+	color: #fff!important;
+    font-size: 1em;
+    padding: 0 5px;
+    background-color: #3C439B;
+    width: 25px;
+    height: 29px;
+    line-height: 32px;
+    display: block;
+    font-family: 'gobold';
+    text-align: center;
 }
 
-.paginator li:hover{
+.paginator li:hover,
+.paginator li .pag_activa{
 	background-color: #9E3838;
-}
-
-.paginator li a:hover{
 	text-decoration: none;
 }
 
+textarea.form-control {
+    height: auto;
+    min-height: 200px;
+}
+
+select[multiple] {
+	width: 100%;
+	height: 120px;
+	padding: 10px;
+}
+
+span.disc {
+    display: block;
+    font-size: 12px;
+    margin-top: 10px;
+    line-height: 110%;
+    color: darkgrey;
+}
 
 /**/
 
@@ -401,8 +436,8 @@ header .dropdown-menu > li i {
 	}
 
 	.home__videos__img {
-		width: 250px;
-		height: 100px;
+		width: 90%;
+		height: 180px;
 		overflow: hidden;
 		position: relative;
 		margin: 0 auto;

@@ -21,6 +21,6 @@ SQL;
 $rta = 'ok';
 
 mysqli_query($conexion, $c);
-header("Location: ../index.php?e=$rta");
+header("Location: ../index.php?s=videos_listado&e=$rta");
 
 ?>

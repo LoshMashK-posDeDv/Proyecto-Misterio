@@ -20,8 +20,10 @@
 					<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 					<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span></li>
 				</ul>
-				<p>Look, there's a rhythmic ceremonial ritual coming up. Of course, the Enchantment Under The Sea Dance they're supposed to go to this, that's where they kiss for the first time. Alright kid, you stick to your father like glue and make sure that he takes her to the dance. (Lunchroom) (Marty sits down across from George at a table. George is writing in a notebook.)</p>
-				<p>Ladies and gentlemen! As mayor of Hill Valley, it gives me great pleasure to dedicate this clock to the people of Hill County. May it stand for all time! (everyone cheers) Tell me when, gentlemen! 3...2...1...now! (The Mayor starts the clock.) Let the festivities begin! (Doc and Marty are watching all this happen from a few yards away.)</p>
+				<div class="desc">
+					<p>Look, there's a rhythmic ceremonial ritual coming up. Of course, the Enchantment Under The Sea Dance they're supposed to go to this, that's where they kiss for the first time. Alright kid, you stick to your father like glue and make sure that he takes her to the dance. (Lunchroom) (Marty sits down across from George at a table. George is writing in a notebook.)</p>
+					<p>Ladies and gentlemen! As mayor of Hill Valley, it gives me great pleasure to dedicate this clock to the people of Hill County. May it stand for all time! (everyone cheers) Tell me when, gentlemen! 3...2...1...now! (The Mayor starts the clock.) Let the festivities begin! (Doc and Marty are watching all this happen from a few yards away.)</p>					
+				</div>
 
 				<ul>
 					<li>DURACIÓN: 40 min</li>

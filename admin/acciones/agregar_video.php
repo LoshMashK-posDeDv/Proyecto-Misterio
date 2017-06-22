@@ -7,6 +7,7 @@
 	$anio = $_POST['anio'];
 	$video = $_FILES['video'];
 	$video_nombre = $_FILES['video']['name'];
+	$categoria = $_POST['categoria '];
 	$imagenes = $_FILES['imagenes'];
 	$imagen_destacada = $_FILES['imagen_destacada'];
 	$imagen_destacada_nombre = $_FILES['imagen_destacada']['name'];
@@ -127,5 +128,6 @@
 		$rta = 'error';
 	}
 
-	header("Location: ../index.php?s=agregar_video&e=$rta");
+	var_dump($categoria);
+	//header("Location: ../index.php?s=agregar_video&e=$rta");
 ?>

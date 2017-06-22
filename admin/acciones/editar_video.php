@@ -4,6 +4,7 @@
 	$titulo = $_POST['titulo'];
 	$descripcion = $_POST['descripcion'];
 	$duracion = $_POST['duracion'];
+	$categoria = $_POST['categoria'];
 	$anio = $_POST['anio'];
 	$video = $_FILES['video'];
 	$video_nombre = $_FILES['video']['name'];
@@ -116,8 +117,5 @@
 	$rta = 'ok';
 
 	mysqli_query($conexion, $c);
-
-	echo mysqli_error($conexion);
-
-	//header("Location: ../index.php?m=ok");
+	header("Location: ../index.php?s=videos_listado&m=$rta");
 ?>

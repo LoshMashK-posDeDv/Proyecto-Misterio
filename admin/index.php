@@ -43,14 +43,14 @@
 							</li>
 						<?php } ?>
 							<li class="menu__list__option">
-								<a href="index.php">
+								<a href="index.php" class="tdv_no">
 									<i class="glyphicon glyphicon-user"></i>
 									Mi cuenta
 								</a>
 							</li>
 						<?php if(chequear_permisos('EDITAR')) { ?>
 							<li class="menu__list__option">
-								<a href="index.php?s=editar_pagina&p=home">
+								<a href="index.php?s=editar_pagina&p=home" class="tdv_no">
 									<i class="glyphicon glyphicon-file"></i>
 									Homepage
 								</a>
@@ -58,7 +58,7 @@
 						<?php } ?>
 						<?php if(chequear_permisos('EDITAR')) { ?>
 							<li class="menu__list__option">
-								<a href="index.php?s=editar_pagina&p=nosotros">
+								<a href="index.php?s=editar_pagina&p=nosotros" class="tdv_no">
 									<i class="glyphicon glyphicon-file"></i>
 									Nosotros
 								</a>
@@ -66,7 +66,7 @@
 						<?php } ?>
 						<?php if(chequear_permisos('EDITAR')) { ?>
 							<li class="menu__list__option">
-								<a href="index.php?s=editar_pagina&p=contacto">
+								<a href="index.php?s=editar_pagina&p=contacto" class="tdv_no">
 									<i class="glyphicon glyphicon-earphone"></i>
 									Contacto
 								</a>
@@ -82,7 +82,7 @@
 						<?php } ?>
 						<?php if(chequear_permisos('MODERAR_COMENTARIOS')) { ?>
 							<li class="menu__list__option">
-								<a href="index.php?s=comentarios_listado">
+								<a href="index.php?s=comentarios_listado" class="tdv_no">
 									<i class="glyphicon glyphicon-comment"></i>
 									Comentarios
 								</a>

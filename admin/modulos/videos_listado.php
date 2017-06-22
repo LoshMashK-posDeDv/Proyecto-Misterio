@@ -1,28 +1,37 @@
 <?php
 	if(isset($_GET['m'])){
 		if($_GET['m'] == 'ok'){
-			echo 'Se actualizó correctamente';
+			$mensaje = 'El video se actualizó correctamente';
+			$class = 'exito';
 		} else {
-			echo 'Algo salió mal';
+			$mensaje =  'Oops, Algo salió mal';
+			$class = 'error';
 		}
 	}
 
 	if(isset($_GET['e'])){
 		if($_GET['e'] == 'ok'){
-			echo 'Se eliminó el video';
+			$mensaje =  'El video se eliminó correctamente';
+			$class = 'exito';
 		} else {
-			echo 'Algo salió mal';
+			$mensaje =  'Oops, Algo salió mal';
+			$class = 'error';
 		}
 	}
 ?>
 
 <div class="seccion--admin-listado">
-
+	<?php if(isset($_GET['m']) || isset($_GET['e'])){ ?>
+		<p class="<?php echo $class; ?>">
+			<?php echo $mensaje; ?>
+		</p>
+	<?php } ?>
+	
 	<div class="section__title">
 		<h2>Videos</h2>
 		<a href="index.php?s=agregar_video" class="section__title__action"><i class="glyphicon glyphicon-plus"></i> Agregar video</a>
 	</div>
-
+	
 	<table class="admin_list">
 		<thead>
 			<tr class="admin_list__head">
@@ -106,7 +115,7 @@ SQL;
 								$estilo = '';
 							}
 							echo "<li>";
-							echo "<a $estilo href='index.php?s=videos_listado&p=$i'>$i</a>";
+								echo "<a $estilo href='index.php?s=videos_listado&p=$i'>$i</a>";
 							echo "</li>";
 						};
 					?>
