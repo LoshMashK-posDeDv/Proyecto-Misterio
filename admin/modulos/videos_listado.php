@@ -40,20 +40,20 @@
 				$cantidad_por_pagina = 10;
 				$pagina_actual = isset($_GET['p']) ? $_GET['p'] : 1; //lo que viene por get, el num de la pag cliqueada
 				$inicio_paginador = ($pagina_actual - 1) * $cantidad_por_pagina; //cantidad que debe saltear
-				
-				
+
+
 				//segunda consulta: cant de videos que hay
 				$consulta_cant_videos = <<<SQL
-					SELECT 
-						COUNT(IDARTICULO) AS CANTIDAD 
-					FROM 	
+					SELECT
+						COUNT(IDARTICULO) AS CANTIDAD
+					FROM
 						articulos
 SQL;
 				$cantidad_videos = mysqli_query ($conexion, $consulta_cant_videos);
 				//var_dump($cantidad_videos);
 				$array_videos2 = mysqli_fetch_assoc ($cantidad_videos);
 				$cantidad_resultados = $array_videos2['CANTIDAD'];
-				
+
 				$total_links = ceil ($cantidad_resultados / $cantidad_por_pagina);
 
 				//verificacion de cantidad de paginas
@@ -72,8 +72,8 @@ SQL;
 							articulos
 						WHERE
 							A_ESTADO = 1
+						ORDER BY IDARTICULO DESC
 						LIMIT $inicio_paginador, $cantidad_por_pagina
-						ORDER BY FECHA_ALTA DESC
 SQL;
 
 				$respuesta_videos = mysqli_query($conexion, $consulta_videos);
@@ -91,22 +91,22 @@ SQL;
 				</td>
 			</tr>
 			<?php
-				endwhile;
+		endwhile;
 				} //cierre del else de la verificacion
 			?>
-			
+
 			<!--paginador: modificar estructura para los links-->
 			<div>
 				<ul>
 					<?php
-						for($i = 1; $i <= $total_links; i++){
+						for($i = 1; $i <= $total_links; $i++){
 							if ($i == $pagina_actual){
 								$estilo = 'class="pag_activa"';
 							}else{
 								$estilo = '';
 							}
 							echo "<li>";
-							echo "<a $estilo href='videos_listado.php?p=$i'>$i</a>";
+							echo "<a $estilo href='index.php?s=videos_listado&p=$i'>$i</a>";
 							echo "</li>";
 						};
 					?>
