@@ -21,7 +21,11 @@
 </head>
 <body class="admin">
 	<header class="header clearfix">
-		<h1 class="header__title">Prisión &amp; Libertad</h1>
+		<h1 class="header__title">
+			<a href="../index.php" title="Ver sitio">
+				Prisión &amp; Libertad
+			</a>
+		</h1>
 		<p class="header__user">Bienvenido, <?php echo $_SESSION['NOMBRE_USUARIO']; ?></p>
 		<div class="header__logos"><img src="../images/header-logos.png" alt="Sponsors:" /></div>
 	</header>
@@ -92,6 +96,12 @@
 								</a>
 							</li>
 						<?php } ?>
+							<li class="menu__list__option border__top">
+								<a href="index.php?s=cerrar_sesion">
+									<i class="glyphicon glyphicon-log-out"></i>
+									Cerrar Sesión
+								</a>
+							</li>
 					</ul>
 				</nav>
 			</aside>

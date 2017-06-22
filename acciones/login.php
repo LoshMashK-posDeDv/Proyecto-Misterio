@@ -32,6 +32,7 @@ LOGIN;
 			$_SESSION['LOGIN_ERROR'] = 'Tu cuenta ha sido bloqueada';
 		}
 	}
+	
 	//var_dump($_SESSION);
-	header("Location: ../index.php");
+	header("Location: ../admin/index.php");
 ?>

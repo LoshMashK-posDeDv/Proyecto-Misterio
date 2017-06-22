@@ -14,7 +14,7 @@
 	<div class="login_form__row"><input type="submit" name="" value="Ingresar" class="btn btn_ok btn-lg btn-block"></div>
 	
 	<div>
-		<a href="#" class="link-a block-text">¿No tienes una cuenta? Registrate.</a>
+		<a href="index.php?s=registro" class="link-a block-text">¿No tienes una cuenta? Registrate.</a>
 	</div>
 	<div>
 		<a href="#" class="link-d block-text">¿No recuerdas tu contraseña?</a>
