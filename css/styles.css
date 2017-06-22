@@ -108,6 +108,37 @@ header {
 	border: 1px solid #c7c7c7;
 }
 
+/*ADMIN - VIDEOS_LISTADO*/
+.paginator{
+	text-align: right;
+}
+
+.paginator li{
+	display: inline-block;
+	margin: 5px;
+	padding: 8px;
+	background-color: #3C439B;
+}
+
+.paginator li a{
+	color: white!important;
+	font-size: 1em;
+	padding: 5px;
+	margin: 10px 0;
+	font-family: 'gobold';
+}
+
+.paginator li:hover{
+	background-color: #9E3838;
+}
+
+.paginator li a:hover{
+	text-decoration: none;
+}
+
+
+/**/
+
 .menu__list {
 	margin: 0;
 	padding: 10px 0 0;

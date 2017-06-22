@@ -97,7 +97,7 @@ SQL;
 
 			<!--paginador: modificar estructura para los links-->
 			<div>
-				<ul>
+				<ul class="paginator">
 					<?php
 						for($i = 1; $i <= $total_links; $i++){
 							if ($i == $pagina_actual){
