@@ -80,7 +80,7 @@ SQL;
 					</div>
 
 					<ul>
-						<li>DURACIÓN: <?php echo $array_detalle['DURACION'] ?> min</li>
+						<li>DURACIÓN: <?php echo $array_detalle['DURACION'] ?></li>
 						<li>AÑO: <?php echo $array_detalle['AÑO'] ?></li>
 					</ul>
 
