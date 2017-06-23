@@ -56,7 +56,7 @@ $f4 = mysqli_query($conexion, $c4);
 
 	<h2>ACTIVIDAD RECIENTE</h2>
 
-	<div class="container">
+	<div class="">
   		<div class="row">
 		
 		<div id="contadorvideitos" class="col-md-12">

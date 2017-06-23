@@ -205,6 +205,10 @@ header .dropdown-menu > li a {
 
 /*ADMIN - ACTIVIDAD*/
 
+.admin .seccion--dashboard.seccion--dashboard {
+	padding: 15px 40px;
+}
+
 #contadorvideitos span{
 	color: #3C439B;
 	font-family: 'gobold';
