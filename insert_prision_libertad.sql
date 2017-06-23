@@ -9,17 +9,17 @@ VALUES
 INSERT INTO
 	usuarios (NOMBRE_USUARIO, NOMBRE_COMPLETO, EMAIL, CONTRASENIA, FECHA_ALTA, U_ESTADO, FKPERMISOS)
 VALUES
-	('grodriguez', 'german rodriguez', 'german.rodriguez@davinci.edu.ar', 'admin1234', NOW( ), '1', 1),
-	('fmiranda', 'federico miranda', 'federico.mirandaa@gmail.com', '1234', NOW( ), '1', 1),
-	('lmerlo', 'leandro merlo', 'merloleandro@gmail.com', 'holis1234', NOW( ), '1', 1),
-	('florsepulveda', 'florencia sepulveda', 'florenciasepulveda.26@gmail.com', 'holis1234', NOW( ), '1', 1),
-	('fespino', 'florencia ederli', 'florenciaespino@gmail.com', 'zeldaeslomas', NOW( ), '1', 1),
-	('lmitono', 'laura mitono', 'mlauramitono@gmail.com', 'nellylalechuza', NOW( ), '1', 1),
-	('miguel', 'miguel masenio', 'miguel.masenio@davinci.edu.ar', '1234', NOW( ), '1', 1),
-	('usuario1', 'usuario uno', 'usuario1@davinci.edu.ar', '1234', NOW( ), '1', 2),
-	('usuario2', 'usuario dos', 'usuario2@davinci.edu.ar', '1234', NOW( ), '1', 2),
-	('usuario3', 'usuario tres', 'usuario3@davinci.edu.ar', '1234', NOW( ), '1', 2);
-	
+	('grodriguez', 'german rodriguez', 'german.rodriguez@davinci.edu.ar', MD5('admin1234'), NOW( ), '1', 1),
+	('fmiranda', 'federico miranda', 'federico.mirandaa@gmail.com', MD5('1234'), NOW( ), '1', 1),
+	('lmerlo', 'leandro merlo', 'merloleandro@gmail.com', MD5('holis1234'), NOW( ), '1', 1),
+	('florsepulveda', 'florencia sepulveda', 'florenciasepulveda.26@gmail.com', MD5('holis1234'), NOW( ), '1', 1),
+	('fespino', 'florencia ederli', 'florenciaespino@gmail.com', MD5('zeldaeslomas'), NOW( ), '1', 1),
+	('lmitono', 'laura mitono', 'mlauramitono@gmail.com', MD5('nellylalechuza'), NOW( ), '1', 1),
+	('miguel', 'miguel masenio', 'miguel.masenio@davinci.edu.ar', MD5('1234'), NOW( ), '1', 1),
+	('usuario1', 'usuario uno', 'usuario1@davinci.edu.ar', MD5('1234'), NOW( ), '1', 2),
+	('usuario2', 'usuario dos', 'usuario2@davinci.edu.ar', MD5('1234'), NOW( ), '1', 2),
+	('usuario3', 'usuario tres', 'usuario3@davinci.edu.ar', MD5('1234'), NOW( ), '1', 2);
+
 INSERT INTO
 	articulos (TITULO, AUTOR, AÑO, DURACION, FECHA_ALTA, VIDEO, IMAGENES, IMG_DESTACADA, DESCRIPCION, A_ESTADO, FKUSUARIO)
 VALUES
@@ -37,7 +37,7 @@ VALUES
 	('High Grass Circus', 'Tony Ianzelo', '1976', '00:56:00', NOW( ), 'video_1498184435.mp4', '0_imgs_1498181953.jpg,1_imgs_1498181953.jpg,2_imgs_1498181953.jpg,3_imgs_1498181953.jpg,4_imgs_1498181953.jpg', 'img_1498184435.jpg', 'This feature-length documentary offers an inside look into the workings of a travelling circus. In 1976, directors Tony Ianzelo and Torben Schioler followed the various people involved with the Royal Brothers Circus as they set up their tents and put on their show. Fascinating to watch, the film captures the 24-hour-a-day brand of magic that the circus evokes while revealing the nature of the people who run it. ', '1', 1),
 	('Glenn Gould - On the Record', 'Wolf Koenig', '1959', '00:29:00', NOW( ), 'video_1498184435.mp4', '0_imgs_1498181953.jpg,1_imgs_1498181953.jpg,2_imgs_1498181953.jpg', 'img_1498184435.jpg', 'This short documentary follows Glenn Gould to New York City. There, we see the renowned Canadian concert pianist kidding the cab driver, bantering with sound engineers at Columbia Records, and then, alone with the piano, fastidiously recording Bachs Italian Concerto.', '1', 2),
 	('Gone Curling - On the Record', 'John Howe', '1963', '00:10:00', NOW( ), 'video_1498184435.mp4', '0_imgs_1498181953.jpg,1_imgs_1498181953.jpg,2_imgs_1498181953.jpg,3_imgs_1498181953.jpg', 'img_1498184435.jpg', 'This short comedy follows a visitor to the prairies as he slowly discovers the cult of curling. At first, our protagonist doesn’t seem to understand why everyone is so crazy about curling, but once he studies up, buys the right gear, and gets a few lessons, he can’t be stopped. This hilarious short film records the history of a rookies first game. Even non-curlers will feel the pull of the stones and the flick of the brooms in this choice rink-side view.', '1', 6);
-	
+
 INSERT INTO
 	comentarios (COMENTARIO, FECHA_COMENTARIO, C_ESTADO, FKUSUARIO, FKARTICULO)
 VALUES
@@ -49,8 +49,8 @@ VALUES
 	('Se mandaron cualquiera', NOW( ), '0', 10, 6),
 	('Simplemente maravilloso', NOW( ), '1', 3, 12),
 	('Tiene una estetica asombrosa', NOW( ), '1', 4, 5);
-	
-INSERT INTO 
+
+INSERT INTO
 	categorias (CATEGORIA)
 VALUES
 	('Animacion'),
@@ -60,10 +60,10 @@ VALUES
 	('Deportes'),
 	('Policial'),
 	('Ficcion');
-	
-INSERT INTO 
+
+INSERT INTO
 	articulos_categorias
-VALUES 
+VALUES
 	( 1, 1 ),
 	( 1, 6 ),
 	( 2, 5 ),
