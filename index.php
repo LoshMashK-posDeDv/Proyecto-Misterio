@@ -86,9 +86,6 @@
                         <?php        
                             }
                         ?>
-
-                        
-
                     </div>
                     <!-- /.navbar-collapse -->
                 </div>
