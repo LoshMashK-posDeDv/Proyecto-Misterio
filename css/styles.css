@@ -74,6 +74,7 @@ a:hover,
 input:hover,
 button:hover {
 	opacity: 0.8;
+	text-decoration: none;
 }
 
 input,
@@ -339,6 +340,32 @@ span.disc {
 	color: #3C439B;
 }
 
+.section--home--proyecto {
+	//text-align: center;
+}
+
+.section--home--proyecto h2 {
+	text-transform: uppercase;
+	margin: 0 0 30px 0;
+}
+
+.section--home--videos {
+	background: #fff;
+	border-top: 1px solid #ddd;
+}
+
+.section--home--videos.bottom {
+	background: transparent;
+}
+
+.section--home--videos.bottom h3 {
+	color: #333;
+}
+
+.section--home--videos.bottom .home__videos__img {
+	height: 130px;
+}
+
 *[class*="__title"] h2,
 .section__title h2 {
 	margin: 0;
@@ -485,24 +512,26 @@ span.disc {
 
 	.home__videos__img {
 		width: 90%;
-		height: 180px;
+		height: 165px;
 		overflow: hidden;
 		position: relative;
 		margin: 0 auto;
 	}
 
 	.home__videos__img img {
-		max-width: 100%;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%,-50%);
+		width: 120%;
+		max-width: inherit;
 	}
 
 	.home__videos__title {
 		color: #3C439B;
 		text-align: center;
-		font-size: 1.5em;
+		font-size: 1.3em;
+		margin-top: 15px;
+	}
+
+	.home__videos__title a {
+		color: #3C439B;
 	}
 
 	.home__videos__desc {
@@ -538,16 +567,33 @@ span.disc {
 
 	.section--home--info__title h3 {
 		text-align: left;
-		font-size: 1.3em;
+		font-size: 2.3em;
 		color: #fff;
+		margin: 0 0 20px;
+		text-transform: uppercase;
 	}
 
 	.section--home--info p {
-		color: #fff;
+	    color: #8c8c8c;
+	    text-transform: uppercase;
+	    font-family: 'gobold',sans-serif;
+	    font-size: 20px;
+	    line-height: 165%;
 	}
 
 	.section--home--info video {
 		width: 100%;
+	}
+
+	.section--home--info iframe {
+		width: 100%;
+		height: 320px;
+	}
+
+	.section--home--videos__title {
+		margin: 0 0 30px 0;
+		font-size: 2em;
+		text-transform: uppercase;
 	}
 	
 
@@ -767,7 +813,6 @@ footer p {
 	position: relative;
 }
 
-.seccion--home--otros-videos__video__img img,
 .seccion--videos__img img {
 	position: absolute;
 	top: 50%;
@@ -788,9 +833,11 @@ footer p {
 }
 
 .seccion--home--otros-videos__ver-todos {
-	text-align: center;
-	margin-top: 20px;
-	font-size: 1.5em;
+	text-align: right;
+	margin-top: 25px;
+	margin-right: 10px;
+	font-size: 1em;
+	margin-bottom: 0;
 }
 
 /* TABLET */
