@@ -112,26 +112,30 @@
 		if($extensiones != ''){
 			$c .= ", IMAGENES  = '$insertar'";
 		}
-/*
-		for($i = 0; $i < count($categoria); $i++){
-			$c2 = "INSERT INTO
-				articulos_categorias
-			SET
-				FKARTICULO = 'ACA NI IDEA',
-				FKCATEGORIA = '$categoria[$i]' ";
 
-			//echo $c2;
-			//mysqli_query($conexion, $c2);
-		}
-
-*/
 		$rta = 'ok';
 
-		//mysqli_query($conexion, $c);
+		if(mysqli_query($conexion, $c)){
+
+			$art_id = mysqli_insert_id($conexion);
+
+			for($i = 0; $i < count($categoria); $i++){
+				$c2 = "INSERT INTO
+					articulos_categorias
+				SET
+					FKARTICULO = '$art_id',
+					FKCATEGORIA = '$categoria[$i]' ";
+
+				mysqli_query($conexion, $c2);
+			}
+		}
+
+		header("Location: ../index.php?s=videos_listado&m=$rta");
+
 	} else {
 		$c = 'falló';
 		$rta = 'error';
-	}
 
-	//header("Location: ../index.php?s=agregar_video&e=$rta");
+		header("Location: ../index.php?s=agregar_video&m=$rta");
+	}
 ?>

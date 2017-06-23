@@ -1,10 +1,8 @@
 <?php
-	if(isset($_GET['e'])){
-		if($_GET['e'] == 'ok'){
-			echo 'Se guardó correctamente';
-		} else {
-			echo 'Algo salió mal';
-		}
+
+	if(isset($_GET['m'])){
+		$mensaje =  'Oops, Algo salió mal. Revisá los campos e intenta nuevamente';
+		$class = 'error';
 	}
 
 	$c_categoria = "SELECT * FROM categorias";
@@ -13,6 +11,12 @@
 ?>
 
 <div class="seccion--video-agregar">
+
+	<?php if(isset($_GET['m'])) { ?>
+		<p class="<?php echo $class; ?>">
+			<?php echo $mensaje; ?>
+		</p>
+	<?php } ?>
 
 	<div class="row video_agregar_form">
 		<div class="col-md-5">

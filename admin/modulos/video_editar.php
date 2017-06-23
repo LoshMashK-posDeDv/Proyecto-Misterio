@@ -5,6 +5,16 @@
 		$id = 1;
 	}
 
+	if(isset($_GET['m'])){
+		if($_GET['m'] == 'ok'){
+			$mensaje = 'El video se actualizó correctamente';
+			$class = 'exito';
+		} else {
+			$mensaje =  'Oops, Algo salió mal. Revisa los campos e intenta nuevamente';
+			$class = 'error';
+		}
+	}
+
 	$c = <<<SQL
 
 	SELECT
@@ -43,6 +53,12 @@ CATEGORIA;
 ?>
 
 <div class="seccion--video-editar">
+
+	<?php if(isset($_GET['m'])) { ?>
+		<p class="<?php echo $class; ?>">
+			<?php echo $mensaje; ?>
+		</p>
+	<?php } ?>
 
 	<div class="row video_agregar_form">
 		<div class="col-md-5">

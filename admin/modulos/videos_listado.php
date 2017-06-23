@@ -8,21 +8,10 @@
 			$class = 'error';
 		}
 	}
-
-	if(isset($_GET['e'])){
-		if($_GET['e'] == 'ok'){
-			$mensaje =  'El video se eliminó correctamente';
-			$class = 'exito';
-		} else {
-			$mensaje =  'Oops, Algo salió mal';
-			$class = 'error';
-		}
-	}
-
 ?>
 
 <div class="seccion--admin-listado">
-	<?php if(isset($_GET['m']) || isset($_GET['e'])){ ?>
+	<?php if(isset($_GET['m'])) { ?>
 		<p class="<?php echo $class; ?>">
 			<?php echo $mensaje; ?>
 		</p>
