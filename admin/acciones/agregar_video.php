@@ -43,10 +43,6 @@
 			$foto_nombre = $foto['name'];
 			/* Le saco la extensión */
 			$extensiones = pathinfo($foto_nombre, PATHINFO_EXTENSION);
-			/* Fuerzo a que el nombre del archivo sea igual al título del video */
-			$foto_nombre = $titulo;
-			/* Reemplazo todas las cosas extrañas por un _ */
-			$foto_nombre = preg_replace("/[^a-zA-Z0-9_-]/", "_", $foto_nombre);
 			/*
 				- La variable $i: Me va a servir para que, por ejemplo, todas las fotos del ID 15 no se llamen 15_imagenes_TITULO.jpg, porque se pisarían, entonces se van a llamar  150_imagenes_TITULO.jpg, 151_imagenes_TITULO.jpg, 152_imagenes_TITULO.jpg, etc. Esto obviamente lo podemos cambiar para que quede de la manera que queramos.
 			*/
