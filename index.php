@@ -92,9 +92,6 @@ include('setup/config.php');
                         <?php        
                             }
                         ?>
-
-                        
-
                     </div>
                     <!-- /.navbar-collapse -->
                 </div>

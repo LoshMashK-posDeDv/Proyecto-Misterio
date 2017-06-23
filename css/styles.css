@@ -390,6 +390,11 @@ span.disc {
     border: 1px solid #ddd;
 }
 
+.login_form .error,
+.login_form .exito {
+	display: block;
+}
+
 .login_form__row {
 	padding: 10px 0;
 }
