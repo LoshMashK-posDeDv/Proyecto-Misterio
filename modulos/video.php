@@ -49,8 +49,8 @@ SQL;
 </div>
 
 <section class="section--home--proyecto">
-	<div class="container">	
-		
+	<div class="container">
+
 		<div class="row">
 
 			<div class="col-sm-12">
@@ -92,8 +92,8 @@ SQL;
 						</div>
 						<h3><?php echo $array_detalle['NOMBRE_COMPLETO']; ?></h3>
 						<p>Email: <?php echo $array_detalle['EMAIL']; ?></p>
-					</div>					
-				</div>					
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -105,7 +105,7 @@ SQL;
 <section class="section--home--comentarios">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-7 comentarios">				
+			<div class="col-md-7 comentarios">
 				<h3>COMENTARIOS</h3>
 				<?php
 					if(mysqli_num_rows($r2) == 0){
@@ -136,6 +136,7 @@ SQL;
 					</div>
 				</div>
 				-->
+				<?php if(isset($_SESSION['IDUSUARIOS'])): ?>
 				<h3>NUEVO COMENTARIO</h3>
 				<form action="acciones/comentar.php" method="post">
 					<!--<span>NOMBRE</span>
@@ -147,9 +148,12 @@ SQL;
 						<div class="col-sm-8"></div>
 						<div class="col-sm-4">
 							<input class="btn_ok btn-xs" type="submit" value="enviar">
-						</div>						
-					</div>	
+						</div>
+					</div>
 				</form>
+			<?php else: ?>
+				<p>Para comentar es necesario iniciar sesión.</p>
+			<?php endif; ?>
 			</div>
 		</div>
 	</div>
