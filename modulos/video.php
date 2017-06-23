@@ -18,7 +18,7 @@
 		EMAIL
 	FROM
 		articulos a
-	LEFT JOIN usuarios u ON a.FKUSUARIO = u.IDUSUARIOS
+	LEFT JOIN usuarios AS u ON a.FKUSUARIO = u.IDUSUARIOS
 	WHERE IDARTICULO = $vid_id
 SQL;
 
@@ -124,7 +124,7 @@ SQL;
 					<textarea cols="50" rows="10"></textarea>
 
 					<div class="col-md-3 col-md-offset-9">
-						<button class="btn respoboton" type="button">ENVIAR</button>
+						<input class="btn respoboton" type="submit" value="enviar">
 					</div>
 				</form>
 			</div>
