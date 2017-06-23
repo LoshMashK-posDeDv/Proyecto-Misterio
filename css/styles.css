@@ -152,6 +152,11 @@ header .dropdown-menu > li > a {
 
 header .dropdown-menu > li i {
     margin-right: 10px;
+	color: #fff;
+}
+
+header .dropdown-menu > li a {
+    color: #fff;
 }
 
 .dropdown-menu > li > a:focus, 
