@@ -34,11 +34,15 @@ include('setup/config.php');
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-navbar">
+                        <button class="btn botones" id="btn-videos" type="button" id="dropdown-menu">
+                            <a href="index.php?s=videos">Videos</a>
+                        </button>
                         <?php 
                             if(isset($_SESSION['NOMBRE_USUARIO'])) { ?>                               
 
                                 <ul class="nav navbar-nav navbar-right">
-                                    <div class="dropdown">                                    
+                                    <div class="dropdown">    
+                                                                        
                                         <button class="btn dropdown-toggle" type="button" id="dropdown-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                             Hola <?php echo $_SESSION['NOMBRE_USUARIO'] ?>
                                             <span class="caret"></span>
@@ -65,6 +69,9 @@ include('setup/config.php');
                             } else if((isset($_GET['s']) && $_GET['s'] != 'login' && $_GET['s'] != 'registro') || !isset($_GET['s'])) {
                         ?>                        
                             <ul class="nav navbar-nav navbar-right">
+                                <button class="btn botones" id="btn-videos" type="button" id="dropdown-menu">
+                            <a href="index.php?s=videos">Videos</a>
+                        </button>
                                 <div class="dropdown">
                                 
                                     <button class="btn dropdown-toggle" type="button" id="dropdown-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">

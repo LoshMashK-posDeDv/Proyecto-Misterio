@@ -433,20 +433,15 @@ span.disc {
     padding: 25px 15px;
 }
 
-.botones{
-	cursor: pointer!important;
-	color: white!important;
+#btn-videos a{
+	color: white;
+	margin-left: 20px;
 }
 
-.botones i{
-	color: white!important;
+#btn-videos a:hover{
+	text-decoration: none;
 }
 
-
-/* esto no funcaaaa :/ */
-.botones:hover{
-	background-color: #t70707!important;
-}
 
 /* HOME */
 
