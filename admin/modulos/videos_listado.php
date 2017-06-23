@@ -18,6 +18,7 @@
 			$class = 'error';
 		}
 	}
+
 ?>
 
 <div class="seccion--admin-listado">
@@ -106,23 +107,52 @@ SQL;
 				} //cierre del else de la verificacion
 			?>
 
-			<!--paginador: modificar estructura para los links-->
-			<div>
-				<ul class="paginator">
-					<?php
-						for($i = 1; $i <= $total_links; $i++){
-							if ($i == $pagina_actual){
-								$estilo = 'class="pag_activa"';
-							}else{
-								$estilo = '';
-							}
-							echo "<li>";
-								echo "<a $estilo href='index.php?s=videos_listado&p=$i'>$i</a>";
-							echo "</li>";
-						};
-					?>
-				</ul>
-			</div>
+
+
+
+<!-- PAGINADOR MÁGICO -->
+
+<div class="paginador clear">
+	<ul class="paginator">
+	<?php 
+		$pag_anterior = $pagina_actual - 1;
+		if( $pag_anterior > 0 ){
+		?>
+		<li><a href="index.php?s=videos_listado&p=<?php echo $pag_anterior; ?>">&larr;</a></li> 
+		
+		<?php 
+
+		} 
+
+		for( $i = 1; $i <= $total_links; $i++ ){
+		$activo = $pagina_actual == $i ? 'class="pag_activa"':'';
+		
+		echo '<li><a href="index.php?s=videos_listado&p='.$i.'" '.$activo.'>'.$i.'</a></li> ';
+		
+		}
+		
+	?>
+		
+	<?php 
+	
+		$pag_siguiente = $pagina_actual + 1;
+		if( $pag_siguiente <= $total_links ){
+	
+	?>
+	
+		<li><a href="index.php?s=videos_listado&p=<?php echo $pag_siguiente ?>">&rarr;</a></li>
+	
+	<?php } ?>
+	
+	</ul>
+</div>
+
+
+
+
+
+
+			
 		</tbody>
 	</table>
 

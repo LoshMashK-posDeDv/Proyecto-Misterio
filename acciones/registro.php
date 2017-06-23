@@ -13,7 +13,7 @@ SET
 	NOMBRE_USUARIO = '$nombre_usuario',
 	CONTRASENIA = MD5('$password'),
 	U_ESTADO = 1,
-	FKPERMISOS = 1,
+	FKPERMISOS = 2,
 	NOMBRE_COMPLETO = '$nombre_completo',
 	EMAIL = '$email',
 	FECHA_ALTA = NOW( )

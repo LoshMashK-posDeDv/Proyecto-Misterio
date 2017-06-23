@@ -47,8 +47,8 @@ if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
 		case 'login':
 			$seccion .= 'login.php';
 			break;
-		case 'logout':
-			header("Location: acciones/logout.php" );
+		case 'cerrar_sesion':
+			$seccion = 'acciones/logout.php';
 			break;
 		case 'registro':
 			$seccion .= 'registro.php';
