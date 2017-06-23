@@ -18,7 +18,7 @@
 		EMAIL
 	FROM
 		articulos a
-	LEFT JOIN usuarios u ON a.IDARTICULO = u.IDUSUARIOS
+	LEFT JOIN usuarios u ON a.FKUSUARIO = u.IDUSUARIOS
 	WHERE IDARTICULO = $vid_id
 SQL;
 

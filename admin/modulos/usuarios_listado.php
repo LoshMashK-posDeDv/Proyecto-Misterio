@@ -1,4 +1,3 @@
-
 <div class="seccion--admin-listado">
 
 	<div class="section__title">
@@ -71,7 +70,7 @@
 						<?php
 							$estado_cont = $a_usuarios['U_ESTADO'] == 1 ? 'inactivo' : 'activo';
 						?>
-						<a class="<?php echo strtolower($estado); ?>" href="acciones/usuario_status.php?i=<?php echo $a_usuarios['IDUSUARIOS'] ?>" title="Cambiar estado a <?php echo $estado_cont; ?> ">
+						<a class="<?php echo strtolower($estado); ?>" href="acciones/cambiar_estado_usuario.php?i=<?php echo $a_usuarios['IDUSUARIOS'] ?>" title="Cambiar estado a <?php echo $estado_cont; ?> ">
 							<i class="glyphicon glyphicon-flag"></i>
 						</a>
 					</td>

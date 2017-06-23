@@ -152,6 +152,11 @@ header .dropdown-menu > li > a {
 
 header .dropdown-menu > li i {
     margin-right: 10px;
+	color: #fff;
+}
+
+header .dropdown-menu > li a {
+    color: #fff;
 }
 
 .dropdown-menu > li > a:focus, 
@@ -606,7 +611,7 @@ blockquote{
 }
 
 .infousuario h3{
-	text-align: center;
+	text-align: left;
 
 }
 

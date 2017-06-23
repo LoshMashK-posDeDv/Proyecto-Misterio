@@ -49,12 +49,12 @@ include('setup/config.php');
                                         </button>
 
                                         <ul class="dropdown-menu" aria-labelledby="dropdown-menu">
-                                            <li>
+                                            <!--<li>
                                                 <a class="botones" href="index.php?s=mi_cuenta">
                                                     <i class="glyphicon glyphicon-user"></i> 
                                                     Mi cuenta
                                                 </a>
-                                            </li>
+                                            </li>-->
                                             <li>
                                                 <a class="botones" href="index.php?s=cerrar_sesion">
                                                     <i class="glyphicon glyphicon-log-out"></i>
