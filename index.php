@@ -38,10 +38,10 @@ include('setup/config.php');
                             <li id="btn-videos">
                                 <a href="index.php?s=videos">Videos</a>
                             </li>
-                            <?php if(isset($_SESSION['NOMBRE_USUARIO'])) { ?> 
+                            <?php if(isset($_SESSION['NOMBRE_USUARIO'])) { ?>
 
-                                <li class="dropdown">    
-                                                                    
+                                <li class="dropdown">
+
                                     <button class="btn dropdown-toggle" type="button" id="dropdown-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                         Hola <?php echo $_SESSION['NOMBRE_USUARIO'] ?>
                                         <span class="caret"></span>
@@ -50,7 +50,7 @@ include('setup/config.php');
                                     <ul class="dropdown-menu" aria-labelledby="dropdown-menu">
                                         <!--<li>
                                             <a class="botones" href="index.php?s=mi_cuenta">
-                                                <i class="glyphicon glyphicon-user"></i> 
+                                                <i class="glyphicon glyphicon-user"></i>
                                                 Mi cuenta
                                             </a>
                                         </li>-->
@@ -61,13 +61,13 @@ include('setup/config.php');
                                             </a>
                                         </li>
                                     </ul>
-                                </li>                              
-                            
+                                </li>
+
                             <?php } else if((isset($_GET['s']) && $_GET['s'] != 'login' && $_GET['s'] != 'registro') || !isset($_GET['s'])) {
-                            ?>                        
-                                                          
+                            ?>
+
                                 <li class="dropdown">
-                                
+
                                     <button class="btn dropdown-toggle" type="button" id="dropdown-menu_2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                         <i class="glyphicon glyphicon-user"></i>
                                         <span class="caret"></span>
@@ -76,18 +76,18 @@ include('setup/config.php');
                                     <ul class="dropdown-menu" aria-labelledby="dropdown-menu_2">
                                         <li>
                                             <a class="botones" href="index.php?s=login">
-                                                <i class="glyphicon glyphicon-user"></i> 
+                                                <i class="glyphicon glyphicon-user"></i>
                                                 Login
                                             </a>
                                         </li>
                                         <li>
                                             <a class="botones" href="index.php?s=registro">
-                                                <i class="glyphicon glyphicon-align-center"></i> 
+                                                <i class="glyphicon glyphicon-align-center"></i>
                                                 Registro
                                             </a>
                                         </li>
                                     </ul>
-                                </li>                                
+                                </li>
 
                             <?php } ?>
                         </ul>
@@ -98,14 +98,14 @@ include('setup/config.php');
             </nav>
 
         </header>
-        
+
         <div class="contenedor">
             <?php include($seccion); ?>
         </div>
-        
+
         <footer>
             <div class="container">
-                <p>Prision &amp; Libertad - Todos los derechos reservados</p>            
+                <p>Prision &amp; Libertad - Todos los derechos reservados</p>
             </div>
         </footer>
 
