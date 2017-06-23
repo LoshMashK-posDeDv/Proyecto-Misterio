@@ -9,13 +9,16 @@
 		AUTOR,
 		AÑO,
 		DURACION,
-		DATE_FORMAT(FECHA_ALTA, "%d de %M de %Y") AS FECHA,
+		DATE_FORMAT(a.FECHA_ALTA, "%d de %M de %Y") AS FECHA,
 		VIDEO,
 		IMAGENES,
 		IMG_DESTACADA,
-		DESCRIPCION
+		DESCRIPCION,
+		NOMBRE_COMPLETO,
+		EMAIL
 	FROM
-		articulos
+		articulos a
+	LEFT JOIN usuarios u ON a.IDARTICULO = u.IDUSUARIOS
 	WHERE IDARTICULO = $vid_id
 SQL;
 
@@ -39,14 +42,14 @@ SQL;
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
 				<video class="videito" controls>
-					<source src="../uploads/<?php echo $array_detalle['VIDEO'] ?>" type="uploads/<?php echo $separar_video[1] ?>">
+					<source src="uploads/<?php echo $array_detalle['VIDEO'] ?>" type="video/<?php echo $separar_video[1] ?>">
 					Tu navegador no soporta la reproducción de videos.
 				</video>
 			</div>
 			<div class="col-md-6 col-md-offset-1 idvideito">
 				<h2><?php echo $array_detalle['TITULO'] ?></h2>
 				<ul>
-					<li><?php echo $array_detalle['FECHA'] ?></li>
+					<li><?php echo traducir_mes($array_detalle['FECHA']); ?></li>
 					<li><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 					<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 					<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -66,11 +69,11 @@ SQL;
 			<div class="col-md-3 col-md-offset-1 infousuario">
 				<div class="col-md-12">
 					<div class="col-md-6 col-md-offset-3">
-					<img src="https://yt3.ggpht.com/-cjAi_YrRPCA/AAAAAAAAAAI/AAAAAAAAAAA/CvohcVRdIA0/s100-c-k-no-mo-rj-c0xffffff/photo.jpg" alt="foto del usuario" >
+					<!--<img src="https://yt3.ggpht.com/-cjAi_YrRPCA/AAAAAAAAAAI/AAAAAAAAAAA/CvohcVRdIA0/s100-c-k-no-mo-rj-c0xffffff/photo.jpg" alt="foto del usuario" >-->
 					</div>
 				</div>
-				<h3>DR. BROWN</h3>
-				<p>Jennifer. Jen. Jennifer. Wake up. (Marty sits beside her on the swing. She hasn't stirred yet. He gently touches her cheek. He bends down and kisses her. Her eyes open and she smiles.) Marty. (She sits up and embraces him, and she changes her expression.) I had the worst nightmare. (In Town.) (Marty and Jennifer are sitting in the truck, waiting for a traffic light. No other cars are around.)</p>
+				<h3><?php echo $array_detalle['NOMBRE_COMPLETO']; ?></h3>
+				<p>Email: <?php echo $array_detalle['EMAIL']; ?></p>
 			</div>
 		</div>
 	</div>
