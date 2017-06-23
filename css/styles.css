@@ -91,9 +91,12 @@ input[type="submit"]:hover {
 
 /* ADMIN */
 
-h4,h5,h6 {
-	font-family: 'gobold',sans-serif;
+h4,h5,h6 {	
 	text-transform: uppercase;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'gobold',sans-serif;
 }
 
 h2{
