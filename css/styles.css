@@ -189,6 +189,31 @@ header .dropdown-menu > li a {
 	margin-top: 20px;
 }
 
+/*ADMIN - ACTIVIDAD*/
+
+#contadorvideitos span{
+	color: #3C439B;
+	font-family: 'gobold';
+}
+
+#contadorvideitos p{
+	font-size: 6em;
+	font-family: 'gobold';
+}
+
+#estadistica ul{
+	list-style: none;
+}
+
+#estadistica li{
+	font-size: 1em;
+}
+
+#estadistica h3{
+	color: #583B97;
+}
+
+
 /*ADMIN - VIDEOS_LISTADO*/
 .paginator{
 	text-align: right;
