@@ -42,6 +42,17 @@ body{
 	color: #fff;
 }
 
+.btn:hover,
+.btn.active.focus, 
+.btn.active:focus, 
+.btn.focus, 
+.btn:active.focus, 
+.btn:active:focus, 
+.btn:focus {
+    color: #FFF;
+    outline: none;
+}
+
 .link-a {
 	color: #af4c4c;
 }
