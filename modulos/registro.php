@@ -12,6 +12,18 @@
 		<div class="login_form__row"><input type="text" name="usuario" placeholder="Nombre de usuario"></div>
 		<div class="login_form__row"><input type="password" name="password" placeholder="Contraseña"></div>
 		<div class="login_form__row"><input type="submit" name="" value="Registrarse" class="btn btn_ok btn-lg btn-block"></div>	
+		
+		<?php 
+			if( isset($_GET['m']) &&  $_GET['m'] == 'error'){
+				echo '<p class="error">';
+					echo "Por favor revisa los campos";
+				echo '</p>';
+			} else if( isset($_GET['m']) &&  $_GET['m'] == 'exito'){
+				echo '<p class="exito">';
+					echo "Tu cuenta se ha creado con éxito";
+				echo '</p>';
+			}
+		?>
 
 		<div>
 			<a href="index.php?s=login" class="link-a block-text">¿Ya tienes una cuenta? Ingresa.</a>
