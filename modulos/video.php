@@ -9,7 +9,7 @@
 		AUTOR,
 		AÑO,
 		DURACION,
-		DATE_FORMAT( FECHA_ALTA, "%d/%m/%Y" ) AS FECHA,
+		DATE_FORMAT(FECHA_ALTA, "%d de %M de %Y") AS FECHA,
 		VIDEO,
 		IMAGENES,
 		IMG_DESTACADA,
@@ -46,8 +46,7 @@ SQL;
 			<div class="col-md-6 col-md-offset-1 idvideito">
 				<h2><?php echo $array_detalle['TITULO'] ?></h2>
 				<ul>
-					<li><?php echo $array_detalle['FECHA_ALTA'] ?></li>
-					<li>21 DE MAYO DE 2017</li>
+					<li><?php echo $array_detalle['FECHA'] ?></li>
 					<li><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 					<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 					<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -59,7 +58,7 @@ SQL;
 				</div>
 
 				<ul>
-					<li>DURACIÓN: 40 min</li>
+					<li>DURACIÓN: <?php echo $array_detalle['DURACION'] ?> min</li>
 					<li>AÑO: <?php echo $array_detalle['AÑO'] ?></li>
 				</ul>
 
