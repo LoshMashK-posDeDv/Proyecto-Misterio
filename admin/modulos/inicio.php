@@ -54,14 +54,17 @@ $f4 = mysqli_query($conexion, $c4);
 ?>
 <div class="seccion--dashboard">
 
-	<h2>Acá va cualquier cosa más digna que la foto de Zelda</h2>
+	<h2>ACTIVIDAD RECIENTE</h2>
 
-	<div class="cambien-la-clase">
-		<h3>Videos</h3>
-		<p><?php echo $a_categorias['TOTAL']; ?></p>
-	</div>
+	<div class="container">
+  		<div class="row">
+		
+		<div id="contadorvideitos" class="col-md-12">
+			<p><span><?php echo $a_categorias['TOTAL']; ?></span> VIDEOS</P>
+		</div>
 
-	<div class="2-cambien-la-clase">
+
+	<div class="col-md-12" id="estadistica">
 		<h3>Últimos comentarios</h3>
 		<ul>
 			<?php
@@ -70,9 +73,7 @@ $f4 = mysqli_query($conexion, $c4);
 				<li><?php echo $a_comentarios['USUARIO'] ?>: <?php echo $a_comentarios['COMENTARIO'] ?> (<?php echo $a_comentarios['TITULO'] ?>)</li>
 			<?php endwhile; ?>
 		</ul>
-	</div>
 
-	<div class="3-cambien-la-clase">
 		<h3>Últimos videos</h3>
 		<ul>
 			<?php
@@ -81,9 +82,7 @@ $f4 = mysqli_query($conexion, $c4);
 				<li><?php echo $a_videos['TITULO'] ?></li>
 			<?php endwhile; ?>
 		</ul>
-	</div>
 
-	<div class="4-cambien-la-clase">
 		<h3>Nuevos usuarios</h3>
 		<ul>
 			<?php
