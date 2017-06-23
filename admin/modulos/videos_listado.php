@@ -71,7 +71,7 @@ SQL;
 				//verificacion de cantidad de paginas
 				if($pagina_actual > $total_links or $pagina_actual < 1){
 					echo 'Pediste una página inexistente';
-				}else{
+				} else {
 					$consulta_videos = <<<SQL
 						SELECT
 							IMG_DESTACADA,
@@ -106,54 +106,44 @@ SQL;
 		endwhile;
 				} //cierre del else de la verificacion
 			?>
-
-
-
-
-<!-- PAGINADOR MÁGICO -->
-
-<div class="paginador clear">
-	<ul class="paginator">
-	<?php 
-		$pag_anterior = $pagina_actual - 1;
-		if( $pag_anterior > 0 ){
-		?>
-		<li><a href="index.php?s=videos_listado&p=<?php echo $pag_anterior; ?>">&larr;</a></li> 
-		
-		<?php 
-
-		} 
-
-		for( $i = 1; $i <= $total_links; $i++ ){
-		$activo = $pagina_actual == $i ? 'class="pag_activa"':'';
-		
-		echo '<li><a href="index.php?s=videos_listado&p='.$i.'" '.$activo.'>'.$i.'</a></li> ';
-		
-		}
-		
-	?>
-		
-	<?php 
-	
-		$pag_siguiente = $pagina_actual + 1;
-		if( $pag_siguiente <= $total_links ){
-	
-	?>
-	
-		<li><a href="index.php?s=videos_listado&p=<?php echo $pag_siguiente ?>">&rarr;</a></li>
-	
-	<?php } ?>
-	
-	</ul>
-</div>
-
-
-
-
-
-
-			
 		</tbody>
 	</table>
+
+	<!-- PAGINADOR MÁGICO -->
+
+	<div class="paginador clear">
+		<ul class="paginator">
+		<?php 
+			$pag_anterior = $pagina_actual - 1;
+			if( $pag_anterior > 0 ){
+			?>
+			<li><a href="index.php?s=videos_listado&p=<?php echo $pag_anterior; ?>">&larr;</a></li> 
+			
+			<?php 
+
+			} 
+
+			for( $i = 1; $i <= $total_links; $i++ ){
+			$activo = $pagina_actual == $i ? 'class="pag_activa"':'';
+			
+			echo '<li><a href="index.php?s=videos_listado&p='.$i.'" '.$activo.'>'.$i.'</a></li> ';
+			
+			}
+			
+		?>
+			
+		<?php 
+		
+			$pag_siguiente = $pagina_actual + 1;
+			if( $pag_siguiente <= $total_links ){
+		
+		?>
+		
+			<li><a href="index.php?s=videos_listado&p=<?php echo $pag_siguiente ?>">&rarr;</a></li>
+		
+		<?php } ?>
+		
+		</ul>
+	</div>
 
 </div>

@@ -663,7 +663,7 @@ footer p {
 }
 
 .seccion--videos__video {
-	width: calc(25% - 20px);
+	width: calc(100% - 20px);
 	margin: 20px 10px;
 }
 
@@ -713,6 +713,18 @@ footer p {
 	.admin_list__head__actions {
 		text-align: center;
 		width: 75px;
+	}
+
+	.seccion--home--otros-videos__ver-todos {
+		text-align: right;
+		margin-top: 5px;
+		margin-right: 10px;
+		font-size: 1em;
+	}
+
+	.seccion--videos__video {
+		width: calc(25% - 20px);
+		margin: 20px 10px;
 	}
 
 }
