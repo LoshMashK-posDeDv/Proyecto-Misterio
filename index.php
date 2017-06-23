@@ -1,8 +1,14 @@
-<?php include('setup/config.php'); ?>
+<?php
+
+include('funciones.php');
+include('setup/config.php');
+
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Prisión &amp; Libertad</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/stylesheet.css">
@@ -28,7 +34,36 @@
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-navbar">
-                        <?php if((isset($_GET['s']) && $_GET['s'] != 'login' && $_GET['s'] != 'registro') || !isset($_GET['s'])){ ?>
+                        <?php 
+                            if(isset($_SESSION['NOMBRE_USUARIO'])) { ?>                               
+
+                                <ul class="nav navbar-nav navbar-right">
+                                    <div class="dropdown">                                    
+                                        <button class="btn dropdown-toggle" type="button" id="dropdown-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            Hola <?php echo $_SESSION['NOMBRE_USUARIO'] ?>
+                                            <span class="caret"></span>
+                                        </button>
+
+                                        <ul class="dropdown-menu" aria-labelledby="dropdown-menu">
+                                            <li>
+                                                <a class="botones" href="index.php?s=mi_cuenta">
+                                                    <i class="glyphicon glyphicon-user"></i> 
+                                                    Mi cuenta
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="botones" href="index.php?s=cerrar_sesion">
+                                                    <i class="glyphicon glyphicon-log-out"></i>
+                                                    Cerrar sesión
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </ul>
+                        
+                        <?php 
+                            } else if((isset($_GET['s']) && $_GET['s'] != 'login' && $_GET['s'] != 'registro') || !isset($_GET['s'])) {
+                        ?>                        
                             <ul class="nav navbar-nav navbar-right">
                                 <div class="dropdown">
                                 
@@ -53,7 +88,13 @@
                                     </ul>
                                 </div>
                             </ul>
-                        <?php } ?>
+
+                        <?php        
+                            }
+                        ?>
+
+                        
+
                     </div>
                     <!-- /.navbar-collapse -->
                 </div>
