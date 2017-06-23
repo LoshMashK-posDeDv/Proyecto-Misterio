@@ -1,3 +1,31 @@
+<?php
+
+	$vid_id = isset($_GET['vid']) ? $_GET['vid'] : 0 ;
+
+	$consulta_video = <<<SQL
+	SELECT
+		IDARTICULO,
+		TITULO,
+		AUTOR,
+		AÑO,
+		DURACION,
+		VIDEO,
+		IMAGENES,
+		IMG_DESTACADA	
+	FROM
+		articulos
+	WHERE IDARTICULO = $vid_id
+SQL;
+
+	//$r1 = mysqli_query($conexion, $consulta_video);
+
+	//$video = mysqli_fetch_array($r1);
+
+	echo $consulta_video;
+
+?>
+
+
 <div class="jumbotron" id="contenedorVideo">
 </div>
 
@@ -90,27 +118,3 @@
 		</div>
 	</div>
 </section>
-
-
-
-
-
-<?php
-
-	$vid_id = $_GET['vid'];
-
-	$consulta_video = <<<SQL
-	SELECT
-		*
-	FROM
-		articulos
-	WHERE IDARTICULO = $vid_id
-SQL;
-
-	$r1 = mysqli_query($conexion, $consulta_video);
-
-	$video = mysqli_fetch_array($r1);
-
-	var_dump($video);
-
-?>
