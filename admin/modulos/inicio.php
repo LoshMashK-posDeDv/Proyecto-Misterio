@@ -17,7 +17,6 @@ $c2 = <<<SQL
 	FROM
 		comentarios AS c
 	JOIN articulos AS a ON a.IDARTICULO = c.FKARTICULO
-	-- LEFT JOIN usuarios AS u ON a.FKUSUARIO = u.IDUSUARIOS
 	JOIN usuarios AS u on u.IDUSUARIOS = c.FKUSUARIO
 	ORDER BY FECHA_COMENTARIO DESC
 	LIMIT 5
