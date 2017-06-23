@@ -22,8 +22,19 @@
 	WHERE IDARTICULO = $vid_id
 SQL;
 
-	$r1 = mysqli_query($conexion, $consulta_video);
+	$consulta_comentarios = <<<SQL
+		SELECT
+			COMENTARIO,
+			FECHA_COMENTARIO,
+			u.NOMBRE_COMPLETO AS NOMBRE
+		FROM
+			comentarios as c
+		JOIN usuarios as u ON c.FKUSUARIO = u.IDUSUARIOS
+		WHERE c.FKARTICULO = $vid_id
+SQL;
 
+	$r1 = mysqli_query($conexion, $consulta_video);
+	$r2 = mysqli_query($conexion, $consulta_comentarios);
 	//$video = mysqli_fetch_array($r1);
 
 	//echo $consulta_video;
@@ -91,11 +102,20 @@ SQL;
 			<div class="col-md-6 col-md-offset-1 comentarios">
 				<div class="col-md-12">
 				<h3>COMENTARIOS</h3>
+				<?php
+					if(mysqli_num_rows($r2) == 0){
+						echo "<p> La publicación no tiene comentarios</p>";
+					} else {
+						while($array_comentarios = mysqli_fetch_assoc($r2)):?>
 				<div class="col-md-12">
-					<h4>Marty McFly</h4>
-					<span>15/05/2017</span>
-					<p>I know Doc...but I had to c… But its good to see ya, Marty. (They hug.) Marty, you're gonna have to do something about those clothes. You walk around town dressed like that and you're liable to get shot. (rubs his neck) Or hanged. What idiot dressed you in that outfit? (smiles and claps Doc on the shoulder) You did.</p>
+					<h4><?php echo $array_comentarios['NOMBRE'] ?></h4>
+					<span><?php echo $array_comentarios['FECHA_COMENTARIO'] ?></span>
+					<p><?php echo $array_comentarios['COMENTARIO'] ?></p>
 				</div>
+			<?php
+						endwhile;
+					}
+			?>
 				<!--
 
 					ESTO POR AHORA NO VA
@@ -117,12 +137,12 @@ SQL;
 			</div>
 			<div class="col-md-12">
 				<h3>NUEVO COMENTARIO</h3>
-				<form>
-					<span>NOMBRE</span>
+				<form action="acciones/comentar.php" method="post">
+					<!--<span>NOMBRE</span>
 					<input type="text" name="nombre">
-					<span>COMENTARIO</span>
-					<textarea cols="50" rows="10"></textarea>
-
+					<span>COMENTARIO</span>-->
+					<textarea cols="50" rows="10" name="comentario"></textarea>
+					<input type="hidden" name="video" value="<?php echo $vid_id ?>">
 					<div class="col-md-3 col-md-offset-9">
 						<input class="btn respoboton" type="submit" value="enviar">
 					</div>
