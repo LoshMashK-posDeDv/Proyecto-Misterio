@@ -61,9 +61,9 @@ SQL;
 ?>
 
 <div class="container">
-
+	<h2 class="u text-left">Listado de videos</h2>
 	<div class="paginador clear">
-		<ul class="paginator">
+		<!--<ul class="paginator">
 		<?php 
 			$pag_anterior = $pagina_actual - 1;
 			if( $pag_anterior > 0 ){
@@ -94,7 +94,7 @@ SQL;
 		
 		<?php } ?>
 		
-		</ul>
+		</ul>-->
 	</div>
 
 	<div class="seccion--videos">
