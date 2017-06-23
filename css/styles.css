@@ -129,7 +129,7 @@ header .btn {
 	background: transparent;
 	color: #fff;
 	padding: 15px 0;
-	font-size: 15px;
+	font-size: 14px;
 }
 
 header .btn i,
@@ -157,6 +157,13 @@ header .dropdown-menu > li i {
 
 header .dropdown-menu > li a {
     color: #fff;
+}
+
+.nav > li > a {
+    text-transform: uppercase;
+    padding-left: 10px;
+    padding-right: 35px;
+    font-size: 14px;
 }
 
 .dropdown-menu > li > a:focus, 
@@ -459,19 +466,14 @@ span.disc {
 	margin-top: 10px;
 }
 
-.navbar-nav > li > a {
-    padding: 25px 15px;
+.navbar-nav.navbar-nav > li > a {
+    padding: 25px;
+    color: #fff;
 }
 
-#btn-videos a{
-	color: white;
-	margin-left: 20px;
+.navbar-nav.navbar-nav > li > a:hover {
+	color: #fff;
 }
-
-#btn-videos a:hover{
-	text-decoration: none;
-}
-
 
 /* HOME */
 
