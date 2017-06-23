@@ -9,7 +9,7 @@ VALUES
 INSERT INTO
 	usuarios (NOMBRE_USUARIO, NOMBRE_COMPLETO, EMAIL, CONTRASENIA, FECHA_ALTA, U_ESTADO, FKPERMISOS)
 VALUES
-	('grodrigez', 'german rodriguez', 'german.rodriguez@davinci.edu.ar', 'admin1234', NOW( ), '1', 1),
+	('grodriguez', 'german rodriguez', 'german.rodriguez@davinci.edu.ar', 'admin1234', NOW( ), '1', 1),
 	('fmiranda', 'federico miranda', 'federico.mirandaa@gmail.com', '1234', NOW( ), '1', 1),
 	('lmerlo', 'leandro merlo', 'merloleandro@gmail.com', 'holis1234', NOW( ), '1', 1),
 	('florsepulveda', 'florencia sepulveda', 'florenciasepulveda.26@gmail.com', 'holis1234', NOW( ), '1', 1),
