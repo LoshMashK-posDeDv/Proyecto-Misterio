@@ -44,19 +44,10 @@
 			$foto_nombre = $foto['name'];
 			/* Le saco la extensión */
 			$extensiones = pathinfo($foto_nombre, PATHINFO_EXTENSION);
-			/* Fuerzo a que el nombre del archivo sea igual al título del video */
-			$foto_nombre = $titulo;
-			/* Reemplazo todas las cosas extrañas por un _ */
-			$foto_nombre = preg_replace("/[^a-zA-Z0-9_-]/", "_", $foto_nombre);
-			/* Y acá hago varias cosas. Le estoy poniendo el nuevo nombre al archivo que está formado por:
-				- El id: para reconocerlos fácil y agrupar todas las imágenes que correspondan a un mismo video.
-				- La variable $i: Que me va a servir para que, por ejemplo, todas las fotos del ID 15 no se llamen 15_imagenes_TITULO.jpg, porque se pisarían, entonces se van a llamar  150_imagenes_TITULO.jpg, 151_imagenes_TITULO.jpg, 152_imagenes_TITULO.jpg, etc. Esto obviamente lo podemos cambiar para que quede de la manera que queramos.
-				- "_imagenes_": Esto únicamente lo puse para que quede registrado que esa imagen pertenece a una selección múltiple.
-				- Nombre de la foto (el título del video).
-				- El ".", para que sea .jpg, .png o lo que corresponda
-				- Extensión de la foto.
+			/*
+				- La variable $i: Me va a servir para que, por ejemplo, todas las fotos del ID 15 no se llamen 15_imagenes_TITULO.jpg, porque se pisarían, entonces se van a llamar  150_imagenes_TITULO.jpg, 151_imagenes_TITULO.jpg, 152_imagenes_TITULO.jpg, etc. Esto obviamente lo podemos cambiar para que quede de la manera que queramos.
 			*/
-			$foto_nombre = $id . $i . "_imagenes_" . $foto_nombre . "." . $extensiones;
+			$foto_nombre = $i . "_imgs_" . time() . "." . $extensiones;
 			/* Hago el move_uploaded_file para guardar la foto en nuestras carpetas */
 			move_uploaded_file($foto['tmp_name'], "../../uploads/$foto_nombre");
 			/* Incremento la $i para que cambie según la foto */
@@ -78,17 +69,13 @@
 
 	if($video['size'] > 0){
 		$extension = pathinfo($video_nombre, PATHINFO_EXTENSION);
-		$video_nombre = $titulo;
-		$video_nombre = preg_replace("/[^a-zA-Z0-9_-]/", "_", $video_nombre);
-		$video_nombre .= "_video." . $extension;
+		$video_nombre = "video_" . time() . '.' . $extension;
 		move_uploaded_file($video['tmp_name'], "../../uploads/$video_nombre");
 	}
 
 	if($imagen_destacada['size'] > 0){
 		$extension_img = pathinfo($imagen_destacada_nombre, PATHINFO_EXTENSION);
-		$imagen_destacada_nombre = $titulo;
-		$imagen_destacada_nombre = preg_replace("/[^a-zA-Z0-9_-]/", "_", $imagen_destacada_nombre);
-		$imagen_destacada_nombre .= "_img_destacada." . $extension_img;
+		$imagen_destacada_nombre = "img_" . time() . "." . $extension_img;
 		move_uploaded_file($imagen_destacada['tmp_name'], "../../uploads/$imagen_destacada_nombre");
 	}
 

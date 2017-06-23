@@ -8,8 +8,9 @@
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
 				<h2>El proyecto</h2>
-				<p>You cost three-hundred buck damage to my car, you son-of-a-bitch. And I'm gonna take it out of your ass. Hold him. Let him go, Biff, you're drunk. Well looky what we have here. No no no, you're staying right here with me. Stop it.</p>
-				<p>Marty, you have to wear the boots. You can't wear those futuristic things in 1885. You shouldn't even be wearing them in 1955. (Indicating his Nike's.) All right, Doc, look. Once I get there I'll put them on, I promise. Okay, I think we're about ready. I put gas in the tank, your future clothes are packed, just in case fresh batteries for your walkie-talkies. Oh, and what about that floating device? Hoverboard. Alright. (he picks up the hoverboard and puts it in the Delorean.)</p>
+				<p>Con el objetivo de <strong>construir una comunidad en la cual alumnos y profesores convivan en diversos espacios creativos, académicos, profesionales</strong>, y compartiendo las etapas que cada uno transita, Escuela Da Vinci es parte de un proyecto de extensión entre diversos espacios académicos internacionales.</p>
+				<p>Bajo la consigna: "PRISION Y LIBERTAD¨, los estudiantes de 4to cuatrimestre de la Carrera de Cine de Animación, serán parte de un proceso de trabajo de manera conjunta y comunitaria, entre la UNSAM y la Universidad de Richmond, Virginia en Estados Unidos.</p>
+				<p><strong>El objetivo es desarrollar experiencias audiovisuales</strong>, pudiendo alojar todo el material del proceso en una plataforma de trabajo interactivo donde los alumnos de las diferentes casas de estudio podrán intervenirlo.</p>
 			</div>
 		</div>
 	</div>
@@ -54,17 +55,13 @@ SQL;
 	<div class="container">
 		<div class="row">
 			<div class="section--home--info__title col-md-11 col-md-offset-1">
-				<h3>Otra info</h3>
+				<h3>La Experiencia</h3>
 			</div>
 			<div class="col-md-5 col-md-offset-1">
-				<video controls>
-					<source src="" type="">
-						Tu navegador no soporta la reproducción de videos.
-				</video>
+					<iframe width="400" height="200" src="https://www.youtube.com/embed/0J_5nFjUSEE" frameborder="0" allowfullscreen></iframe>
 			</div>
 			<div class="col-md-5">
-				<p>Yeah. (Saturday Morning) (George's Backyard) (George is hanging up laundry.) I still don't understand, how am I supposed to go to the dance with her, if she's already going to the dance with you.</p>
-				<p>Hey! (Biff walks over to his car, where Terry the mechanic has fixed it. It's the same Terry from 2015 who asked Marty to donate money to save the clock tower- of course here he's 60 years younger.) Looking good Terry. Hey Biff, she's all fixed up just like you wanted, but I couldn't get it started! You got some kind of a kill switch on this thing?</p>
+				<p>Esta experiencia se extiende a otras de las carreras de la Escuela, como Diseño y Programación Web y Mobile, cuyos alumnos programarán la plataforma de documental interactivo, para alojar el contenido que se vaya generando, y Diseño Gráfico quienes realizarán todo el aspecto gráfico de los audiovisuales, y los afiches de cada trabajo. Generando así un verdadero Proyecto Transmedia.</p>
 			</div>
 		</div>		
 	</div>
@@ -73,14 +70,14 @@ SQL;
 <section class="section--home--quote">
 	<div class="container">
 		<blockquote>
-			Hey kid, thumb a hundred bucks will ya, help save the clock tower. I... Sorry, no. Another time.
+			"Con el objetivo de construir una comunidad en la cual alumnos y profesores convivan en diversos espacios creativos, académicos, profesionales, y compartiendo las etapas que cada uno transita..."
 		</blockquote>		
 	</div>
 </section>
 
 <section class="section--home--otros-videos container">
 	<div class="section--home--otros-videos__title">
-		<h3>Más cosas</h3>
+		<h3>VIDEOS</h3>
 	</div>
 	<ul class="row">
 		<?php

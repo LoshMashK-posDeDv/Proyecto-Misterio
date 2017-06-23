@@ -152,6 +152,11 @@ header .dropdown-menu > li > a {
 
 header .dropdown-menu > li i {
     margin-right: 10px;
+	color: #fff;
+}
+
+header .dropdown-menu > li a {
+    color: #fff;
 }
 
 .dropdown-menu > li > a:focus, 
@@ -183,6 +188,31 @@ header .dropdown-menu > li i {
 .admin main div[class^='seccion--'] input[type=submit] {
 	margin-top: 20px;
 }
+
+/*ADMIN - ACTIVIDAD*/
+
+#contadorvideitos span{
+	color: #3C439B;
+	font-family: 'gobold';
+}
+
+#contadorvideitos p{
+	font-size: 6em;
+	font-family: 'gobold';
+}
+
+#estadistica ul{
+	list-style: none;
+}
+
+#estadistica li{
+	font-size: 1em;
+}
+
+#estadistica h3{
+	color: #583B97;
+}
+
 
 /*ADMIN - VIDEOS_LISTADO*/
 .paginator{
@@ -433,20 +463,15 @@ span.disc {
     padding: 25px 15px;
 }
 
-.botones{
-	cursor: pointer!important;
-	color: white!important;
+#btn-videos a{
+	color: white;
+	margin-left: 20px;
 }
 
-.botones i{
-	color: white!important;
+#btn-videos a:hover{
+	text-decoration: none;
 }
 
-
-/* esto no funcaaaa :/ */
-.botones:hover{
-	background-color: #t70707!important;
-}
 
 /* HOME */
 
@@ -611,7 +636,7 @@ blockquote{
 }
 
 .infousuario h3{
-	text-align: center;
+	text-align: left;
 
 }
 

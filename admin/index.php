@@ -56,22 +56,6 @@
 								</a>
 							</li>
 						<?php } ?>
-						<?php if(chequear_permisos('EDITAR')) { ?>
-							<li class="menu__list__option">
-								<a href="index.php?s=editar_pagina&p=nosotros" class="tdv_no">
-									<i class="glyphicon glyphicon-file"></i>
-									Nosotros
-								</a>
-							</li>
-						<?php } ?>
-						<?php if(chequear_permisos('EDITAR')) { ?>
-							<li class="menu__list__option">
-								<a href="index.php?s=editar_pagina&p=contacto" class="tdv_no">
-									<i class="glyphicon glyphicon-earphone"></i>
-									Contacto
-								</a>
-							</li>
-						<?php } ?>
 						<?php if(chequear_permisos('MODERAR_USUARIOS')) { ?>
 							<li class="menu__list__option">
 								<a href="index.php?s=usuarios_listado">

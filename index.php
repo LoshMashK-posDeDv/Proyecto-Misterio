@@ -34,23 +34,27 @@ include('setup/config.php');
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-navbar">
+                        <button class="btn botones" id="btn-videos" type="button" id="dropdown-menu">
+                            <a href="index.php?s=videos">Videos</a>
+                        </button>
                         <?php 
                             if(isset($_SESSION['NOMBRE_USUARIO'])) { ?>                               
 
                                 <ul class="nav navbar-nav navbar-right">
-                                    <div class="dropdown">                                    
+                                    <div class="dropdown">    
+                                                                        
                                         <button class="btn dropdown-toggle" type="button" id="dropdown-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                             Hola <?php echo $_SESSION['NOMBRE_USUARIO'] ?>
                                             <span class="caret"></span>
                                         </button>
 
                                         <ul class="dropdown-menu" aria-labelledby="dropdown-menu">
-                                            <li>
+                                            <!--<li>
                                                 <a class="botones" href="index.php?s=mi_cuenta">
                                                     <i class="glyphicon glyphicon-user"></i> 
                                                     Mi cuenta
                                                 </a>
-                                            </li>
+                                            </li>-->
                                             <li>
                                                 <a class="botones" href="index.php?s=cerrar_sesion">
                                                     <i class="glyphicon glyphicon-log-out"></i>
@@ -65,6 +69,9 @@ include('setup/config.php');
                             } else if((isset($_GET['s']) && $_GET['s'] != 'login' && $_GET['s'] != 'registro') || !isset($_GET['s'])) {
                         ?>                        
                             <ul class="nav navbar-nav navbar-right">
+                                <button class="btn botones" id="btn-videos" type="button" id="dropdown-menu">
+                            <a href="index.php?s=videos">Videos</a>
+                        </button>
                                 <div class="dropdown">
                                 
                                     <button class="btn dropdown-toggle" type="button" id="dropdown-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
