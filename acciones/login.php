@@ -29,7 +29,11 @@ LOGIN;
 	} else {
 		if( $log['U_ESTADO'] == 1 ){
 			$_SESSION = $log;
-			header("Location: ../admin/index.php");
+			if($log['FKPERMISOS'] == 1){
+				header("Location: ../admin/index.php");
+			} else {
+				header("Location: ../index.php");
+			}
 		} else {
 			$_SESSION['LOGIN_ERROR'] = 'Tu cuenta ha sido bloqueada';
 			header("Location: ../index.php?s=login");
