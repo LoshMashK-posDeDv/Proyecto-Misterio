@@ -1,3 +1,31 @@
+<?php
+
+	$vid_id = isset($_GET['vid']) ? $_GET['vid'] : 0 ;
+
+	$consulta_video = <<<SQL
+	SELECT
+		IDARTICULO,
+		TITULO,
+		AUTOR,
+		AÑO,
+		DURACION,
+		VIDEO,
+		IMAGENES,
+		IMG_DESTACADA	
+	FROM
+		articulos
+	WHERE IDARTICULO = $vid_id
+SQL;
+
+	//$r1 = mysqli_query($conexion, $consulta_video);
+
+	//$video = mysqli_fetch_array($r1);
+
+	echo $consulta_video;
+
+?>
+
+
 <div class="jumbotron" id="contenedorVideo">
 </div>
 
@@ -20,8 +48,10 @@
 					<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 					<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span></li>
 				</ul>
-				<p>Look, there's a rhythmic ceremonial ritual coming up. Of course, the Enchantment Under The Sea Dance they're supposed to go to this, that's where they kiss for the first time. Alright kid, you stick to your father like glue and make sure that he takes her to the dance. (Lunchroom) (Marty sits down across from George at a table. George is writing in a notebook.)</p>
-				<p>Ladies and gentlemen! As mayor of Hill Valley, it gives me great pleasure to dedicate this clock to the people of Hill County. May it stand for all time! (everyone cheers) Tell me when, gentlemen! 3...2...1...now! (The Mayor starts the clock.) Let the festivities begin! (Doc and Marty are watching all this happen from a few yards away.)</p>
+				<div class="desc">
+					<p>Look, there's a rhythmic ceremonial ritual coming up. Of course, the Enchantment Under The Sea Dance they're supposed to go to this, that's where they kiss for the first time. Alright kid, you stick to your father like glue and make sure that he takes her to the dance. (Lunchroom) (Marty sits down across from George at a table. George is writing in a notebook.)</p>
+					<p>Ladies and gentlemen! As mayor of Hill Valley, it gives me great pleasure to dedicate this clock to the people of Hill County. May it stand for all time! (everyone cheers) Tell me when, gentlemen! 3...2...1...now! (The Mayor starts the clock.) Let the festivities begin! (Doc and Marty are watching all this happen from a few yards away.)</p>					
+				</div>
 
 				<ul>
 					<li>DURACIÓN: 40 min</li>
@@ -88,27 +118,3 @@
 		</div>
 	</div>
 </section>
-
-
-
-
-
-<?php
-
-	$vid_id = $_GET['vid'];
-
-	$consulta_video = <<<SQL
-	SELECT
-		*
-	FROM
-		articulos
-	WHERE IDARTICULO = $vid_id
-SQL;
-
-	$r1 = mysqli_query($conexion, $consulta_video);
-
-	$video = mysqli_fetch_array($r1);
-
-	var_dump($video);
-
-?>

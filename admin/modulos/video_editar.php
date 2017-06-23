@@ -30,6 +30,16 @@ SQL;
 	$separar_video = explode(".", $a['VIDEO']);
 
 	$separar_imagenes = explode(",", $a['IMAGENES']);
+
+
+	$c_categoria = <<<CATEGORIA
+	SELECT 
+		*
+	FROM 
+		categorias
+CATEGORIA;
+
+	$f_categoria = mysqli_query($conexion, $c_categoria);
 ?>
 
 <div class="seccion--video-editar">
@@ -41,7 +51,9 @@ SQL;
 
 				<div class="form-group">
 					<div class="section__title">
-						<a class="section__title__back" href="index.php"><i class="glyphicon glyphicon-chevron-left"></i></a>
+						<a class="section__title__back" href="index.php?s=videos_listado">
+							<i class="glyphicon glyphicon-chevron-left"></i>
+						</a>
 						<h2>Editar video</h2>
 					</div>
 
@@ -66,28 +78,41 @@ SQL;
 						</div>
 					</div>
 
-					<div class="clearfix">
-						<h3>Video</h3>
+					<div class="clearfix">						
 						<div class="row">
 							<div class="col-md-6">
+								<h3>Video</h3>
 								<video controls>
 									<source src="../uploads/<?php echo $a['VIDEO'] ?>" type="video/<?php echo $separar_video[1] ?>">
 								</video>
+								<input type="file" name="video" id="video" class="form-control create_form__video" />
 							</div>
 							<div class="col-md-6">
-								<input type="file" name="video" id="video" class="form-control create_form__video" />
+								<h3>Categoría</h3>
+								<select multiple class="form-control" name="categoria[]">
+									<?php while($a_categoria = mysqli_fetch_assoc($f_categoria)): ?>
+										<option value="<?php echo $a_categoria['IDCATEGORIA'] ?>">
+											<?php echo $a_categoria['CATEGORIA'] ?>
+										</option>
+									<?php endwhile; ?>
+								</select>
+								<span class="disc">Manten apretado ctrl para seleccionar mas de una opción</span>
 							</div>
 						</div>
 					</div>
 
 					<div class="clearfix">
 						<h3>Im&aacute;genes</h3>
-						<div class="imagenes row">
-							<?php for($i = 0; $i < count($separar_imagenes); $i++): ?>
-								<div class="imagenes__item col-xs-6 col-md-3"><img src="../uploads/<?php echo $separar_imagenes[$i]  ?>" alt=""></div
-							<?php endfor; ?>
+						<div class="imagenes">
+							<div class="row">
+								<?php for($i = 0; $i < count($separar_imagenes); $i++): ?>
+									<div class="imagenes__item col-xs-6 col-md-3">
+										<img src="../uploads/<?php echo $separar_imagenes[$i]  ?>" alt="">
+									</div>
+								<?php endfor; ?>								
+							</div>
 						</div>
-						<div class="pull-right">
+						<div class="btn-block">
 							<input type="file" multiple="true" name="imagenes[]" id="imagenes" class="form-control create_form__imagenes" />
 						</div>
 					</div>
@@ -104,9 +129,11 @@ SQL;
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6"></div>
-				<div class="col-md-1">
-					<input type="submit" class="btn btn-default" value="Guardar"/>
+				<div class="row">
+					<div class="col-md-6">
+						<input type="submit" class="btn btn_ok btn-block" value="Guardar"/>
+					</div>
+					<div class="col-md-6"></div>					
 				</div>
 			</form>
 		</div>

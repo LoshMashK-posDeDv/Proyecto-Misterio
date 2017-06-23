@@ -21,7 +21,11 @@
 </head>
 <body class="admin">
 	<header class="header clearfix">
-		<h1 class="header__title">Prisión &amp; Libertad</h1>
+		<h1 class="header__title">
+			<a href="../index.php" title="Ver sitio">
+				Prisión &amp; Libertad
+			</a>
+		</h1>
 		<p class="header__user">Bienvenido, <?php echo $_SESSION['NOMBRE_USUARIO']; ?></p>
 		<div class="header__logos"><img src="../images/header-logos.png" alt="Sponsors:" /></div>
 	</header>
@@ -39,14 +43,14 @@
 							</li>
 						<?php } ?>
 							<li class="menu__list__option">
-								<a href="index.php">
+								<a href="index.php" class="tdv_no">
 									<i class="glyphicon glyphicon-user"></i>
 									Mi cuenta
 								</a>
 							</li>
 						<?php if(chequear_permisos('EDITAR')) { ?>
 							<li class="menu__list__option">
-								<a href="index.php?s=editar_pagina&p=home">
+								<a href="index.php?s=editar_pagina&p=home" class="tdv_no">
 									<i class="glyphicon glyphicon-file"></i>
 									Homepage
 								</a>
@@ -54,7 +58,7 @@
 						<?php } ?>
 						<?php if(chequear_permisos('EDITAR')) { ?>
 							<li class="menu__list__option">
-								<a href="index.php?s=editar_pagina&p=nosotros">
+								<a href="index.php?s=editar_pagina&p=nosotros" class="tdv_no">
 									<i class="glyphicon glyphicon-file"></i>
 									Nosotros
 								</a>
@@ -62,8 +66,8 @@
 						<?php } ?>
 						<?php if(chequear_permisos('EDITAR')) { ?>
 							<li class="menu__list__option">
-								<a href="index.php?s=editar_pagina&p=contacto">
-									<i class="glyphicon glyphicon-file"></i>
+								<a href="index.php?s=editar_pagina&p=contacto" class="tdv_no">
+									<i class="glyphicon glyphicon-earphone"></i>
 									Contacto
 								</a>
 							</li>
@@ -71,14 +75,14 @@
 						<?php if(chequear_permisos('MODERAR_USUARIOS')) { ?>
 							<li class="menu__list__option">
 								<a href="index.php?s=usuarios_listado">
-									<i class="glyphicon glyphicon-pawn"></i>
+									<i class="glyphicon glyphicon-user"></i>
 									Usuarios
 								</a>
 							</li>
 						<?php } ?>
 						<?php if(chequear_permisos('MODERAR_COMENTARIOS')) { ?>
 							<li class="menu__list__option">
-								<a href="index.php?s=comentarios_listado">
+								<a href="index.php?s=comentarios_listado" class="tdv_no">
 									<i class="glyphicon glyphicon-comment"></i>
 									Comentarios
 								</a>
@@ -92,6 +96,12 @@
 								</a>
 							</li>
 						<?php } ?>
+							<li class="menu__list__option border__top">
+								<a href="index.php?s=cerrar_sesion">
+									<i class="glyphicon glyphicon-log-out"></i>
+									Cerrar Sesión
+								</a>
+							</li>
 					</ul>
 				</nav>
 			</aside>

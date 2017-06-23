@@ -59,6 +59,7 @@ if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
 		case 'video':
 			$seccion .= 'video.php';
 			break;
+
 		default:
 			$seccion .= 'home.php';
 			break;
@@ -80,6 +81,10 @@ if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
 		case 'usuarios_listado':
 			$seccion .= 'usuarios_listado.php';
 			break;
+		case 'cerrar_sesion':
+			$seccion = 'acciones/logout.php';
+			break;	
+
 		default:
 			$seccion .= 'inicio.php';
 			break;

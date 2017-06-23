@@ -7,6 +7,7 @@
 	$anio = $_POST['anio'];
 	$video = $_FILES['video'];
 	$video_nombre = $_FILES['video']['name'];
+	//$categoria = $_POST['categoria ']; HACER ANDAR
 	$imagenes = $_FILES['imagenes'];
 	$imagen_destacada = $_FILES['imagen_destacada'];
 	$imagen_destacada_nombre = $_FILES['imagen_destacada']['name'];
@@ -83,13 +84,13 @@
 	$er_duracion = "/^[0-9]{1,2}(:|.)[0-9]{2}(:|.)[0-9]{2}$/";
 	$txt_duracion = preg_match($er_duracion, $duracion, $coincidencia_duracion);
 
-	$er_video = "/^[\w\s]{4,45}\.(mp4|webm)$/i";
-	$txt_video = preg_match($er_video, $video_nombre = $_FILES['video']['name'], $coincidencia_video);
+	//$er_video = "/^[\w\s]{4,45}\.(mp4|webm)$/i";
+	//$txt_video = preg_match($er_video, $video_nombre = $_FILES['video']['name'], $coincidencia_video);
 
 	$er_imagen_destacada = "/^[\w\s]{4,45}\.(jpg|png)$/i";
 	$txt_imagen_destacada = preg_match($er_imagen_destacada, $imagen_destacada['name'], $coincidencia_imagen_destacada);
 
-	if($txt_titulo && $txt_descripcion && $txt_duracion && $txt_video && $txt_imagen_destacada){
+	if($txt_titulo && $txt_descripcion && $txt_duracion && $txt_imagen_destacada){
 		if($video['size'] > 0){
 			$extension = pathinfo($video_nombre, PATHINFO_EXTENSION);
 			$video_nombre = $titulo;
@@ -114,7 +115,7 @@
 			VIDEO = '$video_nombre',
 			IMG_DESTACADA = '$imagen_destacada_nombre',
 			A_ESTADO = '1',
-			FECHA_ALTA = '". date("Y-m-d H:i:s") . "'";
+			FECHA_ALTA = NOW()";
 
 		if($imagenes['size'] > 0){
 			$c .= ", IMAGENES  = '$insertar'";
@@ -122,10 +123,13 @@
 
 		$rta = 'ok';
 
-		mysqli_query($conexion, $c);
+		//mysqli_query($conexion, $c);
 	} else {
 		$rta = 'error';
 	}
 
-	header("Location: ../index.php?s=agregar_video&e=$rta");
+	echo $c;
+	//header("Location: ../index.php?s=agregar_video&e=$rta");
+	
+	//VER FKPERMISOS EN 1
 ?>
