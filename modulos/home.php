@@ -16,7 +16,9 @@
 	</div>
 </section>
 
-<section class="section--home--videos container">
+<section class="section--home--videos">
+
+	<div class="container">
 			<?php
 				$consulta_videos = <<<SQL
 				SELECT
@@ -39,16 +41,24 @@ SQL;
 
 		<article class="col-md-4 home__videos">
 			<div class="home__videos__img">
-				<a href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>"><img src="uploads/<?php echo $array_videos['IMG_DESTACADA'] ?>"></a>
+				<a href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>">
+					<img src="uploads/<?php echo $array_videos['IMG_DESTACADA'] ?>">
+				</a>
 			</div>
-			<a href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>"><h3 class="home__videos__title"><?php echo $array_videos['TITULO'] ?></h3></a>
-			<p class="home__videos__desc"><?php echo trim_desc($array_videos['DESCRIPCION']) ?></p>
+			<h3 class="home__videos__title">
+				<a href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>">
+					<?php echo $array_videos['TITULO'] ?>
+				</a>
+			</h3>
+			<p class="home__videos__desc">
+				<?php echo trim_desc($array_videos['DESCRIPCION']) ?>
+			</p>
 		</article>
 		<?php
 			}//cierre while
 		?>
-
-
+	
+	</div>
 </section>
 
 <section class="section--home--info">
@@ -75,11 +85,12 @@ SQL;
 	</div>
 </section>
 
-<section class="section--home--otros-videos container">
-	<div class="section--home--otros-videos__title">
-		<h3>VIDEOS</h3>
-	</div>
-	<ul class="row">
+<section class="section--home--videos bottom">
+	<div class="container">
+		<div class="section--home--videos__title">
+			<h3>ÚLTIMOS VIDEOS</h3>
+		</div>
+		<div class="row">
 		<?php
 			$consulta_videos = <<<SQL
 			SELECT
@@ -99,12 +110,24 @@ SQL;
 		$r2 = mysqli_query($conexion, $consulta_videos);
 		while($array_videos = mysqli_fetch_assoc($r2)){
 		?>
-		<li class="col-md-3">
-			<a class="seccion--home--otros-videos__video__img" href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>"><img src="uploads/<?php echo $array_videos['IMG_DESTACADA'] ?>"></a>
-			<a href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>"><h4 class="section--home--otros-videos__video__title"><?php echo $array_videos['TITULO'] ?></h4></a>
-		</li>
-		<?php } ?>
-	</ul>
+			<article class="col-md-3 home__videos">
+				<div class="home__videos__img">
+					<a href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>">
+						<img src="uploads/<?php echo $array_videos['IMG_DESTACADA'] ?>">
+					</a>
+				</div>
+				<h3 class="home__videos__title">
+					<a href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>">
+						<?php echo $array_videos['TITULO'] ?>					
+					</a>
+				</h3>
+			</article>
+			<?php } ?>
+		</div>
 
-	<p class="seccion--home--otros-videos__ver-todos"><a class="linki" href="?s=videos">Ver todos</a></p>
+		<p class="seccion--home--otros-videos__ver-todos">
+			<a class="linki" href="?s=videos">Ver todos</a>
+		</p>
+		
+	</div>
 </section>
