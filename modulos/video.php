@@ -27,8 +27,8 @@ SQL;
 	//$video = mysqli_fetch_array($r1);
 
 	//echo $consulta_video;
-	
-	
+
+
 	while($array_detalle = mysqli_fetch_assoc($r1)):
 		$separar_video = explode(".", $array_detalle['VIDEO']);
 ?>
@@ -57,7 +57,7 @@ SQL;
 					<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span></li>
 				</ul>
 				<div class="desc">
-					<p><?php echo $array_detalle['DESCRIPCION'] ?></p>					
+					<p><?php echo $array_detalle['DESCRIPCION'] ?></p>
 				</div>
 
 				<ul>
@@ -96,6 +96,10 @@ SQL;
 					<span>15/05/2017</span>
 					<p>I know Doc...but I had to c… But its good to see ya, Marty. (They hug.) Marty, you're gonna have to do something about those clothes. You walk around town dressed like that and you're liable to get shot. (rubs his neck) Or hanged. What idiot dressed you in that outfit? (smiles and claps Doc on the shoulder) You did.</p>
 				</div>
+				<!--
+
+					ESTO POR AHORA NO VA
+
 				<div class="col-md-11 col-md-offset-1">
 					<h4>Biff</h4>
 					<span>20/05/2017</span>
@@ -109,6 +113,7 @@ SQL;
 						<button class="btn respoboton" type="button">RESPONDER</button>
 					</div>
 				</div>
+				-->
 			</div>
 			<div class="col-md-12">
 				<h3>NUEVO COMENTARIO</h3>
