@@ -25,3 +25,13 @@ SQL;
 
 	return $a[$permiso];
 }
+
+function trim_desc($text,$trim = 140){
+	if(strlen($text) > $trim){
+		$desc = substr($text, 0, $trim) . '...';
+	} else {
+		$desc = $text;
+	}
+
+	return $desc;
+}

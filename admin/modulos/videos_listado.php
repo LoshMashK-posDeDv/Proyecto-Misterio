@@ -8,20 +8,10 @@
 			$class = 'error';
 		}
 	}
-
-	if(isset($_GET['e'])){
-		if($_GET['e'] == 'ok'){
-			$mensaje =  'El video se eliminó correctamente';
-			$class = 'exito';
-		} else {
-			$mensaje =  'Oops, Algo salió mal';
-			$class = 'error';
-		}
-	}
 ?>
 
 <div class="seccion--admin-listado">
-	<?php if(isset($_GET['m']) || isset($_GET['e'])){ ?>
+	<?php if(isset($_GET['m'])) { ?>
 		<p class="<?php echo $class; ?>">
 			<?php echo $mensaje; ?>
 		</p>
@@ -70,7 +60,7 @@ SQL;
 				//verificacion de cantidad de paginas
 				if($pagina_actual > $total_links or $pagina_actual < 1){
 					echo 'Pediste una página inexistente';
-				}else{
+				} else {
 					$consulta_videos = <<<SQL
 						SELECT
 							IMG_DESTACADA,
@@ -105,25 +95,44 @@ SQL;
 		endwhile;
 				} //cierre del else de la verificacion
 			?>
-
-			<!--paginador: modificar estructura para los links-->
-			<div>
-				<ul class="paginator">
-					<?php
-						for($i = 1; $i <= $total_links; $i++){
-							if ($i == $pagina_actual){
-								$estilo = 'class="pag_activa"';
-							}else{
-								$estilo = '';
-							}
-							echo "<li>";
-								echo "<a $estilo href='index.php?s=videos_listado&p=$i'>$i</a>";
-							echo "</li>";
-						};
-					?>
-				</ul>
-			</div>
 		</tbody>
 	</table>
+
+	<!-- PAGINADOR MÁGICO -->
+
+	<div class="paginador clear">
+		<ul class="paginator">
+		<?php 
+			$pag_anterior = $pagina_actual - 1;
+			if( $pag_anterior > 0 ){
+			?>
+			<li><a href="index.php?s=videos_listado&p=<?php echo $pag_anterior; ?>">&larr;</a></li> 
+			
+			<?php 
+
+			} 
+
+			for( $i = 1; $i <= $total_links; $i++ ){
+			$activo = $pagina_actual == $i ? 'class="pag_activa"':'';
+			
+			echo '<li><a href="index.php?s=videos_listado&p='.$i.'" '.$activo.'>'.$i.'</a></li> ';
+			
+			}
+			
+		?>
+			
+		<?php 
+		
+			$pag_siguiente = $pagina_actual + 1;
+			if( $pag_siguiente <= $total_links ){
+		
+		?>
+		
+			<li><a href="index.php?s=videos_listado&p=<?php echo $pag_siguiente ?>">&rarr;</a></li>
+		
+		<?php } ?>
+		
+		</ul>
+	</div>
 
 </div>

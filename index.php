@@ -1,8 +1,14 @@
-<?php include('setup/config.php'); ?>
+<?php
+
+include('funciones.php');
+include('setup/config.php');
+
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Prisión &amp; Libertad</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/stylesheet.css">

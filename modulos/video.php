@@ -5,24 +5,29 @@
 	$consulta_video = <<<SQL
 	SELECT
 		IDARTICULO,
-		TITULO,
+		UCASE(TITULO) AS TITULO,
 		AUTOR,
 		AÑO,
 		DURACION,
+		DATE_FORMAT(FECHA_ALTA, "%d de %M de %Y") AS FECHA,
 		VIDEO,
 		IMAGENES,
-		IMG_DESTACADA	
+		IMG_DESTACADA,
+		DESCRIPCION
 	FROM
 		articulos
 	WHERE IDARTICULO = $vid_id
 SQL;
 
-	//$r1 = mysqli_query($conexion, $consulta_video);
+	$r1 = mysqli_query($conexion, $consulta_video);
 
 	//$video = mysqli_fetch_array($r1);
 
-	echo $consulta_video;
-
+	//echo $consulta_video;
+	
+	
+	while($array_detalle = mysqli_fetch_assoc($r1)):
+		$separar_video = explode(".", $array_detalle['VIDEO']);
 ?>
 
 
@@ -34,14 +39,14 @@ SQL;
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
 				<video class="videito" controls>
-					<source src="" type="">
+					<source src="../uploads/<?php echo $array_detalle['VIDEO'] ?>" type="uploads/<?php echo $separar_video[1] ?>">
 					Tu navegador no soporta la reproducción de videos.
 				</video>
 			</div>
 			<div class="col-md-6 col-md-offset-1 idvideito">
-				<h2>GREAT SCOTT!</h2>
+				<h2><?php echo $array_detalle['TITULO'] ?></h2>
 				<ul>
-					<li>21 DE MAYO DE 2017</li>
+					<li><?php echo $array_detalle['FECHA'] ?></li>
 					<li><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 					<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 					<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -49,13 +54,12 @@ SQL;
 					<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span></li>
 				</ul>
 				<div class="desc">
-					<p>Look, there's a rhythmic ceremonial ritual coming up. Of course, the Enchantment Under The Sea Dance they're supposed to go to this, that's where they kiss for the first time. Alright kid, you stick to your father like glue and make sure that he takes her to the dance. (Lunchroom) (Marty sits down across from George at a table. George is writing in a notebook.)</p>
-					<p>Ladies and gentlemen! As mayor of Hill Valley, it gives me great pleasure to dedicate this clock to the people of Hill County. May it stand for all time! (everyone cheers) Tell me when, gentlemen! 3...2...1...now! (The Mayor starts the clock.) Let the festivities begin! (Doc and Marty are watching all this happen from a few yards away.)</p>					
+					<p><?php echo $array_detalle['DESCRIPCION'] ?></p>					
 				</div>
 
 				<ul>
-					<li>DURACIÓN: 40 min</li>
-					<li>AÑO: 2017</li>
+					<li>DURACIÓN: <?php echo $array_detalle['DURACION'] ?> min</li>
+					<li>AÑO: <?php echo $array_detalle['AÑO'] ?></li>
 				</ul>
 
 			</div>
@@ -71,7 +75,9 @@ SQL;
 		</div>
 	</div>
 </section>
-
+<?php
+	endwhile;
+?>
 
 
 
