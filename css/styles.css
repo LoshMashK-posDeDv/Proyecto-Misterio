@@ -40,6 +40,7 @@ body{
 .btn_ok.btn_ok {
 	background: #3D449B;
 	color: #fff;
+	text-transform: uppercase;
 }
 
 .btn:hover,
@@ -610,12 +611,18 @@ blockquote{
 	}
 }
 
+.section--home--comentarios {
+	background: #fdfdfd;
+	border-top: 1px solid #ddd;
+}
+
 .videito{
 	width: 100%;
-	margin-bottom: 40px;
+	margin-bottom: 10px;
 }
 
 .idvideito h2{
+	margin-top: 0;
 	text-align: left;
 }
 
@@ -636,9 +643,14 @@ blockquote{
     margin-bottom: 15px;
 }
 
+.video--info {
+    background: #fafafa;
+    padding: 25px;
+}
+
 .infousuario{
 	background-color: #333;
-	padding: 2%;
+	padding: 15px;
 }
 
 .infousuario h3, .infousuario p{
@@ -658,6 +670,40 @@ blockquote{
 .comentarios h3{
 	color: #3C439B;
 	font-size: 1.8em;
+	margin-bottom: 15px;
+	margin-top: 40px;
+}
+
+.comentarios h3:first-of-type {
+	margin-top: 0;
+}
+
+.comentarios .comment {
+	padding: 15px 0;
+	border-bottom: 1px solid #e0dfdf;
+}
+
+.comentarios .comment h4 {
+	display: inline-block;
+	vertical-align: text-bottom;
+	margin: 0;
+	color: #9e3838;
+}
+
+.comentarios .comment p {
+	margin: 20px 0 0 0;
+	font-size: 14px;
+}
+
+.comentarios .comment span {
+	font-size: 12px;
+	display: inline-block;
+	color: #929292;
+	vertical-align: text-bottom;
+	margin-left: 10px;
+	padding-left: 10px;
+	border-left: 1px solid #ddd;
+	font-family: arial;
 }
 
 .respoboton{
@@ -675,12 +721,14 @@ blockquote{
 .comentarios input, 
 .comentarios textarea{
 	resize: none;
-    width: 100%;
-    background-color: #DBDBDB;
-    border: none;
-    margin-bottom: 20px;
-    margin-top: 5px;
-    padding: 15px;
+	width: 100%;
+	background-color: #efefef;
+	border: none;
+	margin-bottom: 20px;
+	margin-top: 5px;
+	padding: 15px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
 }
 
 .comentarios span{
