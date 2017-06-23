@@ -366,8 +366,10 @@ span.disc {
 	background: transparent;
 }
 
+.section--home--videos h3,
 .section--home--videos.bottom h3 {
 	color: #333;
+	margin: 0 0 20px 0;
 }
 
 .section--home--videos.bottom .home__videos__img {
@@ -527,7 +529,7 @@ span.disc {
 	}
 
 	.home__videos__img img {
-		width: 120%;
+		width: 105%;
 		max-width: inherit;
 	}
 
@@ -558,6 +560,7 @@ span.disc {
 	.section--home--quote {
 		text-align: center;
 		background: #a92020;
+		padding: 50px 0;
 	}
 
 	.section--home--otros-videos ul {
@@ -595,6 +598,7 @@ span.disc {
 
 	.section--home--info iframe {
 		width: 100%;
+		border: 0;
 		height: 320px;
 	}
 
@@ -681,7 +685,8 @@ blockquote{
 }
 
 .idvideito ul{
-	    -webkit-padding-start: 0!important;
+	-webkit-padding-start: 0!important;
+	padding: 0;
 }
 
 .idvideito ul li{

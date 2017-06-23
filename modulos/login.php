@@ -2,7 +2,7 @@
 	<h2>Inicia sesión</h2>
 	<div class="login_form__row"><input type="text" name="usuario" placeholder="Usuario"></div>
 	<div class="login_form__row"><input type="password" name="password" placeholder="Contraseña"></div>
-	<div class="login_form__row"><input type="submit" name="" value="Ingresar" class="btn btn_ok btn-lg btn-block"></div>
+	<div class="login_form__row"><input type="submit" name="enviar" value="Ingresar" class="btn btn_ok btn-lg btn-block"></div>
 	
 	<?php 
 		if( isset($_SESSION['LOGIN_ERROR'])){

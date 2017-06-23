@@ -11,7 +11,7 @@
 		<div class="login_form__row"><input type="text" name="email" placeholder="Correo electrónico"></div>
 		<div class="login_form__row"><input type="text" name="usuario" placeholder="Nombre de usuario"></div>
 		<div class="login_form__row"><input type="password" name="password" placeholder="Contraseña"></div>
-		<div class="login_form__row"><input type="submit" name="" value="Registrarse" class="btn btn_ok btn-lg btn-block"></div>	
+		<div class="login_form__row"><input type="submit" name="enviar" value="Registrarse" class="btn btn_ok btn-lg btn-block"></div>	
 		
 		<?php 
 			if( isset($_GET['m']) &&  $_GET['m'] == 'error'){

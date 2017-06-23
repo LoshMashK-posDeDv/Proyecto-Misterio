@@ -104,5 +104,5 @@
 	$rta = 'ok';
 
 	mysqli_query($conexion, $c);
-	header("Location: ../index.php?s=agregar_video&m=$rta");
+	header("Location: ../index.php?s=editar_video&m=$rta&i=$id");
 ?>

@@ -28,14 +28,14 @@ include('setup/config.php');
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand botones" href="index.php">
-                            <img src="images/brand.png">
+                            <img src="images/brand.png" alt="Prision y libertad">
                         </a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-navbar">
                         <ul class="nav navbar-nav navbar-right">
-                            <li id="btn-videos"  id="dropdown-menu">
+                            <li id="btn-videos">
                                 <a href="index.php?s=videos">Videos</a>
                             </li>
                             <?php if(isset($_SESSION['NOMBRE_USUARIO'])) { ?> 
@@ -68,12 +68,12 @@ include('setup/config.php');
                                                           
                                 <li class="dropdown">
                                 
-                                    <button class="btn dropdown-toggle" type="button" id="dropdown-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <button class="btn dropdown-toggle" type="button" id="dropdown-menu_2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                         <i class="glyphicon glyphicon-user"></i>
                                         <span class="caret"></span>
                                     </button>
 
-                                    <ul class="dropdown-menu" aria-labelledby="dropdown-menu">
+                                    <ul class="dropdown-menu" aria-labelledby="dropdown-menu_2">
                                         <li>
                                             <a class="botones" href="index.php?s=login">
                                                 <i class="glyphicon glyphicon-user"></i> 

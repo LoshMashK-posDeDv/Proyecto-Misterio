@@ -19,6 +19,7 @@
 <section class="section--home--videos">
 
 	<div class="container">
+		<h3 class="u text-center">Los más vistos</h3>
 			<?php
 				$consulta_videos = <<<SQL
 				SELECT
@@ -42,14 +43,15 @@ SQL;
 		<article class="col-md-4 home__videos">
 			<div class="home__videos__img">
 				<a href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>">
-					<img src="uploads/<?php echo $array_videos['IMG_DESTACADA'] ?>">
+					<img src="uploads/<?php echo $array_videos['IMG_DESTACADA'] ?>" alt="<?php echo $array_videos['TITULO'] ?>"
+					>
 				</a>
 			</div>
-			<h3 class="home__videos__title">
+			<h4 class="home__videos__title">
 				<a href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>">
 					<?php echo $array_videos['TITULO'] ?>
 				</a>
-			</h3>
+			</h4>
 			<p class="home__videos__desc">
 				<?php echo trim_desc($array_videos['DESCRIPCION']) ?>
 			</p>
@@ -68,7 +70,7 @@ SQL;
 				<h3>La Experiencia</h3>
 			</div>
 			<div class="col-md-5 col-md-offset-1">
-					<iframe width="400" height="200" src="https://www.youtube.com/embed/0J_5nFjUSEE" frameborder="0" allowfullscreen></iframe>
+					<iframe width="400" height="200" src="https://www.youtube.com/embed/0J_5nFjUSEE" allowfullscreen></iframe>
 			</div>
 			<div class="col-md-5">
 				<p>Esta experiencia se extiende a otras de las carreras de la Escuela, como Diseño y Programación Web y Mobile, cuyos alumnos programarán la plataforma de documental interactivo, para alojar el contenido que se vaya generando, y Diseño Gráfico quienes realizarán todo el aspecto gráfico de los audiovisuales, y los afiches de cada trabajo. Generando así un verdadero Proyecto Transmedia.</p>
@@ -77,13 +79,13 @@ SQL;
 	</div>
 </section>
 
-<section class="section--home--quote">
+<div class="section--home--quote">
 	<div class="container">
 		<blockquote>
 			"Con el objetivo de construir una comunidad en la cual alumnos y profesores convivan en diversos espacios creativos, académicos, profesionales, y compartiendo las etapas que cada uno transita..."
 		</blockquote>		
 	</div>
-</section>
+</div>
 
 <section class="section--home--videos bottom">
 	<div class="container">
@@ -113,14 +115,14 @@ SQL;
 			<article class="col-md-3 home__videos">
 				<div class="home__videos__img">
 					<a href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>">
-						<img src="uploads/<?php echo $array_videos['IMG_DESTACADA'] ?>">
+						<img src="uploads/<?php echo $array_videos['IMG_DESTACADA'] ?>" alt="<?php echo $array_videos['TITULO'] ?>">
 					</a>
 				</div>
-				<h3 class="home__videos__title">
+				<h4 class="home__videos__title">
 					<a href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>">
 						<?php echo $array_videos['TITULO'] ?>					
 					</a>
-				</h3>
+				</h4>
 			</article>
 			<?php } ?>
 		</div>

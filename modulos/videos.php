@@ -105,7 +105,7 @@ SQL;
 		<article class="seccion--videos__video">
 			<div class="seccion--videos__img">
 				<a href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>">
-					<img src="uploads/<?php echo $array_videos['IMG_DESTACADA'] ?>">
+					<img src="uploads/<?php echo $array_videos['IMG_DESTACADA'] ?>" alt="<?php echo $array_videos['TITULO'] ?>">
 				</a>
 			</div>
 			<div class="seccion--videos__txt">

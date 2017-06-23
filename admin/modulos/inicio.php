@@ -56,41 +56,43 @@ $f4 = mysqli_query($conexion, $c4);
 
 	<h2>ACTIVIDAD RECIENTE</h2>
 
-	<div class="">
-  		<div class="row">
-		
+  	<div class="row">		
 		<div id="contadorvideitos" class="col-md-12">
-			<p><span><?php echo $a_categorias['TOTAL']; ?></span> VIDEOS</P>
+			<p>
+				<span>
+					<?php echo $a_categorias['TOTAL']; ?>		
+				</span> 
+				VIDEOS
+			</p>
 		</div>
 
+		<div class="col-md-12" id="estadistica">
+			<h3>Últimos comentarios</h3>
+			<ul>
+				<?php
+					while($a_comentarios = mysqli_fetch_assoc($f2)):
+				?>
+					<li><?php echo $a_comentarios['USUARIO'] ?>: <?php echo $a_comentarios['COMENTARIO'] ?> (<?php echo $a_comentarios['TITULO'] ?>)</li>
+				<?php endwhile; ?>
+			</ul>
 
-	<div class="col-md-12" id="estadistica">
-		<h3>Últimos comentarios</h3>
-		<ul>
-			<?php
-				while($a_comentarios = mysqli_fetch_assoc($f2)):
-			?>
-				<li><?php echo $a_comentarios['USUARIO'] ?>: <?php echo $a_comentarios['COMENTARIO'] ?> (<?php echo $a_comentarios['TITULO'] ?>)</li>
-			<?php endwhile; ?>
-		</ul>
+			<h3>Últimos videos</h3>
+			<ul>
+				<?php
+					while($a_videos = mysqli_fetch_assoc($f3)):
+				?>
+					<li><?php echo $a_videos['TITULO'] ?></li>
+				<?php endwhile; ?>
+			</ul>
 
-		<h3>Últimos videos</h3>
-		<ul>
-			<?php
-				while($a_videos = mysqli_fetch_assoc($f3)):
-			?>
-				<li><?php echo $a_videos['TITULO'] ?></li>
-			<?php endwhile; ?>
-		</ul>
-
-		<h3>Nuevos usuarios</h3>
-		<ul>
-			<?php
-				while($a_usuarios = mysqli_fetch_assoc($f4)):
-			?>
-				<li><?php echo $a_usuarios['NOMBRE_USUARIO'] ?></li>
-			<?php endwhile; ?>
-		</ul>
+			<h3>Nuevos usuarios</h3>
+			<ul>
+				<?php
+					while($a_usuarios = mysqli_fetch_assoc($f4)):
+				?>
+					<li><?php echo $a_usuarios['NOMBRE_USUARIO'] ?></li>
+				<?php endwhile; ?>
+			</ul>
+		</div>
 	</div>
-
 </div>
