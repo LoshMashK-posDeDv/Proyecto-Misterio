@@ -43,7 +43,7 @@
 							</li>
 						<?php } ?>
 							<li class="menu__list__option">
-								<a href="index.php" class="tdv_no">
+								<a href="index.php?s=mi_cuenta" class="tdv_no">
 									<i class="glyphicon glyphicon-user"></i>
 									Mi cuenta
 								</a>

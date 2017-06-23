@@ -14,9 +14,8 @@ if($_SERVER['HTTP_HOST'] == 'localhost'){
 	$config = parse_ini_file('online.ini');
 }
 
-/*error_reporting($config['errores']['reporting']);
-ini_set('display_errors' , $config['errores']['display']) ;
-*/
+error_reporting($config['reporting']);
+ini_set('display_errors' , $config['display']) ;
 
 //conexion al sql
 $conexion = @mysqli_connect(
@@ -48,8 +47,8 @@ if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
 		case 'login':
 			$seccion .= 'login.php';
 			break;
-		case 'logout':
-			header("Location: acciones/logout.php" );
+		case 'cerrar_sesion':
+			$seccion = 'acciones/logout.php';
 			break;
 		case 'registro':
 			$seccion .= 'registro.php';
