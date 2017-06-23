@@ -642,6 +642,39 @@ footer p {
     margin: 0;
 }
 
+.seccion--videos {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+}
+
+.seccion--videos__video {
+	width: calc(25% - 20px);
+	margin: 20px 10px;
+}
+
+.seccion--home--otros-videos__video__img,
+.seccion--videos__img {
+	display: block;
+	height: 150px;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+.seccion--home--otros-videos__video__img img,
+.seccion--videos__img img {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.seccion--home--otros-videos__ver-todos {
+	text-align: center;
+	margin-top: 20px;
+	font-size: 1.5em;
+}
+
 /* TABLET */
 
 /* DESKTOP */

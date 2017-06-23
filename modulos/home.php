@@ -41,7 +41,7 @@ SQL;
 				<a href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>"><img src="uploads/<?php echo $array_videos['IMG_DESTACADA'] ?>"></a>
 			</div>
 			<a href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>"><h3 class="home__videos__title"><?php echo $array_videos['TITULO'] ?></h3></a>
-			<p class="home__videos__desc"><?php echo $array_videos['DESCRIPCION'] ?></p>
+			<p class="home__videos__desc"><?php echo trim_desc($array_videos['DESCRIPCION']) ?></p>
 		</article>
 		<?php
 			}//cierre while
@@ -83,34 +83,31 @@ SQL;
 		<h3>Más cosas</h3>
 	</div>
 	<ul class="row">
-		<li class="col-md-3">
-			<video controls>
-				<source src="" type="">
-				Tu navegador no soporta la reproducción de videos.
-			</video>
-		</li>
+		<?php
+			$consulta_videos = <<<SQL
+			SELECT
+				IDARTICULO,
+				UCASE(TITULO) AS TITULO,
+				DESCRIPCION,
+				VIDEO,
+				IMG_DESTACADA
+			FROM
+				articulos
+			ORDER BY
+				IDARTICULO
+				DESC
+			LIMIT 4
+SQL;
 
+		$r2 = mysqli_query($conexion, $consulta_videos);
+		while($array_videos = mysqli_fetch_assoc($r2)){
+		?>
 		<li class="col-md-3">
-			<video controls>
-				<source src="" type="">
-				Tu navegador no soporta la reproducción de videos.
-			</video>
+			<a class="seccion--home--otros-videos__video__img" href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>"><img src="uploads/<?php echo $array_videos['IMG_DESTACADA'] ?>"></a>
+			<a href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>"><h4 class="section--home--otros-videos__video__title"><?php echo $array_videos['TITULO'] ?></h4></a>
 		</li>
-
-		<li class="col-md-3">
-			<video controls>
-				<source src="" type="">
-				Tu navegador no soporta la reproducción de videos.
-			</video>
-		</li>
-
-		<li class="col-md-3">
-			<video controls>
-				<source src="" type="">
-				Tu navegador no soporta la reproducción de videos.
-			</video>
-		</li>
+		<?php } ?>
 	</ul>
 
-	<p class="pull-right"><a class="linki" href="#">Ver todos</a></p>
+	<p class="seccion--home--otros-videos__ver-todos"><a class="linki" href="?s=videos">Ver todos</a></p>
 </section>
