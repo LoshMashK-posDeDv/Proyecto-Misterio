@@ -104,10 +104,18 @@ SQL;
 		?>
 		<article class="seccion--videos__video">
 			<div class="seccion--videos__img">
-				<a href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>"><img src="uploads/<?php echo $array_videos['IMG_DESTACADA'] ?>"></a>
+				<a href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>">
+					<img src="uploads/<?php echo $array_videos['IMG_DESTACADA'] ?>">
+				</a>
 			</div>
-			<a href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>"><h3 class="seccion--videos__title"><?php echo $array_videos['TITULO'] ?></h3></a>
-			<p class="seccion--videos__desc"><?php echo trim_desc($array_videos['DESCRIPCION']); ?></p>
+			<div class="seccion--videos__txt">
+				<h3 class="seccion--videos__title">
+					<a href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>">
+						<?php echo $array_videos['TITULO'] ?>					
+					</a>
+				</h3>
+				<p class="seccion--videos__desc"><?php echo trim_desc($array_videos['DESCRIPCION']); ?></p>
+			</div>
 		</article>
 		<?php
 			} //cierre while
