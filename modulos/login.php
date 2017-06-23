@@ -16,7 +16,7 @@
 	<div>
 		<a href="index.php?s=registro" class="link-a block-text">¿No tienes una cuenta? Registrate.</a>
 	</div>
-	<div>
+	<!--<div>
 		<a href="#" class="link-d block-text">¿No recuerdas tu contraseña?</a>
-	</div>	
+	</div>-->
 </form>
