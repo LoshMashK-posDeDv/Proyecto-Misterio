@@ -22,8 +22,19 @@
 	WHERE IDARTICULO = $vid_id
 SQL;
 
-	$r1 = mysqli_query($conexion, $consulta_video);
+	$consulta_comentarios = <<<SQL
+		SELECT
+			COMENTARIO,
+			FECHA_COMENTARIO,
+			u.NOMBRE_COMPLETO AS NOMBRE
+		FROM
+			comentarios as c
+		JOIN usuarios as u ON c.FKUSUARIO = u.IDUSUARIOS
+		WHERE c.FKARTICULO = $vid_id
+SQL;
 
+	$r1 = mysqli_query($conexion, $consulta_video);
+	$r2 = mysqli_query($conexion, $consulta_comentarios);
 	//$video = mysqli_fetch_array($r1);
 
 	//echo $consulta_video;
@@ -38,16 +49,15 @@ SQL;
 </div>
 
 <section class="section--home--proyecto">
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-10 col-md-offset-1">
 				<video class="videito" controls>
 					<source src="uploads/<?php echo $array_detalle['VIDEO'] ?>" type="video/<?php echo $separar_video[1] ?>">
 					Tu navegador no soporta la reproducción de videos.
 				</video>
 			</div>
-
-			<div class="col-md-7 idvideito">
+			<div class="col-md-6 col-md-offset-1 idvideito">
 				<h2><?php echo $array_detalle['TITULO'] ?></h2>
 				<ul>
 					<li><?php echo traducir_mes($array_detalle['FECHA']); ?></li>
@@ -65,12 +75,12 @@ SQL;
 					<li>DURACIÓN: <?php echo $array_detalle['DURACION'] ?> min</li>
 					<li>AÑO: <?php echo $array_detalle['AÑO'] ?></li>
 				</ul>
-			</div>
 
-			<div class="col-md-4 col-md-offset-1 infousuario">
+			</div>
+			<div class="col-md-3 col-md-offset-1 infousuario">
 				<div class="col-md-12">
 					<div class="col-md-6 col-md-offset-3">
-						<!--<img src="https://yt3.ggpht.com/-cjAi_YrRPCA/AAAAAAAAAAI/AAAAAAAAAAA/CvohcVRdIA0/s100-c-k-no-mo-rj-c0xffffff/photo.jpg" alt="foto del usuario" >-->
+					<!--<img src="https://yt3.ggpht.com/-cjAi_YrRPCA/AAAAAAAAAAI/AAAAAAAAAAA/CvohcVRdIA0/s100-c-k-no-mo-rj-c0xffffff/photo.jpg" alt="foto del usuario" >-->
 					</div>
 				</div>
 				<h3><?php echo $array_detalle['NOMBRE_COMPLETO']; ?></h3>
@@ -83,15 +93,29 @@ SQL;
 	endwhile;
 ?>
 
-<section>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-7 comentarios">
-				<h3>COMENTARIOS</h3>
-				<h4>Marty McFly</h4>
-				<span>15/05/2017</span>
-				<p>I know Doc...but I had to c… But its good to see ya, Marty. (They hug.) Marty, you're gonna have to do something about those clothes. You walk around town dressed like that and you're liable to get shot. (rubs his neck) Or hanged. What idiot dressed you in that outfit? (smiles and claps Doc on the shoulder) You did.</p>
 
+
+
+<section>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-1 comentarios">
+				<div class="col-md-12">
+				<h3>COMENTARIOS</h3>
+				<?php
+					if(mysqli_num_rows($r2) == 0){
+						echo "<p> La publicación no tiene comentarios</p>";
+					} else {
+						while($array_comentarios = mysqli_fetch_assoc($r2)):?>
+				<div class="col-md-12">
+					<h4><?php echo $array_comentarios['NOMBRE'] ?></h4>
+					<span><?php echo $array_comentarios['FECHA_COMENTARIO'] ?></span>
+					<p><?php echo $array_comentarios['COMENTARIO'] ?></p>
+				</div>
+			<?php
+						endwhile;
+					}
+			?>
 				<!--
 
 					ESTO POR AHORA NO VA
@@ -110,21 +134,20 @@ SQL;
 					</div>
 				</div>
 				-->
-
+			</div>
+			<div class="col-md-12">
 				<h3>NUEVO COMENTARIO</h3>
-				<form>
-					<span>NOMBRE</span>
+				<form action="acciones/comentar.php" method="post">
+					<!--<span>NOMBRE</span>
 					<input type="text" name="nombre">
-					<span>COMENTARIO</span>
-					<textarea cols="50" rows="10"></textarea>
-					
-					<div class="row">
-						<div class="col-sm-6"></div>
-						<div class="col-sm-6">
-							<input class="btn btn_ok btn-sm" type="submit" value="enviar">
-						</div>
-					</div>					
+					<span>COMENTARIO</span>-->
+					<textarea cols="50" rows="10" name="comentario"></textarea>
+					<input type="hidden" name="video" value="<?php echo $vid_id ?>">
+					<div class="col-md-3 col-md-offset-9">
+						<input class="btn respoboton" type="submit" value="enviar">
+					</div>
 				</form>
+			</div>
 			</div>
 		</div>
 	</div>
