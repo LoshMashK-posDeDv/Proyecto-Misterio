@@ -5,7 +5,7 @@
 		} else {
 			echo 'Algo salió mal';
 		}
-	}	
+	}
 
 	$c_categoria = "SELECT * FROM categorias";
 
@@ -46,7 +46,7 @@
 						</div>
 					</div>
 
-					<div class="clearfix">						
+					<div class="clearfix">
 						<div class="row">
 							<div class="col-md-6">
 								<h3>Video</h3>
@@ -100,7 +100,7 @@
 					<div class="col-md-6">
 						<input type="submit" class="btn btn_ok btn-block" value="Guardar"/>
 					</div>
-					<div class="col-md-6"></div>					
+					<div class="col-md-6"></div>
 				</div>
 			</form>
 		</div>

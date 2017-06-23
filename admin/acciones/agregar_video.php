@@ -7,11 +7,10 @@
 	$anio = $_POST['anio'];
 	$video = $_FILES['video'];
 	$video_nombre = $_FILES['video']['name'];
-	//$categoria = $_POST['categoria ']; HACER ANDAR
+	$categoria = isset($_POST['categoria']) ? $_POST['categoria'] : '';
 	$imagenes = $_FILES['imagenes'];
 	$imagen_destacada = $_FILES['imagen_destacada'];
 	$imagen_destacada_nombre = $_FILES['imagen_destacada']['name'];
-
 
 	/*
 	*
@@ -48,14 +47,10 @@
 			$foto_nombre = $titulo;
 			/* Reemplazo todas las cosas extrañas por un _ */
 			$foto_nombre = preg_replace("/[^a-zA-Z0-9_-]/", "_", $foto_nombre);
-			/* Y acá hago varias cosas. Le estoy poniendo el nuevo nombre al archivo que está formado por:
-				- La variable $i: Que me va a servir para que, por ejemplo, todas las fotos del ID 15 no se llamen 15_imagenes_TITULO.jpg, porque se pisarían, entonces se van a llamar  150_imagenes_TITULO.jpg, 151_imagenes_TITULO.jpg, 152_imagenes_TITULO.jpg, etc. Esto obviamente lo podemos cambiar para que quede de la manera que queramos.
-				- "_imagenes_": Esto únicamente lo puse para que quede registrado que esa imagen pertenece a una selección múltiple.
-				- Nombre de la foto (el título del video).
-				- El ".", para que sea .jpg, .png o lo que corresponda
-				- Extensión de la foto.
+			/*
+				- La variable $i: Me va a servir para que, por ejemplo, todas las fotos del ID 15 no se llamen 15_imagenes_TITULO.jpg, porque se pisarían, entonces se van a llamar  150_imagenes_TITULO.jpg, 151_imagenes_TITULO.jpg, 152_imagenes_TITULO.jpg, etc. Esto obviamente lo podemos cambiar para que quede de la manera que queramos.
 			*/
-			$foto_nombre = $i . "_imagenes_" . $foto_nombre . "." . $extensiones;
+			$foto_nombre = $i . "_imgs_" . time() . "." . $extensiones;
 			/* Hago el move_uploaded_file para guardar la foto en nuestras carpetas */
 			move_uploaded_file($foto['tmp_name'], "../../uploads/$foto_nombre");
 			/* Incremento la $i para que cambie según la foto */
@@ -74,7 +69,6 @@
 
 	//$autor = $_SESSION['NOMBRE_COMPLETO'];
 
-
 	$er_titulo = "/^[a-z0-9-\.*\s]{5,80}$/i";
 	$txt_titulo = preg_match($er_titulo, $titulo, $coincidencia_titulo);
 
@@ -84,18 +78,16 @@
 	$er_duracion = "/^[0-9]{1,2}(:|.)[0-9]{2}(:|.)[0-9]{2}$/";
 	$txt_duracion = preg_match($er_duracion, $duracion, $coincidencia_duracion);
 
-	//$er_video = "/^[\w\s]{4,45}\.(mp4|webm)$/i";
-	//$txt_video = preg_match($er_video, $video_nombre = $_FILES['video']['name'], $coincidencia_video);
+	$er_video = "/^[\w\s]{4,45}\.(mp4|webm)$/i";
+	$txt_video = preg_match($er_video, $video_nombre = $_FILES['video']['name'], $coincidencia_video);
 
-	$er_imagen_destacada = "/^[\w\s]{4,45}\.(jpg|png)$/i";
+	$er_imagen_destacada = "/^[\w\s]{1,45}\.(jpg|png)$/i";
 	$txt_imagen_destacada = preg_match($er_imagen_destacada, $imagen_destacada['name'], $coincidencia_imagen_destacada);
 
-	if($txt_titulo && $txt_descripcion && $txt_duracion && $txt_imagen_destacada){
+	if($txt_titulo && $txt_descripcion && $txt_video && $txt_duracion && $txt_imagen_destacada){
 		if($video['size'] > 0){
 			$extension = pathinfo($video_nombre, PATHINFO_EXTENSION);
-			$video_nombre = $titulo;
-			$video_nombre = preg_replace("/[^a-zA-Z0-9_-]/", "_", $video_nombre);
-			$video_nombre .= "_video." . $extension;
+			$video_nombre = "video_" . time() . '.' . $extension;
 			move_uploaded_file($video['tmp_name'], "../../uploads/$video_nombre");
 		}
 
@@ -117,19 +109,29 @@
 			A_ESTADO = '1',
 			FECHA_ALTA = NOW()";
 
-		if($imagenes['size'] > 0){
+		if($extensiones != ''){
 			$c .= ", IMAGENES  = '$insertar'";
 		}
+/*
+		for($i = 0; $i < count($categoria); $i++){
+			$c2 = "INSERT INTO
+				articulos_categorias
+			SET
+				FKARTICULO = 'ACA NI IDEA',
+				FKCATEGORIA = '$categoria[$i]' ";
 
+			//echo $c2;
+			//mysqli_query($conexion, $c2);
+		}
+
+*/
 		$rta = 'ok';
 
 		//mysqli_query($conexion, $c);
 	} else {
+		$c = 'falló';
 		$rta = 'error';
 	}
 
-	echo $c;
 	//header("Location: ../index.php?s=agregar_video&e=$rta");
-	
-	//VER FKPERMISOS EN 1
 ?>
