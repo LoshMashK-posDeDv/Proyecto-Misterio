@@ -13,7 +13,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Prisión &amp; Libertad</title>
+	<title>El calabozo del androide</title>
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/styles.css">
 	<link rel="icon" href="../images/favicon.ico" type="image/x-icon"/>
@@ -23,11 +23,10 @@
 	<header class="header clearfix">
 		<h1 class="header__title">
 			<a href="../index.php" title="Ver sitio">
-				Prisión &amp; Libertad
+				El calabozo del androide
 			</a>
 		</h1>
 		<p class="header__user">Bienvenido, <?php echo $_SESSION['NOMBRE_USUARIO']; ?></p>
-		<div class="header__logos"><img src="../images/header-logos.png" alt="Sponsors:" /></div>
 	</header>
 	<div class="container-fluid">
 		<div class="row">
@@ -66,7 +65,7 @@
 						<?php } ?>
 						<?php if(chequear_permisos('MODERAR_COMENTARIOS')) { ?>
 							<li class="menu__list__option">
-								<a href="index.php?s=comentarios_listado" class="tdv_no">
+								<a href="index.php?s=comentarios_listado">
 									<i class="glyphicon glyphicon-comment"></i>
 									Comentarios
 								</a>

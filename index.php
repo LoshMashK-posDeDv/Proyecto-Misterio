@@ -9,7 +9,7 @@ include('setup/config.php');
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Prisión &amp; Libertad</title>
+        <title>El calabozo del androide</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/stylesheet.css">
         <link rel="stylesheet" href="css/styles.css">
@@ -28,7 +28,7 @@ include('setup/config.php');
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand botones" href="index.php">
-                            <img src="images/brand.png" alt="Prision y libertad">
+                            <img src="images/brand.png" alt="El calabozo del androide">
                         </a>
                     </div>
 
@@ -48,12 +48,12 @@ include('setup/config.php');
                                     </button>
 
                                     <ul class="dropdown-menu" aria-labelledby="dropdown-menu">
-                                        <!--<li>
+                                        <li>
                                             <a class="botones" href="index.php?s=mi_cuenta">
                                                 <i class="glyphicon glyphicon-user"></i>
                                                 Mi cuenta
                                             </a>
-                                        </li>-->
+                                        </li>
                                         <li>
                                             <a class="botones" href="index.php?s=cerrar_sesion">
                                                 <i class="glyphicon glyphicon-log-out"></i>

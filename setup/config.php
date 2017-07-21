@@ -84,6 +84,9 @@ if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
 		case 'usuarios_listado':
 			$seccion .= 'usuarios_listado.php';
 			break;
+		case 'comentarios_listado':
+			$seccion .= 'comentarios_listado.php';
+			break;
 		case 'cerrar_sesion':
 			$seccion = 'acciones/logout.php';
 			break;

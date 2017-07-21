@@ -421,9 +421,16 @@ span.disc {
 .admin_list__row__author,
 .admin_list__row__date,
 .admin_list__row__tipo,
-.admin_list__row__estado {
+.admin_list__row__estado,
+.admin_list__head__comentario {
 	padding-left: 15px;
 	padding-right: 15px;
+}
+
+.admin_list__head__comentario {
+	width: 60%;
+	white-space: initial;
+	padding: 0 50px;
 }
 
 .admin_list__row__image {
