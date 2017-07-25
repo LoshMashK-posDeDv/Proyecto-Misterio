@@ -75,13 +75,13 @@ include('setup/config.php');
 
                                     <ul class="dropdown-menu" aria-labelledby="dropdown-menu_2">
                                         <li>
-                                            <a class="botones" href="index.php?s=login">
-                                                <img src="images/iconos/superman-blanco.png" alt="ícono superman">
+                                            <a class="botones botonitos" href="index.php?s=login">
+                                                <img src="images/iconos/superman-blanco.png" alt="ícono superman" class="iconitos">
                                                 Login
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="botones" href="index.php?s=registro">
+                                            <a class="botones botonitos" href="index.php?s=registro">
                                                 <i class="glyphicon glyphicon-align-center"></i>
                                                 Registro
                                             </a>
@@ -105,7 +105,7 @@ include('setup/config.php');
 
         <footer>
             <div class="container">
-                <p>Prision &amp; Libertad - Todos los derechos reservados</p>
+                <p>El Calabozo del Androide - Todos los derechos reservados</p>
             </div>
         </footer>
 

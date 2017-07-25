@@ -11,10 +11,10 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
-				<h2>El proyecto</h2>
-				<p>Con el objetivo de <strong>construir una comunidad en la cual alumnos y profesores convivan en diversos espacios creativos, académicos, profesionales</strong>, y compartiendo las etapas que cada uno transita, Escuela Da Vinci es parte de un proyecto de extensión entre diversos espacios académicos internacionales.</p>
-				<p>Bajo la consigna: "PRISION Y LIBERTAD¨, los estudiantes de 4to cuatrimestre de la Carrera de Cine de Animación, serán parte de un proceso de trabajo de manera conjunta y comunitaria, entre la UNSAM y la Universidad de Richmond, Virginia en Estados Unidos.</p>
-				<p><strong>El objetivo es desarrollar experiencias audiovisuales</strong>, pudiendo alojar todo el material del proceso en una plataforma de trabajo interactivo donde los alumnos de las diferentes casas de estudio podrán intervenirlo.</p>
+				<h2>BIENVENIDOS, SIMPLES MORTALES</h2>
+				<p>Ahoy! Pasen! Pasen! En esta web van a <strong>poder subir videos, imágenes, reviews y lo que quieran de cualquier cosa relacionada a juegos y afines</strong>. Puede que algunos de ustedes vengan a presumir sus colecciones, pero <strong>sepan que van a ser juzgados y criticados sin piedad por el resto de los usuarios</strong>.</p>
+				<p>Por favor tengan en cuenta que no queremos simplonadas, por lo cual <strong>cualquier usuario que postee muñecos truchos o su colección de Mi Pequeño Pony, será banneado de por vida</strong>.</p>
+				<p>Que eso no te desaliente, después de todo, ¿qué sería de la vida del coleccionista sin los giles que piensan que sus Magic de Surrak vale un millón de dólares?</p>
 			</div>
 		</div>
 	</div>
@@ -71,13 +71,15 @@ SQL;
 	<div class="container">
 		<div class="row">
 			<div class="section--home--info__title col-md-11 col-md-offset-1">
-				<h3>La Experiencia</h3>
+				<h3>ARTE DE BATALLA</h3>
 			</div>
 			<div class="col-md-5 col-md-offset-1">
-					<iframe width="400" height="200" src="https://www.youtube.com/embed/0J_5nFjUSEE" allowfullscreen></iframe>
+					<iframe width="400" height="200" src="https://www.youtube.com/embed/8yxOUiAQHEk?list=PLDFywqJ_KSCKWUVsKhoC0dU4f2VzyA59Z" allowfullscreen></iframe>
 			</div>
 			<div class="col-md-5">
-				<p>Esta experiencia se extiende a otras de las carreras de la Escuela, como Diseño y Programación Web y Mobile, cuyos alumnos programarán la plataforma de documental interactivo, para alojar el contenido que se vaya generando, y Diseño Gráfico quienes realizarán todo el aspecto gráfico de los audiovisuales, y los afiches de cada trabajo. Generando así un verdadero Proyecto Transmedia.</p>
+				<p>Este mes arrancan los torneos del juego de mesa argentino de estrategia Arte de Batalla.</p>
+				<p>Por eso te desafiamos a que te aprendas las reglas y te sumes a la academia para que te pateen el trasero jugadores más experimentados.</p>
+				<p>Podés venir a las academias que damos en El Calabozo, o te podés sumar a alguno de los muchos eventos que se están armando.</p>
 			</div>
 		</div>		
 	</div>
@@ -86,7 +88,7 @@ SQL;
 <div class="section--home--quote">
 	<div class="container">
 		<blockquote>
-			"Con el objetivo de construir una comunidad en la cual alumnos y profesores convivan en diversos espacios creativos, académicos, profesionales, y compartiendo las etapas que cada uno transita..."
+			"A DARLE ÁTOMOS!"
 		</blockquote>		
 	</div>
 </div>

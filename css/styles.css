@@ -125,7 +125,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 h2{
 	font-size: 3em;
 	text-align: center;
-	color: #9E3838;
+	color: #602A77;
 }
 
 img,
@@ -530,6 +530,11 @@ span.disc {
 	color: #fff;
 }
 
+.botonitos img{
+	width: 25px;
+	height: 25px;
+}
+
 /* HOME */
 
 	section[class*="section--home--"] {
@@ -575,7 +580,7 @@ span.disc {
 
 	.section--home--quote {
 		text-align: center;
-		background: #a92020;
+		background: #7A2739;
 		padding: 50px 0;
 	}
 
@@ -589,7 +594,7 @@ span.disc {
 	}
 
 	.section--home--info {
-		background: #333;
+		background: #47B39C;
 	}
 
 	.section--home--info__title h3 {
@@ -601,7 +606,7 @@ span.disc {
 	}
 
 	.section--home--info p {
-	    color: #8c8c8c;
+	    color: white;
 	    text-transform: uppercase;
 	    font-family: 'gobold',sans-serif;
 	    font-size: 20px;
@@ -811,12 +816,12 @@ blockquote{
 }
 
 footer {
-    background: #333;    
+    background: #602A77;    
     padding: 10px 0;
 }
 
 footer p {
-	color: #808080;
+	color: white;
     font-size: 12px;
     margin: 0;
 }
