@@ -69,14 +69,14 @@ include('setup/config.php');
                                 <li class="dropdown">
 
                                     <button class="btn dropdown-toggle" type="button" id="dropdown-menu_2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                        <i class="glyphicon glyphicon-user"></i>
+                                        <img src="images/iconos/superman-blanco.png" alt="ícono superman" class="iconitos">
                                         <span class="caret"></span>
                                     </button>
 
                                     <ul class="dropdown-menu" aria-labelledby="dropdown-menu_2">
                                         <li>
                                             <a class="botones" href="index.php?s=login">
-                                                <i class="glyphicon glyphicon-user"></i>
+                                                <img src="images/iconos/superman-blanco.png" alt="ícono superman">
                                                 Login
                                             </a>
                                         </li>

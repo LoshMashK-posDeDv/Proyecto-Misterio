@@ -1,6 +1,10 @@
 
 <section id="contenedorHome">
-	<h1 class="hidden">Prisión &amp; Libertad</h1>
+	<h1 class="hidden">El Calabozo del Androide</h1>
+	<div class="sr-only">
+		<h1>Tus videos apestan (y vos también)</h1>
+		<p>Una web para que subas tus cosas de juegos, comics y demases...  Y todos los critiquemos porque apestan.|</p>
+	</div>
 
 </section>
 <section class="section--home--proyecto">

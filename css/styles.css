@@ -30,6 +30,11 @@ body{
 	background-color: #EFEFEF;
 }
 
+.iconitos{
+	height: 40px;
+}
+
+
 .btn {
 	line-height: 40px;
 	border: 0;
@@ -135,7 +140,7 @@ header {
 header .btn {
 	background: transparent;
 	color: #fff;
-	padding: 15px 0;
+	padding: 10px 0;
 	font-size: 14px;
 }
 
@@ -496,24 +501,28 @@ span.disc {
 
 /* navbar */
 
+.navbar{
+	height: 60px;
+}
+
 .navbar-default{
-	background-color: #333333;
+	background-color: #602A77;
 	border: none;
 	border-radius: 0;
 }
 
 .navbar-brand {
-    height: 70px;
+    height: 45px;
     padding: 0 15px;
 }
 
 .navbar-brand img{
-	height: 50px;
-	margin-top: 10px;
+	height: 45px;
+	margin-top: 7px;
 }
 
 .navbar-nav.navbar-nav > li > a {
-    padding: 25px;
+    padding: 20px;
     color: #fff;
 }
 
