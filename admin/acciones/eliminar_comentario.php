@@ -1,8 +1,8 @@
 <?php
     include("../../setup/config.php");
 
-    if(isset($_GET['i'])){
-        $id = $_GET['i'];
+    if(isset($_GET['id'])){
+        $id = $_GET['id'];
     } else {
         $id = '-1';
     }
@@ -10,17 +10,17 @@
     $c = <<<SQL
 
     UPDATE
-        articulos
+        comentarios
     SET
-        A_ESTADO = 0
+        C_ESTADO = 0
     WHERE
-        IDARTICULO = '$id'
+        IDCOMENTARIO = '$id'
     LIMIT 1
 SQL;
 
 $rta = 'ok';
 
 mysqli_query($conexion, $c);
-header("Location: ../index.php?s=videos_listado&m=$rta");
+header("Location: ../index.php?s=comentarios_listado&m=$rta");
 
 ?>
