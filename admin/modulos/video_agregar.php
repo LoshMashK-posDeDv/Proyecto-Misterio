@@ -56,6 +56,7 @@
 								<h3>Video</h3>
 								<img src="http://placehold.it/200x200" alt="Preview del video" />
 								<input type="file" name="video" id="video" class="form-control create_form__video" />
+								<p>Formatos: mp4 o webm</p>
 							</div>
 							<div class="col-md-6">
 								<h3>Categoría</h3>
@@ -85,6 +86,7 @@
 						</div>
 						<div class="pull-right">
 							<input type="file" multiple="true" name="imagenes[]" id="imagenes" class="form-control create_form__imagenes" />
+							<p>Formatos: jpg, jpeg o png.</p>
 						</div>
 					</div>
 
@@ -96,6 +98,7 @@
 							</div>
 							<div class="col-md-6">
 								<input type="file" name="imagen_destacada" id="imagen_destacada" class="form-control create_form__imagen_destacada" />
+								<p>Formatos: jpg, jpeg o png.</p>
 							</div>
 						</div>
 					</div>
