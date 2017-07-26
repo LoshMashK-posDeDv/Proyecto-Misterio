@@ -215,7 +215,7 @@ header .dropdown-menu > li a {
 }
 
 #contadorvideitos span{
-	color: #3C439B;
+	color: #361935;
 	font-family: 'gobold';
 }
 
@@ -238,6 +238,11 @@ header .dropdown-menu > li a {
 
 
 /*ADMIN - VIDEOS_LISTADO*/
+
+.seccion--videos__title a{
+	color: #1D896F;
+}
+
 .paginator{
 	text-align: right;
 }
@@ -251,7 +256,7 @@ header .dropdown-menu > li a {
 	color: #fff!important;
     font-size: 1em;
     padding: 0 5px;
-    background-color: #3C439B;
+    background-color: #361935;
     width: 25px;
     height: 29px;
     line-height: 32px;
@@ -262,7 +267,7 @@ header .dropdown-menu > li a {
 
 .paginator li:hover,
 .paginator li .pag_activa{
-	background-color: #9E3838;
+	background-color: #7A2739;
 	text-decoration: none;
 }
 
@@ -350,7 +355,7 @@ span.disc {
 	margin-left: 10px;
 	padding-left: 10px;
 	border-left: 1px solid #000;
-	color: #3C439B;
+	color: #361935;
 }
 
 .section--home--proyecto {
@@ -384,7 +389,7 @@ span.disc {
 *[class*="__title"] h2,
 .section__title h2 {
 	margin: 0;
-	color: #9E3838;
+	color: #7A2739;
 }
 
 *[class*="__title"] h3 {
@@ -555,14 +560,14 @@ span.disc {
 	}
 
 	.home__videos__title {
-		color: #3C439B;
+		color: #361935;
 		text-align: center;
 		font-size: 1.3em;
 		margin-top: 15px;
 	}
 
 	.home__videos__title a {
-		color: #3C439B;
+		color: #361935;
 	}
 
 	.home__videos__desc {
@@ -652,43 +657,24 @@ blockquote{
 
 .linki{
 	font-family: 'gobold';
-	color: #9E3838;
+	color: #7A2739;
 	text-transform: uppercase;
 }
 
 .linki:hover{
-	color: #3C439B;
+	color: #361935;
 }
 
 
 /*DETALLE VIDEO*/
 
-@media screen and (max-width: 499px){
-	#contenedorVideo{
-		background-image: url("../images/cover_mini_cel.jpg");
-		background-size: contain;
-		padding: 20vw;
-		margin-top: -20px;
-	}
-}
 
-@media screen and (min-width: 600px) and (max-width: 899px){
-	#contenedorVideo{
-		background-image: url("../images/cover_mini_tablet.jpg");
-		background-size: cover;
-		padding: 10vw;
-		margin-top: -60px;
-	}
-}
-
-@media screen and (min-width: 900px){
 	#contenedorVideo{
 		background-image: url("../images/cover_mini.jpg");
 		background-size: cover;
 		padding: 10vw;
 		margin-top: -50px;
 	}
-}
 
 .section--home--comentarios {
 	background: #fdfdfd;
@@ -729,7 +715,7 @@ blockquote{
 }
 
 .infousuario{
-	background-color: #333;
+	background-color: #361935;
 	padding: 15px;
 }
 
@@ -748,7 +734,7 @@ blockquote{
 }
 
 .comentarios h3{
-	color: #3C439B;
+	color: #361935;
 	font-size: 1.8em;
 	margin-bottom: 15px;
 	margin-top: 40px;
@@ -767,7 +753,7 @@ blockquote{
 	display: inline-block;
 	vertical-align: text-bottom;
 	margin: 0;
-	color: #9e3838;
+	color: #7A2739;
 }
 
 .comentarios .comment p {
@@ -788,7 +774,7 @@ blockquote{
 
 .respoboton{
 	color: #EFEFEF;
-	background-color: #3C439B;
+	background-color: #361935;
 	text-align: right;
 	padding: 0px 15px;
 	margin-top: 10px;
