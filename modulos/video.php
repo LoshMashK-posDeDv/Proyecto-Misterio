@@ -24,13 +24,16 @@ SQL;
 
 	$consulta_comentarios = <<<SQL
 		SELECT
+			IDCOMENTARIO,
 			COMENTARIO,
 			FECHA_COMENTARIO,
-			u.NOMBRE_COMPLETO AS NOMBRE
+			u.NOMBRE_COMPLETO AS NOMBRE,
+			u.NOMBRE_USUARIO AS USER,
+			C_ESTADO
 		FROM
 			comentarios as c
 		JOIN usuarios as u ON c.FKUSUARIO = u.IDUSUARIOS
-		WHERE c.FKARTICULO = $vid_id
+		WHERE c.FKARTICULO = $vid_id AND C_ESTADO = 1
 SQL;
 
 	$r1 = mysqli_query($conexion, $consulta_video);
@@ -116,8 +119,15 @@ SQL;
 							<h4><?php echo $array_comentarios['NOMBRE'] ?></h4>
 							<span><?php echo $array_comentarios['FECHA_COMENTARIO'] ?></span>
 							<p><?php echo $array_comentarios['COMENTARIO'] ?></p>
+							<?php
+								if($_SESSION['NOMBRE_USUARIO'] == $array_comentarios['USER']):
+							?>
+								<a href="acciones/eliminar_comentario_usuario.php?vid=<?php echo $vid_id ?>&id=<?php echo $array_comentarios['IDCOMENTARIO'] ?>">Eliminar</a>
+							<?php
+								endif;
+							?>
 						</div>
-					<?php endwhile; } ?>
+					<?php endwhile; }	?>
 				<!--
 
 					ESTO POR AHORA NO VA
@@ -139,9 +149,6 @@ SQL;
 				<?php if(isset($_SESSION['IDUSUARIOS'])): ?>
 				<h3>NUEVO COMENTARIO</h3>
 				<form action="acciones/comentar.php" method="post">
-					<!--<span>NOMBRE</span>
-					<input type="text" name="nombre">
-					<span>COMENTARIO</span>-->
 					<textarea cols="50" rows="10" name="comentario"></textarea>
 					<input type="hidden" name="video" value="<?php echo $vid_id ?>">
 					<div class="row">
