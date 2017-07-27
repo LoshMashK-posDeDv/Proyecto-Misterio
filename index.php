@@ -30,6 +30,11 @@ include('setup/config.php');
                         <a class="navbar-brand botones" href="index.php">
                             <img src="images/brand.png" alt="El calabozo del androide">
                         </a>
+                        <form class="navbar-form navbar-left" id="buscadorsin" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Buscar...">
+                            </div>
+                        </form>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->

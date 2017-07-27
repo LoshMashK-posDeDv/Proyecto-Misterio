@@ -540,6 +540,15 @@ span.disc {
 	height: 25px;
 }
 
+#buscadorsin{
+	margin-top: 13px;
+	width: 300px;
+}
+
+#buscadorsin div, #buscadorsin div input{
+	width: 300px;
+}
+
 /* HOME */
 
 	section[class*="section--home--"] {
