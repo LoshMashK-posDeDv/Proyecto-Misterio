@@ -56,12 +56,14 @@ $f4 = mysqli_query($conexion, $c4);
 
 	<h2>ACTIVIDAD RECIENTE</h2>
 
-  	<div class="row">		
+	<a href="acciones/exportar_pdf.php">Exportar en PDF</a>
+
+  	<div class="row">
 		<div id="contadorvideitos" class="col-md-12">
 			<p>
 				<span>
-					<?php echo $a_categorias['TOTAL']; ?>		
-				</span> 
+					<?php echo $a_categorias['TOTAL']; ?>
+				</span>
 				VIDEOS
 			</p>
 		</div>

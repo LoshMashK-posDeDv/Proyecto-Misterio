@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/styles.css">
 	<link rel="icon" href="../images/favicon.ico" type="image/x-icon"/>
+	<script src="../js/jquery.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
 </head>
 <body class="admin">
@@ -32,7 +33,7 @@
 		<div class="row">
 			<aside class="col-md-2 menu">
 				<nav>
-					<ul class="menu__list">						
+					<ul class="menu__list">
 						<?php if(chequear_permisos('MODERAR_VIDEOS')) { ?>
 							<li class="menu__list__option">
 								<a href="index.php">

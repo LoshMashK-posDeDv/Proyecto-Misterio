@@ -20,7 +20,7 @@
 
 	<div class="row video_agregar_form">
 		<div class="col-md-5">
-			<form class="create_form" action="acciones/agregar_video.php" enctype="multipart/form-data" method="post">
+			<form class="create_form" id="form_agregar_video" action="acciones/agregar_video.php" enctype="multipart/form-data" method="post">
 				<div class="form-group">
 					<div class="section__title">
 						<a class="section__title__back" href="index.php?s=videos_listado">
