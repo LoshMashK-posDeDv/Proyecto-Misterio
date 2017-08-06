@@ -11,7 +11,8 @@
 	$imagenes = $_FILES['imagenes'];
 	$imagen_destacada = $_FILES['imagen_destacada'];
 	$imagen_destacada_nombre = $_FILES['imagen_destacada']['name'];
-
+	
+	echo $anio;
 	/*
 	*
 	* ----- COMIENZA LA DOCUMENTACIÓN SOBRE LOS INPUT FILE MULTIPLES -----
@@ -126,12 +127,12 @@
 			}
 		}
 
-		header("Location: ../index.php?s=videos_listado&m=$rta");
+	//	header("Location: ../index.php?s=videos_listado&m=$rta");
 
 	} else {
 		$c = 'falló';
 		$rta = 'error';
 
-		header("Location: ../index.php?s=agregar_video&m=$rta");
+	//	header("Location: ../index.php?s=agregar_video&m=$rta");
 	}
 ?>
