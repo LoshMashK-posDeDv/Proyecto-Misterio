@@ -15,7 +15,6 @@ VALUES
 	('florsepulveda', 'florencia sepulveda', 'florenciasepulveda.26@gmail.com', MD5('holis1234'), NOW( ), '1', 1),
 	('fespino', 'florencia ederli', 'florenciaespino@gmail.com', MD5('zeldaeslomas'), NOW( ), '1', 1),
 	('lmitono', 'laura mitono', 'mlauramitono@gmail.com', MD5('nellylalechuza'), NOW( ), '1', 1),
-	('miguel', 'miguel masenio', 'miguel.masenio@davinci.edu.ar', MD5('1234'), NOW( ), '1', 1),
 	('usuario1', 'usuario uno', 'usuario1@davinci.edu.ar', MD5('1234'), NOW( ), '1', 2),
 	('usuario2', 'usuario dos', 'usuario2@davinci.edu.ar', MD5('1234'), NOW( ), '1', 2),
 	('usuario3', 'usuario tres', 'usuario3@davinci.edu.ar', MD5('1234'), NOW( ), '1', 2);
@@ -53,24 +52,27 @@ VALUES
 INSERT INTO
 	categorias (CATEGORIA)
 VALUES
+	('Gameplay'),
+	('Como jugar'),
+	('Unboxing'),
+	('Opinion/Review'),
+	('Fan Made'),
+	('Homenaje'),
 	('Animacion'),
-	('Documental'),
-	('Ciencia'),
-	('Comedia'),
-	('Deportes'),
-	('Policial'),
-	('Ficcion');
+	('Live action'),
+	('Random / Misc'),
+	('Bragging');
 
 INSERT INTO
 	articulos_categorias
 VALUES
 	( 1, 1 ),
-	( 1, 6 ),
+	( 1, 3 ),
 	( 2, 5 ),
 	( 3, 2 ),
 	( 4, 4 ),
 	( 4, 2 ),
-	( 5, 1 ),
+	( 5, 10 ),
 	( 7, 6 ),
 	( 10, 7 ),
 	( 12, 4 );
