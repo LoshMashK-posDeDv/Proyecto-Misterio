@@ -54,19 +54,30 @@ SQL;
 		<div class="row">
 
 			<div class="col-sm-12">
-				<video class="videito" controls>
+				<?php if($array_detalle['VIDEO'] != null){
+					?>
+					<video class="videito" controls>
 					<source src="uploads/<?php echo $array_detalle['VIDEO'] ?>" type="video/<?php echo $separar_video[1] ?>">
 					Tu navegador no soporta la reproducción de videos.
 				</video>
+				<?php
+				}else{
+				?>	
+					<img src="uploads/<?php echo $array_detalle['IMG_DESTACADA']; ?>" alt="imagen destacada articulo"/>
+				<?php
+				}
+				?>
 			</div>
 		</div>
 
+		
 		<div class="video--info">
 			<div class="row">
 				<div class="col-md-7 idvideito">
 
 					<h2><?php echo $array_detalle['TITULO'] ?></h2>
 					<ul>
+						<li><?php echo $array_detalle['CHUCHERIA']; ?></li>
 						<li><?php echo traducir_mes($array_detalle['FECHA']); ?></li>
 						<!--<li><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 						<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
@@ -78,11 +89,6 @@ SQL;
 					<div class="desc">
 						<p><?php echo $array_detalle['DESCRIPCION'] ?></p>
 					</div>
-
-					<ul>
-						<li>DURACIÓN: <?php echo $array_detalle['DURACION'] ?></li>
-						<li>AÑO: <?php echo $array_detalle['AÑO'] ?></li>
-					</ul>
 
 				</div>
 				<div class="col-md-4 col-md-offset-1">
