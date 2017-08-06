@@ -240,6 +240,8 @@ header .dropdown-menu > li a {
 }
 
 
+
+
 /*ADMIN - VIDEOS_LISTADO*/
 
 .seccion--videos__title a{
@@ -467,6 +469,14 @@ span.disc {
 	color: #ca2424;
 }
 
+.admin_list__row form input[type="radio"]{
+	background-color: red;
+}
+
+
+.admin_list__row form input[type="radio"]:checked:after {
+	background-color: red;
+}
 
 .admin_agregar_form input[type="text"],
 .admin_agregar_form textarea {
