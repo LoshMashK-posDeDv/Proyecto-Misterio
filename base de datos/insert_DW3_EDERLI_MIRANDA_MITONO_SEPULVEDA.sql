@@ -27,8 +27,7 @@ VALUES
 	('Ticket to Ride: Europe', 'Ticket to Ride', NOW( ), null, 'ticket.jpeg', 'Uno de mis jueguitos favoritos, super adictivo, puedo pasarme horas jugando con mis amigas Flor', '1', 6),
 	('Deadpool Funko Pop', 'Deadpool', NOW( ), null, null, 'deadpool.jpg', 'Miren el muñequito que me compré', '1', 2),
 	('Mi stitch y yo', 'stitch', NOW( ), null, null, 'stitch.jpg', 'Stitch rechazándome fuertemente un domingo por la noche', '1', 5),
-	('Deadpool Funko Pop', 'Deadpool', NOW( ), null, null, 'deadpool.jpg', 'Miren el muñequito que me compré', '1', 2);
-	('Deadpool Funko Pop', 'Deadpool', NOW( ), null, null, 'deadpool.jpg', 'Miren el muñequito que me compré', '1', 2);
+	('Listo para matar', 'Deadpool', NOW( ), null, null, 'deadpoolger.jpg', 'A punto de hacerles bebes a mis alumnos de php con mi nueva campera de Deadpool', '1', 1);
 
 INSERT INTO
 	comentarios (COMENTARIO, FECHA_COMENTARIO, C_ESTADO, FKUSUARIO, FKARTICULO)
@@ -66,7 +65,4 @@ VALUES
 	( 4, 10 ),
 	( 5, 9 ),
 	( 5, 10 ),
-	
-	( 7, 6 ),
-	( 10, 7 ),
-	( 12, 4 );
+	( 6, 10 );
