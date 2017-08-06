@@ -7,17 +7,17 @@ VALUES
 	('1', '1', '0', '0', '0', '0');
 
 INSERT INTO
-	usuarios (NOMBRE_USUARIO, NOMBRE_COMPLETO, EMAIL, CONTRASENIA, FECHA_ALTA, U_ESTADO, FKPERMISOS)
+	usuarios (NOMBRE_COMPLETO, EMAIL, CONTRASENIA, FECHA_ALTA, U_ESTADO, FKPERMISOS)
 VALUES
-	('grodriguez', 'german rodriguez', 'german.rodriguez@davinci.edu.ar', MD5('admin1234'), NOW( ), '1', 1),
-	('fmiranda', 'federico miranda', 'federico.mirandaa@gmail.com', MD5('1234'), NOW( ), '1', 1),
-	('lmerlo', 'leandro merlo', 'merloleandro@gmail.com', MD5('holis1234'), NOW( ), '1', 1),
-	('florsepulveda', 'florencia sepulveda', 'florenciasepulveda.26@gmail.com', MD5('holis1234'), NOW( ), '1', 1),
-	('fespino', 'florencia ederli', 'florenciaespino@gmail.com', MD5('zeldaeslomas'), NOW( ), '1', 1),
-	('lmitono', 'laura mitono', 'mlauramitono@gmail.com', MD5('nellylalechuza'), NOW( ), '1', 1),
-	('usuario1', 'usuario uno', 'usuario1@davinci.edu.ar', MD5('1234'), NOW( ), '1', 2),
-	('usuario2', 'usuario dos', 'usuario2@davinci.edu.ar', MD5('1234'), NOW( ), '1', 2),
-	('usuario3', 'usuario tres', 'usuario3@davinci.edu.ar', MD5('1234'), NOW( ), '1', 2);
+	('german rodriguez', 'german.rodriguez@davinci.edu.ar', MD5('admin1234'), NOW( ), '1', 1),
+	('federico miranda', 'federico.mirandaa@gmail.com', MD5('1234'), NOW( ), '1', 1),
+	('leandro merlo', 'merloleandro@gmail.com', MD5('holis1234'), NOW( ), '1', 1),
+	('florencia sepulveda', 'florenciasepulveda.26@gmail.com', MD5('holis1234'), NOW( ), '1', 1),
+	('florencia ederli', 'florenciaespino@gmail.com', MD5('zeldaeslomas'), NOW( ), '1', 1),
+	('laura mitono', 'mlauramitono@gmail.com', MD5('nellylalechuza'), NOW( ), '1', 1),
+	('usuario uno', 'usuario1@davinci.edu.ar', MD5('1234'), NOW( ), '1', 2),
+	('usuario dos', 'usuario2@davinci.edu.ar', MD5('1234'), NOW( ), '1', 2),
+	('usuario tres', 'usuario3@davinci.edu.ar', MD5('1234'), NOW( ), '1', 2);
 
 INSERT INTO
 	articulos (TITULO, CHUCHERIA, FECHA_ALTA, VIDEO, IMAGENES, IMG_DESTACADA, DESCRIPCION, A_ESTADO, FKUSUARIO)
