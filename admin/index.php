@@ -26,7 +26,7 @@
 				El calabozo del androide
 			</a>
 		</h1>
-		<p class="header__user">Bienvenido, <?php echo $_SESSION['NOMBRE_USUARIO']; ?></p>
+		<p class="header__user">Bienvenido, <?php echo $_SESSION['NOMBRE_COMPLETO']; ?></p>
 	</header>
 	<div class="container-fluid">
 		<div class="row">
@@ -67,7 +67,7 @@
 							<li class="menu__list__option">
 								<a href="index.php?s=videos_listado">
 									<img src="../images/iconos/gameboy-blanco.png" alt="ícono gameboy" class="iconitos">
-									Videos
+									Posts
 								</a>
 							</li>
 						<?php } ?>
