@@ -1,6 +1,6 @@
 <?php
 
-	
+
 ?>
 
 
@@ -13,7 +13,7 @@
 		<div class="row">
 
 			<div class="col-sm-12">
-				
+
 
 
 			<img src="images/errores/error403.jpg" alt="error 403">
@@ -24,6 +24,6 @@
 			</div>
 		</div>
 
-		
+
 	</div>
 </section>
