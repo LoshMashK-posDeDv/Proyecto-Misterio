@@ -11,7 +11,8 @@
 	$imagenes = $_FILES['imagenes'];
 	$imagen_destacada = $_FILES['imagen_destacada'];
 	$imagen_destacada_nombre = $_FILES['imagen_destacada']['name'];
-
+	
+	echo $anio;
 	/*
 	*
 	* ----- COMIENZA LA DOCUMENTACIÓN SOBRE LOS INPUT FILE MULTIPLES -----
@@ -77,7 +78,7 @@
 	$er_video = "/^[\w\s]{4,45}\.(mp4|webm)$/i";
 	$txt_video = preg_match($er_video, $video_nombre = $_FILES['video']['name'], $coincidencia_video);
 
-	$er_imagen_destacada = "/^[\w\s]{1,45}\.(jpg|png)$/i";
+	$er_imagen_destacada = "/^[\w\s]{1,45}\.(jpg|jpeg|png)$/i";
 	$txt_imagen_destacada = preg_match($er_imagen_destacada, $imagen_destacada['name'], $coincidencia_imagen_destacada);
 
 	if($txt_titulo && $txt_descripcion && $txt_video && $txt_duracion && $txt_imagen_destacada){
@@ -126,12 +127,12 @@
 			}
 		}
 
-		header("Location: ../index.php?s=videos_listado&m=$rta");
+	//	header("Location: ../index.php?s=videos_listado&m=$rta");
 
 	} else {
 		$c = 'falló';
 		$rta = 'error';
 
-		header("Location: ../index.php?s=agregar_video&m=$rta");
+	//	header("Location: ../index.php?s=agregar_video&m=$rta");
 	}
 ?>

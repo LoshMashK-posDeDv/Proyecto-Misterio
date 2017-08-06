@@ -2,17 +2,18 @@
 	include("../../setup/config.php");
 
 	$i_user = $_GET['i'];
-	$c_user = <<<ESTADO
+  $v_user = $_POST['permiso'];
+	$p_user = <<<PERMISO
 		UPDATE
 			usuarios
 		SET
-			U_ESTADO = ( -1 * (U_ESTADO -1))
+			FKPERMISOS = '$v_user'
 		WHERE
 			IDUSUARIOS = '$i_user'
 		LIMIT 1
-ESTADO;
-
-	mysqli_query($conexion, $c_user);
+PERMISO;
+	mysqli_query($conexion, $p_user);
 
 	header("Location: ../index.php?s=usuarios_listado#user_$i_user");
+
 ?>

@@ -30,7 +30,7 @@ include('setup/config.php');
                         <a class="navbar-brand botones" href="index.php">
                             <img src="images/brand.png" alt="El calabozo del androide">
                         </a>
-                        <form method="get" action="modulos/buscar.php" class="navbar-form navbar-left" id="buscadorsin" role="search">
+                        <form method="get" action="index.php?s=resultados" class="navbar-form navbar-left" id="buscadorsin" role="search">
                             <div class="form-group">
                                 <input type="text" name="buscar" class="form-control" placeholder="Buscar...">
                             </div>
@@ -54,14 +54,14 @@ include('setup/config.php');
 
                                     <ul class="dropdown-menu" aria-labelledby="dropdown-menu">
                                         <li>
-                                            <a class="botones" href="index.php?s=mi_cuenta">
-                                                <i class="glyphicon glyphicon-user"></i>
+                                            <a class="botones" href="admin/index.php?s=mi_cuenta">
+                                                <img src="images/iconos/calavera-blanco.png" alt="ícono calavera" class="iconitos">
                                                 Mi cuenta
                                             </a>
                                         </li>
                                         <li>
                                             <a class="botones" href="index.php?s=cerrar_sesion">
-                                                <i class="glyphicon glyphicon-log-out"></i>
+                                                <img src="images/iconos/llave-blanco.png" alt="ícono llave" class="iconitos">
                                                 Cerrar sesión
                                             </a>
                                         </li>
