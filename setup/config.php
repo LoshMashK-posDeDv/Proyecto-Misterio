@@ -54,13 +54,16 @@ if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
 			$seccion .= 'registro.php';
 			break;
 		case 'recupero':
-			$seccion .= 'recuperar_pass.php';
+			$seccion .= 'recupero_pass.php';
 			break;
 		case 'videos':
 			$seccion .= 'videos.php';
 			break;
 		case 'video':
 			$seccion .= 'video.php';
+			break;
+		case 'resultados':
+			$seccion .= 'buscar.php';
 			break;
 
 		default:
@@ -71,6 +74,9 @@ if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
 	switch ($s) {
 		case 'videos_listado':
 			$seccion .= 'videos_listado.php';
+			break;
+		case 'mi_cuenta':
+			$seccion .= 'mi_cuenta.php';
 			break;
 		case 'agregar_video':
 			$seccion .= 'video_agregar.php';
