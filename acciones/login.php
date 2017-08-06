@@ -30,7 +30,6 @@ LOGIN;
 	$user = mysqli_query($conexion, $c_log);
 	$log = mysqli_fetch_assoc($user);
 
-
 	if( !$log ){
 		$_SESSION['LOGIN_ERROR'] = 'Tu email o contraseña son incorrectos';
 		header("Location: ../index.php?s=login");
@@ -38,7 +37,7 @@ LOGIN;
 		if( $log['U_ESTADO'] == 1 ){
 			$_SESSION = $log;
 			if($log['FKPERMISOS'] == 1){
-				header("Location: ../admin/index.php");
+				header("Location: ../admin");
 			} else {
 				header("Location: ../index.php");
 			}
