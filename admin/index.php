@@ -37,29 +37,29 @@
 						<?php if(chequear_permisos('MODERAR_VIDEOS')) { ?>
 							<li class="menu__list__option">
 								<a href="index.php">
-									<i class="glyphicon glyphicon-home"></i>
-									Inicio
+									<img src="../images/iconos/joy-blanco.png" alt="ícono joystick" class="iconitos">
+									Panel
 								</a>
 							</li>
 						<?php } ?>
 							<li class="menu__list__option">
 								<a href="index.php?s=mi_cuenta" class="tdv_no">
-									<i class="glyphicon glyphicon-user"></i>
+									<img src="../images/iconos/calavera-blanco.png" alt="ícono calavera" class="iconitos">
 									Mi cuenta
 								</a>
 							</li>
 						<?php if(chequear_permisos('EDITAR')) { ?>
 							<li class="menu__list__option">
 								<a href="index.php?s=editar_pagina&p=home" class="tdv_no">
-									<i class="glyphicon glyphicon-file"></i>
-									Homepage
+									<img src="../images/iconos/coin-blanco.png" alt="ícono monedita" class="iconitos">
+									Sitio
 								</a>
 							</li>
 						<?php } ?>
 						<?php if(chequear_permisos('MODERAR_USUARIOS')) { ?>
 							<li class="menu__list__option">
 								<a href="index.php?s=usuarios_listado">
-									<i class="glyphicon glyphicon-user"></i>
+									<img src="../images/iconos/superman-blanco.png" alt="ícono superman" class="iconitos">
 									Usuarios
 								</a>
 							</li>
@@ -67,7 +67,7 @@
 						<?php if(chequear_permisos('MODERAR_COMENTARIOS')) { ?>
 							<li class="menu__list__option">
 								<a href="index.php?s=comentarios_listado">
-									<i class="glyphicon glyphicon-comment"></i>
+									<img src="../images/iconos/globo-blanco.png" alt="ícono globo con un corazón" class="iconitos">
 									Comentarios
 								</a>
 							</li>
@@ -75,14 +75,14 @@
 						<?php if(chequear_permisos('MODERAR_VIDEOS')) { ?>
 							<li class="menu__list__option">
 								<a href="index.php?s=videos_listado">
-									<i class="glyphicon glyphicon-facetime-video"></i>
+									<img src="../images/iconos/gameboy-blanco.png" alt="ícono gameboy" class="iconitos">
 									Videos
 								</a>
 							</li>
 						<?php } ?>
 							<li class="menu__list__option border__top">
 								<a href="index.php?s=cerrar_sesion">
-									<i class="glyphicon glyphicon-log-out"></i>
+									<img src="../images/iconos/llave-blanco.png" alt="ícono superman" class="iconitos">
 									Cerrar Sesión
 								</a>
 							</li>
