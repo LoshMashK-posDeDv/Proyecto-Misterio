@@ -37,7 +37,7 @@ VALUES
 	('Me parece asombroso', NOW( ), '1', 5, 3),
 	('Es una porquería', NOW( ), '0', 8, 4),
 	('que rica piba', NOW( ), '1', 5, 5),
-	('De lo mejor que se vio en este último tiempo', NOW( ), '0', 4, 1),
+	('De lo mejor que se vio en este último tiempo', NOW( ), '0', 1, 1),
 	('Altas llantas', NOW( ), '1', 7, 1),
 	('Está muy bueno pero son 8 horas de juego', NOW( ), '1', 5, 2);
 
