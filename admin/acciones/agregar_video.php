@@ -77,7 +77,7 @@
 	$er_video = "/^[\w\s]{4,45}\.(mp4|webm)$/i";
 	$txt_video = preg_match($er_video, $video_nombre = $_FILES['video']['name'], $coincidencia_video);
 
-	$er_imagen_destacada = "/^[\w\s]{1,45}\.(jpg|png)$/i";
+	$er_imagen_destacada = "/^[\w\s]{1,45}\.(jpg|jpeg|png)$/i";
 	$txt_imagen_destacada = preg_match($er_imagen_destacada, $imagen_destacada['name'], $coincidencia_imagen_destacada);
 
 	if($txt_titulo && $txt_descripcion && $txt_video && $txt_duracion && $txt_imagen_destacada){
