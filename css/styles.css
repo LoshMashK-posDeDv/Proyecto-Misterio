@@ -475,7 +475,7 @@ span.disc {
 
 
 .admin_list__row form input[type="radio"]:checked:after {
-	background-color: red;
+	background-color: green;
 }
 
 .admin_agregar_form input[type="text"],

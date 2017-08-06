@@ -12,7 +12,7 @@ $c2 = <<<SQL
 		IDCOMENTARIO,
 		COMENTARIO,
 		FECHA_COMENTARIO,
-		u.NOMBRE_USUARIO AS USUARIO,
+		u.NOMBRE_COMPLETO AS USUARIO,
 		a.TITULO AS TITULO
 	FROM
 		comentarios AS c
@@ -34,7 +34,7 @@ SQL;
 
 $c4 = <<<SQL
 	SELECT
-		NOMBRE_USUARIO,
+		NOMBRE_COMPLETO,
 		FECHA_ALTA
 	FROM
 		usuarios
@@ -92,7 +92,7 @@ $f4 = mysqli_query($conexion, $c4);
 				<?php
 					while($a_usuarios = mysqli_fetch_assoc($f4)):
 				?>
-					<li><?php echo $a_usuarios['NOMBRE_USUARIO'] ?></li>
+					<li><?php echo $a_usuarios['NOMBRE_COMPLETO'] ?></li>
 				<?php endwhile; ?>
 			</ul>
 		</div>
