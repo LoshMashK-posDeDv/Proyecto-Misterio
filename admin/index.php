@@ -45,17 +45,9 @@
 							<li class="menu__list__option">
 								<a href="index.php?s=mi_cuenta" class="tdv_no">
 									<img src="../images/iconos/calavera-blanco.png" alt="ícono calavera" class="iconitos">
-									Mi cuenta
+									Perfil
 								</a>
 							</li>
-						<?php if(chequear_permisos('EDITAR')) { ?>
-							<li class="menu__list__option">
-								<a href="index.php?s=editar_pagina&p=home" class="tdv_no">
-									<img src="../images/iconos/coin-blanco.png" alt="ícono monedita" class="iconitos">
-									Sitio
-								</a>
-							</li>
-						<?php } ?>
 						<?php if(chequear_permisos('MODERAR_USUARIOS')) { ?>
 							<li class="menu__list__option">
 								<a href="index.php?s=usuarios_listado">
@@ -82,7 +74,7 @@
 						<?php } ?>
 							<li class="menu__list__option border__top">
 								<a href="index.php?s=cerrar_sesion">
-									<img src="../images/iconos/llave-blanco.png" alt="ícono superman" class="iconitos">
+									<img src="../images/iconos/llave-blanco.png" alt="ícono llave" class="iconitos">
 									Cerrar Sesión
 								</a>
 							</li>
