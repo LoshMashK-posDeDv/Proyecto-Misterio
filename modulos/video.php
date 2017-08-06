@@ -123,7 +123,7 @@ SQL;
 							<span><?php echo $array_comentarios['FECHA_COMENTARIO'] ?></span>
 							<p><?php echo $array_comentarios['COMENTARIO'] ?></p>
 							<?php
-								if(isset($_SESSION['NOMBRE_USUARIO']) == $array_comentarios['USER']):
+								if(isset($_SESSION['NOMBRE_COMPLETO']) == $array_comentarios['NOMBRE']):
 							?>
 								<a href="acciones/eliminar_comentario_usuario.php?vid=<?php echo $vid_id ?>&id=<?php echo $array_comentarios['IDCOMENTARIO'] ?>">Eliminar</a>
 							<?php
