@@ -5,10 +5,8 @@
 	$consulta_video = <<<SQL
 	SELECT
 		IDARTICULO,
+		CHUCHERIA,
 		UCASE(TITULO) AS TITULO,
-		AUTOR,
-		AÑO,
-		DURACION,
 		DATE_FORMAT(a.FECHA_ALTA, "%d de %M de %Y") AS FECHA,
 		VIDEO,
 		IMAGENES,
@@ -28,7 +26,6 @@ SQL;
 			COMENTARIO,
 			FECHA_COMENTARIO,
 			u.NOMBRE_COMPLETO AS NOMBRE,
-			u.NOMBRE_USUARIO AS USER,
 			C_ESTADO
 		FROM
 			comentarios as c

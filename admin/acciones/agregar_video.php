@@ -5,13 +5,14 @@
 	$descripcion = $_POST['descripcion'];
 	$duracion = $_POST['duracion'];
 	$anio = $_POST['anio'];
+	echo $anio;
 	$video = $_FILES['video'];
 	$video_nombre = $_FILES['video']['name'];
 	$categoria = isset($_POST['categoria']) ? $_POST['categoria'] : '';
 	$imagenes = $_FILES['imagenes'];
 	$imagen_destacada = $_FILES['imagen_destacada'];
 	$imagen_destacada_nombre = $_FILES['imagen_destacada']['name'];
-	
+
 	echo $anio;
 	/*
 	*
@@ -127,12 +128,12 @@
 			}
 		}
 
-	//	header("Location: ../index.php?s=videos_listado&m=$rta");
+		//header("Location: ../index.php?s=videos_listado&m=$rta");
 
 	} else {
 		$c = 'falló';
 		$rta = 'error';
 
-	//	header("Location: ../index.php?s=agregar_video&m=$rta");
+		//header("Location: ../index.php?s=agregar_video&m=$rta");
 	}
 ?>
