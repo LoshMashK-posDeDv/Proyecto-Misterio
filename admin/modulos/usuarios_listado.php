@@ -9,7 +9,6 @@
 		<thead>
 			<tr class="admin_list__head">
 				<th class="admin_list__head__image">Nombre completo</th>
-				<th class="admin_list__head__name">Nombre de usuario</th>
 				<th class="admin_list__head__author">Email</th>
 				<th class="admin_list__head__date hidden-xs">Fecha de alta</th>
 				<th class="admin_list__head__tipo">Tipo de usuario</th>
@@ -20,7 +19,7 @@
 
 		<tbody>
 			<?php
-				$usuarios = "SELECT	IDUSUARIOS,	NOMBRE_USUARIO,	NOMBRE_COMPLETO, EMAIL,	FECHA_ALTA,	U_ESTADO, FKPERMISOS FROM usuarios ORDER BY FECHA_ALTA DESC";
+				$usuarios = "SELECT	IDUSUARIOS,	NOMBRE_COMPLETO, EMAIL,	FECHA_ALTA,	U_ESTADO, FKPERMISOS FROM usuarios ORDER BY FECHA_ALTA DESC";
 
 				$r_usuarios = mysqli_query($conexion, $usuarios);
 
@@ -32,10 +31,6 @@
 						<p>
 							<?php echo $a_usuarios['NOMBRE_COMPLETO'] ?>
 						</p>
-					</td>
-
-					<td class="admin_list__row__name">
-						<p><?php echo $a_usuarios['NOMBRE_USUARIO'] ?></p>
 					</td>
 
 					<td class="admin_list__row__author">

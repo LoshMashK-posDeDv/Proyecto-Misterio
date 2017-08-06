@@ -16,12 +16,12 @@
 			<?php echo $mensaje; ?>
 		</p>
 	<?php } ?>
-	
+
 	<div class="section__title">
 		<h2>Videos</h2>
 		<a href="index.php?s=agregar_video" class="section__title__action"><i class="glyphicon glyphicon-plus"></i> Agregar video</a>
 	</div>
-	
+
 	<table class="admin_list">
 		<thead>
 			<tr class="admin_list__head">
@@ -65,7 +65,7 @@ SQL;
 						SELECT
 							IMG_DESTACADA,
 							TITULO,
-							AUTOR,
+							CHUCHERIA,
 							FECHA_ALTA,
 							A_ESTADO,
 							IDARTICULO
@@ -84,7 +84,7 @@ SQL;
 			<tr class="admin_list__row">
 				<td class="admin_list__row__image"><img src="../uploads/<?php echo $array_videos['IMG_DESTACADA'] ?>" alt="<?php echo $array_videos['TITULO'] ?>"></td>
 				<td class="admin_list__row__name"><p><?php echo $array_videos['TITULO'] ?></p></td>
-				<td class="admin_list__row__author hidden-xs"><p><?php echo $array_videos['AUTOR'] ?></p></td>
+				<td class="admin_list__row__author hidden-xs"><p><?php echo $array_videos['CHUCHERIA'] ?></p></td>
 				<td class="admin_list__row__date hidden-xs"><p><?php echo $array_videos['FECHA_ALTA'] ?></p></td>
 				<td class="admin_list__row__actions">
 					<a href="index.php?s=editar_video&i=<?php echo $array_videos['IDARTICULO'] ?>" title="Editar video"><i class="glyphicon glyphicon-pencil"></i></a>
@@ -102,36 +102,36 @@ SQL;
 
 	<div class="paginador clear">
 		<ul class="paginator">
-		<?php 
+		<?php
 			$pag_anterior = $pagina_actual - 1;
 			if( $pag_anterior > 0 ){
 			?>
-			<li><a href="index.php?s=videos_listado&p=<?php echo $pag_anterior; ?>">&larr;</a></li> 
-			
-			<?php 
+			<li><a href="index.php?s=videos_listado&p=<?php echo $pag_anterior; ?>">&larr;</a></li>
 
-			} 
+			<?php
+
+			}
 
 			for( $i = 1; $i <= $total_links; $i++ ){
 			$activo = $pagina_actual == $i ? 'class="pag_activa"':'';
-			
+
 			echo '<li><a href="index.php?s=videos_listado&p='.$i.'" '.$activo.'>'.$i.'</a></li> ';
-			
+
 			}
-			
+
 		?>
-			
-		<?php 
-		
+
+		<?php
+
 			$pag_siguiente = $pagina_actual + 1;
 			if( $pag_siguiente <= $total_links ){
-		
+
 		?>
-		
+
 			<li><a href="index.php?s=videos_listado&p=<?php echo $pag_siguiente ?>">&rarr;</a></li>
-		
+
 		<?php } ?>
-		
+
 		</ul>
 	</div>
 
