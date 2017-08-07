@@ -7,7 +7,7 @@
 
 	if(isset($_GET['m'])){
 		if($_GET['m'] == 'ok'){
-			$mensaje = 'El video se actualizó correctamente';
+			$mensaje = 'El post se actualizó correctamente';
 			$class = 'exito';
 		} else {
 			$mensaje =  'Oops, Algo salió mal. Revisa los campos e intenta nuevamente';
@@ -18,14 +18,14 @@
 	$c = <<<SQL
 
 	SELECT
+		IDARTICULO,
 		TITULO,
+		CHUCHERIA,
+		FECHA_ALTA,
 		DESCRIPCION,
-		DURACION,
-		AÑO,
 		VIDEO,
 		IMG_DESTACADA,
-		IMAGENES,
-		IDARTICULO
+		IMAGENES
 	FROM
 		articulos
 	WHERE
@@ -37,7 +37,7 @@ SQL;
 	$f = mysqli_query($conexion, $c);
 	$a = mysqli_fetch_assoc($f);
 
-	$separar_video = explode(".", $a['VIDEO']);
+	$separar_post = explode(".", $a['VIDEO']);
 
 	$separar_imagenes = explode(",", $a['IMAGENES']);
 
@@ -52,7 +52,7 @@ CATEGORIA;
 	$f_categoria = mysqli_query($conexion, $c_categoria);
 ?>
 
-<div class="seccion--video-editar">
+<div class="seccion--post-editar">
 
 	<?php if(isset($_GET['m'])) { ?>
 		<p class="<?php echo $class; ?>">
@@ -60,17 +60,17 @@ CATEGORIA;
 		</p>
 	<?php } ?>
 
-	<div class="row video_agregar_form">
-		<div class="col-md-5">
-			<form class="create_form" action="acciones/editar_video.php" enctype="multipart/form-data" method="post">
+	<div class="row post_agregar_form">
+		<div class="col-md-7 col-md-offset-3">
+			<form class="create_form" action="acciones/editar_post.php" enctype="multipart/form-data" method="post">
 				<input type="hidden" name="id" value="<?php echo $a['IDARTICULO'] ?>">
 
 				<div class="form-group">
 					<div class="section__title">
-						<a class="section__title__back" href="index.php?s=videos_listado">
+						<a class="section__title__back" href="index.php?s=posts_listado">
 							<i class="glyphicon glyphicon-chevron-left"></i>
 						</a>
-						<h2>Editar video</h2>
+						<h2>Editar post</h2>
 					</div>
 
 					<div class="clearfix">
@@ -83,25 +83,14 @@ CATEGORIA;
 						<textarea class="form-control create_form__descripcion" name="descripcion" id="descripcion"><?php echo $a['DESCRIPCION'] ?></textarea>
 					</div>
 
-					<div class="row">
-						<div class="col-md-6">
-							<h3>Duraci&oacute;n</h3>
-							<input type="text" name="duracion" id="duracion" class="form-control create_form__duracion" value="<?php echo $a['DURACION'] ?>" />
-						</div>
-						<div class="col-md-6">
-							<h3>A&ntilde;o</h3>
-							<input type="text" name="anio" id="anio" class="form-control create_form__anio" value="<?php echo $a['AÑO'] ?>" />
-						</div>
-					</div>
-
 					<div class="clearfix">						
 						<div class="row">
 							<div class="col-md-6">
 								<h3>Video</h3>
 								<video controls>
-									<source src="../uploads/<?php echo $a['VIDEO'] ?>" type="video/<?php echo $separar_video[1] ?>">
+									<source src="../uploads/<?php echo $a['VIDEO'] ?>" type="video/<?php echo $separar_post[1] ?>">
 								</video>
-								<input type="file" name="video" id="video" class="form-control create_form__video" />
+								<input type="file" name="video" id="video" class="form-control create_form__post" />
 							</div>
 							<div class="col-md-6">
 								<h3>Categoría</h3>

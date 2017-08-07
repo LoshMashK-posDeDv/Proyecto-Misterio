@@ -1,7 +1,7 @@
 <?php
 	if(isset($_GET['m'])){
 		if($_GET['m'] == 'ok'){
-			$mensaje = 'El video se actualizó correctamente';
+			$mensaje = 'El post se actualizó correctamente';
 			$class = 'exito';
 		} else {
 			$mensaje =  'Oops, Algo salió mal';
@@ -18,8 +18,8 @@
 	<?php } ?>
 
 	<div class="section__title">
-		<h2>Videos</h2>
-		<a href="index.php?s=agregar_video" class="section__title__action"><i class="glyphicon glyphicon-plus"></i> Agregar video</a>
+		<h2>posts</h2>
+		<a href="index.php?s=agregar_post" class="section__title__action"><i class="glyphicon glyphicon-plus"></i> Agregar post</a>
 	</div>
 
 	<table class="admin_list">
@@ -41,8 +41,8 @@
 				$inicio_paginador = ($pagina_actual - 1) * $cantidad_por_pagina; //cantidad que debe saltear
 
 
-				//segunda consulta: cant de videos que hay
-				$consulta_cant_videos = <<<SQL
+				//segunda consulta: cant de posts que hay
+				$consulta_cant_posts = <<<SQL
 					SELECT
 						COUNT(IDARTICULO) AS CANTIDAD
 					FROM
@@ -50,10 +50,10 @@
 					WHERE
 						A_ESTADO = 1
 SQL;
-				$cantidad_videos = mysqli_query ($conexion, $consulta_cant_videos);
-				//var_dump($cantidad_videos);
-				$array_videos2 = mysqli_fetch_assoc ($cantidad_videos);
-				$cantidad_resultados = $array_videos2['CANTIDAD'];
+				$cantidad_posts = mysqli_query ($conexion, $consulta_cant_posts);
+				//var_dump($cantidad_posts);
+				$array_posts2 = mysqli_fetch_assoc ($cantidad_posts);
+				$cantidad_resultados = $array_posts2['CANTIDAD'];
 
 				$total_links = ceil ($cantidad_resultados / $cantidad_por_pagina);
 
@@ -61,7 +61,7 @@ SQL;
 				if($pagina_actual > $total_links or $pagina_actual < 1){
 					echo 'Pediste una página inexistente';
 				} else {
-					$consulta_videos = <<<SQL
+					$consulta_posts = <<<SQL
 						SELECT
 							IMG_DESTACADA,
 							TITULO,
@@ -77,18 +77,18 @@ SQL;
 						LIMIT $inicio_paginador, $cantidad_por_pagina
 SQL;
 
-				$respuesta_videos = mysqli_query($conexion, $consulta_videos);
+				$respuesta_posts = mysqli_query($conexion, $consulta_posts);
 
-				while($array_videos = mysqli_fetch_assoc($respuesta_videos)):
+				while($array_posts = mysqli_fetch_assoc($respuesta_posts)):
 			?>
 			<tr class="admin_list__row">
-				<td class="admin_list__row__image"><img src="../uploads/<?php echo $array_videos['IMG_DESTACADA'] ?>" alt="<?php echo $array_videos['TITULO'] ?>"></td>
-				<td class="admin_list__row__name"><p><?php echo $array_videos['TITULO'] ?></p></td>
-				<td class="admin_list__row__author hidden-xs"><p><?php echo $array_videos['CHUCHERIA'] ?></p></td>
-				<td class="admin_list__row__date hidden-xs"><p><?php echo $array_videos['FECHA_ALTA'] ?></p></td>
+				<td class="admin_list__row__image"><img src="../uploads/<?php echo $array_posts['IMG_DESTACADA'] ?>" alt="<?php echo $array_posts['TITULO'] ?>"></td>
+				<td class="admin_list__row__name"><p><?php echo $array_posts['TITULO'] ?></p></td>
+				<td class="admin_list__row__author hidden-xs"><p><?php echo $array_posts['CHUCHERIA'] ?></p></td>
+				<td class="admin_list__row__date hidden-xs"><p><?php echo $array_posts['FECHA_ALTA'] ?></p></td>
 				<td class="admin_list__row__actions">
-					<a href="index.php?s=editar_video&i=<?php echo $array_videos['IDARTICULO'] ?>" title="Editar video"><i class="glyphicon glyphicon-pencil"></i></a>
-					<a href="acciones/eliminar_video.php?i=<?php echo $array_videos['IDARTICULO'] ?>" title="Eliminar video"><i class="glyphicon glyphicon-remove"></i></a>
+					<a href="index.php?s=editar_post&i=<?php echo $array_posts['IDARTICULO'] ?>" title="Editar post"><i class="glyphicon glyphicon-pencil"></i></a>
+					<a href="acciones/eliminar_post.php?i=<?php echo $array_posts['IDARTICULO'] ?>" title="Eliminar post"><i class="glyphicon glyphicon-remove"></i></a>
 				</td>
 			</tr>
 			<?php
@@ -106,7 +106,7 @@ SQL;
 			$pag_anterior = $pagina_actual - 1;
 			if( $pag_anterior > 0 ){
 			?>
-			<li><a href="index.php?s=videos_listado&p=<?php echo $pag_anterior; ?>">&larr;</a></li>
+			<li><a href="index.php?s=posts_listado&p=<?php echo $pag_anterior; ?>">&larr;</a></li>
 
 			<?php
 
@@ -115,7 +115,7 @@ SQL;
 			for( $i = 1; $i <= $total_links; $i++ ){
 			$activo = $pagina_actual == $i ? 'class="pag_activa"':'';
 
-			echo '<li><a href="index.php?s=videos_listado&p='.$i.'" '.$activo.'>'.$i.'</a></li> ';
+			echo '<li><a href="index.php?s=posts_listado&p='.$i.'" '.$activo.'>'.$i.'</a></li> ';
 
 			}
 
@@ -128,7 +128,7 @@ SQL;
 
 		?>
 
-			<li><a href="index.php?s=videos_listado&p=<?php echo $pag_siguiente ?>">&rarr;</a></li>
+			<li><a href="index.php?s=posts_listado&p=<?php echo $pag_siguiente ?>">&rarr;</a></li>
 
 		<?php } ?>
 
