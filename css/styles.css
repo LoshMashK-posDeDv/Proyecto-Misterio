@@ -474,13 +474,18 @@ span.disc {
 	color: #ca2424;
 }
 
-.admin_list__row form input[type="radio"]{
-	background-color: red;
+.admin_list__row__tipo form input[type="radio"]{
+	display:none;
 }
 
+.admin_list__row__tipo form label > input[type="radio"] + label{
+    background: url(../images/iconos/nocorazon.png) left center no-repeat;    
+    
+}
 
-.admin_list__row form input[type="radio"]:checked:after {
-	background-color: green;
+.admin_list__row__tipo form label > input[type="radio"]:checked + label{
+	background: url(../images/iconos/nocorazon.png) left center no-repeat;  
+
 }
 
 .admin_agregar_form input[type="text"],
