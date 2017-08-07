@@ -1,9 +1,9 @@
 <?php
 
-include('funciones.php');
-include('setup/config.php');
-
+    include('funciones.php');
+    include('setup/config.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -30,7 +30,7 @@ include('setup/config.php');
                         <a class="navbar-brand botones" href="index.php">
                             <img src="images/brand.png" alt="El calabozo del androide">
                         </a>
-                        <form method="get" action="acciones/" class="navbar-form navbar-left" id="buscadorsin" role="search">
+                        <form method="get" action="index.php" class="navbar-form navbar-left" id="buscadorsin" role="search">
                             <div class="form-group">
                                 <input type="text" name="buscar" class="form-control" placeholder="Buscar...">
                             </div>
@@ -41,7 +41,7 @@ include('setup/config.php');
                     <div class="collapse navbar-collapse" id="bs-navbar">
                         <ul class="nav navbar-nav navbar-right">
                             <li id="btn-videos">
-                                <a href="index.php?s=videos">POSTS</a>
+                                <a href="index.php?s=posts">POSTS</a>
                             </li>
                             <?php if(isset($_SESSION['NOMBRE_COMPLETO'])) { ?>
 
@@ -105,7 +105,14 @@ include('setup/config.php');
         </header>
 
         <div class="contenedor">
-            <?php include($seccion); ?>
+
+            <?php 
+                if(isset($_GET['buscar'])){
+                    include('modulos/buscar.php'); 
+                } else {
+                    include($seccion); 
+                }
+            ?>
         </div>
 
         <footer>

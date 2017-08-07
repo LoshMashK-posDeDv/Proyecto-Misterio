@@ -614,6 +614,17 @@ span.disc {
 	width: 300px;
 }
 
+.resultados_error {
+	padding: 30px 45px 0;
+	margin: 20px 0;
+	width: 100%;
+}
+
+.resultados_error p {
+    font-family: 'gobold',sans-serif;
+    font-size: 25px;
+}
+
 /* HOME */
 
 	section[class*="section--home--"] {
