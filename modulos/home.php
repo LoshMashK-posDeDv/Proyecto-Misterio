@@ -117,6 +117,7 @@ SQL;
 
 		$r2 = mysqli_query($conexion, $consulta_posts_b);
 		while($array_posts = mysqli_fetch_assoc($r2)){
+
 		?>
 			<article class="col-md-3 home__posts">
 				<div class="home__posts__img">

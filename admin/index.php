@@ -33,7 +33,7 @@
 			<aside class="col-md-2 menu">
 				<nav>
 					<ul class="menu__list">
-						<?php if(chequear_permisos('MODERAR_VIDEOS')) { ?>
+						<?php if(chequear_permisos('MODERAR_POSTS')) { ?>
 							<li class="menu__list__option">
 								<a href="index.php">
 									<img src="../images/iconos/joy-blanco.png" alt="ícono joystick" class="iconitos">
@@ -63,7 +63,7 @@
 								</a>
 							</li>
 						<?php } ?>
-						<?php if(chequear_permisos('MODERAR_VIDEOS')) { ?>
+						<?php if(chequear_permisos('MODERAR_POSTS')) { ?>
 							<li class="menu__list__option">
 								<a href="index.php?s=posts_listado">
 									<img src="../images/iconos/gameboy-blanco.png" alt="ícono gameboy" class="iconitos">
