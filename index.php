@@ -87,7 +87,7 @@ include('setup/config.php');
                                         </li>
                                         <li>
                                             <a class="botones botonitos" href="index.php?s=registro">
-                                                <i class="glyphicon glyphicon-align-center"></i>
+                                                <img src="images/iconos/varita-blanco.png" alt="ícono varita" class="iconitos">
                                                 Registro
                                             </a>
                                         </li>
