@@ -33,8 +33,19 @@ SQL;
 		WHERE c.FKARTICULO = $vid_id AND C_ESTADO = 1
 SQL;
 
+	$consulta_categoria = <<<SQL
+		SELECT
+			FKCATEGORIA,
+			CATEGORIA
+		FROM
+			articulos_categorias AS rel JOIN categorias AS c ON c.IDCATEGORIA = rel.FKCATEGORIA
+		WHERE
+			FKARTICULO = $vid_id
+SQL;
+	
 	$r1 = mysqli_query($conexion, $consulta_video);
 	$r2 = mysqli_query($conexion, $consulta_comentarios);
+	$r3 = mysqli_query($conexion, $consulta_categoria);
 	//$video = mysqli_fetch_array($r1);
 
 	//echo $consulta_video;
@@ -78,6 +89,12 @@ SQL;
 					<h2><?php echo $array_detalle['TITULO'] ?></h2>
 					<ul>
 						<li><?php echo $array_detalle['CHUCHERIA']; ?></li>
+						<li>Categoría: <?php 
+								while($array_color = mysqli_fetch_assoc($r3)):
+									echo $array_color['CATEGORIA']; 
+								endwhile;
+							?>
+						</li>
 						<li><?php echo traducir_mes($array_detalle['FECHA']); ?></li>
 						<!--<li><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 						<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
