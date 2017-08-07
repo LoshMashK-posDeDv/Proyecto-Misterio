@@ -40,7 +40,7 @@ $consulta_categoria = <<<SQL
 		FROM
 			articulos_categorias AS rel JOIN categorias AS c ON c.IDCATEGORIA = rel.FKCATEGORIA
 		WHERE
-			FKARTICULO = $vid_id
+			FKARTICULO = $post_id
 SQL;
 
 	$r1 = mysqli_query($conexion, $consulta_post);
