@@ -47,12 +47,12 @@ VALUES
 	('Gameplay'), 
 	('Como jugar'), 
 	('Unboxing'), 
-	('Opinion/Review'), 
+	('Review'), 
 	('Fan Made'), 
 	('Homenaje'), 
 	('Animacion'), 
 	('Live action'), 
-	('Random / Misc'),
+	('Random'),
 	('Bragging'); 
 
 INSERT INTO
