@@ -20,7 +20,7 @@ VALUES
 	('usuario tres', 'usuario3@davinci.edu.ar', MD5('1234'), NOW( ), '1', 2);
 
 INSERT INTO
-	articulos (TITULO, CHUCHERIA, FECHA_ALTA, post, IMAGENES, IMG_DESTACADA, DESCRIPCION, A_ESTADO, FKUSUARIO)
+	articulos (TITULO, CHUCHERIA, FECHA_ALTA, VIDEO, IMAGENES, IMG_DESTACADA, DESCRIPCION, A_ESTADO, FKUSUARIO)
 VALUES
 	('Miren mi ropita nueva de Splatoon', 'Splatoon', NOW( ), null, null, 'splatoon.jpg', 'Hola amigos, estuve jugando al Splatton 2 para Nintendo Swith y me sorprendió la variedad de ropitas nuevas que hay disponible.', '1', 5),
 	('Through The Ages 2nd Edition!', 'Through The Ages', NOW( ), null, 'through02.jpg, through03.jpg, through04.jpg', 'through01.jpg', 'Con Sid Meier, kpo total de la estrategia en la pc hace años y años!! Gracias por tanto, pequeño homenaje ingame a el, el lider mas codiciado!', '1', 1),
