@@ -22,8 +22,7 @@
 					echo 'Su contraseña se ha actualizado con éxito';
 				echo '</p>';
 			}
-		}
-		
+		}		
 	?>
 
 	<div>
