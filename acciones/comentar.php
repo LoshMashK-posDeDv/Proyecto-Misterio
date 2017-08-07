@@ -5,7 +5,7 @@ include('../setup/config.php');
 //$nombre = $_POST['nombre'];
 $comentario = $_POST['comentario'];
 $usuario = $_SESSION['IDUSUARIOS'];
-$video = $_POST['video'];
+$post = $_POST['post'];
 
 $nuevo_comentario = <<<SQL
     INSERT INTO
@@ -15,11 +15,11 @@ $nuevo_comentario = <<<SQL
         FECHA_COMENTARIO = NOW(),
         C_ESTADO = 1,
         FKUSUARIO = '$usuario',
-        FKARTICULO = '$video'
+        FKARTICULO = '$post'
 SQL;
 
 mysqli_query($conexion, $nuevo_comentario);
 //echo mysqli_error($conexion);
-header("Location: ../index.php?s=video&vid=$video");
+header("Location: ../index.php?s=post&vid=$post");
 
 ?>

@@ -1,8 +1,8 @@
 <?php
 
-	$vid_id = isset($_GET['vid']) ? $_GET['vid'] : 0 ;
+	$post_id = isset($_GET['vid']) ? $_GET['vid'] : 0 ;
 
-	$consulta_video = <<<SQL
+	$consulta_post = <<<SQL
 	SELECT
 		IDARTICULO,
 		CHUCHERIA,
@@ -17,7 +17,7 @@
 	FROM
 		articulos a
 	LEFT JOIN usuarios AS u ON a.FKUSUARIO = u.IDUSUARIOS
-	WHERE IDARTICULO = $vid_id
+	WHERE IDARTICULO = $post_id
 SQL;
 
 	$consulta_comentarios = <<<SQL
@@ -30,22 +30,18 @@ SQL;
 		FROM
 			comentarios as c
 		JOIN usuarios as u ON c.FKUSUARIO = u.IDUSUARIOS
-		WHERE c.FKARTICULO = $vid_id AND C_ESTADO = 1
+		WHERE c.FKARTICULO = $post_id AND C_ESTADO = 1
 SQL;
 
-	$r1 = mysqli_query($conexion, $consulta_video);
+	$r1 = mysqli_query($conexion, $consulta_post);
 	$r2 = mysqli_query($conexion, $consulta_comentarios);
-	//$video = mysqli_fetch_array($r1);
-
-	//echo $consulta_video;
-
 
 	while($array_detalle = mysqli_fetch_assoc($r1)):
-		$separar_video = explode(".", $array_detalle['VIDEO']);
+		$separar_post = explode(".", $array_detalle['VIDEO']);
 ?>
 
 
-<div class="jumbotron" id="contenedorVideo">
+<div class="jumbotron" id="contenedorpost">
 </div>
 
 <section class="section--home--proyecto">
@@ -56,10 +52,10 @@ SQL;
 			<div class="col-sm-12">
 				<?php if($array_detalle['VIDEO'] != null){
 					?>
-					<video class="videito" controls>
-					<source src="uploads/<?php echo $array_detalle['VIDEO'] ?>" type="video/<?php echo $separar_video[1] ?>">
-					Tu navegador no soporta la reproducción de videos.
-				</video>
+					<post class="videito" controls>
+					<source src="uploads/<?php echo $array_detalle['post'] ?>" type="post/<?php echo $separar_post[1] ?>">
+					Tu navegador no soporta la reproducción de posts.
+				</post>
 				<?php
 				}else{
 				?>	
@@ -71,7 +67,7 @@ SQL;
 		</div>
 
 		
-		<div class="video--info">
+		<div class="post--info">
 			<div class="row">
 				<div class="col-md-7 idvideito">
 
@@ -125,7 +121,7 @@ SQL;
 							<?php
 								if(isset($_SESSION['NOMBRE_COMPLETO']) == $array_comentarios['NOMBRE']):
 							?>
-								<a href="acciones/eliminar_comentario_usuario.php?vid=<?php echo $vid_id ?>&id=<?php echo $array_comentarios['IDCOMENTARIO'] ?>">Eliminar</a>
+								<a href="acciones/eliminar_comentario_usuario.php?vid=<?php echo $post_id ?>&id=<?php echo $array_comentarios['IDCOMENTARIO'] ?>">Eliminar</a>
 							<?php
 								endif;
 							?>
@@ -153,7 +149,7 @@ SQL;
 				<h3>NUEVO COMENTARIO</h3>
 				<form action="acciones/comentar.php" method="post">
 					<textarea cols="50" rows="10" name="comentario"></textarea>
-					<input type="hidden" name="video" value="<?php echo $vid_id ?>">
+					<input type="hidden" name="post" value="<?php echo $post_id ?>">
 					<div class="row">
 						<div class="col-sm-8"></div>
 						<div class="col-sm-4">

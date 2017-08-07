@@ -10,7 +10,7 @@
 	$f_categoria = mysqli_query($conexion, $c_categoria);
 ?>
 
-<div class="seccion--video-agregar">
+<div class="seccion--post-agregar">
 
 	<?php if(isset($_GET['m'])) { ?>
 		<p class="<?php echo $class; ?>">
@@ -18,15 +18,15 @@
 		</p>
 	<?php } ?>
 
-	<div class="row video_agregar_form">
-		<div class="col-md-5">
-			<form class="create_form" id="form_agregar_video" action="acciones/agregar_video.php" enctype="multipart/form-data" method="post">
+	<div class="row post_agregar_form">
+		<div class="col-md-7 col-md-offset-3">
+			<form class="create_form" id="form_agregar_post" action="acciones/agregar_post.php" enctype="multipart/form-data" method="post">
 				<div class="form-group">
 					<div class="section__title">
-						<a class="section__title__back" href="index.php?s=videos_listado">
+						<a class="section__title__back" href="index.php?s=posts_listado">
 							<i class="glyphicon glyphicon-chevron-left"></i>
 						</a>
-						<h2>Agregar nuevo video</h2>
+						<h2>Agregar nuevo post</h2>
 					</div>
 
 					<div class="clearfix">
@@ -55,7 +55,7 @@
 							<div class="col-md-6">
 								<h3>Video</h3>
 								<img src="http://placehold.it/200x200" alt="Preview del video" />
-								<input type="file" name="video" id="video" class="form-control create_form__video" />
+								<input type="file" name="video" id="video" class="form-control create_form__post" />
 								<p>Formatos: mp4 o webm</p>
 							</div>
 							<div class="col-md-6">

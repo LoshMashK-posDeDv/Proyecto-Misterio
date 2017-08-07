@@ -65,9 +65,9 @@
 						<?php } ?>
 						<?php if(chequear_permisos('MODERAR_VIDEOS')) { ?>
 							<li class="menu__list__option">
-								<a href="index.php?s=videos_listado">
+								<a href="index.php?s=posts_listado">
 									<img src="../images/iconos/gameboy-blanco.png" alt="ícono gameboy" class="iconitos">
-									Posts
+									Chucherías
 								</a>
 							</li>
 						<?php } ?>

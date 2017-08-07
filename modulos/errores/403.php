@@ -4,7 +4,7 @@
 ?>
 
 
-<div class="jumbotron" id="contenedorVideo">
+<div class="jumbotron" id="contenedorpost">
 </div>
 
 <section class="section--home--proyecto">

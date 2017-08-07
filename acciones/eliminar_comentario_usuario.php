@@ -27,6 +27,6 @@ SQL;
 $rta = 'ok';
 
 mysqli_query($conexion, $c);
-header("Location: ../index.php?s=video&vid=$vid&m=$rta");
+header("Location: ../index.php?s=post&vid=$vid&m=$rta");
 
 ?>
