@@ -423,7 +423,7 @@ span.disc {
 
 .admin_list {
 	border-collapse: separate;
-	width: 100%;
+	width: 90%;
 	white-space: nowrap;
 }
 
@@ -443,8 +443,7 @@ span.disc {
 .admin_list__row__tipo,
 .admin_list__row__estado,
 .admin_list__head__comentario {
-	padding-left: 15px;
-	padding-right: 15px;
+	padding: 0 30px;
 }
 
 .admin_list__head__comentario {
@@ -466,26 +465,50 @@ span.disc {
 	margin: 0 5px;
 }
 
+.cajon{
+	width: 35px;
+	height: 35px;
+	vertical-align: bottom;
+}
+
 .admin_list__row__actions .activo i {
-	color: #369e36;
+	background: url(../images/iconos/abierto-negro.png) left center no-repeat;
+  	background-size: contain;
+
 }
 
 .admin_list__row__actions .inactivo i {
-	color: #ca2424;
+	background: url(../images/iconos/cerrado-negro.png) left center no-repeat;
+  	background-size: contain;
 }
 
-.admin_list__row__tipo form input[type="radio"]{
-	display:none;
+.tiposUser input[type="radio"]{
+	display: none;
 }
 
-.admin_list__row__tipo form label > input[type="radio"] + label{
-    background: url(../images/iconos/nocorazon.png) left center no-repeat;    
-    
+.tiposUser input[type="radio"] + span{
+  background: url(../images/iconos/nocorazon.png) left center no-repeat;
+  background-size: contain;
+  padding: 10px 5px 10px 35px;
+  cursor: pointer!important;
+
 }
 
-.admin_list__row__tipo form label > input[type="radio"]:checked + label{
-	background: url(../images/iconos/nocorazon.png) left center no-repeat;  
+.tiposUser input[type="radio"]:checked + span{
+	background: url(../images/iconos/corazon.png) left center no-repeat; 
+	background-size: contain;
+}
 
+.refresh{
+	background-color: #90C0C4;
+	box-shadow: none;
+	margin-left: 20px;
+
+}
+
+.eliminar{
+	margin-left: 10px;
+	cursor: pointer;
 }
 
 .admin_agregar_form input[type="text"],
@@ -936,6 +959,7 @@ footer p {
 	.admin_list__head__actions {
 		text-align: center;
 		width: 75px;
+		margin-right: 50px;
 	}
 
 	.seccion--home--otros-posts__ver-todos {
