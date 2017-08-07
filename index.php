@@ -87,7 +87,7 @@
                                         </li>
                                         <li>
                                             <a class="botones botonitos" href="index.php?s=registro">
-                                                <i class="glyphicon glyphicon-align-center"></i>
+                                                <img src="images/iconos/varita-blanco.png" alt="ícono varita" class="iconitos">
                                                 Registro
                                             </a>
                                         </li>
@@ -114,14 +114,16 @@
                 }
             ?>
         </div>
-
-        <footer>
-            <div class="container">
-                <p>El Calabozo del Androide - Todos los derechos reservados</p>
-            </div>
+            <div id="noo"></div>
+            <footer>
+                
+                <div class="container">
+                    <img src="images/lightsaber.png" alt="sable laser coleccionable" id="sable" onclick="noEsColeccionable()">
+                </div>
         </footer>
 
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/dom.js"></script>
     </body>
 </html>
