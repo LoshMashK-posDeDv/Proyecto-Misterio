@@ -27,7 +27,18 @@ VALUES
 	('Ticket to Ride: Europe', 'Ticket to Ride', NOW( ), null, null, 'ticket.jpeg', 'Uno de mis jueguitos favoritos, super adictivo, puedo pasarme horas jugando con mis amigas Flor', '1', 6),
 	('Deadpool Funko Pop', 'Deadpool', NOW( ), null, null, 'deadpool.jpg', 'Miren el muñequito que me compré', '1', 2),
 	('Mi stitch y yo', 'stitch', NOW( ), null, null, 'stitch.jpg', 'Stitch rechazándome fuertemente un domingo por la noche', '1', 5),
-	('Listo para matar', 'Deadpool', NOW( ), null, null, 'deadpoolger.jpg', 'A punto de hacerles bebes a mis alumnos de php con mi nueva campera de Deadpool', '1', 1);
+	('Listo para matar', 'Deadpool', NOW( ), null, null, 'deadpoolger.jpg', 'A punto de hacerles bebes a mis alumnos de php con mi nueva campera de Deadpool', '1', 1),
+	('Mi nueva vitrina de comics', 'Comics', NOW( ), null, 'vitrina02.jpg, vitrina03.jpg', 'vitrina01.jpg', 'Mi aficción por las historietas me llevó a construir esta vitrina para mis comics. Mi favorito es Superman por ser la insignia y el ícono de DC-sin degradar a Batman-, y por su aspecto religioso, pues se asemeja a Jesús: vive sus 33 años, vino del cielo y es el más poderoso', '1', 2),
+	('Conseguí el Suhi Go!', 'Sushi Go', NOW( ), null, 'sushi02.jpg', 'sushi01.jpg', 'No puedo mas de contenta con mi nuevo jueguito, y las cartitas son lo más', '1', 4),
+	('Colección de piezas de DC Comic', 'Figuras DC Comics', NOW( ), null, null, 'coleccion_figuras.jpg', 'Me tuve que armar un estante para mi colección de personajes, ahora están todos juntitos', '1', 8),
+	('Amo Big Hero', 'Big Hero', NOW( ), null, 'big02.jpg, big03.jpg, big04.jpg, big05.jpg', 'big01.jpg', 'Mi asombrosa lámpara LED USB de Baymax. No puedo dejar de dormir con ella. Su cabeza y sus manos son móviles!', '1', 6),
+	('Lois and Peter', 'Family Guy', NOW( ), null, null, 'nighttime.jpg', 'Al carajo con todo! Me lo compré y me encanta. Que se curtan!', '1', 1),
+	('Nunca habrá otro Batman como Adam West', 'Batman', NOW( ), null, null, 'tatuaje.jpg', 'Adam no está físicamente, pero ahora vive aquí, en mi tatuaje', '1', 9),
+	('Dibujando a Shifu', 'Shifu, Kung Fu Panda', NOW( ), null, null, 'master_shifu.jpg', 'Después de varios intentos logré hacerle este pequeño homenaje a este tan querido personaje de mi peli favorita', '1', 6),
+	('Droideando', 'Droid Factory, Star Wars', NOW( ), null, null, 'droides.jpg', 'Los conseguí en la tienda de Tattoine Traders en los estudios Disney, son lo mas mono que he visto y no me resistí a comprarlos', '1', 9);
+	('Nerdeando', 'Call of Cthulhu', NOW( ), null, 'cthulhu02.jpg, cthulhu03.jpg', 'cthulhu01.jpg', 'Nerdeando con amigos solo porque si', '1', 1);
+	
+	
 
 INSERT INTO
 	comentarios (COMENTARIO, FECHA_COMENTARIO, C_ESTADO, FKUSUARIO, FKARTICULO)
@@ -65,4 +76,16 @@ VALUES
 	( 4, 10 ),
 	( 5, 9 ),
 	( 5, 10 ),
-	( 6, 10 );
+	( 6, 10 ),
+	( 7, 9 ),
+	( 7, 10),
+	( 8, 10),
+	( 9, 10),
+	( 10, 10),
+	( 11, 10),
+	( 12, 6),
+	( 13, 5),
+	( 13, 6),
+	( 14, 9),
+	( 14, 10),
+	( 15, 1);
