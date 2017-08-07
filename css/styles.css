@@ -262,6 +262,10 @@ header .dropdown-menu > li a {
 	color: #1D896F;
 }
 
+.paginador{
+	width: 100%;
+}
+
 .paginator{
 	text-align: right;
 }
