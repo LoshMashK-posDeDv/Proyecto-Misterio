@@ -921,6 +921,20 @@ footer p {
 	margin-bottom: 0;
 }
 
+.seccion--email {
+	border: 1px solid #ddd;
+	margin: 30px auto;
+	width: 50%;
+	min-height: 510px;
+	background: url(../images/monkey.png) no-repeat center bottom #fff;
+	height: calc(100vh - 90px);
+}
+
+.seccion--email p {
+	font-size: 17px;
+	margin: 35px 35px 0 35px;
+}
+
 /* TABLET */
 
 /* DESKTOP */

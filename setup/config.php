@@ -65,6 +65,9 @@ if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
 		case 'resultados':
 			$seccion .= 'buscar.php';
 			break;
+		case 'prueba_email':
+			$seccion .= 'prueba_email.php';
+			break;
 
 		default:
 			$seccion .= 'home.php';
