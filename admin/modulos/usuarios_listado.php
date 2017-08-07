@@ -45,9 +45,9 @@
 
 					<td class="admin_list__row__tipo">
 						<form action="acciones/cambiar_permisos.php?i=<?php echo $a_usuarios['IDUSUARIOS'] ?>" method="post">
-								<label><input type="radio" name="permiso" value="1" <?php echo $a_usuarios['FKPERMISOS'] == 1 ? 'checked' : '';  ?>> Admin </label>
-								<label><input type="radio" name="permiso" value="2" <?php echo $a_usuarios['FKPERMISOS'] == 2 ? 'checked' : '';  ?>> Usuario </label>
-								<button type="submit"><i class="glyphicon glyphicon-refresh"></i></button>
+								<label class="tiposUser"><input type="radio" name="permiso" value="1" <?php echo $a_usuarios['FKPERMISOS'] == 1 ? 'checked' : '';  ?>> <span>Admin</span> </label>
+								<label class="tiposUser"><input type="radio" name="permiso" value="2" <?php echo $a_usuarios['FKPERMISOS'] == 2 ? 'checked' : '';  ?>> <span>Usuario</span> </label>
+								<button type="submit" class="btn btn-default refresh"><i class="glyphicon glyphicon-refresh"></i></button>
 						</form>
 					</td>
 
