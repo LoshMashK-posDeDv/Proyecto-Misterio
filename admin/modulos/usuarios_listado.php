@@ -64,35 +64,22 @@
 						<?php
 							$estado_cont = $a_usuarios['U_ESTADO'] == 1 ? 'inactivo' : 'activo';
 						?>
+						
 						<a class="<?php echo strtolower($estado); ?>" href="acciones/cambiar_estado_usuario.php?i=<?php echo $a_usuarios['IDUSUARIOS'] ?>" title="Cambiar estado a <?php echo $estado_cont; ?> ">
 							<i class="glyphicon cajon"></i>
 							<span class="sr-only"> cambiar estado </span>
 						</a>
 
-						<a class="eliminar" data-toggle="modal" data-target="#eliminar" title="Eliminar usuario">
+						<a class="eliminar" onclick="return confirm('¿Está seguro que desea eliminar el usuario?')" href="acciones/eliminar_usuario.php?i=<?php echo $a_usuarios['IDUSUARIOS'] ?>" title="Eliminar usuario">
 							<img src="../images/iconos/bomba-negro.png" alt="ícono bomba" class="iconitos">
 							<span class="sr-only"> borrar usuario </span>
+
 						</a>
 					</td>
 				</tr>
-
 			<?php
 				endwhile;
 			?>
 		</tbody>
 	</table>
-</div>
-
-<div class="modal fade" id="eliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <p class="text-center">¿Desea eliminar al usuario?</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-        <a href="acciones/eliminar_usuario.php?i=<?php echo $a_usuarios['IDUSUARIOS'] ?>" class="btn btn-danger">Eliminar</a>
-      </div>
-    </div>
-  </div>
 </div>

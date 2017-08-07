@@ -40,15 +40,15 @@ include('setup/config.php');
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-navbar">
                         <ul class="nav navbar-nav navbar-right">
-                            <li id="btn-posts">
-                                <a href="index.php?s=posts">posts</a>
+                            <li id="btn-videos">
+                                <a href="index.php?s=videos">Videos</a>
                             </li>
-                            <?php if(isset($_SESSION['EMAIL'])) { ?>
+                            <?php if(isset($_SESSION['NOMBRE_USUARIO'])) { ?>
 
                                 <li class="dropdown">
 
                                     <button class="btn dropdown-toggle" type="button" id="dropdown-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                        Hola <?php echo $_SESSION['EMAIL'] ?>
+                                        Hola <?php echo $_SESSION['NOMBRE_USUARIO'] ?>
                                         <span class="caret"></span>
                                     </button>
 
