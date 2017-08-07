@@ -65,7 +65,7 @@ SQL;
                     <p>Estadísticas</p>
                 </page_footer>
 
-                <h1 class='hola'>$d1[TOTAL] videos</h1>
+                <h1 class='hola'>$d1[TOTAL] posts</h1>
                 <page>
 
                 <page_footer class='hola'>
@@ -86,7 +86,7 @@ SQL;
                     <p>Estadísticas</p>
                 </page_footer>
 
-                    <h2>Últimos videos</h2>";
+                    <h2>Últimos posts</h2>";
 
                     while($d3 = mysqli_fetch_assoc($f3)){
                         $content .= "<p>$d3[TITULO]</p>";

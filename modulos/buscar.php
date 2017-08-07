@@ -34,7 +34,7 @@ SQL;
             <img src="../uploads/<?php echo $array_resultados['IMG_DESTACADA'] ?>" alt="">
             <h3><?php echo $array_resultados['TITULO'] ?></h3>
             <p><?php echo $array_resultados['DESCRIPCION'] ?></p>
-            <a href="../index.php?s=video&vid=<?php echo $array_resultados['IDARTICULO'] ?>">Ver más</a>
+            <a href="../index.php?s=post&vid=<?php echo $array_resultados['IDARTICULO'] ?>">Ver más</a>
         </div>
     <?php
         endwhile;

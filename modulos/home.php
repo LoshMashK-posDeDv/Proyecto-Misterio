@@ -2,7 +2,7 @@
 <section id="contenedorHome">
 	<h1 class="hidden">El Calabozo del Androide</h1>
 	<div class="sr-only">
-		<h1>Tus videos apestan (y vos también)</h1>
+		<h1>Tus posts apestan (y vos también)</h1>
 		<p>Una web para que subas tus cosas de juegos, comics y demases...  Y todos los critiquemos porque apestan.|</p>
 	</div>
 
@@ -12,7 +12,7 @@
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
 				<h2>BIENVENIDOS, SIMPLES MORTALES</h2>
-				<p>Ahoy! Pasen! Pasen! En esta web van a <strong>poder subir videos, imágenes, reviews y lo que quieran de cualquier cosa relacionada a juegos y afines</strong>. Puede que algunos de ustedes vengan a presumir sus colecciones, pero <strong>sepan que van a ser juzgados y criticados sin piedad por el resto de los usuarios</strong>.</p>
+				<p>Ahoy! Pasen! Pasen! En esta web van a <strong>poder subir posts, imágenes, reviews y lo que quieran de cualquier cosa relacionada a juegos y afines</strong>. Puede que algunos de ustedes vengan a presumir sus colecciones, pero <strong>sepan que van a ser juzgados y criticados sin piedad por el resto de los usuarios</strong>.</p>
 				<p>Por favor tengan en cuenta que no queremos simplonadas, por lo cual <strong>cualquier usuario que postee muñecos truchos o su colección de Mi Pequeño Pony, será banneado de por vida</strong>.</p>
 				<p>Que eso no te desaliente, después de todo, ¿qué sería de la vida del coleccionista sin los giles que piensan que sus Magic de Surrak vale un millón de dólares?</p>
 			</div>
@@ -20,12 +20,12 @@
 	</div>
 </section>
 
-<section class="section--home--videos">
+<section class="section--home--posts">
 
 	<div class="container">
 		<h3 class="u text-center">Los más vistos</h3>
 			<?php
-				$consulta_videos = <<<SQL
+				$consulta_posts = <<<SQL
 				SELECT
 					IDARTICULO,
 					UCASE(TITULO) AS TITULO,
@@ -39,25 +39,25 @@
 				LIMIT 3
 SQL;
 
-			$r1 = mysqli_query($conexion, $consulta_videos);
-			while($array_videos = mysqli_fetch_assoc($r1)){
+			$r1 = mysqli_query($conexion, $consulta_posts);
+			while($array_posts = mysqli_fetch_assoc($r1)){
 			?>
 
 
-		<article class="col-md-4 home__videos">
-			<div class="home__videos__img">
-				<a href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>">
-					<img src="uploads/<?php echo $array_videos['IMG_DESTACADA'] ?>" alt="<?php echo $array_videos['TITULO'] ?>"
+		<article class="col-md-4 home__posts">
+			<div class="home__posts__img">
+				<a href="index.php?s=post&vid=<?php echo $array_posts['IDARTICULO']; ?>">
+					<img src="uploads/<?php echo $array_posts['IMG_DESTACADA'] ?>" alt="<?php echo $array_posts['TITULO'] ?>"
 					>
 				</a>
 			</div>
-			<h4 class="home__videos__title">
-				<a href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>">
-					<?php echo $array_videos['TITULO'] ?>
+			<h4 class="home__posts__title">
+				<a href="index.php?s=post&vid=<?php echo $array_posts['IDARTICULO']; ?>">
+					<?php echo $array_posts['TITULO'] ?>
 				</a>
 			</h4>
-			<p class="home__videos__desc">
-				<?php echo trim_desc($array_videos['DESCRIPCION']) ?>
+			<p class="home__posts__desc">
+				<?php echo trim_desc($array_posts['DESCRIPCION']) ?>
 			</p>
 		</article>
 		<?php
@@ -93,14 +93,14 @@ SQL;
 	</div>
 </div>
 
-<section class="section--home--videos bottom">
+<section class="section--home--posts bottom">
 	<div class="container">
-		<div class="section--home--videos__title">
-			<h3>ÚLTIMOS VIDEOS</h3>
+		<div class="section--home--posts__title">
+			<h3>ÚLTIMOS POSTS</h3>
 		</div>
 		<div class="row">
 		<?php
-			$consulta_videos = <<<SQL
+			$consulta_posts_b = <<<SQL
 			SELECT
 				IDARTICULO,
 				UCASE(TITULO) AS TITULO,
@@ -115,26 +115,26 @@ SQL;
 			LIMIT 4
 SQL;
 
-		$r2 = mysqli_query($conexion, $consulta_videos);
-		while($array_videos = mysqli_fetch_assoc($r2)){
+		$r2 = mysqli_query($conexion, $consulta_posts_b);
+		while($array_posts = mysqli_fetch_assoc($r2)){
 		?>
-			<article class="col-md-3 home__videos">
-				<div class="home__videos__img">
-					<a href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>">
-						<img src="uploads/<?php echo $array_videos['IMG_DESTACADA'] ?>" alt="<?php echo $array_videos['TITULO'] ?>">
+			<article class="col-md-3 home__posts">
+				<div class="home__posts__img">
+					<a href="index.php?s=post&vid=<?php echo $array_posts['IDARTICULO']; ?>">
+						<img src="uploads/<?php echo $array_posts['IMG_DESTACADA'] ?>" alt="<?php echo $array_posts['TITULO'] ?>">
 					</a>
 				</div>
-				<h4 class="home__videos__title">
-					<a href="index.php?s=video&vid=<?php echo $array_videos['IDARTICULO']; ?>">
-						<?php echo $array_videos['TITULO'] ?>					
+				<h4 class="home__posts__title">
+					<a href="index.php?s=post&vid=<?php echo $array_posts['IDARTICULO']; ?>">
+						<?php echo $array_posts['TITULO'] ?>					
 					</a>
 				</h4>
 			</article>
 			<?php } ?>
 		</div>
 
-		<p class="seccion--home--otros-videos__ver-todos">
-			<a class="linki" href="?s=videos">Ver todos</a>
+		<p class="seccion--home--otros-posts__ver-todos">
+			<a class="linki" href="?s=posts">Ver todos</a>
 		</p>
 		
 	</div>

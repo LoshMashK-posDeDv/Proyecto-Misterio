@@ -64,7 +64,7 @@ $f4 = mysqli_query($conexion, $c4);
 				<span>
 					<?php echo $a_categorias['TOTAL']; ?>
 				</span>
-				VIDEOS
+				POSTS
 			</p>
 		</div>
 
@@ -78,12 +78,12 @@ $f4 = mysqli_query($conexion, $c4);
 				<?php endwhile; ?>
 			</ul>
 
-			<h3>Últimos videos</h3>
+			<h3>Últimos posts</h3>
 			<ul>
 				<?php
-					while($a_videos = mysqli_fetch_assoc($f3)):
+					while($a_posts = mysqli_fetch_assoc($f3)):
 				?>
-					<li><?php echo $a_videos['TITULO'] ?></li>
+					<li><?php echo $a_posts['TITULO'] ?></li>
 				<?php endwhile; ?>
 			</ul>
 

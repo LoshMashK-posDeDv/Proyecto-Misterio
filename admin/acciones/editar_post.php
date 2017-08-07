@@ -6,8 +6,8 @@
 	$duracion = $_POST['duracion'];
 	$categoria = $_POST['categoria'];
 	$anio = $_POST['anio'];
-	$video = $_FILES['video'];
-	$video_nombre = $_FILES['video']['name'];
+	$post = $_FILES['post'];
+	$post_nombre = $_FILES['post']['name'];
 	$imagenes = $_FILES['imagenes'];
 	$imagen_destacada = $_FILES['imagen_destacada'];
 	$imagen_destacada_nombre = $_FILES['imagen_destacada']['name'];
@@ -67,10 +67,10 @@
 
 	//$autor = $_SESSION['NOMBRE_COMPLETO'];
 
-	if($video['size'] > 0){
-		$extension = pathinfo($video_nombre, PATHINFO_EXTENSION);
-		$video_nombre = "video_" . time() . '.' . $extension;
-		move_uploaded_file($video['tmp_name'], "../../uploads/$video_nombre");
+	if($post['size'] > 0){
+		$extension = pathinfo($post_nombre, PATHINFO_EXTENSION);
+		$post_nombre = "post_" . time() . '.' . $extension;
+		move_uploaded_file($post['tmp_name'], "../../uploads/$post_nombre");
 	}
 
 	if($imagen_destacada['size'] > 0){
@@ -87,8 +87,8 @@
 		DURACION = '$duracion',
 		AÑO = '$anio'";
 
-	if($video['size'] > 0){
-		$c .= ", VIDEO = '$video_nombre'";
+	if($post['size'] > 0){
+		$c .= ", post = '$post_nombre'";
 	}
 
 	if($imagenes['size'] > 0){
@@ -104,5 +104,5 @@
 	$rta = 'ok';
 
 	mysqli_query($conexion, $c);
-	header("Location: ../index.php?s=editar_video&m=$rta&i=$id");
+	header("Location: ../index.php?s=editar_post&m=$rta&i=$id");
 ?>

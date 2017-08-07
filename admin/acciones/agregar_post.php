@@ -6,8 +6,8 @@
 	$duracion = $_POST['duracion'];
 	$anio = $_POST['anio'];
 	echo $anio;
-	$video = $_FILES['video'];
-	$video_nombre = $_FILES['video']['name'];
+	$post = $_FILES['post'];
+	$post_nombre = $_FILES['post']['name'];
 	$categoria = isset($_POST['categoria']) ? $_POST['categoria'] : '';
 	$imagenes = $_FILES['imagenes'];
 	$imagen_destacada = $_FILES['imagen_destacada'];
@@ -76,17 +76,17 @@
 	$er_duracion = "/^[0-9]{1,2}(:|.)[0-9]{2}(:|.)[0-9]{2}$/";
 	$txt_duracion = preg_match($er_duracion, $duracion, $coincidencia_duracion);
 
-	$er_video = "/^[\w\s]{4,45}\.(mp4|webm)$/i";
-	$txt_video = preg_match($er_video, $video_nombre = $_FILES['video']['name'], $coincidencia_video);
+	$er_post = "/^[\w\s]{4,45}\.(mp4|webm)$/i";
+	$txt_post = preg_match($er_post, $post_nombre = $_FILES['post']['name'], $coincidencia_post);
 
 	$er_imagen_destacada = "/^[\w\s]{1,45}\.(jpg|jpeg|png)$/i";
 	$txt_imagen_destacada = preg_match($er_imagen_destacada, $imagen_destacada['name'], $coincidencia_imagen_destacada);
 
-	if($txt_titulo && $txt_descripcion && $txt_video && $txt_duracion && $txt_imagen_destacada){
-		if($video['size'] > 0){
-			$extension = pathinfo($video_nombre, PATHINFO_EXTENSION);
-			$video_nombre = "video_" . time() . '.' . $extension;
-			move_uploaded_file($video['tmp_name'], "../../uploads/$video_nombre");
+	if($txt_titulo && $txt_descripcion && $txt_post && $txt_duracion && $txt_imagen_destacada){
+		if($post['size'] > 0){
+			$extension = pathinfo($post_nombre, PATHINFO_EXTENSION);
+			$post_nombre = "post_" . time() . '.' . $extension;
+			move_uploaded_file($post['tmp_name'], "../../uploads/$post_nombre");
 		}
 
 		if($imagen_destacada['size'] > 0){
@@ -102,7 +102,7 @@
 			DESCRIPCION = '$descripcion',
 			DURACION = '$duracion',
 			AÑO = '$anio',
-			VIDEO = '$video_nombre',
+			post = '$post_nombre',
 			IMG_DESTACADA = '$imagen_destacada_nombre',
 			A_ESTADO = '1',
 			FECHA_ALTA = NOW()";
@@ -128,12 +128,12 @@
 			}
 		}
 
-		//header("Location: ../index.php?s=videos_listado&m=$rta");
+		//header("Location: ../index.php?s=posts_listado&m=$rta");
 
 	} else {
 		$c = 'falló';
 		$rta = 'error';
 
-		//header("Location: ../index.php?s=agregar_video&m=$rta");
+		//header("Location: ../index.php?s=agregar_post&m=$rta");
 	}
 ?>
