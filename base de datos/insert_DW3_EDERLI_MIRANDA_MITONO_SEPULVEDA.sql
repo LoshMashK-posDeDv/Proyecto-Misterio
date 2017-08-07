@@ -44,13 +44,22 @@ INSERT INTO
 	comentarios (COMENTARIO, FECHA_COMENTARIO, C_ESTADO, FKUSUARIO, FKARTICULO)
 VALUES
 	('Esa ropita está genial', NOW( ), '1', 4, 1),
+	('Divina! La quiero ya!', NOW( ), '1', 9, 1),
 	('Es un juego fantástico', NOW( ), '1', 6, 2),
+	('Bienvenidos a mi Imperio, tomen asiento y vean como les paso el trapo', NOW( ), '1', 6, 3),
 	('Me parece asombroso', NOW( ), '1', 5, 3),
 	('Es una porquería', NOW( ), '0', 8, 4),
-	('que rica piba', NOW( ), '1', 5, 5),
+	('Que rica piba', NOW( ), '1', 5, 5),
 	('De lo mejor que se vio en este último tiempo', NOW( ), '0', 1, 1),
 	('Altas llantas', NOW( ), '1', 7, 1),
-	('Está muy bueno pero son 8 horas de juego', NOW( ), '1', 5, 2);
+	('Está muy bueno pero son 8 horas de juego', NOW( ), '1', 5, 2),
+	('El mejor Batman de todos los tiempos, inigualable', NOW( ), '1', 1, 12),
+	('Uhhhhhhh papapapa se ve genial', NOW( ), '1', 9, 11),
+	('Es muy tienita esa lámpara', NOW( ), '1', 4, 10),
+	('No se parece en nada, te quedó super espantoso', NOW( ), '1', 7, 13),
+	('Impresionante invitame!', NOW( ), '1', 5, 6),
+	('Juguemos ese jueguito super genial en todos los recreos de DV!', NOW( ), '1', 6, 8);
+	
 
 INSERT INTO
 	categorias (CATEGORIA)
