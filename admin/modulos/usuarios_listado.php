@@ -65,11 +65,13 @@
 							$estado_cont = $a_usuarios['U_ESTADO'] == 1 ? 'inactivo' : 'activo';
 						?>
 						<a class="<?php echo strtolower($estado); ?>" href="acciones/cambiar_estado_usuario.php?i=<?php echo $a_usuarios['IDUSUARIOS'] ?>" title="Cambiar estado a <?php echo $estado_cont; ?> ">
-							<i class="glyphicon glyphicon-flag"></i>
+							<i class="glyphicon cajon"></i>
+							<span class="sr-only"> cambiar estado </span>
 						</a>
 
 						<a class="eliminar" data-toggle="modal" data-target="#eliminar" title="Eliminar usuario">
-							<i class="glyphicon glyphicon-remove"></i>
+							<img src="../images/iconos/bomba-negro.png" alt="ícono bomba" class="iconitos">
+							<span class="sr-only"> borrar usuario </span>
 						</a>
 					</td>
 				</tr>
