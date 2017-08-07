@@ -69,7 +69,7 @@
 							<i class="glyphicon glyphicon-flag"></i>
 						</a>
 
-						<a class="eliminar" href="acciones/eliminar_usuario.php?i=<?php echo $a_usuarios['IDUSUARIOS'] ?>" title="Eliminar usuario">
+						<a class="eliminar" onclick="return confirm('¿Está seguro que desea eliminar el usuario?')" href="acciones/eliminar_usuario.php?i=<?php echo $a_usuarios['IDUSUARIOS'] ?>" title="Eliminar usuario">
 							<i class="glyphicon glyphicon-remove"></i>
 						</a>
 					</td>
