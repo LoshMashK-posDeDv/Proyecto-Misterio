@@ -43,12 +43,12 @@ include('setup/config.php');
                             <li id="btn-videos">
                                 <a href="index.php?s=videos">Videos</a>
                             </li>
-                            <?php if(isset($_SESSION['NOMBRE_USUARIO'])) { ?>
+                            <?php if(isset($_SESSION['EMAIL'])) { ?>
 
                                 <li class="dropdown">
 
                                     <button class="btn dropdown-toggle" type="button" id="dropdown-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                        Hola <?php echo $_SESSION['NOMBRE_USUARIO'] ?>
+                                        Hola <?php echo $_SESSION['EMAIL'] ?>
                                         <span class="caret"></span>
                                     </button>
 

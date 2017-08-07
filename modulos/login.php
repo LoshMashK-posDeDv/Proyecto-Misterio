@@ -11,6 +11,19 @@
 			echo '</p>';
 			unset( $_SESSION['LOGIN_ERROR'] );
 		}
+
+		if (isset($_GET['e'])) {
+			if ($_GET['e'] == 'error_t') {
+				echo '<p class="error">';
+					echo 'Error al confirmar la contraseña';
+				echo '</p>';
+			} else if ($_GET['e'] == 'exito_t') {
+				echo '<p class="error exito">';
+					echo 'Su contraseña se ha actualizado con éxito';
+				echo '</p>';
+			}
+		}
+		
 	?>
 
 	<div>

@@ -13,7 +13,7 @@
 	} else {
 		$nueva_pass = rand(10000, 99999);
 		$token = md5('Jeff Albertson' . $email);
-		$insert_pass = "INSERT into recuperar_pass SET EMAIL='$email', CLAVE_NUEVA='$nueva_pass', TOKEN_SEGURIDAD='$token'";
+		$insert_pass = "INSERT into recuperar_pass SET EMAIL='$email', CLAVE_NUEVA='$nueva_pass', TOKEN_SEGURIDAD='$token' ON DUPLICATE KEY UPDATE CLAVE_NUEVA='$nueva_pass', TOKEN_SEGURIDAD='$token'";
 		$nombre = $info['NOMBRE_COMPLETO'];
 		$nombre = strstr($nombre, ' ', true);
 		$nombre = ucfirst($nombre);     
