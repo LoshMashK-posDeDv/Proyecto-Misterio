@@ -27,7 +27,7 @@ VALUES
 	('Ticket to Ride: Europe', 'Ticket to Ride', NOW( ), null, null, 'ticket.jpeg', 'Uno de mis jueguitos favoritos, super adictivo, puedo pasarme horas jugando con mis amigas Flor', '1', 6),
 	('Deadpool Funko Pop', 'Deadpool', NOW( ), null, null, 'deadpool.jpg', 'Miren el muñequito que me compré', '1', 2),
 	('Mi stitch y yo', 'stitch', NOW( ), null, null, 'stitch.jpg', 'Stitch rechazándome fuertemente un domingo por la noche', '1', 5),
-	('Listo para matar', 'Deadpool', NOW( ), null, null, 'deadpoolger.jpg', 'A punto de hacerles bebes a mis alumnos de php con mi nueva campera de Deadpool', '1', 1),
+	('Colección Hogwarts', 'Harry Potter', NOW( ), null, null, 'hogwarts.jpg', 'Lo mejor que me pudo haber pasado, no veo la hora de verlos todos', '1', 7),
 	('Mi nueva vitrina de comics', 'Comics', NOW( ), null, 'vitrina02.jpg, vitrina03.jpg', 'vitrina01.jpg', 'Mi aficción por las historietas me llevó a construir esta vitrina para mis comics. Mi favorito es Superman por ser la insignia y el ícono de DC-sin degradar a Batman-, y por su aspecto religioso, pues se asemeja a Jesús: vive sus 33 años, vino del cielo y es el más poderoso', '1', 2),
 	('Conseguí el Suhi Go!', 'Sushi Go', NOW( ), null, 'sushi02.jpg', 'sushi01.jpg', 'No puedo mas de contenta con mi nuevo jueguito, y las cartitas son lo más', '1', 4),
 	('Colección de piezas de DC Comic', 'Figuras DC Comics', NOW( ), null, null, 'coleccion_figuras.jpg', 'Me tuve que armar un estante para mi colección de personajes, ahora están todos juntitos', '1', 8),
@@ -35,7 +35,7 @@ VALUES
 	('Lois and Peter', 'Family Guy', NOW( ), null, null, 'nighttime.jpg', 'Al carajo con todo! Me lo compré y me encanta. Que se curtan!', '1', 1),
 	('Nunca habrá otro Batman como Adam West', 'Batman', NOW( ), null, null, 'tatuaje.jpg', 'Adam no está físicamente, pero ahora vive aquí, en mi tatuaje', '1', 9),
 	('Dibujando a Shifu', 'Shifu, Kung Fu Panda', NOW( ), null, null, 'master_shifu.jpg', 'Después de varios intentos logré hacerle este pequeño homenaje a este tan querido personaje de mi peli favorita', '1', 6),
-	('Droideando', 'Droid Factory, Star Wars', NOW( ), null, null, 'droides.jpg', 'Los conseguí en la tienda de Tattoine Traders en los estudios Disney, son lo mas mono que he visto y no me resistí a comprarlos', '1', 9);
+	('Droidecitos', 'Droid Factory, Star Wars', NOW( ), null, null, 'droides.jpg', 'Los conseguí en la tienda de Tattoine Traders en los estudios Disney, son lo mas mono que he visto y no me resistí a comprarlos', '1', 9),
 	('Nerdeando', 'Call of Cthulhu', NOW( ), null, 'cthulhu02.jpg, cthulhu03.jpg', 'cthulhu01.jpg', 'Nerdeando con amigos solo porque si', '1', 1);
 	
 	
