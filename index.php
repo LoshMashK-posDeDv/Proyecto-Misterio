@@ -107,14 +107,16 @@ include('setup/config.php');
         <div class="contenedor">
             <?php include($seccion); ?>
         </div>
-
-        <footer>
-            <div class="container">
-                <p>El Calabozo del Androide - Todos los derechos reservados</p>
-            </div>
+            <div id="noo"></div>
+            <footer>
+                
+                <div class="container">
+                    <img src="images/lightsaber.png" alt="sable laser coleccionable" id="sable" onclick="noEsColeccionable()">
+                </div>
         </footer>
 
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/dom.js"></script>
     </body>
 </html>

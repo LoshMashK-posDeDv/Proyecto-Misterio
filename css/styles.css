@@ -880,10 +880,9 @@ footer {
     padding: 10px 0;
 }
 
-footer p {
-	color: white;
-    font-size: 12px;
-    margin: 0;
+#sable{
+	width: 200px;
+	cursor: pointer;
 }
 
 .seccion--posts {
