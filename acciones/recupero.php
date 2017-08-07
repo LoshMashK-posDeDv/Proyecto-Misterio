@@ -14,18 +14,12 @@
 		$nueva_pass = rand(10000, 99999);
 		$token = md5('Jeff Albertson' . $email);
 		$insert_pass = "INSERT into recuperar_pass SET EMAIL='$email', CLAVE_NUEVA='$nueva_pass', TOKEN_SEGURIDAD='$token'";
+		$nombre = $info['NOMBRE_COMPLETO'];
+		$nombre = strstr($nombre, ' ', true);
+		$nombre = ucfirst($nombre);     
 		mysqli_query($conexion, $insert_pass);	
-		//header("Location: ../index.php?s=prueba_email");
+		
+		/*  Para mostrar como se veria el email de confirmación lo redireccionamos a un php de prueba */
+		header("Location: ../index.php?s=prueba_email&e=$email&n=$nombre&nc=$nueva_pass&t=$token");
 	}
 ?>
-
-<div class="seccion--email login_form">
-	<h2>Bueno bueno bueno...</h2>	
-	<p class="text-center">
-		Pruebas científicas demostraron que simios pueden recordar parámetros simples de formas y colores.
-		<br>
-		Parece que alguien olvidó su contraseña, lo cual lo hace más estúpido que un simio.
-		<br>
-		No te preocupes, tu clave temporal es $nueva_pass, pero no va a funcionar hasta que no hagas click <a href="confirmar_pass.php?EMAIL=$email&TOKEN=$token">ACÁ</a>
-	</p>
-</div>

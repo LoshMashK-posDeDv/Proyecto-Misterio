@@ -114,6 +114,15 @@ input[type="submit"]:hover {
     padding: 5px 20px;
 }
 
+.green {
+	color: #6ede4b;
+	font-family: 'gobold',sans-serif;
+}
+
+.bold {
+	font-weight: 700;
+}
+
 /* ADMIN */
 
 h4,h5,h6 {	
@@ -551,7 +560,7 @@ span.disc {
 }
 
 .post_agregar_form {
-	background: url(../images/thinking.gif) no-repeat 180px 270px #fff;
+	background: url(../images/thinking.gif) no-repeat 14% bottom #fff;
 	background-attachment: fixed;
 	padding-bottom: 40px;
 }
@@ -926,13 +935,20 @@ footer p {
 	margin: 30px auto;
 	width: 50%;
 	min-height: 510px;
-	background: url(../images/monkey.png) no-repeat center bottom #fff;
+	background: url(../images/monkey.png) no-repeat center bottom -30px #fff;
 	height: calc(100vh - 90px);
+	padding: 20px 60px;
 }
 
 .seccion--email p {
-	font-size: 17px;
-	margin: 35px 35px 0 35px;
+	font-size: 14px;
+	margin: 20px 0;
+}
+
+.seccion--email .green {
+    display: block;
+    font-size: 20px;
+    margin: 10px 0;
 }
 
 /* TABLET */
