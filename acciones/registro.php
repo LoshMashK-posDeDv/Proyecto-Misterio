@@ -17,22 +17,20 @@
 		FECHA_ALTA = NOW( )
 REGISTRO;
 
-		if(empty(empty($nombre_completo) || empty($email) || empty($password)) {
+	if(empty($nombre_completo) || empty($email) || empty($password)) {
+		$mnsj = 'error';
+	} else {
+		$c_match = "SELECT * FROM usuarios WHERE EMAIL = '$email'";
+		$check = mysqli_query($conexion, $c_match);
+		
+		if (mysqli_num_rows($check) == 0 ) {
+			mysqli_query($conexion, $c_reg);
+			$mnsj = 'exito';
+		} else {
 			$mnsj = 'error';
-		} else {		
-			
-			$c_match = "SELECT * FROM usuarios WHERE EMAIL = '" . $email . "'";
-			
-			$check = mysqli_query($conexion, $c_match);
-			
-			if (mysqli_num_rows($check) == 0 ) {
-				mysqli_query($conexion, $c_reg);
-				$mnsj = 'exito';
-			} else {
-				$mnsj = 'error';
-			}	
-		}
+		}	
+	}
 
-		header("Location: ../index.php?s=registro&m=$mnsj");
+	header("Location: ../index.php?s=registro&m=$mnsj");
 
 ?>

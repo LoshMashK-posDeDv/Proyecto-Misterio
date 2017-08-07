@@ -42,7 +42,7 @@
 							</li>
 						<?php } ?>
 							<li class="menu__list__option">
-								<a href="index.php?s=mi_cuenta" class="tdv_no">
+								<a href="index.php?s=mi_cuenta">
 									<img src="../images/iconos/calavera-blanco.png" alt="ícono calavera" class="iconitos">
 									Perfil
 								</a>
