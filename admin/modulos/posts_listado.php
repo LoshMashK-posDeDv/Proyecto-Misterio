@@ -27,7 +27,7 @@
 			<tr class="admin_list__head">
 				<th class="admin_list__head__image">Captura</th>
 				<th class="admin_list__head__name">Título</th>
-				<!-- <th class="admin_list__head__author hidden-xs">Autor</th> -->
+				<th class="admin_list__head__author hidden-xs">Tipo de chuchería</th> 
 				<th class="admin_list__head__date hidden-xs">Fecha</th>
 				<th class="admin_list__head__actions">Acción</th>
 			</tr>
@@ -65,12 +65,13 @@ SQL;
 						SELECT
 							IMG_DESTACADA,
 							TITULO,
-							-- CHUCHERIA,
-							FECHA_ALTA,
+							DATE_FORMAT(a.FECHA_ALTA, "%d de %M de %Y") AS FECHA_ALTA,
 							A_ESTADO,
-							IDARTICULO
+							IDARTICULO,
+							TIPO_CHUCHERIA
 						FROM
-							articulos
+							articulos AS a
+						LEFT JOIN tipo_chucherias ON a.FKCHUCHERIA = tipo_chucherias.IDCHUCHERIA
 						WHERE
 							A_ESTADO = 1
 						ORDER BY IDARTICULO DESC
@@ -84,8 +85,8 @@ SQL;
 			<tr class="admin_list__row">
 				<td class="admin_list__row__image"><img src="../uploads/<?php echo $array_posts['IMG_DESTACADA'] ?>" alt="<?php echo $array_posts['TITULO'] ?>"></td>
 				<td class="admin_list__row__name"><p><?php echo $array_posts['TITULO'] ?></p></td>
-				<!-- <td class="admin_list__row__author hidden-xs"><p><?php echo $array_posts['CHUCHERIA'] ?></p></td> -->
-				<td class="admin_list__row__date hidden-xs"><p><?php echo $array_posts['FECHA_ALTA'] ?></p></td>
+				<td class="admin_list__row__author hidden-xs"><p><?php echo $array_posts['TIPO_CHUCHERIA'] ?></p></td>
+				<td class="admin_list__row__date hidden-xs"><p><?php echo traducir_mes($array_posts['FECHA_ALTA']) ?></p></td>
 				<td class="admin_list__row__actions">
 					<a href="index.php?s=editar_post&i=<?php echo $array_posts['IDARTICULO'] ?>" title="Editar post"><i class="glyphicon glyphicon-pencil"></i></a>
 					<a href="acciones/eliminar_post.php?i=<?php echo $array_posts['IDARTICULO'] ?>" title="Eliminar post"><i class="glyphicon glyphicon-remove"></i></a>
