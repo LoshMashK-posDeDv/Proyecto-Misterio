@@ -87,9 +87,6 @@ if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
 		case 'editar_post':
 			$seccion .= 'post_editar.php';
 			break;
-		case 'editar_pagina':
-			$seccion .= 'pagina_editar.php';
-			break;
 		case 'usuarios_listado':
 			$seccion .= 'usuarios_listado.php';
 			break;
