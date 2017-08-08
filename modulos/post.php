@@ -3,7 +3,7 @@
 	$post_id = isset($_GET['vid']) ? $_GET['vid'] : 0 ;
 
 	$consulta_post = <<<SQL
-	SELECT
+		SELECT 
 		IDARTICULO,
 		UCASE(TITULO) AS TITULO,
 		DATE_FORMAT(a.FECHA_ALTA, "%d de %M de %Y") AS FECHA,
@@ -14,10 +14,9 @@
 		NOMBRE_COMPLETO,
 		EMAIL,
 		NICK,
-		FKCHUCHERIA
-	FROM 
-		articulos a
-	
+		TIPO_CHUCHERIA	
+	FROM articulos AS a 
+	LEFT JOIN tipo_chucherias ON a.FKCHUCHERIA = tipo_chucherias.IDCHUCHERIA
 	LEFT JOIN usuarios AS u ON a.FKUSUARIO = u.IDUSUARIOS
 	WHERE IDARTICULO = $post_id
 SQL;
@@ -87,7 +86,7 @@ SQL;
 					<div class="idvideito">
 						<h2><?php echo $array_detalle['TITULO'] ?></h2>
 						<ul>
-							<li>Tipo de chuchería: <?php echo $array_detalle['FKCHUCHERIA']; ?></li>
+							<li>Tipo de chuchería: <?php echo $array_detalle['TIPO_CHUCHERIA']; ?></li>
 							<li>Categoría: <?php 
 									while($array_categoria = mysqli_fetch_assoc($r3)):
 										$categorias = explode(',',$array_categoria['CATEGORIA']);
