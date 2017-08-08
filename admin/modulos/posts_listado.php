@@ -27,7 +27,7 @@
 			<tr class="admin_list__head">
 				<th class="admin_list__head__image">Captura</th>
 				<th class="admin_list__head__name">Título</th>
-				<th class="admin_list__head__author hidden-xs">Autor</th>
+				<!-- <th class="admin_list__head__author hidden-xs">Autor</th> -->
 				<th class="admin_list__head__date hidden-xs">Fecha</th>
 				<th class="admin_list__head__actions">Acción</th>
 			</tr>
@@ -65,7 +65,7 @@ SQL;
 						SELECT
 							IMG_DESTACADA,
 							TITULO,
-							CHUCHERIA,
+							-- CHUCHERIA,
 							FECHA_ALTA,
 							A_ESTADO,
 							IDARTICULO
@@ -84,7 +84,7 @@ SQL;
 			<tr class="admin_list__row">
 				<td class="admin_list__row__image"><img src="../uploads/<?php echo $array_posts['IMG_DESTACADA'] ?>" alt="<?php echo $array_posts['TITULO'] ?>"></td>
 				<td class="admin_list__row__name"><p><?php echo $array_posts['TITULO'] ?></p></td>
-				<td class="admin_list__row__author hidden-xs"><p><?php echo $array_posts['CHUCHERIA'] ?></p></td>
+				<!-- <td class="admin_list__row__author hidden-xs"><p><?php echo $array_posts['CHUCHERIA'] ?></p></td> -->
 				<td class="admin_list__row__date hidden-xs"><p><?php echo $array_posts['FECHA_ALTA'] ?></p></td>
 				<td class="admin_list__row__actions">
 					<a href="index.php?s=editar_post&i=<?php echo $array_posts['IDARTICULO'] ?>" title="Editar post"><i class="glyphicon glyphicon-pencil"></i></a>
