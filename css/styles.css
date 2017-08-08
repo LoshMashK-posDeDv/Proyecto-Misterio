@@ -739,7 +739,7 @@ tr.admin_list__head th {
 
 	.home__posts__img {
 		width: 90%;
-		height: 265px;
+		height: 335px;
 		overflow: hidden;
 		position: relative;
 		margin: 0 auto;
@@ -778,6 +778,7 @@ tr.admin_list__head th {
 		text-align: center;
 		background: #7A2739;
 		padding: 50px 0;
+		font-size: 35px;
 	}
 
 	.section--home--otros-posts ul {
