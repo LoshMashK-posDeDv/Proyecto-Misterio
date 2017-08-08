@@ -3,7 +3,7 @@
 
 	$titulo = $_POST['titulo'];
 	$descripcion = $_POST['descripcion'];
-	$video = $_FILES['VIDEO'];
+	$video = $_FILES['video'];
 	$video_nombre = $_FILES['video']['name'];
 	$categoria = isset($_POST['categoria']) ? $_POST['categoria'] : '';
 	$imagenes = $_FILES['imagenes'];
@@ -72,13 +72,13 @@
 	// $er_duracion = "/^[0-9]{1,2}(:|.)[0-9]{2}(:|.)[0-9]{2}$/";
 	// $txt_duracion = preg_match($er_duracion, $duracion, $coincidencia_duracion);
 
-	$er_video = "/^[\w\s]{4,45}\.(mp4|webm)$/i";
+	$er_video = "/(^[\w\s]{4,45}\.(mp4|webm)$)?/i";
 	$txt_video = preg_match($er_video, $video_nombre = $_FILES['video']['name'], $coincidencia_video);
 
 	$er_imagen_destacada = "/^[\w\s]{1,45}\.(jpg|jpeg|png)$/i";
 	$txt_imagen_destacada = preg_match($er_imagen_destacada, $imagen_destacada['name'], $coincidencia_imagen_destacada);
 
-	if($txt_titulo && $txt_descripcion && $txt_video && $txt_duracion && $txt_imagen_destacada){
+	if($txt_titulo && $txt_descripcion && $txt_video && $txt_imagen_destacada){
 		if($video['size'] > 0){
 			$extension = pathinfo($video_nombre, PATHINFO_EXTENSION);
 			$video_nombre = "video_" . time() . '.' . $extension;
