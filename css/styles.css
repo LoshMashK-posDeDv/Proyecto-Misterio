@@ -161,15 +161,17 @@ header .btn .caret {
 }
 
 header .dropdown-menu {
-    background: #333;
-    border-radius: 0;
-    margin: 0;
-    font-size: 13px;
-    padding: 0;
+	background: #333;
+	border-radius: 0;
+	margin: 0;
+	font-size: 13px;
+	padding: 0;
+	min-width: 205px;
+	top: 75px;
 }
 
 header .dropdown-menu > li > a {
-    padding: 8px 20px;
+    padding: 10px;
 }
 
 header .dropdown-menu > li i {
@@ -708,8 +710,8 @@ tr.admin_list__head th {
 }
 
 .botonitos img{
-	width: 25px;
-	height: 25px;
+	width: 40px;
+	height: auto;
 }
 
 .resultados_error {
