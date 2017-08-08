@@ -189,6 +189,52 @@ header .dropdown-menu > li a {
     font-size: 14px;
 }
 
+.nav .dropdown {
+	padding-left: 10px;
+}
+
+#buscadorsin ::-webkit-input-placeholder { 
+  color: #fff;
+}
+
+#buscadorsin ::-moz-placeholder { 
+  color: #fff;
+}
+
+#buscadorsin :-ms-input-placeholder { 
+  color: #fff;
+}
+
+#buscadorsin  :-moz-placeholder { 
+  color: #fff;
+}
+
+#buscadorsin{
+	margin: 10px 0 0 0;
+	padding: 0;
+	border: 0;
+	float: left;
+}
+
+#buscadorsin div input{
+	background: transparent;
+	border: 0;
+	border-bottom: 1px solid #fff;
+	font-size: 15px;
+	color: #fff;
+	border-radius: 0;
+	height: 45px;
+	line-height: 45px;
+	padding: 5px;
+	outline: none;
+	box-shadow: none;
+}
+
+#buscadorsin div input:focus {
+	box-shadow: none;
+	background: #165f04;
+}
+
 .dropdown-menu > li > a:focus, 
 .dropdown-menu > li > a:hover {
     background-color: #424242;
@@ -570,19 +616,36 @@ span.disc {
 
 /* navbar */
 
-.navbar{
-	height: 60px;
+.logo h1 {
+	margin: 0;
+}
+
+.navbar-nav {
+	margin-top: 10px;
 }
 
 .navbar-default{
-	background-color: #602A77;
+	background-color: #412061;
 	border: none;
 	border-radius: 0;
+	min-height: inherit;
+	height: auto;
+	margin: 0;
+	padding: 10px 0;
 }
 
 .navbar-brand {
-    height: 45px;
-    padding: 0 15px;
+    padding: 0;
+    float: none;
+    line-height: normal;
+    display: block;
+    width: 300px;
+    height: 75px;
+    background: url(../images/brand.png) no-repeat 0 0 transparent;
+    background-size: 100%;
+    font-size: 0;
+    color: transparent;
+    margin: 0 auto;
 }
 
 .navbar-brand img{
@@ -602,15 +665,6 @@ span.disc {
 .botonitos img{
 	width: 25px;
 	height: 25px;
-}
-
-#buscadorsin{
-	margin-top: 13px;
-	width: 300px;
-}
-
-#buscadorsin div, #buscadorsin div input{
-	width: 300px;
 }
 
 .resultados_error {

@@ -17,35 +17,36 @@
     </head>
     <body>
         <header>
-            <nav class="navbar navbar-default">
+            <nav class="navbar navbar-default logo">
                 <div class="container">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand botones" href="index.php">
-                            <img src="images/brand.png" alt="El calabozo del androide">
-                        </a>
-                        <form method="get" action="index.php" class="navbar-form navbar-left" id="buscadorsin" role="search">
-                            <div class="form-group">
-                                <input type="text" name="buscar" class="form-control" placeholder="Buscar...">
-                            </div>
-                        </form>
-                    </div>
+                    <div class="collapse navbar-collapse pull-left">
+                        <h1 class="pull-left">
+                            <a class="navbar-brand" href="index.php">
+                                El calabozo del Androide
+                            </a>
+                        </h1>  
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-navbar">
-                        <ul class="nav navbar-nav navbar-right">
+                        <div class="navbar-header">                        
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                    
+                        <ul class="nav navbar-nav navbar-left" id="bs-navbar">
                             <li id="btn-videos">
-                                <a href="index.php?s=posts">POSTS</a>
+                                <a href="index.php">Inicio</a>
                             </li>
-                            <?php if(isset($_SESSION['NOMBRE_COMPLETO'])) { ?>
-
-                                <li class="dropdown">
+                            <li id="btn-videos">
+                                <a href="index.php?s=posts">Posts</a>
+                            </li> 
+                            <li id="btn-videos">
+                                <a href="index.php?s=posts">Acerca del sitio</a>
+                            </li> 
+                            <li class="dropdown">
+                                <?php if(isset($_SESSION['NOMBRE_COMPLETO'])) { ?>
 
                                     <button class="btn dropdown-toggle" type="button" id="dropdown-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                         Hola <?php echo solo_nombre($_SESSION['NOMBRE_COMPLETO']); ?>
@@ -66,46 +67,46 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </li>
 
-                            <?php } else if((isset($_GET['s']) && $_GET['s'] != 'login' && $_GET['s'] != 'registro') || !isset($_GET['s'])) {
-                            ?>
+                                <?php } else if((isset($_GET['s']) && $_GET['s'] != 'login' && $_GET['s'] != 'registro') || !isset($_GET['s'])) {
+                                ?>
 
-                                <li class="dropdown">
+                                        <button class="btn dropdown-toggle" type="button" id="dropdown-menu_2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            <img src="images/iconos/calavera-blanco.png" alt="ícono calavera" class="iconitos">
+                                            <span class="caret"></span>
+                                        </button>
 
-                                    <button class="btn dropdown-toggle" type="button" id="dropdown-menu_2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                        <img src="images/iconos/calavera-blanco.png" alt="ícono calavera" class="iconitos">
-                                        <span class="caret"></span>
-                                    </button>
-
-                                    <ul class="dropdown-menu" aria-labelledby="dropdown-menu_2">
-                                        <li>
-                                            <a class="botones botonitos" href="index.php?s=login">
-                                                <img src="images/iconos/calavera-blanco.png" alt="ícono calavera" class="iconitos">
-                                                Login
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="botones botonitos" href="index.php?s=registro">
-                                                <img src="images/iconos/varita-blanco.png" alt="ícono varita" class="iconitos">
-                                                Registro
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                            <?php } ?>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdown-menu_2">
+                                            <li>
+                                                <a class="botones botonitos" href="index.php?s=login">
+                                                    <img src="images/iconos/calavera-blanco.png" alt="ícono calavera" class="iconitos">
+                                                    Login
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="botones botonitos" href="index.php?s=registro">
+                                                    <img src="images/iconos/varita-blanco.png" alt="ícono varita" class="iconitos">
+                                                    Registro
+                                                </a>
+                                            </li>
+                                        </ul>
+                                <?php } ?>                        
+                            </li>                              
                         </ul>
                     </div>
-                    <!-- /.navbar-collapse -->
+                    
+                    <div class="pull-right">
+                        <form method="get" action="index.php" class="navbar-form navbar-left" id="buscadorsin" role="search">
+                            <div class="form-group">
+                                <input type="text" name="buscar" class="form-control" placeholder="Buscar...">
+                            </div>
+                        </form>              
+                    </div>
                 </div>
-                <!-- /.container-fluid -->
             </nav>
-
         </header>
 
         <div class="contenedor">
-
             <?php 
                 if(isset($_GET['buscar'])){
                     include('modulos/buscar.php'); 
@@ -114,12 +115,13 @@
                 }
             ?>
         </div>
-            <div id="noo"></div>
-            <footer>
-                
-                <div class="container">
-                    <img src="images/lightsaber.png" alt="sable laser coleccionable" id="sable" onclick="noEsColeccionable()">
-                </div>
+
+        <div id="noo"></div>
+        <footer>
+            
+            <div class="container">
+                <img src="images/lightsaber.png" alt="sable laser coleccionable" id="sable" onclick="noEsColeccionable()">
+            </div>
         </footer>
 
         <script src="js/jquery.js"></script>
