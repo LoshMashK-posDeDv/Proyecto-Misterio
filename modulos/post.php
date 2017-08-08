@@ -156,12 +156,14 @@ SQL;
 							<span><?php echo $array_comentarios['FECHA_COMENTARIO'] ?></span>
 							<p><?php echo $array_comentarios['COMENTARIO'] ?></p>
 							<?php
-								var_dump ($_SESSION['EMAIL']);
-								if(isset($_SESSION['NICK']) == $array_comentarios['NICK']):
+								if($_SESSION['NICK'] == $array_comentarios['NICK']){
 							?>
-								<a href="acciones/eliminar_comentario_usuario.php?vid=<?php echo $post_id ?>&id=<?php echo $array_comentarios['IDCOMENTARIO'] ?>">Eliminar</a>
+								<a href="acciones/eliminar_comentario_usuario.php?vid=<?php echo $post_id ?>&id=<?php echo $array_comentarios['IDCOMENTARIO'] ?>">
+									Eliminar
+								</a>
+							
 							<?php
-								endif;
+								}
 							?>
 						</div>
 					<?php endwhile; }	?>
