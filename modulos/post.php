@@ -13,7 +13,6 @@
 		DESCRIPCION,
 		NOMBRE_COMPLETO,
 		EMAIL,
-		NICK,
 		TIPO_CHUCHERIA	
 	FROM articulos AS a 
 	LEFT JOIN tipo_chucherias ON a.FKCHUCHERIA = tipo_chucherias.IDCHUCHERIA
@@ -26,7 +25,7 @@ SQL;
 			IDCOMENTARIO,
 			COMENTARIO,
 			FECHA_COMENTARIO,
-			u.NOMBRE_COMPLETO AS NOMBRE,
+			u.NICK AS NICK,
 			C_ESTADO
 		FROM
 			comentarios as c
@@ -153,11 +152,12 @@ SQL;
 					} else {
 						while($array_comentarios = mysqli_fetch_assoc($r2)):?>
 						<div class="comment">
-							<h4><?php echo $array_comentarios['NOMBRE'] ?></h4>
+							<h4><?php echo $array_comentarios['NICK'] ?></h4>
 							<span><?php echo $array_comentarios['FECHA_COMENTARIO'] ?></span>
 							<p><?php echo $array_comentarios['COMENTARIO'] ?></p>
 							<?php
-								if(isset($_SESSION['NOMBRE_COMPLETO']) == $array_comentarios['NOMBRE']):
+								var_dump ($_SESSION['EMAIL']);
+								if(isset($_SESSION['NICK']) == $array_comentarios['NICK']):
 							?>
 								<a href="acciones/eliminar_comentario_usuario.php?vid=<?php echo $post_id ?>&id=<?php echo $array_comentarios['IDCOMENTARIO'] ?>">Eliminar</a>
 							<?php
