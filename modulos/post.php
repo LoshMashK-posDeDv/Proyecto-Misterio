@@ -47,7 +47,6 @@ SQL;
 	$r1 = mysqli_query($conexion, $consulta_post);
 	$r2 = mysqli_query($conexion, $consulta_comentarios);
 	$r3 = mysqli_query($conexion, $consulta_categoria);
-	$r4 = mysqli_query($conexion, $consulta_post);
 	
 	while($array_detalle = mysqli_fetch_assoc($r1)):
 		$separar_post = explode(".", $array_detalle['VIDEO']);
@@ -105,9 +104,8 @@ SQL;
 						<div class="img_list">
 							<ul>
 								<?php 	
-									while($array_post = mysqli_fetch_assoc($r4)):
-										
-										$imgs = explode(',' , $array_post['IMAGENES']);
+									if($array_detalle['IMAGENES'] != null){
+										$imgs = explode(',' , $array_detalle['IMAGENES']);
 
 										foreach( $imgs as $indice => $valor){
 												$valor = trim($valor); //quito todos los malditos espacios
@@ -118,8 +116,8 @@ SQL;
 											
 								<?php
 										}										
-									endwhile;
-									
+									//endwhile;
+									}
 								?>							
 							</ul>
 						</div>
