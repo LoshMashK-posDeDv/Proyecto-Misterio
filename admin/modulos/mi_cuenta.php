@@ -1,6 +1,15 @@
 <?php
 
-	$usuarios = "SELECT	IDUSUARIOS,	NOMBRE_COMPLETO, EMAIL,	FECHA_ALTA,	U_ESTADO, FKPERMISOS FROM usuarios ORDER BY FECHA_ALTA DESC";
+	$consulta =
+		"SELECT
+			NOMBRE_COMPLETO,
+			EMAIL,
+			CONTRASENIA,
+			FECHA_ALTA,
+			U_ESTADO,
+			FKPERMISOS
+		FROM
+			usuarios";
 	$respuesta = mysqli_query($conexion, $consulta);
 ?>
 
@@ -8,8 +17,6 @@
 	<div class="section__title">
 		<h2>Mi cuenta</h2>
 	</div>
-
-	<p><?php echo $a_usuarios['NOMBRE_COMPLETO'] ?></p>
 
 		<p>Estos son los datos de tu perfil. Sentite libre de cambiar lo que quieras.</p>
 
