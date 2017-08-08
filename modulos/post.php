@@ -131,7 +131,7 @@ SQL;
 							<!--<img src="https://yt3.ggpht.com/-cjAi_YrRPCA/AAAAAAAAAAI/AAAAAAAAAAA/CvohcVRdIA0/s100-c-k-no-mo-rj-c0xffffff/photo.jpg" alt="foto del usuario" >-->
 						</div>
 						<h3><?php echo $array_detalle['NOMBRE_COMPLETO']; ?></h3>
-						<p>Email: <?php echo $array_detalle['EMAIL']; ?></p>
+						<p>Email: <?php echo $array_detalle['EMAIL']; ?></p> 
 					</div>
 				</div>
 			</div>

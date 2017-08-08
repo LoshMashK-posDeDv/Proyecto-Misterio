@@ -39,7 +39,6 @@ VALUES
 	('Nerdeando', 'Call of Cthulhu', NOW( ), null, 'cthulhu02.jpg, cthulhu03.jpg', 'cthulhu01.jpg', 'Nerdeando con amigos solo porque si', '1', 1);
 	
 	
-
 INSERT INTO
 	comentarios (COMENTARIO, FECHA_COMENTARIO, C_ESTADO, FKUSUARIO, FKARTICULO)
 VALUES
@@ -98,3 +97,4 @@ VALUES
 	( 14, 9),
 	( 14, 10),
 	( 15, 1);
+

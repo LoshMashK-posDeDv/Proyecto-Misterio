@@ -75,3 +75,4 @@ CREATE TABLE recuperar_pass(
 	
 	FOREIGN KEY(EMAIL) REFERENCES usuarios(EMAIL)
 )ENGINE=InnoDB;
+
