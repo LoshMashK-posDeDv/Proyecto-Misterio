@@ -104,12 +104,12 @@ SQL;
 					</ul>
 
 					<div class="desc">
-						<p><?php echo $array_detalle['DESCRIPCION'] ?></p>
+						<p><?php echo nl2br($array_detalle['DESCRIPCION']) ?></p>
 					</div>
 					<div>
 						<ul>
 							<li>
-								<?php 
+								<?php 										
 									while($array_post = mysqli_fetch_assoc($r4)):
 										$imgs = explode(',',$array_post['IMAGENES']);
 										foreach( $imgs as $indice => $valor){	
@@ -131,7 +131,7 @@ SQL;
 							<!--<img src="https://yt3.ggpht.com/-cjAi_YrRPCA/AAAAAAAAAAI/AAAAAAAAAAA/CvohcVRdIA0/s100-c-k-no-mo-rj-c0xffffff/photo.jpg" alt="foto del usuario" >-->
 						</div>
 						<h3><?php echo $array_detalle['NOMBRE_COMPLETO']; ?></h3>
-						<p>Email: <?php echo $array_detalle['EMAIL']; ?></p>
+						<p>Email: <?php echo $array_detalle['EMAIL']; ?></p> 
 					</div>
 				</div>
 			</div>

@@ -46,7 +46,7 @@
 				<th class="admin_list__head__date">Fecha de alta</th>
 				<th class="admin_list__head__comentario">Comentario</th>
 				<th class="admin_list__head__estado">Estado</th>
-				<th class="admin_list__head__actions">Acción</th>
+				<th class="admin_list__head__actions">Borrar</th>
 			</tr>
 		</thead>
 
@@ -82,7 +82,7 @@
 
 				<td class="admin_list__row__actions">
 					<a class="" href="acciones/eliminar_comentario.php?id=<?php echo $array['ID'] ?>" title="Eliminar">
-						<i class="glyphicon glyphicon-trash"></i>
+						<img src="../images/iconos/espadita-negro.png" alt="ícono espadita" class="iconitos">
 					</a>
 					<!--
 					Lo oculto porque no se que hace el botón
