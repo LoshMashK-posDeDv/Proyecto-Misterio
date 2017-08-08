@@ -28,15 +28,14 @@
 
 body{
 	background-color: #EFEFEF;
+	position: relative;
 }
 
 .iconitos{
 	height: 30px;
 	display: inline-block;
 	padding-right: 5px;
-
 }
-
 
 .btn {
 	line-height: 40px;
@@ -614,6 +613,17 @@ span.disc {
 	width: 300px;
 }
 
+.resultados_error {
+	padding: 30px 45px 0;
+	margin: 20px 0;
+	width: 100%;
+}
+
+.resultados_error p {
+    font-family: 'gobold',sans-serif;
+    font-size: 25px;
+}
+
 /* HOME */
 
 	section[class*="section--home--"] {
@@ -880,10 +890,15 @@ footer {
     padding: 10px 0;
 }
 
-footer p {
-	color: white;
-    font-size: 12px;
-    margin: 0;
+#noo {
+	position: absolute;
+	left: 0;
+	bottom: 90px;
+}
+
+#sable{
+	width: 200px;
+	cursor: pointer;
 }
 
 .seccion--posts {
