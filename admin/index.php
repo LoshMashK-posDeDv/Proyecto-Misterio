@@ -2,7 +2,7 @@
 	include('../funciones.php');
 	include('../setup/config.php');
 
-	if(!isset($_SESSION['EMAIL']) || $_SESSION['FKPERMISOS'] != 1){
+	if(!isset($_SESSION['EMAIL'])){
 		header("Location: ../index.php?s=login");
 	}
 ?>
@@ -63,14 +63,12 @@
 								</a>
 							</li>
 						<?php } ?>
-						<?php if(chequear_permisos('MODERAR_POSTS')) { ?>
 							<li class="menu__list__option">
 								<a href="index.php?s=posts_listado">
 									<img src="../images/iconos/gameboy-blanco.png" alt="ícono gameboy" class="iconitos">
 									Chucherías
 								</a>
 							</li>
-						<?php } ?>
 							<li class="menu__list__option border__top">
 								<a href="index.php?s=cerrar_sesion">
 									<img src="../images/iconos/llave-blanco.png" alt="ícono llave" class="iconitos">
