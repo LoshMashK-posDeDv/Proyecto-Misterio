@@ -232,7 +232,7 @@ header .dropdown-menu > li a {
 
 #buscadorsin div input:focus {
 	box-shadow: none;
-	background: #165f04;
+	background: #3a1f54;
 }
 
 .dropdown-menu > li > a:focus, 
@@ -269,6 +269,7 @@ header .dropdown-menu > li a {
 .admin main div.seccion--post-editar {
 	padding-bottom: 0;
 }
+
 
 /*ADMIN - ACTIVIDAD*/
 
@@ -398,7 +399,7 @@ span.disc {
 
 .header__user {
 	float: left;
-    margin: 38px 0 0 15px;
+	margin: 30px 0 0 15px;
 }
 
 .header__logos {
@@ -634,7 +635,8 @@ span.disc {
 	padding: 10px 0;
 }
 
-.navbar-brand {
+.navbar-brand,
+.admin h1 a {
     padding: 0;
     float: none;
     line-height: normal;
@@ -1035,7 +1037,7 @@ footer {
 	}
 
 	.header__title {
-		margin-left: 15px;
+		margin: 0 0 0 10px;
 		text-align: left;
 		float: left;
 	}

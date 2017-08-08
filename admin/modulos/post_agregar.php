@@ -39,17 +39,6 @@
 						<textarea class="form-control create_form__descripcion" name="descripcion" id="descripcion"></textarea>
 					</div>
 
-					<div class="row">
-						<div class="col-md-6">
-							<h3>Duraci&oacute;n</h3>
-							<input type="text" name="duracion" id="duracion" class="form-control create_form__duracion" />
-						</div>
-						<div class="col-md-6">
-							<h3>A&ntilde;o</h3>
-							<input type="text" name="anio" id="anio" class="form-control create_form__anio" />
-						</div>
-					</div>
-
 					<div class="clearfix">
 						<div class="row">
 							<div class="col-md-6">
