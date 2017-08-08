@@ -361,6 +361,24 @@ span.disc {
 
 /**/
 
+.seccion--mi-cuenta form{
+	margin-top: 50px;
+}
+
+.seccion--mi-cuenta input{
+	display: block;
+	padding: 5px;
+	width: 50%;
+}
+
+.seccion--mi-cuenta button{
+	background-color: #90C0C4;
+	box-shadow: none;
+	margin-top: 20px;
+	font-weight: 600;
+}
+
+
 .menu__list {
 	margin: 0;
 	padding: 10px 0 0;
@@ -562,6 +580,7 @@ span.disc {
 	background-color: #90C0C4;
 	box-shadow: none;
 	margin-left: 20px;
+	font-weight: 600;
 
 }
 
