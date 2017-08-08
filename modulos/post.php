@@ -46,6 +46,7 @@ SQL;
 	$r1 = mysqli_query($conexion, $consulta_post);
 	$r2 = mysqli_query($conexion, $consulta_comentarios);
 	$r3 = mysqli_query($conexion, $consulta_categoria);
+	$r4 = mysqli_query($conexion, $consulta_post);
 	
 	while($array_detalle = mysqli_fetch_assoc($r1)):
 		$separar_post = explode(".", $array_detalle['VIDEO']);
@@ -70,7 +71,7 @@ SQL;
 				<?php
 				}else{
 				?>	
-					<img src="uploads/<?php echo $array_detalle['IMG_DESTACADA']; ?>" alt="imagen destacada articulo"/>
+					<img src="uploads/<?php echo $array_detalle['IMG_DESTACADA']; ?>" alt="<?php echo $array_detalle['TITULO']; ?>"/>
 				<?php
 				}
 				?>
@@ -88,8 +89,9 @@ SQL;
 						<li>Categoría: <?php 
 								while($array_categoria = mysqli_fetch_assoc($r3)):
 									$categorias = explode(',',$array_categoria['CATEGORIA']);
-									var_dump($categorias);
-									//echo $array_categoria['CATEGORIA']; 
+									foreach( $categorias as $indice => $valor){						
+										echo "<span>".$valor."</span>";
+									}
 								endwhile;
 							?>
 						</li>
@@ -103,6 +105,23 @@ SQL;
 
 					<div class="desc">
 						<p><?php echo $array_detalle['DESCRIPCION'] ?></p>
+					</div>
+					<div>
+						<ul>
+							<li>
+								<?php 
+									while($array_post = mysqli_fetch_assoc($r4)):
+										$imgs = explode(',',$array_post['IMAGENES']);
+										foreach( $imgs as $indice => $valor){	
+										$valor = trim($valor); //quito todos los malditos espacios
+											?>
+											<img src="uploads/<?php echo $valor; ?>" alt="<?php echo $valor; ?>"/>
+											<?php
+										}
+									endwhile;
+								?>
+							</li>
+						</ul>
 					</div>
 
 				</div>
