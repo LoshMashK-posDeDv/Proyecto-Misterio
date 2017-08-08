@@ -46,7 +46,7 @@ VALUES
 	('Dibujando a Shifu', NOW( ), null, null, 'master_shifu.jpg', 'Después de varios intentos logré hacerle este pequeño homenaje a este tan querido personaje de mi peli favorita', '1', 6, 5),
 	('Droidecitos', NOW( ), null, null, 'droides.jpg', 'Los conseguí en la tienda de Tattoine Traders en los estudios Disney, son lo mas mono que he visto y no me resistí a comprarlos', '1', 9, 1),
 	('Nerdeando con Call of Cthulhu', NOW( ), null, 'cthulhu02.jpg, cthulhu03.jpg', 'cthulhu01.jpg', 'Nerdeando con amigos solo porque si', '1', 1, 4),
-	('Mi obra super cool', NOW( ), 'video_1498184435.mp4', null, 'pajarito.jpg', 'Hice un videito muy tiernito y adorable para compartir.', '1', 7, 5);
+	('Piper', NOW( ), 'video_1498184435.mp4', null, 'pajarito.jpg', 'Hice un videito muy tiernito y adorable para compartir.', '1', 7, 5);
 	
 	
 INSERT INTO
