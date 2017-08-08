@@ -45,7 +45,7 @@ VALUES
 	('Nunca habrá otro Batman como Adam West', NOW( ), null, null, 'tatuaje.jpg', 'Adam no está físicamente, pero ahora vive aquí, en mi tatuaje', '1', 9, 5),
 	('Dibujando a Shifu', NOW( ), null, null, 'master_shifu.jpg', 'Después de varios intentos logré hacerle este pequeño homenaje a este tan querido personaje de mi peli favorita', '1', 6, 5),
 	('Droidecitos', NOW( ), null, null, 'droides.jpg', 'Los conseguí en la tienda de Tattoine Traders en los estudios Disney, son lo mas mono que he visto y no me resistí a comprarlos', '1', 9, 1),
-	('Nerdeando con Call of Cthulhu', NOW( ), null, 'cthulhu02.jpg, cthulhu03.jpg', 'cthulhu01.jpg', 'Nerdeando con amigos solo porque si', '1', 1, 1);
+	('Nerdeando con Call of Cthulhu', NOW( ), null, 'cthulhu02.jpg, cthulhu03.jpg', 'cthulhu01.jpg', 'Nerdeando con amigos solo porque si', '1', 1, 4);
 	
 	
 INSERT INTO
