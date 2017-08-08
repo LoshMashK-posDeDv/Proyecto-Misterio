@@ -55,7 +55,7 @@ VALUES
 	('Está muy bueno pero son 8 horas de juego', NOW( ), '1', 5, 2),
 	('El mejor Batman de todos los tiempos, inigualable', NOW( ), '1', 1, 12),
 	('Uhhhhhhh papapapa se ve genial', NOW( ), '1', 9, 11),
-	('Es muy tienita esa lámpara', NOW( ), '1', 4, 10),
+	('Es muy tiernita esa lámpara', NOW( ), '1', 4, 10),
 	('No se parece en nada, te quedó super espantoso', NOW( ), '1', 7, 13),
 	('Impresionante invitame!', NOW( ), '1', 5, 6),
 	('Juguemos ese jueguito super genial en todos los recreos de DV!', NOW( ), '1', 6, 8);
