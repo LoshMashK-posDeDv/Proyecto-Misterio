@@ -45,7 +45,8 @@ VALUES
 	('Nunca habrá otro Batman como Adam West', NOW( ), null, null, 'tatuaje.jpg', 'Adam no está físicamente, pero ahora vive aquí, en mi tatuaje', '1', 9, 5),
 	('Dibujando a Shifu', NOW( ), null, null, 'master_shifu.jpg', 'Después de varios intentos logré hacerle este pequeño homenaje a este tan querido personaje de mi peli favorita', '1', 6, 5),
 	('Droidecitos', NOW( ), null, null, 'droides.jpg', 'Los conseguí en la tienda de Tattoine Traders en los estudios Disney, son lo mas mono que he visto y no me resistí a comprarlos', '1', 9, 1),
-	('Nerdeando con Call of Cthulhu', NOW( ), null, 'cthulhu02.jpg, cthulhu03.jpg', 'cthulhu01.jpg', 'Nerdeando con amigos solo porque si', '1', 1, 4);
+	('Nerdeando con Call of Cthulhu', NOW( ), null, 'cthulhu02.jpg, cthulhu03.jpg', 'cthulhu01.jpg', 'Nerdeando con amigos solo porque si', '1', 1, 4),
+	('Piper', NOW( ), 'video_1498184435.mp4', null, 'pajarito.jpg', 'Hice un videito muy tiernito y adorable para compartir.', '1', 7, 5);
 	
 	
 INSERT INTO
@@ -58,15 +59,15 @@ VALUES
 	('Me parece asombroso', NOW( ), '1', 5, 3),
 	('Es una porquería', NOW( ), '0', 8, 4),
 	('Que rica piba', NOW( ), '1', 5, 5),
-	('De lo mejor que se vio en este último tiempo', NOW( ), '0', 1, 1),
 	('Altas llantas', NOW( ), '1', 7, 1),
 	('Está muy bueno pero son 8 horas de juego', NOW( ), '1', 5, 2),
 	('El mejor Batman de todos los tiempos, inigualable', NOW( ), '1', 1, 12),
 	('Uhhhhhhh papapapa se ve genial', NOW( ), '1', 9, 11),
-	('Es muy tiernita esa lámpara', NOW( ), '1', 4, 10),
 	('No se parece en nada, te quedó super espantoso', NOW( ), '1', 7, 13),
 	('Impresionante invitame!', NOW( ), '1', 5, 6),
-	('Juguemos ese jueguito super genial en todos los recreos de DV!', NOW( ), '1', 6, 8);
+	('Es muy tiernita esa lámpara', NOW( ), '1', 4, 10),
+	('Juguemos ese jueguito super genial en todos los recreos de DV!', NOW( ), '1', 6, 8),
+	('De lo mejor que se vio en este último tiempo', NOW( ), '0', 1, 1);
 	
 INSERT INTO
 	categorias (CATEGORIA)
@@ -104,7 +105,8 @@ VALUES
 	( 13, 6),
 	( 14, 9),
 	( 14, 10),
-	( 15, 1);
+	( 15, 1),
+	( 16, 7);
 
 
 	

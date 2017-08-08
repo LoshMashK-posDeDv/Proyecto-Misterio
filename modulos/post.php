@@ -49,7 +49,7 @@ SQL;
 	$r3 = mysqli_query($conexion, $consulta_categoria);
 	
 	while($array_detalle = mysqli_fetch_assoc($r1)):
-		$separar_post = explode(".", $array_detalle['VIDEO']);
+		$separar_video = explode(".", $array_detalle['VIDEO']);
 		$descripcion = $array_detalle['DESCRIPCION'];
 		$descripcion = nl2br($descripcion);
 		$descripcion = strip_tags($descripcion);
@@ -67,10 +67,10 @@ SQL;
 			<div class="col-sm-6">
 				<?php if($array_detalle['VIDEO'] != null){
 					?>
-					<post class="videito" controls>
-					<source src="uploads/<?php echo $array_detalle['post'] ?>" type="post/<?php echo $separar_post[1] ?>">
-					Tu navegador no soporta la reproducción de posts.
-				</post>
+					<video class="videito" controls>
+					<source src="uploads/<?php echo $array_detalle['VIDEO'] ?>" type="video/<?php echo $separar_video[1] ?>">
+					Tu navegador no soporta la reproducción de videos.
+				</video>
 				<?php
 				}else{
 				?>	
