@@ -219,22 +219,23 @@ header .dropdown-menu > li a {
 	border: 0;
 	font-size: 15px;
 	border-radius: 0;
-	padding: 5px;
+	padding: 0 0 0 45px;
 	outline: none;
 	box-shadow: none;
 	background: url(../images/iconos/fantasmita-blanco.png) no-repeat 0 0 transparent;
 	background-size: 35px auto;
 	width: 43px;
-	color: transparent;
-	transition: 0.3s;
+	color: #fff;
+	transition: 0.2s;
+	cursor: pointer;
 }
 
 #buscadorsin div input:focus {
 	box-shadow: none;
 	background: #3a1f54;
 	width: auto;	
-	color: #fff;
 	padding: 5px 15px;
+	cursor: text;
 }
 
 .dropdown-menu > li > a:focus, 
@@ -290,7 +291,9 @@ header .dropdown-menu > li a {
 }
 
 #estadistica ul{
-	list-style: none;
+	list-style: disc;
+    padding: 0;
+    margin: 15px 0 40px 20px;
 }
 
 #estadistica li{

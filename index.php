@@ -97,7 +97,7 @@
                     <div class="pull-right">
                         <form method="get" action="index.php" class="navbar-form navbar-left" id="buscadorsin" role="search">
                             <div class="form-group">
-                                <input type="text" name="buscar" class="form-control" value="Buscar...">
+                                <input type="text" name="buscar" class="form-control" placeholder="Buscar...">
                             </div>
                         </form>              
                     </div>

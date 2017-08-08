@@ -51,7 +51,8 @@ $f3 = mysqli_query($conexion, $c3);
 
 $f4 = mysqli_query($conexion, $c4);
 
-?>
+?> 
+
 <div class="seccion--dashboard">
 
 	<h2>ACTIVIDAD RECIENTE</h2>
