@@ -5,7 +5,6 @@
 	$consulta_post = <<<SQL
 	SELECT
 		IDARTICULO,
-		CHUCHERIA,
 		UCASE(TITULO) AS TITULO,
 		DATE_FORMAT(a.FECHA_ALTA, "%d de %M de %Y") AS FECHA,
 		VIDEO,
@@ -13,9 +12,12 @@
 		IMG_DESTACADA,
 		DESCRIPCION,
 		NOMBRE_COMPLETO,
-		EMAIL
-	FROM
+		EMAIL,
+		NICK,
+		FKCHUCHERIA
+	FROM 
 		articulos a
+	
 	LEFT JOIN usuarios AS u ON a.FKUSUARIO = u.IDUSUARIOS
 	WHERE IDARTICULO = $post_id
 SQL;
@@ -85,7 +87,7 @@ SQL;
 					<div class="idvideito">
 						<h2><?php echo $array_detalle['TITULO'] ?></h2>
 						<ul>
-							<li><?php echo $array_detalle['CHUCHERIA']; ?></li>
+							<li>Tipo de chuchería: <?php echo $array_detalle['FKCHUCHERIA']; ?></li>
 							<li>Categoría: <?php 
 									while($array_categoria = mysqli_fetch_assoc($r3)):
 										$categorias = explode(',',$array_categoria['CATEGORIA']);
