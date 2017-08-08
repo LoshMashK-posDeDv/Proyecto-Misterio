@@ -64,7 +64,7 @@ SQL;
 
 		<div class="row">
 
-			<div class="col-sm-12">
+			<div class="col-sm-6">
 				<?php if($array_detalle['VIDEO'] != null){
 					?>
 					<post class="videito" controls>
@@ -79,56 +79,51 @@ SQL;
 				}
 				?>
 			</div>
-		</div>
 
-		
-		<div class="post--info">
-			<div class="row">
-				<div class="col-md-7 idvideito">
-
-					<h2><?php echo $array_detalle['TITULO'] ?></h2>
-					<ul>
-						<li><?php echo $array_detalle['CHUCHERIA']; ?></li>
-						<li>Categoría: <?php 
-								while($array_categoria = mysqli_fetch_assoc($r3)):
-									$categorias = explode(',',$array_categoria['CATEGORIA']);
-									foreach( $categorias as $indice => $valor){						
-										echo "<span>".$valor."</span>";
-									}
-								endwhile;
-							?>
-						</li>
-						<li><?php echo traducir_mes($array_detalle['FECHA']); ?></li>
-						<!--<li><span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-						<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-						<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-						<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-						<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span></li>-->
-					</ul>
-
-					<div class="desc">
-						<p><?php echo $descripcion ?></p>
-					</div>
-					<div>
+			<div class="col-sm-6">
+				<div class="post--info">
+					<div class="idvideito">
+						<h2><?php echo $array_detalle['TITULO'] ?></h2>
 						<ul>
-							<li>
-								<?php 										
-									while($array_post = mysqli_fetch_assoc($r4)):
-										$imgs = explode(',',$array_post['IMAGENES']);
-										foreach( $imgs as $indice => $valor){	
-										$valor = trim($valor); //quito todos los malditos espacios
-											?>
-											<img src="uploads/<?php echo $valor; ?>" alt="<?php echo $valor; ?>"/>
-											<?php
+							<li><?php echo $array_detalle['CHUCHERIA']; ?></li>
+							<li>Categoría: <?php 
+									while($array_categoria = mysqli_fetch_assoc($r3)):
+										$categorias = explode(',',$array_categoria['CATEGORIA']);
+										foreach( $categorias as $indice => $valor){						
+											echo "<span>".$valor."</span>";
 										}
 									endwhile;
 								?>
 							</li>
+							<li><?php echo traducir_mes($array_detalle['FECHA']); ?></li>
 						</ul>
+
+						<div class="desc">
+							<p><?php echo $descripcion ?></p>
+						</div>
+						<div class="img_list">
+							<ul>
+								<?php 	
+									while($array_post = mysqli_fetch_assoc($r4)):
+										
+										$imgs = explode(',' , $array_post['IMAGENES']);
+
+										foreach( $imgs as $indice => $valor){
+												$valor = trim($valor); //quito todos los malditos espacios
+								?>
+											<li>
+												<img src="uploads/<?php echo $valor; ?>" alt="<?php echo $valor; ?>"/>
+											</li>
+											
+								<?php
+										}										
+									endwhile;
+									
+								?>							
+							</ul>
+						</div>
 					</div>
 
-				</div>
-				<div class="col-md-4 col-md-offset-1">
 					<div class="infousuario">
 						<div class="col-md-6 col-md-offset-3">
 							<!--<img src="https://yt3.ggpht.com/-cjAi_YrRPCA/AAAAAAAAAAI/AAAAAAAAAAA/CvohcVRdIA0/s100-c-k-no-mo-rj-c0xffffff/photo.jpg" alt="foto del usuario" >-->
@@ -139,6 +134,9 @@ SQL;
 				</div>
 			</div>
 		</div>
+
+		
+		
 	</div>
 </section>
 <?php

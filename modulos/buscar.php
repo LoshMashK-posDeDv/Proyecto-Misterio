@@ -26,8 +26,12 @@ SQL;
         <div class="clear"></div>
         <div class="seccion--posts">
             <?php
-                if(mysqli_num_rows($filas) == 0){                    
-                    include('error_busqueda.php');
+                if(mysqli_num_rows($filas) == 0){   
+            ?>                 
+                    <section class="resultados_error">
+                        <img src="images/errores/no_hay resultados.jpg" alt="Error en la búsqueda" class="img-responsive">
+                    </section>
+            <?php
                 } else {
 
                     while($array_resultados = mysqli_fetch_assoc($filas)):
@@ -52,12 +56,6 @@ SQL;
                 <?php
                     endwhile;
                 ?>
-                    <div class="paginador clear">
-                        <ul class="paginator">
-                            <li><a href="index.php?s=posts&amp;p=1" class="pag_activa">1</a></li>
-                            <li><a href="index.php?s=posts&amp;p=1" class="">2</a></li>
-                        </ul>
-                    </div>
             <?php
                 }
             ?>

@@ -36,11 +36,7 @@ LOGIN;
 	} else {
 		if( $log['U_ESTADO'] == 1 ){
 			$_SESSION = $log;
-			if($log['FKPERMISOS'] == 1){
-				header("Location: ../admin");
-			} else {
-				header("Location: ../index.php");
-			}
+			header("Location: ../admin");
 		} else {
 			$_SESSION['LOGIN_ERROR'] = 'Tu cuenta ha sido bloqueada';
 			header("Location: ../index.php?s=login");

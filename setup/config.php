@@ -1,10 +1,8 @@
 <?php
-
-session_start( );
+session_start();
 
 //leo el archivo de configuración general
 $config_gen = parse_ini_file('setup.ini',true);
-
 date_default_timezone_set($config_gen['zona']['timezone']);
 
 //conexion local u online
@@ -46,10 +44,7 @@ if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
 	switch ($s) {
 		case 'login':
 			$seccion .= 'login.php';
-			break;
-		case 'cerrar_sesion':
-			$seccion = 'acciones/logout.php';
-			break;
+			break;		
 		case 'registro':
 			$seccion .= 'registro.php';
 			break;
@@ -68,7 +63,12 @@ if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
 		case 'prueba_email':
 			$seccion .= 'prueba_email.php';
 			break;
-
+		case 'about':
+			$seccion .= 'about.php';
+			break;
+		case 'cerrar_sesion':
+			$seccion = 'acciones/logout.php';
+			break;
 		default:
 			$seccion .= 'home.php';
 			break;
@@ -96,7 +96,6 @@ if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
 		case 'cerrar_sesion':
 			$seccion = 'acciones/logout.php';
 			break;
-
 		default:
 			$seccion .= 'inicio.php';
 			break;

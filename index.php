@@ -1,5 +1,4 @@
 <?php
-
     include('funciones.php');
     include('setup/config.php');
 ?>
@@ -43,7 +42,7 @@
                                 <a href="index.php?s=posts">Posts</a>
                             </li> 
                             <li id="btn-videos">
-                                <a href="index.php?s=posts">Acerca del sitio</a>
+                                <a href="index.php?s=about">Acerca del sitio</a>
                             </li> 
                             <li class="dropdown">
                                 <?php if(isset($_SESSION['NOMBRE_COMPLETO'])) { ?>
@@ -98,7 +97,7 @@
                     <div class="pull-right">
                         <form method="get" action="index.php" class="navbar-form navbar-left" id="buscadorsin" role="search">
                             <div class="form-group">
-                                <input type="text" name="buscar" class="form-control" placeholder="Buscar...">
+                                <input type="text" name="buscar" class="form-control" value="Buscar...">
                             </div>
                         </form>              
                     </div>
@@ -107,11 +106,11 @@
         </header>
 
         <div class="contenedor">
-            <?php 
+            <?php
                 if(isset($_GET['buscar'])){
-                    include('modulos/buscar.php'); 
+                    require('modulos/buscar.php'); 
                 } else {
-                    include($seccion); 
+                    require($seccion); 
                 }
             ?>
         </div>
