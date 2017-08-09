@@ -22,6 +22,5 @@ SQL;
 mysqli_query($conexion, $nuevo_comentario);
 //echo mysqli_error($conexion);
 header("Location: ../index.php?s=post&vid=$post");
-var_dump($nick);
 
 ?>
