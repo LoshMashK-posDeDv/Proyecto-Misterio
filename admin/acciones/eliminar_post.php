@@ -18,9 +18,9 @@
     LIMIT 1
 SQL;
 
-$rta = 'ok';
+	$rta = 'ok';
 
-mysqli_query($conexion, $c);
-header("Location: ../index.php?s=posts_listado&d=$rta");
+	mysqli_query($conexion, $c);
+	header("Location: ../index.php?s=posts_listado&d=$rta");
 
 ?>

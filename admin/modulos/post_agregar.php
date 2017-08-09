@@ -6,8 +6,11 @@
 	}
 
 	$c_categoria = "SELECT * FROM categorias";
-
+	$c_chucheria = "SELECT * FROM tipo_chucherias";
+	
 	$f_categoria = mysqli_query($conexion, $c_categoria);
+	$f_chucheria = mysqli_query($conexion, $c_chucheria);
+	
 ?>
 
 <div class="seccion--post-agregar">
@@ -50,7 +53,7 @@
 							<div class="col-md-6">
 								<h3>Categoría</h3>
 								<select multiple class="form-control" name="categoria[]">
-									<?php while($a_categoria = mysqli_fetch_assoc($f_categoria)): ?>
+									<?php while($a_categoria = mysqli_fetch_assoc($f_categoria)):?>
 										<option value="<?php echo $a_categoria['IDCATEGORIA'] ?>">
 											<?php echo $a_categoria['CATEGORIA'] ?>
 										</option>
@@ -59,6 +62,17 @@
 								<span class="disc">Manten apretado ctrl para seleccionar mas de una opción</span>
 							</div>
 						</div>
+					</div>
+					
+					<div class="col-md-6">
+								<h3>Tipo de chucheria</h3>
+								<select class="form-control" name="chucheria">
+									<?php while($a_chucherias = mysqli_fetch_assoc($f_chucheria)): ?>
+										<option value="<?php echo $a_chucherias['IDCHUCHERIA'] ?>">
+											<?php echo $a_chucherias['TIPO_CHUCHERIA'] ?>
+										</option>
+									<?php endwhile; ?>
+								</select>
 					</div>
 
 					<div class="clearfix">
