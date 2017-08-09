@@ -54,6 +54,6 @@
     include('../html2pdf/html2pdf.class.php');
     $pdf = new HTML2PDF('P', 'A4');
     $pdf->writeHTML($contenido);
-    $pdf->Output('pdf_file.pdf');
+    $pdf->Output('reportes.pdf');
 
 ?>
