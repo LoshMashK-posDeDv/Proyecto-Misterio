@@ -74,8 +74,12 @@ $f4 = mysqli_query($conexion, $c4);
 			<ul>
 				<?php
 					while($a_comentarios = mysqli_fetch_assoc($f2)):
+						$comentario = $a_comentarios['COMENTARIO'];
+						$comentario = strip_tags($comentario);
+						$comentario = nl2br($comentario);
+						$comentario = trim($comentario);
 				?>
-					<li><?php echo $a_comentarios['USUARIO'] ?>: <?php echo $a_comentarios['COMENTARIO'] ?> (<?php echo $a_comentarios['TITULO'] ?>)</li>
+					<li><?php echo $a_comentarios['USUARIO'] ?>: <?php echo $comentario ?> (<?php echo $a_comentarios['TITULO'] ?>)</li>
 				<?php endwhile; ?>
 			</ul>
 
@@ -83,8 +87,11 @@ $f4 = mysqli_query($conexion, $c4);
 			<ul>
 				<?php
 					while($a_posts = mysqli_fetch_assoc($f3)):
+						$titulo = $a_posts['TITULO'];
+						$titulo = strip_tags($titulo);
+						$titulo = trim($titulo);
 				?>
-					<li><?php echo $a_posts['TITULO'] ?></li>
+					<li><?php echo $titulo ?></li>
 				<?php endwhile; ?>
 			</ul>
 

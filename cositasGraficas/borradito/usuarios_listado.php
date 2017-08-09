@@ -88,7 +88,11 @@
 							<span class="sr-only"> cambiar estado </span>
 						</a>
 
-						
+						<a class="eliminar" onclick="return confirm('¿Está seguro que desea eliminar el usuario?')" href="acciones/eliminar_usuario.php?i=<?php echo $a_usuarios['IDUSUARIOS'] ?>" title="Eliminar usuario">
+							<img src="../images/iconos/bomba-negro.png" alt="ícono bomba" class="iconitos">
+							<span class="sr-only"> borrar usuario </span>
+
+						</a>
 					</td>
 				</tr>
 			<?php
