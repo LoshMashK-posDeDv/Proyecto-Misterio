@@ -8,6 +8,16 @@
 			$class = 'error';
 		}
 	}
+
+	if(isset($_GET['m'])){
+		if($_GET['m'] == 'ok'){
+			$mensaje = 'El post ha sido eliminado correctamente';
+			$class = 'exito';
+		} else {
+			$mensaje =  'Oops, Algo salió mal';
+			$class = 'error';
+		}
+	}
 ?>
 
 <div class="seccion--admin-listado">
@@ -27,7 +37,7 @@
 			<tr class="admin_list__head">
 				<th class="admin_list__head__image">Captura</th>
 				<th class="admin_list__head__name">Título</th>
-				<th class="admin_list__head__author hidden-xs">Tipo de chuchería</th> 
+				<th class="admin_list__head__author hidden-xs">Tipo de chuchería</th>
 				<th class="admin_list__head__date hidden-xs">Fecha</th>
 				<th class="admin_list__head__actions">Acción</th>
 			</tr>

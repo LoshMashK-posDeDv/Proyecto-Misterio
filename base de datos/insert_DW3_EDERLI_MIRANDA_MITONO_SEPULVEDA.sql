@@ -12,7 +12,7 @@ VALUES
 	('german rodriguez', 'gerchu','german.rodriguez@davinci.edu.ar', MD5('admin1234'), NOW( ), '1', 1),
 	('federico miranda', 'fedejunior','federico.mirandaa@gmail.com', MD5('1234'), NOW( ), '1', 1),
 	('leandro merlo', 'leodom','merloleandro@gmail.com', MD5('holis1234'), NOW( ), '1', 1),
-	('florencia sepulveda', 'catana','florenciasepulveda.26@gmail.com', MD5('holis1234'), NOW( ), '1', 1),
+	('florencia sepulveda', 'css','florenciasepulveda.26@gmail.com', MD5('holis1234'), NOW( ), '1', 1),
 	('florencia ederli', 'fespix','florenciaespino@gmail.com', MD5('zeldaeslomas'), NOW( ), '1', 1),
 	('laura mitono', 'lechuza','mlauramitono@gmail.com', MD5('nellylalechuza'), NOW( ), '1', 1),
 	('usuario uno', 'unito','usuario1@davinci.edu.ar', MD5('1234'), NOW( ), '1', 2),
