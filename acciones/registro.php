@@ -4,6 +4,7 @@
 	$nombre_completo = $_POST['nombre_completo'];
 	$email = $_POST['email'];
 	$password = $_POST['password'];
+	$nick = $_POST['nick'];
 
 	$c_reg = <<<REGISTRO
 	INSERT INTO
@@ -12,6 +13,7 @@
 		CONTRASENIA = MD5('$password'),
 		U_ESTADO = 1,
 		FKPERMISOS = 2,
+		NICK = '$nick',
 		NOMBRE_COMPLETO = '$nombre_completo',
 		EMAIL = '$email',
 		FECHA_ALTA = NOW( )

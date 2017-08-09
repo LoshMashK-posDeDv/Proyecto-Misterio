@@ -9,6 +9,7 @@
 
 		<div class="login_form__row"><input type="text" name="nombre_completo" placeholder="Nombre Completo"></div>
 		<div class="login_form__row"><input type="text" name="email" placeholder="Correo electrónico"></div>
+		<div class="login_form__row"><input type="text" name="nick" placeholder="Nick"></div>
 		<div class="login_form__row"><input type="password" name="password" placeholder="Contraseña"></div>
 		<div class="login_form__row"><input type="submit" name="enviar" value="Registrarse" class="btn btn_ok btn-lg btn-block"></div>	
 		
