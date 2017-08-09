@@ -11,13 +11,13 @@
 					<li>Examen Final</li>
 					<li><span class="bold">Profesor:</span> Germán Rodríguez</li>
 					<li>DW3ATN - 2017</li>
-					<li><span class="bold">Alumnos:</span></li>
-					<ul>
-						<li>Ederli, Florencia</li>
-						<li>Miranda, Federico</li>
-						<li>Mitono, Laura</li>
-						<li>Sepúlveda, Florencia</li>
-					</ul>
+					<li><span class="bold">Alumnos:</span></li>					
+				</ul>
+				<ul>
+					<li>Ederli, Florencia</li>
+					<li>Miranda, Federico</li>
+					<li>Mitono, Laura</li>
+					<li>Sepúlveda, Florencia</li>
 				</ul>
 			</div>
 
@@ -47,8 +47,14 @@
 					<p>El usuario común va a poder ver las siguientes opciones:</p>
 					<img src="images/about/usernormal.png" alt="panel como lo ve el usuario normal">
 					<ul>
-						<li><span class="bold">Perfil:</span> Acá va a poder ver y modificar sus datos personales.</li>
-						<li><span class="bold">Chucherías:</span> Va a ver sólo sus posteos y va a poder editarlos o borrarlos.</li>
+						<li>
+							<span class="bold">Perfil:</span> 
+							Acá va a poder ver y modificar sus datos personales.
+						</li>
+						<li>
+							<span class="bold">Chucherías:</span> 
+							Va a ver sólo sus posteos y va a poder editarlos o borrarlos.
+						</li>
 						<li>Cerrar Sesión</li>
 					</ul>
 					<h5>Admin</h5>
@@ -70,6 +76,5 @@
 				</div>
 			</div>
 		</div>
-			
 	</div>
 </div>

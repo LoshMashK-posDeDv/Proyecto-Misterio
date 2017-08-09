@@ -38,7 +38,7 @@
                             <li id="btn-videos">
                                 <a href="index.php?s=posts">Posts</a>
                             </li>
-                            <li id="btn-videos">
+                            <li>
                                 <a href="index.php?s=about">Acerca del sitio</a>
                             </li>
                             <li class="dropdown">
