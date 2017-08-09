@@ -7,11 +7,11 @@
 			<div class="about-box box-first">
 				<h3>Info Entrega</h3>
 				<ul>
-					<li>Materia: Programación II</li>
+					<li><span class="bold">Materia:</span> Programación II</li>
 					<li>Examen Final</li>
-					<li>Profesor: Germán Rodríguez</li>
+					<li><span class="bold">Profesor:</span> Germán Rodríguez</li>
 					<li>DW3ATN - 2017</li>
-					<li>Alumnos:</li>
+					<li><span class="bold">Alumnos:</span></li>
 					<ul>
 						<li>Ederli, Florencia</li>
 						<li>Miranda, Federico</li>

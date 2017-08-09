@@ -348,7 +348,8 @@ header .dropdown-menu > li a {
 }
 
 .about-box.box-first li,
-.about-box.box-first h3 {
+.about-box.box-first h3,
+.about-box.box-first span {
 	color: #fff;
 }
 

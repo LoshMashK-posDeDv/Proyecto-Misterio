@@ -1,21 +1,21 @@
 <?php
 
     $busqueda = isset($_GET['buscar']) ? $_GET['buscar'] : '';
+    $busqueda = mysqli_real_escape_string($conexion, $busqueda);
 
     //primer consulta
-                $cantidad_por_pagina = 8;
-                $pagina_actual = isset($_GET['p']) ? $_GET['p'] : 1; //lo que viene por get, el num de la pag cliqueada
-                $inicio_paginador = ($pagina_actual - 1) * $cantidad_por_pagina; //cantidad que debe saltear
+        $cantidad_por_pagina = 8;
+        $pagina_actual = isset($_GET['p']) ? $_GET['p'] : 1; //lo que viene por get, el num de la pag cliqueada
+        $inicio_paginador = ($pagina_actual - 1) * $cantidad_por_pagina; //cantidad que debe saltear
 
-
-                //segunda consulta: cant de posts que hay
-                $consulta_cant_posts = <<<SQL
-                    SELECT
-                        COUNT(IDARTICULO) AS CANTIDAD
-                    FROM
-                        articulos
-                    WHERE
-                        A_ESTADO = 1 AND TITULO LIKE '%$busqueda%' OR DESCRIPCION LIKE '%$busqueda%'
+        //segunda consulta: cant de posts que hay
+        $consulta_cant_posts = <<<SQL
+            SELECT
+                COUNT(IDARTICULO) AS CANTIDAD
+            FROM
+                articulos
+            WHERE
+                A_ESTADO = 1 AND TITULO LIKE '%$busqueda%' OR DESCRIPCION LIKE '%$busqueda%'
 SQL;
                 $cantidad_posts = mysqli_query ($conexion, $consulta_cant_posts);
                 //var_dump($cantidad_posts);
@@ -26,25 +26,33 @@ SQL;
 
                 //verificacion de cantidad de paginas
                 if($pagina_actual > $total_links or $pagina_actual < 1){
-                    echo 'Pediste una página inexistente';
+        ?>  
+                <div class="container">
+                    <section class="resultados_error">
+                        <img src="images/errores/no_hay resultados.jpg" alt="Error en la búsqueda" class="img-responsive">
+                        <h2 class="sr-only">No hay resultados</h2>
+                        <p class="sr-only">Las malas búsquedas son el nectar de los ignorantes. Para buscar más volvé a Google.</p>
+                    </section>
+                </div>
+        <?php 
                 } else {
 
-    $consulta_buscar = <<<SQL
-        SELECT
-            IDARTICULO,
-            TITULO,
-            IMG_DESTACADA,
-            DESCRIPCION
-        FROM
-            articulos
-        WHERE
-            TITULO LIKE '%$busqueda%' OR DESCRIPCION LIKE '%$busqueda%'
-        ORDER BY
-            TITULO
-        LIMIT $inicio_paginador, $cantidad_por_pagina
+        $consulta_buscar = <<<SQL
+            SELECT
+                IDARTICULO,
+                TITULO,
+                IMG_DESTACADA,
+                DESCRIPCION
+            FROM
+                articulos
+            WHERE
+                TITULO LIKE '%$busqueda%' OR DESCRIPCION LIKE '%$busqueda%'
+            ORDER BY
+                TITULO
+            LIMIT $inicio_paginador, $cantidad_por_pagina
 SQL;
 
-    $filas = mysqli_query($conexion, $consulta_buscar);
+        $filas = mysqli_query($conexion, $consulta_buscar);
 ?>
 
 
