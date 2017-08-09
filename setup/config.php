@@ -75,6 +75,7 @@ if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
 	switch ($s) {
 		case '':
 			$seccion .= 'inicio.php';
+			break;
 		case 'posts_listado':
 			$seccion .= 'posts_listado.php';
 			break;
