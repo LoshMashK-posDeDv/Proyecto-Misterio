@@ -87,7 +87,7 @@
 
 		if($imagen_destacada['size'] > 0){
 			$extension_img = pathinfo($imagen_destacada_nombre, PATHINFO_EXTENSION);
-			if($extension_img == 'jpg' || $extension_img == 'jpeg'){
+			/*if($extension_img == 'jpg' || $extension_img == 'jpeg'){
 				$original = imagecreatefromjpeg($imagen_destacada['tmp_name']);
 				$ancho_original = imagesx($original);
 				$alto_original = imagesy($original);
@@ -104,11 +104,11 @@
 					$ancho, $alto,
 					$ancho_original, $alto_original
 				);
-				$imagen_destacada_nombre = "img_" . time() . "." . $extension_img;
 				imagejpeg($nueva, "../../uploads/$imagen_destacada_nombre", 100);
 			}
-
-			//move_uploaded_file($imagen_destacada['tmp_name'], "../../uploads/$imagen_destacada_nombre");
+			*/
+			$imagen_destacada_nombre = "img_" . time() . "." . $extension_img;
+			move_uploaded_file($imagen_destacada['tmp_name'], "../../uploads/$imagen_destacada_nombre");
 		}
 
 		$c = "INSERT INTO
