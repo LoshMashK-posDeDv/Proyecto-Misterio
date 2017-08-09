@@ -69,7 +69,7 @@ if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
 		// 	$seccion = 'acciones/logout.php';
 		// 	break;
 		default:
-			$seccion .= 'home.php';
+			$seccion .= 'errores/404.php';
 			break;
 	}
 } else {
