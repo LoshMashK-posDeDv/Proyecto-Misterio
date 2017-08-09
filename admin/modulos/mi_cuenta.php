@@ -4,6 +4,7 @@
 		"SELECT
 			NOMBRE_COMPLETO,
 			EMAIL,
+			NICK,
 			CONTRASENIA,
 			FECHA_ALTA,
 			U_ESTADO,
@@ -27,6 +28,10 @@
 			<div class="clearfix">
 				<label>Nombre completo</label>
 				<input type="text" name="nombre" value="" class="form-control">
+			</div>
+			<div class="clearfix">
+				<label>Nick</label>
+				<input type="text" name="nick" value="" class="form-control">
 			</div>
 			<div class="clearfix">
 				<label>Mail</label>
