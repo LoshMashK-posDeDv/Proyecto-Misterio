@@ -416,6 +416,13 @@ span.disc {
 	font-weight: normal;
 }
 
+.seccion--mi-cuenta input + span {
+    color: #333;
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 12px;
+    width: 50%;
+}
 
 .menu__list {
 	margin: 0;
