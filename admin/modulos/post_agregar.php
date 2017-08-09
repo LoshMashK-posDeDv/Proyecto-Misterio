@@ -76,10 +76,9 @@
 					<div class="row">
 						<div class="col-md-6">
 							<h3>Video</h3>
-							<input type="file" name="video" id="video" class="form-control create_form__post" />
-							<p>Formatos: jpg o jpeg.</p>
-						</div>
-						
+							<input type="file" name="video" id="video" class="form-control create_form__post" accept="video/mp4, video/avi" />
+							<p>Formatos: MP4 y AVI.</p>	
+						</div>						
 
 						<div class="col-md-6">
 							<h3>Im&aacute;gen destacada <span class="red">*</span></h3>
