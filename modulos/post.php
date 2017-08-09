@@ -1,6 +1,22 @@
 <?php
+	
+	$consulta_cant_posts = <<<SQL
+		SELECT
+			MAX(IDARTICULO) AS MAX_ARTICULOS,
+			MIN(IDARTICULO) AS MIN_ARTICULOS
+		FROM 
+			articulos
+SQL;
+	$r_error = mysqli_query($conexion, $consulta_cant_posts);
+	$array_cant = mysqli_fetch_assoc($r_error);
 
 	$post_id = isset($_GET['vid']) ? $_GET['vid'] : 0 ;
+	
+	if($_GET['vid'] > $array_cant['MAX_ARTICULOS'] or $_GET['vid'] < $array_cant['MIN_ARTICULOS'] or is_string($_GET['vid'])){
+		echo 'errror';
+	}
+	
+	echo $post_id;
 
 	$consulta_post = <<<SQL
 		SELECT 
@@ -41,13 +57,6 @@ SQL;
 			articulos_categorias AS rel JOIN categorias AS c ON c.IDCATEGORIA = rel.FKCATEGORIA
 		WHERE
 			FKARTICULO = $post_id
-SQL;
-
-	$consulta_cant_posts = <<<SQL
-		SELECT
-			MAX(IDARTICULO) AS CANT_ARTICULOS
-		FROM 
-			articulos
 SQL;
 
 	$r1 = mysqli_query($conexion, $consulta_post);
