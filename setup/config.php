@@ -1,4 +1,5 @@
-<?php session_start();
+<?php
+session_start();
 
 //leo el archivo de configuración general
 $config_gen = parse_ini_file('setup.ini',true);
@@ -41,6 +42,9 @@ if(isset($_GET['s'])){
 
 if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
 	switch ($s) {
+		case '':
+			$seccion .= 'home.php';
+			break;		
 		case 'login':
 			$seccion .= 'login.php';
 			break;		
@@ -65,12 +69,17 @@ if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
 		case 'about':
 			$seccion .= 'about.php';
 			break;
-		default:
-			$seccion .= 'home.php';
+		case 'cerrar_sesion':
+			$seccion = 'acciones/logout.php';
 			break;
-	} 
+		default:
+			$seccion .= 'errores/404.php';
+			break;
+	}
 } else {
 	switch ($s) {
+		case '':
+			$seccion .= 'inicio.php';
 		case 'posts_listado':
 			$seccion .= 'posts_listado.php';
 			break;
@@ -93,7 +102,7 @@ if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
 			$seccion = 'acciones/logout.php';
 			break;
 		default:
-			$seccion .= 'inicio.php';
+			$seccion .= 'errores/404.php';
 			break;
 	}
 }
