@@ -26,11 +26,6 @@ if( $conexion ){
 	mysqli_set_charset($conexion, 'utf8');
 }
 
-
-// To do:
-// - Validacion del get
-// - Sanitizacion del get
-
 $seccion = 'modulos/';
 
 if(isset($_GET['s'])){
@@ -68,7 +63,7 @@ if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
 		default:
 			$seccion .= 'home.php';
 			break;
-	} 
+	}
 } else {
 	switch ($s) {
 		case 'posts_listado':
