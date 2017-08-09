@@ -98,8 +98,8 @@ SQL;
 				<td class="admin_list__row__author hidden-xs"><p><?php echo $array_posts['TIPO_CHUCHERIA'] ?></p></td>
 				<td class="admin_list__row__date hidden-xs"><p><?php echo traducir_mes($array_posts['FECHA_ALTA']) ?></p></td>
 				<td class="admin_list__row__actions">
-					<a href="index.php?s=editar_post&i=<?php echo $array_posts['IDARTICULO'] ?>" title="Editar post"><i class="glyphicon glyphicon-pencil"></i></a>
-					<a href="acciones/eliminar_post.php?i=<?php echo $array_posts['IDARTICULO'] ?>" title="Eliminar post"><i class="glyphicon glyphicon-remove"></i></a>
+					<a href="index.php?s=editar_post&i=<?php echo $array_posts['IDARTICULO'] ?>" title="Editar post"><img src="../images/iconos/espadita-negro.png" alt="ícono espadita" class="iconitos"></a>
+					<a href="acciones/eliminar_post.php?i=<?php echo $array_posts['IDARTICULO'] ?>" title="Eliminar post"><img src="../images/iconos/bomba-negro.png" alt="ícono bomba" class="iconitos"></a>
 				</td>
 			</tr>
 			<?php
