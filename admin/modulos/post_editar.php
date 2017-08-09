@@ -15,6 +15,12 @@
 		}
 	}
 
+	$x_categoria = "SELECT * FROM categorias";
+	$c_chucheria = "SELECT * FROM tipo_chucherias";
+	
+	$p_categoria = mysqli_query($conexion, $c_categoria);
+	$f_chucheria = mysqli_query($conexion, $c_chucheria);
+
 	$c = <<<SQL
 
 	SELECT
@@ -41,14 +47,28 @@ SQL;
 	
 	$separar_imagenes = explode(",", $a['IMAGENES']);
 
-	$c_categoria = <<<CATEGORIA
-	SELECT 
-		*
-	FROM 
-		categorias
-CATEGORIA;
+	$x = <<<SQL
 
-	$f_categoria = mysqli_query($conexion, $c_categoria);
+	SELECT
+		FKCATEGORIA
+	FROM
+		articulos_categorias
+	WHERE
+		IDARTICULO = $id
+
+SQL;	
+
+	$p = mysqli_query($conexion, $x);
+	$b = mysqli_fetch_assoc($p);	
+
+	//$seleccionados = array();
+
+	//while ($cosito = mysqli_fetch_assoc($a)):
+	//	$seleccionados[] = $cosito['FKCATEGORIA'];
+	//endwhile;
+
+	//var_dump($seleccionados);		
+
 ?>
 
 <div class="seccion--post-editar">
@@ -87,7 +107,14 @@ CATEGORIA;
 							<h3>Tipo de chucheria <span class="red">*</span></h3>
 							<select class="form-control" name="chucheria">
 								<?php while($a_chucherias = mysqli_fetch_assoc($f_chucheria)): ?>
-									<option value="<?php echo $a_chucherias['IDCHUCHERIA'] ?>">
+									<option value="<?php echo $a_chucherias['IDCHUCHERIA'] ?>" <?php 
+
+										if ($a_chucherias['IDCHUCHERIA'] == $a['FKCHUCHERIA']){
+
+									echo "selected";
+
+								}
+									?>>
 										<?php echo $a_chucherias['TIPO_CHUCHERIA'] ?>
 									</option>
 								<?php endwhile; ?>
@@ -123,7 +150,14 @@ CATEGORIA;
 							<h3>Categoría</h3>
 							<select multiple class="form-control" name="categoria[]">
 								<?php while($a_categoria = mysqli_fetch_assoc($f_categoria)): ?>
-									<option value="<?php echo $a_categoria['IDCATEGORIA'] ?>">
+									<option value="<?php echo $a_categoria['IDCATEGORIA'] ?>" <?php 
+
+										if ($a_chucherias['IDCATEGORIA'] == $a['FKCATEGORIA']){
+
+									echo "selected";
+
+								}
+									?>>
 										<?php echo $a_categoria['CATEGORIA'] ?>
 									</option>
 								<?php endwhile; ?>
