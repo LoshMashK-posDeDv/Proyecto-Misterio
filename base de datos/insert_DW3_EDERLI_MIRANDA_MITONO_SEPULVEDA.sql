@@ -7,17 +7,17 @@ VALUES
 	('1', '1', '0', '0', '0', '0');
 
 INSERT INTO
-	usuarios (NOMBRE_COMPLETO, NICK, EMAIL, CONTRASENIA, FECHA_ALTA, U_ESTADO, FKPERMISOS)
+	usuarios (NOMBRE_COMPLETO, NICK, EMAIL, EDAD, CONTRASENIA, FECHA_ALTA, U_ESTADO, FKPERMISOS)
 VALUES
-	('german rodriguez', 'gerchu','german.rodriguez@davinci.edu.ar', MD5('admin1234'), NOW( ), '1', 1),
-	('federico miranda', 'fedejunior','federico.mirandaa@gmail.com', MD5('1234'), NOW( ), '1', 1),
-	('leandro merlo', 'leodom','merloleandro@gmail.com', MD5('holis1234'), NOW( ), '1', 1),
-	('florencia sepulveda', 'css','florenciasepulveda.26@gmail.com', MD5('holis1234'), NOW( ), '1', 1),
-	('florencia ederli', 'fespix','florenciaespino@gmail.com', MD5('zeldaeslomas'), NOW( ), '1', 1),
-	('laura mitono', 'lechuza','mlauramitono@gmail.com', MD5('nellylalechuza'), NOW( ), '1', 1),
-	('usuario uno', 'unito','usuario1@davinci.edu.ar', MD5('1234'), NOW( ), '1', 2),
-	('usuario dos', 'docito','usuario2@davinci.edu.ar', MD5('1234'), NOW( ), '1', 2),
-	('usuario tres', 'trecito','usuario3@davinci.edu.ar', MD5('1234'), NOW( ), '1', 2);
+	('german rodriguez', 'gerchu','german.rodriguez@davinci.edu.ar', '38', MD5('admin1234'), NOW( ), '1', 1),
+	('federico miranda', 'fedejunior','federico.mirandaa@gmail.com', '22',MD5('1234'), NOW( ), '1', 1),
+	('leandro merlo', 'leodom','merloleandro@gmail.com', '29',MD5('holis1234'), NOW( ), '1', 1),
+	('florencia sepulveda', 'css','florenciasepulveda.26@gmail.com', '27',MD5('holis1234'), NOW( ), '1', 1),
+	('florencia ederli', 'fespix','florenciaespino@gmail.com', '29',MD5('zeldaeslomas'), NOW( ), '1', 1),
+	('laura mitono', 'lechuza','mlauramitono@gmail.com', MD5('nellylalechuza'), '35',NOW( ), '1', 1),
+	('usuario uno', 'unito','usuario1@davinci.edu.ar', '28',MD5('1234'), NOW( ), '1', 2),
+	('usuario dos', 'docito','usuario2@davinci.edu.ar', '16',MD5('1234'), NOW( ), '1', 2),
+	('usuario tres', 'trecito','usuario3@davinci.edu.ar', '67',MD5('1234'), NOW( ), '1', 2);
 
 INSERT INTO
 	tipo_chucherias (TIPO_CHUCHERIA)
@@ -67,7 +67,8 @@ VALUES
 	('Impresionante invitame!', NOW( ), '1', 5, 6),
 	('Es muy tiernita esa lámpara', NOW( ), '1', 4, 10),
 	('Juguemos ese jueguito super genial en todos los recreos de DV!', NOW( ), '1', 6, 8),
-	('De lo mejor que se vio en este último tiempo', NOW( ), '0', 1, 1);
+	('De lo mejor que se vio en este último tiempo', NOW( ), '0', 1, 1),
+	('Alto dibujo! no le hagas caso a Unito que es un gil', NOW( ), '1', 4, 13);
 	
 INSERT INTO
 	categorias (CATEGORIA)

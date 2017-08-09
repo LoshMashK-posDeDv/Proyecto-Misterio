@@ -36,9 +36,6 @@
                         
                         <ul class="nav navbar-nav navbar-left" id="bs-navbar">
                             <li id="btn-videos">
-                                <a href="index.php">Inicio</a>
-                            </li>
-                            <li id="btn-videos">
                                 <a href="index.php?s=posts">Posts</a>
                             </li> 
                             <li id="btn-videos">
@@ -48,7 +45,7 @@
                                 <?php if(isset($_SESSION['NOMBRE_COMPLETO'])) { ?>
 
                                     <button class="btn dropdown-toggle" type="button" id="dropdown-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                        Hola <?php echo solo_nombre($_SESSION['NOMBRE_COMPLETO']); ?>
+                                        Hola, <?php echo solo_nombre($_SESSION['NOMBRE_COMPLETO']); ?>
                                         <span class="caret"></span>
                                     </button>
 

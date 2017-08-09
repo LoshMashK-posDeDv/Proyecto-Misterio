@@ -1,7 +1,7 @@
 Materia: DW 3° A TN - Programación II
-TP: Examen Parcial III
+Examen Final
 Profesor: Germán Rodríguez
-Cuatrimestre: 1 - 2017
+DW3ATN - 2017
 
 Alumnos:
 	Ederli, Florencia

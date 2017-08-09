@@ -82,7 +82,7 @@
 
 				<td class="admin_list__row__actions">
 					<a class="" href="acciones/eliminar_comentario.php?id=<?php echo $array['ID'] ?>" title="Eliminar">
-						<img src="../images/iconos/espadita-negro.png" alt="ícono espadita" class="iconitos">
+					<img src="../images/iconos/bomba-negro.png" alt="ícono bomba" class="iconitos">
 					</a>
 					<!--
 					Lo oculto porque no se que hace el botón

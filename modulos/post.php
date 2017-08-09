@@ -50,6 +50,7 @@ SQL;
 	while($array_detalle = mysqli_fetch_assoc($r1)):
 		$separar_video = explode(".", $array_detalle['VIDEO']);
 		$descripcion = $array_detalle['DESCRIPCION'];
+		$descripcion = htmlentities($descripcion);
 		$descripcion = nl2br($descripcion);
 		$descripcion = strip_tags($descripcion);
 ?>
