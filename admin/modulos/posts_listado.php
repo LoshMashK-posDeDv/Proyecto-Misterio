@@ -56,11 +56,13 @@
 				//segunda consulta: cant de posts que hay
 				$consulta_cant_posts = <<<SQL
 					SELECT
-						COUNT(IDARTICULO) AS CANTIDAD
+						COUNT(IDARTICULO) AS CANTIDAD,
+						FKUSUARIO
 					FROM
-						articulos
+						articulos AS a
 					WHERE
 						A_ESTADO = 1
+
 SQL;
 				$cantidad_posts = mysqli_query ($conexion, $consulta_cant_posts);
 				//var_dump($cantidad_posts);
