@@ -4,7 +4,8 @@
 		SELECT
 			NOMBRE_COMPLETO,
 			EMAIL,
-			NICK
+			NICK,
+			EDAD
 		FROM
 			usuarios
 		WHERE
@@ -29,19 +30,28 @@ SQL;
 			</div>
 			<div class="clearfix">
 				<label>Nombre completo</label>
-				<input id="nombre" type="text" name="nombre" value="<?php echo $datos['NOMBRE_COMPLETO'] ?>" class="form-control" data-msj="El nombre solo puede contener letras (mínimo 5)" pattern="[\w\s]{5,50}" required>
+				<input id="nombre" type="text" name="nombre" value="<?php echo $datos['NOMBRE_COMPLETO'] ?>" class="form-control">
+				<!-- Poné solo letras! -->
 			</div>
 			<div class="clearfix">
 				<label>Mail</label>
-				<input id="email" type="email" name="mail" value="<?php echo $datos['EMAIL'] ?>" class="form-control" data-msj="El email es inválido" pattern="(([^<>()[\]\.,;:\s@\]+(\.[^<>()[\]\.,;:\s@\]+)*)|(\.+\))@(([^<>()[\]\.,;:\s@\]+\.)+[^<>()[\]\.,;:\s@\]{2,})" required>
+				<input id="email" type="email" name="mail" value="<?php echo $datos['EMAIL'] ?>" class="form-control">
+				<!-- Todavia no sabes que los mails llevan @?? -->
 			</div>
 			<div class="clearfix">
 				<label>Nick</label>
-				<input id="nick" type="text" name="nick" value="<?php echo $datos['NICK'] ?>" class="form-control" data-msj="Ups, probá con otra cosa" pattern="[\d\w\s]{5,50}" required>
+				<input id="nick" type="text" name="nick" value="<?php echo $datos['NICK'] ?>" class="form-control">
+				<!-- Ups, probá con otra cosa. Minimo 3 carácteres! -->
+			</div>
+			<div class="clearfix">
+				<label>Edad</label>
+				<input id="edad" type="text" name="edad" value="<?php echo $datos['EDAD'] ?>" class="form-control">
+				<!-- 4 dígitos?? Que sos? Matusalem? -->
 			</div>
 			<div class="clearfix">
 				<label>Cambiar contraseña</label>
-				<input id="password" type="password" name="password" class="form-control" data-msj="La contraseña debe tener como mínimo 8 caracteres y 15 como máximo. Debe contener al menos un número y un caracter especial" pattern="(?=.*[a-z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}">
+				<input id="password" type="password" name="password" class="form-control">
+				<!-- Como soy re complicado, la contraseña debe tener como mínimo 8 carácteres y 15 como máximo. Ah! y debe contener al menos un número y un caracter especial. TKB :) -->
 			</div>
 			<div class="clearfix" id="pass_inc">
 				<label>Confirmar contraseña</label>

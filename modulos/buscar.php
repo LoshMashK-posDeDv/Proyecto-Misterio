@@ -22,7 +22,7 @@ SQL;
 
 <div class="container">
     <section class="resultados">
-        <h2 class="u text-left">Resultados de búsqueda para <?php echo $busqueda; ?></h2>
+        <h2 class="u text-center"><?php echo $busqueda; ?>...</h2>
         <div class="clear"></div>
         <div class="seccion--posts">
             <?php
@@ -30,6 +30,8 @@ SQL;
             ?>                 
                     <section class="resultados_error">
                         <img src="images/errores/no_hay resultados.jpg" alt="Error en la búsqueda" class="img-responsive">
+                        <h2 class="sr-only">No hay resultados</h2>
+                        <p class="sr-only">Las malas búsquedas son el nectar de los ignorantes. Para buscar más volvé a Google.</p>
                     </section>
             <?php
                 } else {
