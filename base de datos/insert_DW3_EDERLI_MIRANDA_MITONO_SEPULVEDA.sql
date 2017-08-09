@@ -47,7 +47,7 @@ VALUES
 	('Droidecitos', NOW( ), null, null, 'droides.jpg', 'Los conseguí en la tienda de Tattoine Traders en los estudios Disney, son lo mas mono que he visto y no me resistí a comprarlos', '1', 9, 1),
 	('Nerdeando con Call of Cthulhu', NOW( ), null, 'cthulhu02.jpg, cthulhu03.jpg', 'cthulhu01.jpg', 'Nerdeando con amigos solo porque si', '1', 1, 4),
 	('Piper', NOW( ), 'video_1498184435.mp4', null, 'pajarito.jpg', 'Hice un videito muy tiernito y adorable para compartir.', '1', 7, 5),
-	('Las pibitas y los jueguitos', NOW( ), null, null, 'pibitas01', 'Se metieron estas pibiiiiitas a mi casa y me quieren chorear los juegos y no las puedo sacar. Que nadie se meta con mi biblioteca', '1', 5, 4);
+	('Las pibitas y los jueguitos', NOW( ), null, null, 'pibitas01.jpg', 'Se metieron estas pibiiiiitas a mi casa y me quieren chorear los juegos y no las puedo sacar. Que nadie se meta con mi biblioteca!!!', '1', 5, 4);
 	
 	
 INSERT INTO
@@ -70,7 +70,7 @@ VALUES
 	('Juguemos ese jueguito super genial en todos los recreos de DV!', NOW( ), '1', 6, 8),
 	('De lo mejor que se vio en este último tiempo', NOW( ), '0', 1, 1),
 	('Alto dibujo! no le hagas caso a Unito que es un gil', NOW( ), '1', 4, 13),
-	('Lau llevate el Splendor', NOW( ), '1', 2, 17);
+	('Laaaaaaaau llevate el Splendor!', NOW( ), '1', 2, 17);
 	
 INSERT INTO
 	categorias (CATEGORIA)
