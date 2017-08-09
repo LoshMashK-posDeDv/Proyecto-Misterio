@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container about">
 	<h2 class="u text-left">Hola, simple mortal!</h2>
-	<p>Este sitio no fue sólo desarrollado para la diversión de sus creadores, si no que es parte de una entrega. Acá vas a poder encontrar la información de la misma y e como usar este maravilloso sitio.</p>
+	<p>Este sitio no fue sólo desarrollado para la diversión de sus creadores, si no que es parte de una entrega. Acá vas a poder encontrar la información de la misma y de como usar este maravilloso sitio.</p>
 
-	<h3>Info Materia</h3>
+	<h3>Info Entrega</h3>
 		<ul>
-			<li>Materia: DW 3° A TN - Programación II</li>
+			<li>Materia: Programación II</li>
 			<li>Examen Final</li>
 			<li>Profesor: Germán Rodríguez</li>
 			<li>DW3ATN - 2017</li>
@@ -56,7 +56,8 @@
 		<li>Cerrar Sesión</li>
 	</ul>
 
-	
+	<h4>Footer</h4>
+	<p>Ya viste la magia del footer?</p>
 
 
 </div>

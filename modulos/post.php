@@ -62,6 +62,12 @@ SQL;
 		$nombre_completo = nl2br($nombre_completo);
 		$nombre_completo = trim($nombre_completo);
 		//$nombre_completo = utf8_encode($nombre_completo);
+		
+		$titulo = $array_detalle['TITULO'];
+		$titulo = strip_tags($titulo);
+		$titulo = nl2br($titulo);
+		$titulo = trim($titulo);
+		//$titulo = utf8_encode($titulo);
 ?>
 
 
@@ -83,7 +89,7 @@ SQL;
 				<?php
 				}else{
 				?>	
-					<img src="uploads/<?php echo $array_detalle['IMG_DESTACADA']; ?>" alt="<?php echo $array_detalle['TITULO']; ?>"/>
+					<img src="uploads/<?php echo $array_detalle['IMG_DESTACADA']; ?>" alt="<?php echo $titulo; ?>"/>
 				<?php
 				}
 				?>
@@ -92,7 +98,7 @@ SQL;
 			<div class="col-sm-6">
 				<div class="post--info">
 					<div class="idvideito">
-						<h2><?php echo $array_detalle['TITULO'] ?></h2>
+						<h2><?php echo $titulo ?></h2>
 						<ul>
 							<li>Tipo de chuchería: <?php echo $array_detalle['TIPO_CHUCHERIA']; ?></li>
 							<li>Categoría: <?php 
@@ -165,7 +171,7 @@ SQL;
 							$comentario = strip_tags($comentario);
 							$comentario = nl2br($comentario);
 							$comentario = trim($comentario);
-							//$comentario = utf8_encode($comentario);		
+							//$comentario = utf8_decode($comentario);		
 						?>
 						<div class="comment">
 							<h4><?php echo $array_comentarios['NICK'] ?></h4>

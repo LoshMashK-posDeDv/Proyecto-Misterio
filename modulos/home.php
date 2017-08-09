@@ -42,23 +42,36 @@ SQL;
 
 			$r1 = mysqli_query($conexion, $consulta_posts);
 			while($array_posts = mysqli_fetch_assoc($r1)){
+				
+				$descripcion = $array_posts['DESCRIPCION'];
+				$descripcion = strip_tags($descripcion);
+				$descripcion = nl2br($descripcion);
+				//esta función está encaprichada y no quiere funcionar!
+				//$descripcion = utf8_encode($descripcion);
+				
+				$titulo = $array_posts['TITULO'];
+				$titulo = strip_tags($titulo);
+				$titulo = nl2br($titulo);
+				$titulo = trim($titulo);
+				//$titulo = utf8_encode($titulo);
+						
 			?>
 
 
 		<article class="col-md-4 home__posts">
 			<div class="home__posts__img">
 				<a href="index.php?s=post&vid=<?php echo $array_posts['IDARTICULO']; ?>">
-					<img src="uploads/<?php echo $array_posts['IMG_DESTACADA'] ?>" alt="<?php echo $array_posts['TITULO'] ?>"
+					<img src="uploads/<?php echo $array_posts['IMG_DESTACADA'] ?>" alt="<?php echo $titulo ?>"
 					>
 				</a>
 			</div>
 			<h4 class="home__posts__title">
 				<a href="index.php?s=post&vid=<?php echo $array_posts['IDARTICULO']; ?>">
-					<?php echo $array_posts['TITULO'] ?>
+					<?php echo $titulo ?>
 				</a>
 			</h4>
 			<p class="home__posts__desc">
-				<?php echo trim_desc($array_posts['DESCRIPCION']) ?>
+				<?php echo trim_desc($descripcion) ?>
 			</p>
 		</article>
 		<?php
@@ -119,17 +132,23 @@ SQL;
 
 		$r2 = mysqli_query($conexion, $consulta_posts_b);
 		while($array_posts = mysqli_fetch_assoc($r2)){
+				
+			$titulo_b = $array_posts['TITULO'];
+			$titulo_b = strip_tags($titulo_b);
+			$titulo_b = nl2br($titulo_b);
+			$titulo_b = trim($titulo_b);
+			//$titulo_b = utf8_encode($titulo_b);
 
 		?>
 			<article class="col-md-3 home__posts">
 				<div class="home__posts__img">
 					<a href="index.php?s=post&vid=<?php echo $array_posts['IDARTICULO']; ?>">
-						<img src="uploads/<?php echo $array_posts['IMG_DESTACADA'] ?>" alt="<?php echo $array_posts['TITULO'] ?>">
+						<img src="uploads/<?php echo $array_posts['IMG_DESTACADA'] ?>" alt="<?php echo $titulo_b ?>">
 					</a>
 				</div>
 				<h4 class="home__posts__title">
 					<a href="index.php?s=post&vid=<?php echo $array_posts['IDARTICULO']; ?>">
-						<?php echo $array_posts['TITULO'] ?>					
+						<?php echo $titulo_b ?>					
 					</a>
 				</h4>
 			</article>
