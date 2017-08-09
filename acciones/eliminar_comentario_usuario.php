@@ -28,5 +28,4 @@ $rta = 'ok';
 
 mysqli_query($conexion, $c);
 header("Location: ../index.php?s=post&vid=$vid&m=$rta");
-
 ?>

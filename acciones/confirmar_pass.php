@@ -23,5 +23,4 @@
 		mysqli_query($conexion, $borrar_clave_tmp);
 		header("Location: ../index.php?s=login&e=exito_t");
 	}
-
 ?>

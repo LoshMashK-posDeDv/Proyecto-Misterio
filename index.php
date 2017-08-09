@@ -57,7 +57,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="botones" href="index.php?s=cerrar_sesion">
+                                            <a class="botones" href="acciones/logout.php">
                                                 <img src="images/iconos/llave-blanco.png" alt="ícono llave" class="iconitos">
                                                 Cerrar sesión
                                             </a>
@@ -113,8 +113,7 @@
         </div>
 
         <div id="noo"></div>
-        <footer>
-            
+        <footer>            
             <div class="container">
                 <img src="images/lightsaber.png" alt="sable laser coleccionable" id="sable" onclick="noEsColeccionable()">
             </div>

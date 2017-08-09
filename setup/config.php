@@ -1,5 +1,4 @@
-<?php
-session_start();
+<?php session_start();
 
 //leo el archivo de configuración general
 $config_gen = parse_ini_file('setup.ini',true);
@@ -66,9 +65,9 @@ if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
 		case 'about':
 			$seccion .= 'about.php';
 			break;
-		case 'cerrar_sesion':
-			$seccion = 'acciones/logout.php';
-			break;
+		// case 'cerrar_sesion':
+		// 	$seccion = 'acciones/logout.php';
+		// 	break;
 		default:
 			$seccion .= 'home.php';
 			break;
