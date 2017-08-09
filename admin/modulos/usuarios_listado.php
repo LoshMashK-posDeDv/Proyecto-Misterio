@@ -5,6 +5,24 @@
 		<!--<a href="index.php?s=agregar_usuario" class="section__title__action"><i class="glyphicon glyphicon-plus"></i> Agregar usuario</a>-->
 	</div>
 
+	<?php 
+		if (isset($_GET['d'])) {
+			if ($_GET['d'] == 'up') {
+				echo '<p class="error exito">';
+					echo 'Los cambios han sido realizados';
+				echo '</p>';
+			}
+		}
+
+		if (isset($_GET['d'])) {
+			if ($_GET['d'] == 'elim') {
+				echo '<p class="error exito">';
+					echo 'El usuario se ha eliminado muaaajaajaa';
+				echo '</p>';
+			} 
+		}		
+	?>
+
 	<table class="admin_list">
 		<thead>
 			<tr class="admin_list__head">

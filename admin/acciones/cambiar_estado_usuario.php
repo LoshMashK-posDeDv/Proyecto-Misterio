@@ -2,7 +2,7 @@
 	include("../../setup/config.php");
 
 	$i_user = $_GET['i'];
-	$c_user = <<<ESTADO
+	$c_user = <<<SQL
 		UPDATE
 			usuarios
 		SET
@@ -10,9 +10,12 @@
 		WHERE
 			IDUSUARIOS = '$i_user'
 		LIMIT 1
-ESTADO;
+SQL;
 
 	mysqli_query($conexion, $c_user);
 
-	header("Location: ../index.php?s=usuarios_listado#user_$i_user");
+	
+	$u = 'up';
+	
+	header("Location: ../index.php?s=usuarios_listado&d=$u#user_$i_user");
 ?>
