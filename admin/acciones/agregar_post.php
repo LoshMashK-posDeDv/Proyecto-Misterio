@@ -87,8 +87,28 @@
 
 		if($imagen_destacada['size'] > 0){
 			$extension_img = pathinfo($imagen_destacada_nombre, PATHINFO_EXTENSION);
-			$imagen_destacada_nombre = "img_" . time() . "." . $extension_img;
-			move_uploaded_file($imagen_destacada['tmp_name'], "../../uploads/$imagen_destacada_nombre");
+			if($extension_img == 'jpg' || $extension_img == 'jpeg'){
+				$original = imagecreatefromjpeg($imagen_destacada['tmp_name']);
+				$ancho_original = imagesx($original);
+				$alto_original = imagesy($original);
+
+				$ancho = 555;
+				$alto = round($ancho * $alto_original / $ancho_original);
+
+				$nueva = imagecreatetruecolor($ancho, $alto);
+
+				imagecopyresampled(
+					$nueva, $original,
+					0, 0,
+					0, 0,
+					$ancho, $alto,
+					$ancho_original, $alto_original
+				);
+				$imagen_destacada_nombre = "img_" . time() . "." . $extension_img;
+				imagejpeg($nueva, "../../uploads/$imagen_destacada_nombre", 100);
+			}
+
+			//move_uploaded_file($imagen_destacada['tmp_name'], "../../uploads/$imagen_destacada_nombre");
 		}
 
 		$c = "INSERT INTO
@@ -122,12 +142,14 @@
 			}
 		}
 
-		header("Location: ../index.php?s=posts_listado&m=$rta");
+		//header("Location: ../index.php?s=posts_listado&m=$rta");
 
 	} else {
 		$c = 'falló';
 		$rta = 'error';
 
-		header("Location: ../index.php?s=agregar_post&m=$rta");
+		//header("Location: ../index.php?s=agregar_post&m=$rta");
 	}
+
+	echo mysqli_error($conexion);
 ?>
