@@ -9,15 +9,15 @@ VALUES
 INSERT INTO
 	usuarios (NOMBRE_COMPLETO, NICK, EMAIL, EDAD, CONTRASENIA, FECHA_ALTA, U_ESTADO, FKPERMISOS)
 VALUES
-	('german rodriguez', 'gerchu','german.rodriguez@davinci.edu.ar', '38', MD5('admin1234'), NOW( ), '1', 1),
-	('federico miranda', 'fedejunior','federico.mirandaa@gmail.com', '22',MD5('1234'), NOW( ), '1', 1),
-	('leandro merlo', 'leodom','merloleandro@gmail.com', '29',MD5('holis1234'), NOW( ), '1', 1),
-	('florencia sepulveda', 'css','florenciasepulveda.26@gmail.com', '27',MD5('holis1234'), NOW( ), '1', 1),
-	('florencia ederli', 'fespix','florenciaespino@gmail.com', '29',MD5('zeldaeslomas'), NOW( ), '1', 1),
-	('laura mitono', 'lechuza','mlauramitono@gmail.com', MD5('nellylalechuza'), '35',NOW( ), '1', 1),
-	('usuario uno', 'unito','usuario1@davinci.edu.ar', '28',MD5('1234'), NOW( ), '1', 2),
-	('usuario dos', 'docito','usuario2@davinci.edu.ar', '16',MD5('1234'), NOW( ), '1', 2),
-	('usuario tres', 'trecito','usuario3@davinci.edu.ar', '67',MD5('1234'), NOW( ), '1', 2);
+	('Germán Rodríguez', 'gerchu','german.rodriguez@davinci.edu.ar', '38', MD5('admin1234'), NOW( ), '1', 1),
+	('Federico Miranda', 'fedejunior','federico.mirandaa@gmail.com', '22',MD5('1234'), NOW( ), '1', 1),
+	('Leandro Merlo', 'leodom','merloleandro@gmail.com', '29',MD5('holis1234'), NOW( ), '1', 1),
+	('Florencia Sepúlveda', 'css','florenciasepulveda.26@gmail.com', '27',MD5('holis1234'), NOW( ), '1', 1),
+	('Florencia Ederli', 'fespix','florenciaespino@gmail.com', '29',MD5('zeldaeslomas'), NOW( ), '1', 1),
+	('Laura Mitono', 'lechuza','mlauramitono@gmail.com', '35', MD5('nellylalechuza'),NOW( ), '1', 1),
+	('Usuario Uno', 'unito','usuario1@davinci.edu.ar', '28',MD5('1234'), NOW( ), '1', 2),
+	('Usuario Dos', 'docito','usuario2@davinci.edu.ar', '16',MD5('1234'), NOW( ), '1', 2),
+	('Usuario Tres', 'trecito','usuario3@davinci.edu.ar', '67',MD5('1234'), NOW( ), '1', 2);
 
 INSERT INTO
 	tipo_chucherias (TIPO_CHUCHERIA)
@@ -46,7 +46,8 @@ VALUES
 	('Dibujando a Shifu', NOW( ), null, null, 'master_shifu.jpg', 'Después de varios intentos logré hacerle este pequeño homenaje a este tan querido personaje de mi peli favorita', '1', 6, 5),
 	('Droidecitos', NOW( ), null, null, 'droides.jpg', 'Los conseguí en la tienda de Tattoine Traders en los estudios Disney, son lo mas mono que he visto y no me resistí a comprarlos', '1', 9, 1),
 	('Nerdeando con Call of Cthulhu', NOW( ), null, 'cthulhu02.jpg, cthulhu03.jpg', 'cthulhu01.jpg', 'Nerdeando con amigos solo porque si', '1', 1, 4),
-	('Piper', NOW( ), 'video_1498184435.mp4', null, 'pajarito.jpg', 'Hice un videito muy tiernito y adorable para compartir.', '1', 7, 5);
+	('Piper', NOW( ), 'video_1498184435.mp4', null, 'pajarito.jpg', 'Hice un videito muy tiernito y adorable para compartir.', '1', 7, 5),
+	('Las pibitas y los jueguitos', NOW( ), null, null, 'pibitas01', 'Se metieron estas pibiiiiitas a mi casa y me quieren chorear los juegos y no las puedo sacar. Que nadie se meta con mi biblioteca', '1', 5, 4);
 	
 	
 INSERT INTO
@@ -68,7 +69,8 @@ VALUES
 	('Es muy tiernita esa lámpara', NOW( ), '1', 4, 10),
 	('Juguemos ese jueguito super genial en todos los recreos de DV!', NOW( ), '1', 6, 8),
 	('De lo mejor que se vio en este último tiempo', NOW( ), '0', 1, 1),
-	('Alto dibujo! no le hagas caso a Unito que es un gil', NOW( ), '1', 4, 13);
+	('Alto dibujo! no le hagas caso a Unito que es un gil', NOW( ), '1', 4, 13),
+	('Lau llevate el Splendor', NOW( ), '1', 2, 17);
 	
 INSERT INTO
 	categorias (CATEGORIA)
@@ -107,7 +109,9 @@ VALUES
 	( 14, 9),
 	( 14, 10),
 	( 15, 1),
-	( 16, 7);
+	( 16, 7),
+	( 17, 9),
+	( 17, 10);
 
 
 	
