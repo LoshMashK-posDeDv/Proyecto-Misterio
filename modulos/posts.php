@@ -101,20 +101,31 @@ SQL;
 
 		<?php
 			while($array_posts = mysqli_fetch_assoc($respuesta_posts)) {
+				$descripcion = $array_posts['DESCRIPCION'];
+				$descripcion = strip_tags($descripcion);
+				$descripcion = nl2br($descripcion);
+				//esta función está encaprichada y no quiere funcionar!
+				//$descripcion = utf8_encode($descripcion);
+				
+				$titulo = $array_posts['TITULO'];
+				$titulo = strip_tags($titulo);
+				$titulo = nl2br($titulo);
+				$titulo = trim($titulo);
+				//$titulo = utf8_encode($titulo);
 		?>
 		<article class="seccion--posts__post">
 			<div class="seccion--posts__img">
 				<a href="index.php?s=post&vid=<?php echo $array_posts['IDARTICULO']; ?>">
-					<img src="uploads/<?php echo $array_posts['IMG_DESTACADA'] ?>" alt="<?php echo $array_posts['TITULO'] ?>">
+					<img src="uploads/<?php echo $array_posts['IMG_DESTACADA'] ?>" alt="<?php echo $titulo ?>">
 				</a>
 			</div>
 			<div class="seccion--posts__txt">
 				<h3 class="seccion--posts__title">
 					<a href="index.php?s=post&vid=<?php echo $array_posts['IDARTICULO']; ?>">
-						<?php echo $array_posts['TITULO'] ?>					
+						<?php echo $titulo ?>					
 					</a>
 				</h3>
-				<p class="seccion--posts__desc"><?php echo trim_desc($array_posts['DESCRIPCION']); ?></p>
+				<p class="seccion--posts__desc"><?php echo trim_desc($descripcion); ?></p>
 			</div>
 		</article>
 		<?php
