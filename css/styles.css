@@ -310,6 +310,25 @@ header .dropdown-menu > li a {
 	color: #583B97;
 }
 
+/* ABOUT */
+
+.about ul{
+	padding: 0;
+    list-style-type: none;
+}
+
+.about h3{
+	margin-top: 40px;
+}
+
+.about img{
+	margin: 20px 0;
+	display: inline-block;
+}
+
+.about h4, .about h5{
+	margin-top: 20px;
+}
 
 /*ADMIN - POSTS_LISTADO*/
 
