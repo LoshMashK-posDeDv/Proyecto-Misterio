@@ -71,6 +71,9 @@ SQL;
 				if($pagina_actual > $total_links or $pagina_actual < 1){
 					echo 'Pediste una página inexistente';
 				} else {
+
+
+
 					$consulta_posts = <<<SQL
 						SELECT
 							IMG_DESTACADA,
@@ -78,15 +81,22 @@ SQL;
 							DATE_FORMAT(a.FECHA_ALTA, "%d de %M de %Y") AS FECHA_ALTA,
 							A_ESTADO,
 							IDARTICULO,
+							NICK,
 							TIPO_CHUCHERIA
 						FROM
 							articulos AS a
 						LEFT JOIN tipo_chucherias ON a.FKCHUCHERIA = tipo_chucherias.IDCHUCHERIA
+						LEFT JOIN usuarios ON a.FKUSUARIO = usuarios.IDUSUARIOS
 						WHERE
 							A_ESTADO = 1
 						ORDER BY IDARTICULO DESC
 						LIMIT $inicio_paginador, $cantidad_por_pagina
 SQL;
+	
+
+						if($_SESSION['FKPERMISOS'] == "1"){
+
+
 
 				$respuesta_posts = mysqli_query($conexion, $consulta_posts);
 
@@ -104,8 +114,30 @@ SQL;
 			</tr>
 			<?php
 		endwhile;
-				} //cierre del else de la verificacion
-			?>
+				}else{
+				 
+					
+				$respuesta_posts = mysqli_query($conexion, $consulta_posts);
+
+				while($array_posts = mysqli_fetch_assoc($respuesta_posts)):
+				if($_SESSION['NICK'] == $array_posts['NICK']){					
+		?>
+	<tr class="admin_list__row">
+				<td class="admin_list__row__image"><img src="../uploads/<?php echo $array_posts['IMG_DESTACADA'] ?>" alt="<?php echo $array_posts['TITULO'] ?>"></td>
+				<td class="admin_list__row__name"><p><?php echo $array_posts['TITULO'] ?></p></td>
+				<td class="admin_list__row__author hidden-xs"><p><?php echo $array_posts['TIPO_CHUCHERIA'] ?></p></td>
+				<td class="admin_list__row__date hidden-xs"><p><?php echo traducir_mes($array_posts['FECHA_ALTA']) ?></p></td>
+				<td class="admin_list__row__actions">
+					<a href="index.php?s=editar_post&i=<?php echo $array_posts['IDARTICULO'] ?>" title="Editar post"><img src="../images/iconos/espadita-negro.png" alt="ícono espadita" class="iconitos"></a>
+					<a href="acciones/eliminar_post.php?i=<?php echo $array_posts['IDARTICULO'] ?>" title="Eliminar post"><img src="../images/iconos/bomba-negro.png" alt="ícono bomba" class="iconitos"></a>
+				</td>
+			</tr> 	
+
+			<?php
+			}
+		endwhile;
+			}}//cierre del else de la verificacion
+		?>
 		</tbody>
 	</table>
 
