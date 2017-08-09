@@ -2,6 +2,33 @@
 
     $busqueda = isset($_GET['buscar']) ? $_GET['buscar'] : '';
 
+    //primer consulta
+                $cantidad_por_pagina = 8;
+                $pagina_actual = isset($_GET['p']) ? $_GET['p'] : 1; //lo que viene por get, el num de la pag cliqueada
+                $inicio_paginador = ($pagina_actual - 1) * $cantidad_por_pagina; //cantidad que debe saltear
+
+
+                //segunda consulta: cant de posts que hay
+                $consulta_cant_posts = <<<SQL
+                    SELECT
+                        COUNT(IDARTICULO) AS CANTIDAD
+                    FROM
+                        articulos
+                    WHERE
+                        A_ESTADO = 1 AND TITULO LIKE '%$busqueda%' OR DESCRIPCION LIKE '%$busqueda%'
+SQL;
+                $cantidad_posts = mysqli_query ($conexion, $consulta_cant_posts);
+                //var_dump($cantidad_posts);
+                $array_posts3 = mysqli_fetch_assoc ($cantidad_posts);
+                $cantidad_resultados = $array_posts3['CANTIDAD'];
+
+                $total_links = ceil ($cantidad_resultados / $cantidad_por_pagina);
+
+                //verificacion de cantidad de paginas
+                if($pagina_actual > $total_links or $pagina_actual < 1){
+                    echo 'Pediste una página inexistente';
+                } else {
+
     $consulta_buscar = <<<SQL
         SELECT
             IDARTICULO,
@@ -14,6 +41,7 @@
             TITULO LIKE '%$busqueda%' OR DESCRIPCION LIKE '%$busqueda%'
         ORDER BY
             TITULO
+        LIMIT $inicio_paginador, $cantidad_por_pagina
 SQL;
 
     $filas = mysqli_query($conexion, $consulta_buscar);
@@ -59,9 +87,46 @@ SQL;
                     endwhile;
                 ?>
             <?php
-                }
+                }}
             ?>
         </div>
+
+            <!-- PAGINADOR MÁGICO -->
+
+    <div class="paginador clear">
+        <ul class="paginator">
+        <?php
+            $pag_anterior = $pagina_actual - 1;
+            if( $pag_anterior > 0 ){
+            ?>
+            <li><a href="index.php?buscar=<?php echo $busqueda; ?>&p=<?php echo $pag_anterior; ?>">&larr;</a></li>
+
+            <?php
+
+            }
+
+            for( $i = 1; $i <= $total_links; $i++ ){
+            $activo = $pagina_actual == $i ? 'class="pag_activa"':'';
+
+            echo '<li><a href="index.php?buscar='.$busqueda.'&p='.$i.'" '.$activo.'>'.$i.'</a></li> ';
+
+            }
+
+        ?>
+
+        <?php
+
+            $pag_siguiente = $pagina_actual + 1;
+            if( $pag_siguiente <= $total_links ){
+
+        ?>
+
+            <li><a href="index.php?buscar=<?php echo $busqueda; ?>&p=<?php echo $pag_siguiente ?>">&rarr;</a></li>
+
+        <?php } ?>
+
+        </ul>
+    </div>
 
         
     </section>

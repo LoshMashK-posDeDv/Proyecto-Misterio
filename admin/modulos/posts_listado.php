@@ -48,7 +48,7 @@
 		<tbody>
 			<?php
 				//primer consulta
-				$cantidad_por_pagina = 10;
+				$cantidad_por_pagina = 12;
 				$pagina_actual = isset($_GET['p']) ? $_GET['p'] : 1; //lo que viene por get, el num de la pag cliqueada
 				$inicio_paginador = ($pagina_actual - 1) * $cantidad_por_pagina; //cantidad que debe saltear
 
