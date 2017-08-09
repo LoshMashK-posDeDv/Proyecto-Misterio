@@ -15,6 +15,12 @@
 		}
 	}
 
+	$c_categoria = "SELECT * FROM categorias WHERE IDARTICULO = $id";
+	$c_chucheria = "SELECT * FROM tipo_chucherias WHERE IDARTICULO = $id";
+	
+	$f_categoria = mysqli_query($conexion, $c_categoria);
+	$f_chucheria = mysqli_query($conexion, $c_chucheria);
+
 	$c = <<<SQL
 
 	SELECT
@@ -123,7 +129,7 @@ CATEGORIA;
 							<h3>Categoría</h3>
 							<select multiple class="form-control" name="categoria[]">
 								<?php while($a_categoria = mysqli_fetch_assoc($f_categoria)): ?>
-									<option value="<?php echo $a_categoria['IDCATEGORIA'] ?>">
+									<option value="<?php echo $f_categoria ?>">
 										<?php echo $a_categoria['CATEGORIA'] ?>
 									</option>
 								<?php endwhile; ?>
