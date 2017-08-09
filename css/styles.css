@@ -323,16 +323,43 @@ header .dropdown-menu > li a {
     list-style-type: none;
 }
 
+.about .flex {
+	display: flex;
+}
+
 .about h3{
-	margin-top: 40px;
+	margin-top: 0;
 }
 
 .about img{
 	margin: 20px 0;
-	display: inline-block;
 }
 
-.about h4, .about h5{
+.about-box.box-first {
+	background: #a9232c;
+	width: 40%;
+	align-self: flex-start;
+	margin-right: 3%;
+}
+
+.border_box {
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+.about-box.box-first li,
+.about-box.box-first h3 {
+	color: #fff;
+}
+
+.about-box {
+    background: #fff;
+    padding: 30px;
+    margin: 20px 0;
+}
+
+.about h4, 
+.about h5 {
 	margin-top: 20px;
 }
 
