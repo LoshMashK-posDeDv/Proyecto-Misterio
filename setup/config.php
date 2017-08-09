@@ -27,11 +27,6 @@ if( $conexion ){
 	mysqli_set_charset($conexion, 'utf8');
 }
 
-
-// To do:
-// - Validacion del get
-// - Sanitizacion del get
-
 $seccion = 'modulos/';
 
 if(isset($_GET['s'])){
@@ -80,6 +75,7 @@ if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
 	switch ($s) {
 		case '':
 			$seccion .= 'inicio.php';
+			break;
 		case 'posts_listado':
 			$seccion .= 'posts_listado.php';
 			break;
