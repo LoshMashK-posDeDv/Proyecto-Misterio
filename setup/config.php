@@ -68,7 +68,7 @@ if(strpos($_SERVER['PHP_SELF'],'/admin/') == false ){
 		default:
 			$seccion .= 'home.php';
 			break;
-	}
+	} 
 } else {
 	switch ($s) {
 		case 'posts_listado':
