@@ -1,25 +1,24 @@
 <?php
-	
+
 	$consulta_cant_posts = <<<SQL
 		SELECT
 			MAX(IDARTICULO) AS MAX_ARTICULOS,
 			MIN(IDARTICULO) AS MIN_ARTICULOS
-		FROM 
+		FROM
 			articulos
 SQL;
 	$r_error = mysqli_query($conexion, $consulta_cant_posts);
 	$array_cant = mysqli_fetch_assoc($r_error);
 
 	$post_id = isset($_GET['vid']) ? $_GET['vid'] : 0 ;
-	
-	if($_GET['vid'] > $array_cant['MAX_ARTICULOS'] or $_GET['vid'] < $array_cant['MIN_ARTICULOS'] or is_string($_GET['vid'])){
-		echo 'errror';
-	}
-	
-	echo $post_id;
+	$int = (int)$post_id;
+
+	if($post_id > $array_cant['MAX_ARTICULOS'] || $post_id < $array_cant['MIN_ARTICULOS']){
+		include("modulos/errores/404.php");
+	} else {
 
 	$consulta_post = <<<SQL
-		SELECT 
+		SELECT
 		IDARTICULO,
 		UCASE(TITULO) AS TITULO,
 		DATE_FORMAT(a.FECHA_ALTA, "%d de %M de %Y") AS FECHA,
@@ -29,8 +28,8 @@ SQL;
 		DESCRIPCION,
 		NOMBRE_COMPLETO,
 		EMAIL,
-		TIPO_CHUCHERIA	
-	FROM articulos AS a 
+		TIPO_CHUCHERIA
+	FROM articulos AS a
 	LEFT JOIN tipo_chucherias ON a.FKCHUCHERIA = tipo_chucherias.IDCHUCHERIA
 	LEFT JOIN usuarios AS u ON a.FKUSUARIO = u.IDUSUARIOS
 	WHERE IDARTICULO = $post_id
@@ -62,22 +61,22 @@ SQL;
 	$r1 = mysqli_query($conexion, $consulta_post);
 	$r2 = mysqli_query($conexion, $consulta_comentarios);
 	$r3 = mysqli_query($conexion, $consulta_categoria);
-	
+
 	while($array_detalle = mysqli_fetch_assoc($r1)):
 		$separar_video = explode(".", $array_detalle['VIDEO']);
-		
+
 		$descripcion = $array_detalle['DESCRIPCION'];
 		$descripcion = strip_tags($descripcion);
 		$descripcion = nl2br($descripcion);
 		$descripcion = trim($descripcion);
 		//esta función está encaprichada y no quiere funcionar!
 		//$descripcion = utf8_encode($descripcion);
-		
+
 		$nombre_completo = $array_detalle['NOMBRE_COMPLETO'];
 		$nombre_completo = strip_tags($nombre_completo);
 		$nombre_completo = trim($nombre_completo);
 		//$nombre_completo = utf8_encode($nombre_completo);
-		
+
 		$titulo = $array_detalle['TITULO'];
 		$titulo = strip_tags($titulo);
 		$titulo = trim($titulo);
@@ -102,7 +101,7 @@ SQL;
 				</video>
 				<?php
 				}else{
-				?>	
+				?>
 					<img src="uploads/<?php echo $array_detalle['IMG_DESTACADA']; ?>" alt="<?php echo $titulo; ?>"/>
 				<?php
 				}
@@ -115,10 +114,10 @@ SQL;
 						<h2><?php echo $titulo ?></h2>
 						<ul>
 							<li>Tipo de chuchería: <?php echo $array_detalle['TIPO_CHUCHERIA']; ?></li>
-							<li>Categoría: <?php 
+							<li>Categoría: <?php
 									while($array_categoria = mysqli_fetch_assoc($r3)):
 										$categorias = explode(',',$array_categoria['CATEGORIA']);
-										foreach( $categorias as $indice => $valor){						
+										foreach( $categorias as $indice => $valor){
 											echo "<span>".$valor."</span>";
 										}
 									endwhile;
@@ -132,7 +131,7 @@ SQL;
 						</div>
 						<div class="img_list">
 							<ul>
-								<?php 	
+								<?php
 									if($array_detalle['IMAGENES'] != null){
 										$imgs = explode(',' , $array_detalle['IMAGENES']);
 
@@ -142,12 +141,12 @@ SQL;
 											<li>
 												<img src="uploads/<?php echo $valor; ?>" alt="<?php echo $valor; ?>"/>
 											</li>
-											
+
 								<?php
-										}										
+										}
 									//endwhile;
 									}
-								?>							
+								?>
 							</ul>
 						</div>
 					</div>
@@ -157,14 +156,14 @@ SQL;
 							<!--<img src="https://yt3.ggpht.com/-cjAi_YrRPCA/AAAAAAAAAAI/AAAAAAAAAAA/CvohcVRdIA0/s100-c-k-no-mo-rj-c0xffffff/photo.jpg" alt="foto del usuario" >-->
 						</div>
 						<h3><?php echo $nombre_completo; ?></h3>
-						<p>Email: <?php echo $array_detalle['EMAIL']; ?></p> 
+						<p>Email: <?php echo $array_detalle['EMAIL']; ?></p>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		
-		
+
+
 	</div>
 </section>
 <?php
@@ -185,7 +184,7 @@ SQL;
 							$comentario = strip_tags($comentario);
 							$comentario = nl2br($comentario);
 							$comentario = trim($comentario);
-							//$comentario = utf8_decode($comentario);		
+							//$comentario = utf8_decode($comentario);
 						?>
 						<div class="comment">
 							<h4><?php echo $array_comentarios['NICK'] ?></h4>
@@ -204,7 +203,7 @@ SQL;
 							?>
 						</div>
 					<?php endwhile; }	?>
-					
+
 				<?php if(isset($_SESSION['IDUSUARIOS'])): ?>
 				<h3>NUEVO COMENTARIO</h3>
 				<form action="acciones/comentar.php" method="post">
@@ -224,3 +223,6 @@ SQL;
 		</div>
 	</div>
 </section>
+<?php
+	}
+?>

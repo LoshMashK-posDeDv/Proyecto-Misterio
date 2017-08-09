@@ -3,45 +3,45 @@
     include('../html2pdf/html2pdf.class.php');
 
     $c = <<<SQL
-    	SELECT
-    		COUNT(IDARTICULO) AS TOTAL
-    	FROM
-    		articulos
+        SELECT
+            COUNT(IDARTICULO) AS TOTAL
+        FROM
+            articulos
 SQL;
 
     $c2 = <<<SQL
-    	SELECT
-    		IDCOMENTARIO,
-    		COMENTARIO,
-    		FECHA_COMENTARIO,
-    		u.NOMBRE_USUARIO AS USUARIO,
-    		a.TITULO AS TITULO
-    	FROM
-    		comentarios AS c
-    	JOIN articulos AS a ON a.IDARTICULO = c.FKARTICULO
-    	JOIN usuarios AS u on u.IDUSUARIOS = c.FKUSUARIO
-    	ORDER BY FECHA_COMENTARIO DESC
-    	LIMIT 5
+        SELECT
+            IDCOMENTARIO,
+            COMENTARIO,
+            FECHA_COMENTARIO,
+            u.NOMBRE_USUARIO AS USUARIO,
+            a.TITULO AS TITULO
+        FROM
+            comentarios AS c
+        JOIN articulos AS a ON a.IDARTICULO = c.FKARTICULO
+        JOIN usuarios AS u on u.IDUSUARIOS = c.FKUSUARIO
+        ORDER BY FECHA_COMENTARIO DESC
+        LIMIT 5
 SQL;
 
     $c3 = <<<SQL
-    	SELECT
-    		TITULO,
-    		FECHA_ALTA
-    	FROM
-    		articulos
-    	ORDER BY FECHA_ALTA DESC
-    	LIMIT 5
+        SELECT
+            TITULO,
+            FECHA_ALTA
+        FROM
+            articulos
+        ORDER BY FECHA_ALTA DESC
+        LIMIT 5
 SQL;
 
     $c4 = <<<SQL
-    	SELECT
-    		NOMBRE_USUARIO,
-    		FECHA_ALTA
-    	FROM
-    		usuarios
-    	ORDER BY FECHA_ALTA DESC
-    	LIMIT 5
+        SELECT
+            NOMBRE_USUARIO,
+            FECHA_ALTA
+        FROM
+            usuarios
+        ORDER BY FECHA_ALTA DESC
+        LIMIT 5
 SQL;
 
     $f1 = mysqli_query($conexion, $c);

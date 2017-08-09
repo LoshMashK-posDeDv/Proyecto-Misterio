@@ -15,9 +15,7 @@
 		}
 	}
 
-
 	$c_chucheria = "SELECT * FROM tipo_chucherias";
-	
 
 	$f_chucheria = mysqli_query($conexion, $c_chucheria);
 
@@ -39,40 +37,25 @@
 	LIMIT
 		1
 SQL;
+	
+	$c_categoria = "SELECT * FROM categorias";
+	$f_categoria = mysqli_query($conexion, $c_categoria);
 
 	$f = mysqli_query($conexion, $c);
 	$a = mysqli_fetch_assoc($f);
 
-	$separar_post = explode(".", $a['VIDEO']);
-	
+	$separar_post = explode(".", $a['VIDEO']);	
 	$separar_imagenes = explode(",", $a['IMAGENES']);
 
-	$x = <<<SQL
 
-	SELECT
-		FKCATEGORIA
-	FROM
-		articulos_categorias
-	WHERE
-		IDARTICULO = $id
-
-SQL;	
+	$x = "SELECT FKCATEGORIA FROM articulos_categorias WHERE FKARTICULO = $id";	
 
 	$p = mysqli_query($conexion, $x);
-	
-
 	$seleccionados = array();
 
-	while ($cosito = mysqli_fetch_assoc($p)):
+	while ($cosito = mysqli_fetch_assoc($p)){
 		$seleccionados[] = $cosito['FKCATEGORIA'];
-	endwhile;
-
-	var_dump($seleccionados);	
-
-
-		$c_categoria = "SELECT * FROM categorias";
-		$f_categoria = mysqli_query($conexion, $c_categoria);
-
+	}	
 ?>
 
 <div class="seccion--post-editar">
@@ -111,14 +94,12 @@ SQL;
 							<h3>Tipo de chucheria <span class="red">*</span></h3>
 							<select class="form-control" name="chucheria">
 								<?php while($a_chucherias = mysqli_fetch_assoc($f_chucheria)): ?>
-									<option value="<?php echo $a_chucherias['IDCHUCHERIA'] ?>" <?php 
-
-										if ($a_chucherias['IDCHUCHERIA'] == $a['FKCHUCHERIA']){
-
-									echo "selected";
-
-								}
-									?>>
+									<option value="<?php echo $a_chucherias['IDCHUCHERIA'] ?>" 
+										<?php 
+											if ($a_chucherias['IDCHUCHERIA'] == $a['FKCHUCHERIA']){
+												echo "selected";
+											}
+										?>>
 										<?php echo $a_chucherias['TIPO_CHUCHERIA'] ?>
 									</option>
 								<?php endwhile; ?>
@@ -154,15 +135,16 @@ SQL;
 							<h3>Categoría</h3>
 							<select multiple class="form-control" name="categoria[]">
 								<?php while($a_categoria = mysqli_fetch_assoc($f_categoria)): ?>
-									<option value="<?php echo $a_categoria['IDCATEGORIA'] ?>" <?php 
-
-										if (in_array($cosito['FKCATEGORIA'], $seleccionados)){
-
-									echo "selected";
-
-								}
-									?>>
-										<?php echo $a_categoria['CATEGORIA'] ?>
+									
+									<option value="<?php echo $a_categoria['IDCATEGORIA'] ?>" 
+										<?php 
+											foreach ($seleccionados as $selected) {
+												if ($a_categoria['IDCATEGORIA'] == $selected) {
+													echo "selected";
+												}												
+											}
+										?>>
+										<?php echo $a_categoria['CATEGORIA']; ?>
 									</option>
 								<?php endwhile; ?>
 							</select>
