@@ -124,8 +124,9 @@ SQL;
 							<h3>Video</h3>
 							<?php if ($a['VIDEO'] > 0): ?>
 								<video controls>
-									<source src="../uploads/<?php echo $a['VIDEO'] ?>" type="video/<?php echo $separar_post[1] ?>">
-								</video>		
+									<source src="../uploads/<?php echo $a['VIDEO'] ?>" accept="video/mp4, video/avi" type="video/<?php echo $separar_post[1] ?>">
+								</video>	
+								<p>Formatos: MP4 y AVI.</p>	
 							<?php endif; ?>		
 							
 							<input type="file" name="video" id="video" class="form-control create_form__post" />
