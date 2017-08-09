@@ -15,10 +15,10 @@
 		}
 	}
 
-	$x_categoria = "SELECT * FROM categorias";
+
 	$c_chucheria = "SELECT * FROM tipo_chucherias";
 	
-	$p_categoria = mysqli_query($conexion, $c_categoria);
+
 	$f_chucheria = mysqli_query($conexion, $c_chucheria);
 
 	$c = <<<SQL
@@ -59,15 +59,19 @@ SQL;
 SQL;	
 
 	$p = mysqli_query($conexion, $x);
-	$b = mysqli_fetch_assoc($p);	
+	
 
-	//$seleccionados = array();
+	$seleccionados = array();
 
-	//while ($cosito = mysqli_fetch_assoc($a)):
-	//	$seleccionados[] = $cosito['FKCATEGORIA'];
-	//endwhile;
+	while ($cosito = mysqli_fetch_assoc($p)):
+		$seleccionados[] = $cosito['FKCATEGORIA'];
+	endwhile;
 
-	//var_dump($seleccionados);		
+	var_dump($seleccionados);	
+
+
+		$c_categoria = "SELECT * FROM categorias";
+		$f_categoria = mysqli_query($conexion, $c_categoria);
 
 ?>
 
@@ -152,7 +156,7 @@ SQL;
 								<?php while($a_categoria = mysqli_fetch_assoc($f_categoria)): ?>
 									<option value="<?php echo $a_categoria['IDCATEGORIA'] ?>" <?php 
 
-										if ($a_chucherias['IDCATEGORIA'] == $a['FKCATEGORIA']){
+										if (in_array($cosito['FKCATEGORIA'], $seleccionados)){
 
 									echo "selected";
 
