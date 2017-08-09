@@ -33,6 +33,7 @@
 					IMG_DESTACADA
 				FROM
 					articulos
+					WHERE A_ESTADO = 1 
 				ORDER BY
 					IDARTICULO
 					DESC
@@ -109,6 +110,7 @@ SQL;
 				IMG_DESTACADA
 			FROM
 				articulos
+			WHERE A_ESTADO = 1 
 			ORDER BY
 				IDARTICULO
 				DESC
