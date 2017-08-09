@@ -109,7 +109,6 @@ SQL;
 				
 				$titulo = $array_posts['TITULO'];
 				$titulo = strip_tags($titulo);
-				$titulo = nl2br($titulo);
 				$titulo = trim($titulo);
 				//$titulo = utf8_encode($titulo);
 		?>

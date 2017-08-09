@@ -51,7 +51,6 @@ SQL;
 				
 				$titulo = $array_posts['TITULO'];
 				$titulo = strip_tags($titulo);
-				$titulo = nl2br($titulo);
 				$titulo = trim($titulo);
 				//$titulo = utf8_encode($titulo);
 						
@@ -135,7 +134,6 @@ SQL;
 				
 			$titulo_b = $array_posts['TITULO'];
 			$titulo_b = strip_tags($titulo_b);
-			$titulo_b = nl2br($titulo_b);
 			$titulo_b = trim($titulo_b);
 			//$titulo_b = utf8_encode($titulo_b);
 

@@ -66,13 +66,11 @@ SQL;
 		
 		$nombre_completo = $array_detalle['NOMBRE_COMPLETO'];
 		$nombre_completo = strip_tags($nombre_completo);
-		$nombre_completo = nl2br($nombre_completo);
 		$nombre_completo = trim($nombre_completo);
 		//$nombre_completo = utf8_encode($nombre_completo);
 		
 		$titulo = $array_detalle['TITULO'];
 		$titulo = strip_tags($titulo);
-		$titulo = nl2br($titulo);
 		$titulo = trim($titulo);
 		//$titulo = utf8_encode($titulo);
 ?>
