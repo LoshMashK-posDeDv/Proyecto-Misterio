@@ -43,6 +43,13 @@ SQL;
 			FKARTICULO = $post_id
 SQL;
 
+	$consulta_cant_posts = <<<SQL
+		SELECT
+			MAX(IDARTICULO) AS CANT_ARTICULOS
+		FROM 
+			articulos
+SQL;
+
 	$r1 = mysqli_query($conexion, $consulta_post);
 	$r2 = mysqli_query($conexion, $consulta_comentarios);
 	$r3 = mysqli_query($conexion, $consulta_categoria);
