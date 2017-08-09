@@ -23,9 +23,9 @@
                             <a class="navbar-brand" href="index.php">
                                 El calabozo del Androide
                             </a>
-                        </h1>  
+                        </h1>
 
-                        <div class="navbar-header">                        
+                        <div class="navbar-header">
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-expanded="false">
                                 <span class="sr-only">Toggle navigation</span>
                                 <span class="icon-bar"></span>
@@ -33,14 +33,14 @@
                                 <span class="icon-bar"></span>
                             </button>
                         </div>
-                        
+
                         <ul class="nav navbar-nav navbar-left" id="bs-navbar">
                             <li id="btn-videos">
                                 <a href="index.php?s=posts">Posts</a>
-                            </li> 
+                            </li>
                             <li id="btn-videos">
                                 <a href="index.php?s=about">Acerca del sitio</a>
-                            </li> 
+                            </li>
                             <li class="dropdown">
                                 <?php if(isset($_SESSION['NOMBRE_COMPLETO'])) { ?>
 
@@ -86,17 +86,19 @@
                                                 </a>
                                             </li>
                                         </ul>
-                                <?php } ?>                        
-                            </li>                              
+                                <?php } ?>
+                            </li>
                         </ul>
                     </div>
-                    
+
                     <div class="pull-right">
                         <form method="get" action="index.php" class="navbar-form navbar-left" id="buscadorsin" role="search">
                             <div class="form-group">
-                                <input type="text" name="buscar" class="form-control" placeholder="Buscar...">
+                                <input type="text" name="buscar" class="form-control" placeholder="Buscar..." id="buscador_input">
+                                <ul id="opciones"></ul>
                             </div>
-                        </form>              
+                            <script src="js/buscador.js"></script>
+                        </form>
                     </div>
                 </div>
             </nav>
@@ -105,15 +107,15 @@
         <div class="contenedor">
             <?php
                 if(isset($_GET['buscar'])){
-                    require('modulos/buscar.php'); 
+                    require('modulos/buscar.php');
                 } else {
-                    require($seccion); 
+                    require($seccion);
                 }
             ?>
         </div>
 
         <div id="noo"></div>
-        <footer>            
+        <footer>
             <div class="container">
                 <img src="images/lightsaber.png" alt="sable laser coleccionable" id="sable" onclick="noEsColeccionable()">
             </div>
