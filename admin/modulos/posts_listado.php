@@ -1,7 +1,7 @@
 <?php
 	if(isset($_GET['m'])){
 		if($_GET['m'] == 'ok'){
-			$mensaje = 'El post se actualizó correctamente';
+			$mensaje = 'El post se cargó correctamente';
 			$class = 'exito';
 		} else {
 			$mensaje =  'Oops, Algo salió mal';
@@ -9,8 +9,8 @@
 		}
 	}
 
-	if(isset($_GET['m'])){
-		if($_GET['m'] == 'ok'){
+	if(isset($_GET['d'])){
+		if($_GET['d'] == 'ok'){
 			$mensaje = 'El post ha sido eliminado correctamente';
 			$class = 'exito';
 		} else {
@@ -21,16 +21,18 @@
 ?>
 
 <div class="seccion--admin-listado">
-	<?php if(isset($_GET['m'])) { ?>
-		<p class="<?php echo $class; ?>">
-			<?php echo $mensaje; ?>
-		</p>
-	<?php } ?>
+	
 
 	<div class="section__title">
 		<h2>posts</h2>
 		<a href="index.php?s=agregar_post" class="section__title__action"><i class="glyphicon glyphicon-plus"></i> Agregar post</a>
 	</div>
+	
+	<?php if(isset($_GET['m']) || isset($_GET['d'])) { ?>
+		<p class="<?php echo $class; ?>">
+			<?php echo $mensaje; ?>
+		</p>
+	<?php } ?>
 
 	<table class="admin_list">
 		<thead>

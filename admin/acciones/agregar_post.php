@@ -5,11 +5,13 @@
 	$descripcion = $_POST['descripcion'];
 	$video = $_FILES['video'];
 	$video_nombre = $_FILES['video']['name'];
-	$categoria = isset($_POST['categoria']) ? $_POST['categoria'] : '';
+	$categoria = $_POST['categoria'];
+	$chucheria = $_POST['chucheria'];
 	$imagenes = $_FILES['imagenes'];
 	$imagen_destacada = $_FILES['imagen_destacada'];
 	$imagen_destacada_nombre = $_FILES['imagen_destacada']['name'];
-
+	$autor = $_SESSION['IDUSUARIOS'];
+	
 	/*
 	*
 	* ----- COMIENZA LA DOCUMENTACIÓN SOBRE LOS INPUT FILE MULTIPLES -----
@@ -61,24 +63,10 @@
 	*
 	*/
 
-	//$autor = $_SESSION['NOMBRE_COMPLETO'];
-
 	$er_titulo = "/^[a-z0-9-\.*\s]{5,80}$/i";
 	$txt_titulo = preg_match($er_titulo, $titulo, $coincidencia_titulo);
 
-	$er_descripcion = "/^.{10,500}$/i";
-	$txt_descripcion = preg_match_all($er_descripcion, $descripcion, $coincidencia_descripcion);
-
-	// $er_duracion = "/^[0-9]{1,2}(:|.)[0-9]{2}(:|.)[0-9]{2}$/";
-	// $txt_duracion = preg_match($er_duracion, $duracion, $coincidencia_duracion);
-
-	$er_video = "/(^[\w\s]{4,45}\.(mp4|webm)$)?/i";
-	$txt_video = preg_match($er_video, $video_nombre = $_FILES['video']['name'], $coincidencia_video);
-
-	$er_imagen_destacada = "/^[\w\s]{1,45}\.(jpg|jpeg|png)$/i";
-	$txt_imagen_destacada = preg_match($er_imagen_destacada, $imagen_destacada['name'], $coincidencia_imagen_destacada);
-
-	if($txt_titulo && $txt_descripcion && $txt_video && $txt_imagen_destacada){
+	if($categoria && $chucheria && $titulo && $descripcion && $imagen_destacada){
 		if($video['size'] > 0){
 			$extension = pathinfo($video_nombre, PATHINFO_EXTENSION);
 			$video_nombre = "video_" . time() . '.' . $extension;
@@ -119,36 +107,35 @@
 			VIDEO = '$video_nombre',
 			IMG_DESTACADA = '$imagen_destacada_nombre',
 			A_ESTADO = '1',
-			FECHA_ALTA = NOW()";
+			FECHA_ALTA = NOW(),
+			FKCHUCHERIA = '$chucheria',
+			FKUSUARIO = '$autor'";		
 
 		if($extensiones != ''){
 			$c .= ", IMAGENES  = '$insertar'";
-		}
-
-		$rta = 'ok';
+		}		
 
 		if(mysqli_query($conexion, $c)){
 
 			$art_id = mysqli_insert_id($conexion);
-
-			for($i = 0; $i < count($categoria); $i++){
+			
+			foreach($categoria as $cat) {
 				$c2 = "INSERT INTO
 					articulos_categorias
 				SET
 					FKARTICULO = '$art_id',
-					FKCATEGORIA = '$categoria[$i]' ";
+					FKCATEGORIA = '$cat' ";
 
 				mysqli_query($conexion, $c2);
 			}
 		}
-
-		//header("Location: ../index.php?s=posts_listado&m=$rta");
-
+		
+		$rta = 'ok';
+		header("Location: ../index.php?s=posts_listado&m=$rta");
 	} else {
 		$c = 'falló';
 		$rta = 'error';
-
-		//header("Location: ../index.php?s=agregar_post&m=$rta");
+		header("Location: ../index.php?s=agregar_post&m=$rta");
 	}
 
 	echo mysqli_error($conexion);
