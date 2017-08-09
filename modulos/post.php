@@ -178,35 +178,19 @@ SQL;
 							<span><?php echo $array_comentarios['FECHA_COMENTARIO'] ?></span>
 							<p><?php echo $comentario ?></p>
 							<?php
-								if($_SESSION['NICK'] == $array_comentarios['NICK']){
+								if (isset($_SESSION['NICK'])) {
+									if($_SESSION['NICK'] == $array_comentarios['NICK']){
 							?>
-								<a href="acciones/eliminar_comentario_usuario.php?vid=<?php echo $post_id ?>&id=<?php echo $array_comentarios['IDCOMENTARIO'] ?>">
-									Eliminar
-								</a>
-							
+										<a href="acciones/eliminar_comentario_usuario.php?vid=<?php echo $post_id ?>&id=<?php echo $array_comentarios['IDCOMENTARIO'] ?>">
+											Eliminar
+										</a>
 							<?php
+									}
 								}
 							?>
 						</div>
 					<?php endwhile; }	?>
-				<!--
-
-					ESTO POR AHORA NO VA
-
-				<div class="col-md-11 col-md-offset-1">
-					<h4>Biff</h4>
-					<span>20/05/2017</span>
-					<p>When I have kids, I'm going to let them do anything they want. Anything at all. (in the car) I'd like to have that in writing. (outside the car) Yeah, me too. (1985 Marty walks off to catch Strickland.) (o.s) Marty, why are you so nervous?</p>
-				</div>
-				<div class="col-md-11 col-md-offset-1">
-					<h4>George McFly</h4>
-					<span>11/06/2017</span>
-					<p>Emmett! Hold on! Doc picks Clara up just in time. They are now safe on the hoverboard.) YES! (Marty watches as Doc and Clara, staring into each other's eyes, fly away from the Delorean. Marty slams the gull-wing door and get ready to travel back to the future. The Delorean hits 88 MPH and they shoot off into 1985. The locomotive, on fire, falls off the edge of the ravine.)</p>
-					<div class="col-md-4 col-md-offset-8">
-						<button class="btn respoboton" type="button">RESPONDER</button>
-					</div>
-				</div>
-				-->
+					
 				<?php if(isset($_SESSION['IDUSUARIOS'])): ?>
 				<h3>NUEVO COMENTARIO</h3>
 				<form action="acciones/comentar.php" method="post">
