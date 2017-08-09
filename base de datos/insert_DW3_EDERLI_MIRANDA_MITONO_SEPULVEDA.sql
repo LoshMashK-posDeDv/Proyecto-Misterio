@@ -38,7 +38,7 @@ VALUES
 	('Mi stitch y yo', NOW( ), null, null, 'stitch.jpg', 'Stitch rechazándome fuertemente un domingo por la noche', '1', 5, 1),
 	('Colección Hogwarts', NOW( ), null, null, 'hogwarts.jpg', 'Lo mejor que me pudo haber pasado, no veo la hora de verlos todos', '1', 7, 1),
 	('Mi nueva vitrina de comics', NOW( ), null, 'vitrina02.jpg, vitrina03.jpg', 'vitrina01.jpg', 'Mi aficción por las historietas me llevó a construir esta vitrina para mis comics. Mi favorito es Superman por ser la insignia y el ícono de DC-sin degradar a Batman-, y por su aspecto religioso, pues se asemeja a Jesús: vive sus 33 años, vino del cielo y es el más poderoso', '1', 2, 2),
-	('Conseguí el Suhi Go!', NOW( ), null, 'sushi02.jpg', 'sushi01.jpg', 'No puedo mas de contenta con mi nuevo jueguito, y las cartitas son lo más', '1', 4, 4),
+	('Conseguí el Sushi Go!', NOW( ), null, 'sushi02.jpg', 'sushi01.jpg', 'No puedo mas de contenta con mi nuevo jueguito, y las cartitas son lo más', '1', 4, 4),
 	('Envidien mi colección de figuras de DC Comic', NOW( ), null, null, 'coleccion_figuras.jpg', 'Me tuve que armar un estante para mi colección de personajes, ahora están todos juntitos', '1', 8, 3),
 	('Amo Big Hero', NOW( ), null, 'big02.jpg, big03.jpg, big04.jpg, big05.jpg', 'big01.jpg', 'Mi asombrosa lámpara LED USB de Baymax. No puedo dejar de dormir con ella. Su cabeza y sus manos son móviles!', '1', 6, 5),
 	('Lois and Peter', NOW( ), null, null, 'nighttime.jpg', 'Al carajo con todo! Me lo compré y me encanta. Que se curtan!', '1', 1, 1),
