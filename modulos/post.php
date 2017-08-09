@@ -49,10 +49,19 @@ SQL;
 	
 	while($array_detalle = mysqli_fetch_assoc($r1)):
 		$separar_video = explode(".", $array_detalle['VIDEO']);
+		
 		$descripcion = $array_detalle['DESCRIPCION'];
-		$descripcion = htmlentities($descripcion);
-		$descripcion = nl2br($descripcion);
 		$descripcion = strip_tags($descripcion);
+		$descripcion = nl2br($descripcion);
+		$descripcion = trim($descripcion);
+		//esta función está encaprichada y no quiere funcionar!
+		//$descripcion = utf8_encode($descripcion);
+		
+		$nombre_completo = $array_detalle['NOMBRE_COMPLETO'];
+		$nombre_completo = strip_tags($nombre_completo);
+		$nombre_completo = nl2br($nombre_completo);
+		$nombre_completo = trim($nombre_completo);
+		//$nombre_completo = utf8_encode($nombre_completo);
 ?>
 
 
@@ -127,7 +136,7 @@ SQL;
 						<div class="col-md-6 col-md-offset-3">
 							<!--<img src="https://yt3.ggpht.com/-cjAi_YrRPCA/AAAAAAAAAAI/AAAAAAAAAAA/CvohcVRdIA0/s100-c-k-no-mo-rj-c0xffffff/photo.jpg" alt="foto del usuario" >-->
 						</div>
-						<h3><?php echo $array_detalle['NOMBRE_COMPLETO']; ?></h3>
+						<h3><?php echo $nombre_completo; ?></h3>
 						<p>Email: <?php echo $array_detalle['EMAIL']; ?></p> 
 					</div>
 				</div>
@@ -151,11 +160,17 @@ SQL;
 					if(mysqli_num_rows($r2) == 0){
 						echo "<p> La publicación no tiene comentarios</p>";
 					} else {
-						while($array_comentarios = mysqli_fetch_assoc($r2)):?>
+						while($array_comentarios = mysqli_fetch_assoc($r2)):
+							$comentario = $array_comentarios['COMENTARIO'];
+							$comentario = strip_tags($comentario);
+							$comentario = nl2br($comentario);
+							$comentario = trim($comentario);
+							//$comentario = utf8_encode($comentario);		
+						?>
 						<div class="comment">
 							<h4><?php echo $array_comentarios['NICK'] ?></h4>
 							<span><?php echo $array_comentarios['FECHA_COMENTARIO'] ?></span>
-							<p><?php echo $array_comentarios['COMENTARIO'] ?></p>
+							<p><?php echo $comentario ?></p>
 							<?php
 								if($_SESSION['NICK'] == $array_comentarios['NICK']){
 							?>
