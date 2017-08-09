@@ -41,14 +41,29 @@
 		foreach ($archivos as $foto) {
 			/* Tomo el nombre de cada imagen y lo guardo en una variable */
 			$foto_nombre = $foto['name'];
+			$foto_tmp = $foto['tmp_name'];
+
 			/* Le saco la extensión */
 			$extensiones = pathinfo($foto_nombre, PATHINFO_EXTENSION);
-			/*
-				- La variable $i: Me va a servir para que, por ejemplo, todas las fotos del ID 15 no se llamen 15_imagenes_TITULO.jpg, porque se pisarían, entonces se van a llamar  150_imagenes_TITULO.jpg, 151_imagenes_TITULO.jpg, 152_imagenes_TITULO.jpg, etc. Esto obviamente lo podemos cambiar para que quede de la manera que queramos.
-			*/
+
 			$foto_nombre = $i . "_imgs_" . time() . "." . $extensiones;
+
 			/* Hago el move_uploaded_file para guardar la foto en nuestras carpetas */
-			move_uploaded_file($foto['tmp_name'], "../../uploads/$foto_nombre");
+			//move_uploaded_file($foto['tmp_name'], "../../uploads/$foto_nombre");
+
+			/* GD */
+			if($extensiones == 'jpg' || $extensiones == 'jpeg'){
+				$thumb_original_jpg = imagecreatefromjpeg($foto_tmp);
+				$ancho_o_thumb_jpg = imagesx($thumb_original_jpg);
+				$alto_o_thumb_jpg = imagesy($thumb_original_jpg);
+				$ancho_thumb = 555;
+				$alto_thumb = round($ancho_thumb * $alto_o_thumb_jpg / $ancho_o_thumb_jpg);
+				$imagen_copia_thumb = imagecreatetruecolor( $ancho_thumb, $alto_thumb );
+				imagecopyresampled( $imagen_copia_thumb, $thumb_original_jpg, 0, 0, 0, 0, $ancho_thumb, $alto_thumb, $ancho_o_thumb_jpg, $alto_o_thumb_jpg);
+				imagejpeg($imagen_copia_thumb, "../../uploads/$foto_nombre", 100);	
+				imagedestroy($imagen_copia_thumb);
+			}	
+
 			/* Incremento la $i para que cambie según la foto */
 			$i++;
 			$archivos_final[] = $foto_nombre;
@@ -75,28 +90,20 @@
 
 		if($imagen_destacada['size'] > 0){
 			$extension_img = pathinfo($imagen_destacada_nombre, PATHINFO_EXTENSION);
-			/*if($extension_img == 'jpg' || $extension_img == 'jpeg'){
-				$original = imagecreatefromjpeg($imagen_destacada['tmp_name']);
-				$ancho_original = imagesx($original);
-				$alto_original = imagesy($original);
+			
+			/* GD */
+			if($extension_img == 'jpg' || $extension_img == 'jpeg'){
 
-				$ancho = 555;
-				$alto = round($ancho * $alto_original / $ancho_original);
-
-				$nueva = imagecreatetruecolor($ancho, $alto);
-
-				imagecopyresampled(
-					$nueva, $original,
-					0, 0,
-					0, 0,
-					$ancho, $alto,
-					$ancho_original, $alto_original
-				);
-				imagejpeg($nueva, "../../uploads/$imagen_destacada_nombre", 100);
-			}
-			*/
-			$imagen_destacada_nombre = "img_" . time() . "." . $extension_img;
-			move_uploaded_file($imagen_destacada['tmp_name'], "../../uploads/$imagen_destacada_nombre");
+				$imagen_original_jpg = imagecreatefromjpeg($imagen_destacada['tmp_name']);
+				$ancho_original_jpg = imagesx($imagen_original_jpg);
+				$alto_original_jpg = imagesy($imagen_original_jpg);
+				$ancho_jpg = 555;
+				$alto_jpg = round($ancho_jpg * $alto_original_jpg / $ancho_original_jpg);
+				$imagen_copia_jpg = imagecreatetruecolor( $ancho_jpg, $alto_jpg );
+				imagecopyresampled( $imagen_copia_jpg, $imagen_original_jpg, 0, 0, 0, 0, $ancho_jpg, $alto_jpg, $ancho_original_jpg, $alto_original_jpg);
+				imagejpeg($imagen_copia_jpg, "../../uploads/$imagen_destacada_nombre", 100);	
+				imagedestroy($imagen_copia_jpg);
+			}	
 		}
 
 		$c = "INSERT INTO

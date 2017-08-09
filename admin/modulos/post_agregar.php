@@ -33,76 +33,58 @@
 					</div>
 
 					<div class="clearfix">
-						<h3>Titulo</h3>
+						<h3>Titulo <span class="red">*</span> </h3>
 						<input type="text" name="titulo" id="titulo" class="form-control create_form__titulo"/>
 					</div>
 
 					<div class="clearfix">
-						<h3>Descripcion</h3>
+						<h3>Descripcion <span class="red">*</span></h3>
 						<textarea class="form-control create_form__descripcion" name="descripcion" id="descripcion"></textarea>
 					</div>
 
-					<div class="clearfix">
-						<div class="row">
-							<div class="col-md-6">
-								<h3>Video</h3>
-								<img src="http://placehold.it/200x200" alt="Preview del video" />
-								<input type="file" name="video" id="video" class="form-control create_form__post" />
-								<p>Formatos: mp4 o webm</p>
-							</div>
-							<div class="col-md-6">
-								<h3>Categoría</h3>
-								<select multiple class="form-control" name="categoria[]">
-									<?php while($a_categoria = mysqli_fetch_assoc($f_categoria)):?>
-										<option value="<?php echo $a_categoria['IDCATEGORIA'] ?>">
-											<?php echo $a_categoria['CATEGORIA'] ?>
-										</option>
-									<?php endwhile; ?>
-								</select>
-								<span class="disc">Manten apretado ctrl para seleccionar mas de una opción</span>
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-md-6">
-								<h3>Tipo de chucheria</h3>
-								<select class="form-control" name="chucheria">
-									<?php while($a_chucherias = mysqli_fetch_assoc($f_chucheria)): ?>
-										<option value="<?php echo $a_chucherias['IDCHUCHERIA'] ?>">
-											<?php echo $a_chucherias['TIPO_CHUCHERIA'] ?>
-										</option>
-									<?php endwhile; ?>
-								</select>
-					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<h3>Tipo de chucheria <span class="red">*</span></h3>
+							<select class="form-control" name="chucheria">
+								<?php while($a_chucherias = mysqli_fetch_assoc($f_chucheria)): ?>
+									<option value="<?php echo $a_chucherias['IDCHUCHERIA'] ?>">
+										<?php echo $a_chucherias['TIPO_CHUCHERIA'] ?>
+									</option>
+								<?php endwhile; ?>
+							</select>
 
-					<div class="clearfix">
-						<h3>Im&aacute;genes</h3>
-						<div class="imagenes row">
-							<div class="imagenes__item col-xs-6 col-md-3"><img src="http://placehold.it/100x100" alt=""></div>
-							<div class="imagenes__item col-xs-6 col-md-3"><img src="http://placehold.it/100x100" alt=""></div>
-							<div class="imagenes__item col-xs-6 col-md-3"><img src="http://placehold.it/100x100" alt=""></div>
-							<div class="imagenes__item col-xs-6 col-md-3"><img src="http://placehold.it/100x100" alt=""></div>
-							<div class="imagenes__item col-xs-6 col-md-3"><img src="http://placehold.it/100x100" alt=""></div>
-							<div class="imagenes__item col-xs-6 col-md-3"><img src="http://placehold.it/100x100" alt=""></div>
-							<div class="imagenes__item col-xs-6 col-md-3"><img src="http://placehold.it/100x100" alt=""></div>
-							<div class="imagenes__item col-xs-6 col-md-3"><img src="http://placehold.it/100x100" alt=""></div>
-						</div>
-						<div class="pull-right">
-							<input type="file" multiple="true" name="imagenes[]" id="imagenes" class="form-control create_form__imagenes" />
-							<p>Formatos: jpg, jpeg o png.</p>
-						</div>
-					</div>
-
-					<div class="clearfix">
-						<h3>Im&aacute;gen destacada</h3>
-						<div class="row">
-							<div class="col-md-6">
-								<img src="http://placehold.it/300x150" alt="">
-							</div>
-							<div class="col-md-6">
-								<input type="file" name="imagen_destacada" id="imagen_destacada" class="form-control create_form__imagen_destacada" />
+							<h3>Im&aacute;genes</h3>
+							<div class="pull-right">
+								<input type="file" multiple="true" name="imagenes[]" id="imagenes" class="form-control create_form__imagenes" accept="image/jpg, image/jpeg" />
 								<p>Formatos: jpg, jpeg o png.</p>
 							</div>
+						</div>							
+
+						<div class="col-md-6">
+							<h3>Categoría <span class="red">*</span></h3>
+							<select multiple class="form-control" name="categoria[]">
+								<?php while($a_categoria = mysqli_fetch_assoc($f_categoria)):?>
+									<option value="<?php echo $a_categoria['IDCATEGORIA'] ?>">
+										<?php echo $a_categoria['CATEGORIA'] ?>
+									</option>
+								<?php endwhile; ?>
+							</select>
+							<span class="disc">Manten apretado ctrl para seleccionar mas de una opción</span>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-6">
+							<h3>Video</h3>
+							<input type="file" name="video" id="video" class="form-control create_form__post" />
+							<p>Formatos: jpg o jpeg.</p>
+						</div>
+						
+
+						<div class="col-md-6">
+							<h3>Im&aacute;gen destacada <span class="red">*</span></h3>
+							<input type="file" name="imagen_destacada" id="imagen_destacada" class="form-control create_form__imagen_destacada" accept="image/jpg, image/jpeg" />
+							<p>Formatos: jpg o jpeg.</p>
 						</div>
 					</div>
 				</div>

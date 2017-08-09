@@ -21,6 +21,7 @@
 		IDARTICULO,
 		TITULO,
 		FECHA_ALTA,
+		FKCHUCHERIA,
 		DESCRIPCION,
 		VIDEO,
 		IMG_DESTACADA,
@@ -37,9 +38,8 @@ SQL;
 	$a = mysqli_fetch_assoc($f);
 
 	$separar_post = explode(".", $a['VIDEO']);
-
+	
 	$separar_imagenes = explode(",", $a['IMAGENES']);
-
 
 	$c_categoria = <<<CATEGORIA
 	SELECT 
@@ -73,66 +73,74 @@ CATEGORIA;
 					</div>
 
 					<div class="clearfix">
-						<h3>Titulo</h3>
+						<h3>Titulo <span class="red">*</span> </h3>
 						<input type="text" name="titulo" id="titulo" class="form-control create_form__titulo" value="<?php echo $a['TITULO'] ?>"/>
 					</div>
 
 					<div class="clearfix">
-						<h3>Descripcion</h3>
+						<h3>Descripcion <span class="red">*</span> </h3>
 						<textarea class="form-control create_form__descripcion" name="descripcion" id="descripcion"><?php echo $a['DESCRIPCION'] ?></textarea>
 					</div>
 
-					<div class="clearfix">						
-						<div class="row">
-							<div class="col-md-6">
-								<h3>Video</h3>
+					<div class="row">
+						<div class="col-md-6">
+							<h3>Tipo de chucheria <span class="red">*</span></h3>
+							<select class="form-control" name="chucheria">
+								<?php while($a_chucherias = mysqli_fetch_assoc($f_chucheria)): ?>
+									<option value="<?php echo $a_chucherias['IDCHUCHERIA'] ?>">
+										<?php echo $a_chucherias['TIPO_CHUCHERIA'] ?>
+									</option>
+								<?php endwhile; ?>
+							</select>
+
+							<h3>Im&aacute;genes</h3>
+							<div class="imagenes">
+								<div class="row">
+									<?php if (count($separar_imagenes) > 0): ?>									
+										<?php for($i = 0; $i < count($separar_imagenes); $i++): ?>
+											<div class="imagenes__item col-xs-6">
+												<img src="../uploads/<?php echo $separar_imagenes[$i]  ?>" alt="">
+											</div>
+										<?php endfor; ?>	
+									<?php endif; ?>								
+								</div>
+							</div>
+							<div class="btn-block">
+								<input type="file" multiple="true" name="imagenes[]" id="imagenes" class="form-control create_form__imagenes" />
+							</div>
+
+							<h3>Video</h3>
+							<?php if ($a['VIDEO'] > 0): ?>
 								<video controls>
 									<source src="../uploads/<?php echo $a['VIDEO'] ?>" type="video/<?php echo $separar_post[1] ?>">
-								</video>
-								<input type="file" name="video" id="video" class="form-control create_form__post" />
-							</div>
-							<div class="col-md-6">
-								<h3>Categoría</h3>
-								<select multiple class="form-control" name="categoria[]">
-									<?php while($a_categoria = mysqli_fetch_assoc($f_categoria)): ?>
-										<option value="<?php echo $a_categoria['IDCATEGORIA'] ?>">
-											<?php echo $a_categoria['CATEGORIA'] ?>
-										</option>
-									<?php endwhile; ?>
-								</select>
-								<span class="disc">Manten apretado ctrl para seleccionar mas de una opción</span>
-							</div>
-						</div>
-					</div>
+								</video>		
+							<?php endif; ?>		
+							
+							<input type="file" name="video" id="video" class="form-control create_form__post" />
+						</div>							
 
-					<div class="clearfix">
-						<h3>Im&aacute;genes</h3>
-						<div class="imagenes">
+						<div class="col-md-6">
+							<h3>Categoría</h3>
+							<select multiple class="form-control" name="categoria[]">
+								<?php while($a_categoria = mysqli_fetch_assoc($f_categoria)): ?>
+									<option value="<?php echo $a_categoria['IDCATEGORIA'] ?>">
+										<?php echo $a_categoria['CATEGORIA'] ?>
+									</option>
+								<?php endwhile; ?>
+							</select>
+							<span class="disc">Manten apretado ctrl para seleccionar mas de una opción</span>
+
+							<h3>Im&aacute;gen destacada</h3>
 							<div class="row">
-								<?php for($i = 0; $i < count($separar_imagenes); $i++): ?>
-									<div class="imagenes__item col-xs-6 col-md-3">
-										<img src="../uploads/<?php echo $separar_imagenes[$i]  ?>" alt="">
-									</div>
-								<?php endfor; ?>								
-							</div>
-						</div>
-						<div class="btn-block">
-							<input type="file" multiple="true" name="imagenes[]" id="imagenes" class="form-control create_form__imagenes" />
-						</div>
-					</div>
-
-					<div class="clearfix">
-						<h3>Im&aacute;gen destacada</h3>
-						<div class="row">
-							<div class="col-md-6">
-								<img src="../uploads/<?php echo $a['IMG_DESTACADA'] ?>" alt="">
-							</div>
-							<div class="col-md-6">
-								<input type="file" name="imagen_destacada" id="imagen_destacada" class="form-control create_form__imagen_destacada" />
+								<div class="col-md-12">
+									<img src="../uploads/<?php echo $a['IMG_DESTACADA'] ?>" alt="" class="img_cargada">
+									<input type="file" name="imagen_destacada" id="imagen_destacada" class="form-control create_form__imagen_destacada" />
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+				
 				<div class="row">
 					<div class="col-md-6">
 						<input type="submit" class="btn btn_ok btn-block" value="Guardar"/>

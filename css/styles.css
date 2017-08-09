@@ -117,6 +117,12 @@ input[type="submit"]:hover {
 	font-family: 'gobold',sans-serif;
 }
 
+.red {
+	font-weight: bold;
+    color: #de1f1f;
+    font-size: 21px;
+}
+
 .bold {
 	font-weight: 700;
 }
@@ -688,6 +694,10 @@ tr.admin_list__head th {
 	background: url(../images/thinking.gif) no-repeat 14% bottom #fff;
 	background-attachment: fixed;
 	padding-bottom: 40px;
+}
+
+.post_agregar_form .img_cargada {
+	margin-bottom: 15px;
 }
 
 /* navbar */
