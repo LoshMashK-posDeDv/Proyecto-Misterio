@@ -25,6 +25,10 @@
 ?>
 <div class="seccion--admin-listado">
 
+	<div class="section__title">
+		<h2>Comentarios</h2>
+	</div>
+
 	<?php
 		if(isset($_GET['m'])):
 	?>
@@ -34,10 +38,6 @@
 	<?php
 	endif;
 	?>
-
-	<div class="section__title">
-		<h2>Comentarios</h2>
-	</div>
 
 	<table class="admin_list">
 		<thead>
