@@ -21,29 +21,28 @@
     $val_pass = preg_match($er_pass, $password);    
     
     if($val_nombre && $val_email && $val_nick){
+        
+        if (!empty($edad) && $val_edad) {
+            
+        }
+
         if (!empty($password) && !empty($password_confirm)) {
             if ($password == $password_confirm) {
                 $password = md5($password);
-                $actualizar_datos = "UPDATE usuarios SET NOMBRE_COMPLETO = '$nombre', CONTRASENIA = '$password', EMAIL = '$email', NICK = '$nick' WHERE EMAIL = '$_SESSION[IDUSUARIOS]' LIMIT 1";
-                var_dump('Actualizar con contraseña nueva');
+                $actualizar_datos = "UPDATE usuarios SET NOMBRE_COMPLETO = '$nombre', CONTRASENIA = '$password', EMAIL = '$email', NICK = '$nick' WHERE IDUSUARIOS = '$_SESSION[IDUSUARIOS]' LIMIT 1";
             }
         } else {
-            $actualizar_datos = "UPDATE usuarios SET NOMBRE_COMPLETO = '$nombre', EMAIL = '$email', NICK = '$nick' WHERE EMAIL = '$_SESSION[IDUSUARIOS]' LIMIT 1";
-                var_dump('Actualizar SIN contraseña nueva');
+            $actualizar_datos = "UPDATE usuarios SET NOMBRE_COMPLETO = '$nombre', EMAIL = '$email', NICK = '$nick' WHERE IDUSUARIOS = '$_SESSION[IDUSUARIOS]' LIMIT 1";
         }
 
         mysqli_query($conexion, $actualizar_datos);
-        var_dump($actualizar_datos);
 
         $rta = 'ok';
-        //header("Location: ../index.php?s=mi_cuenta&rta=$rta");
-
-        var_dump($rta);
+        header("Location: ../index.php?s=mi_cuenta&rta=$rta");
     } else {
         $rta = 'error';
-        //header("Location: ../index.php?s=mi_cuenta&rta=$rta");
-        var_dump($rta);
+        header("Location: ../index.php?s=mi_cuenta&rta=$rta");
     }
 
-    echo mysqli_error($conexion);
+    //echo mysqli_error($conexion);
 ?>
